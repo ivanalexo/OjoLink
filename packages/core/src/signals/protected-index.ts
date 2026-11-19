@@ -10,12 +10,23 @@ export interface ProtectedDomain {
   readonly suffix: string;
 }
 
+export interface ProtectedSuffixGroup {
+  readonly suffix: string;
+  readonly name: string;
+  readonly labels: readonly string[];
+  readonly skeleton: string;
+  readonly lookalikes: readonly string[];
+}
+
 export interface ProtectedIndex {
   readonly entries: readonly ProtectedDomain[];
+  readonly suffixes: readonly ProtectedSuffixGroup[];
   readonly domains: ReadonlySet<string>;
   readonly byDomainSkeleton: ReadonlyMap<string, ProtectedDomain>;
   readonly byLabelSkeleton: ReadonlyMap<string, ProtectedDomain>;
 }
+
+const cache = new WeakMap<readonly ProtectedPack[], ProtectedIndex>();
 
 /** The part of a registrable domain in front of its public suffix. */
 export function labelOf(domain: string, suffix: string): string {
@@ -24,9 +35,9 @@ export function labelOf(domain: string, suffix: string): string {
     : domain;
 }
 
-/** Prepares protected domains for lookup by lookalike form. The first entry wins on a collision. */
-export function buildProtectedIndex(packs: readonly ProtectedPack[]): ProtectedIndex {
+function build(packs: readonly ProtectedPack[]): ProtectedIndex {
   const entries: ProtectedDomain[] = [];
+  const suffixes: ProtectedSuffixGroup[] = [];
   const domains = new Set<string>();
   const byDomainSkeleton = new Map<string, ProtectedDomain>();
   const byLabelSkeleton = new Map<string, ProtectedDomain>();
@@ -50,6 +61,30 @@ export function buildProtectedIndex(packs: readonly ProtectedPack[]): ProtectedI
       const labelKey = skeleton(item.label);
       if (!byLabelSkeleton.has(labelKey)) byLabelSkeleton.set(labelKey, item);
     }
+
+    for (const { suffix, name, lookalikes } of pack.suffixes) {
+      if (suffixes.some((group) => group.suffix === suffix)) continue;
+      suffixes.push({
+        suffix,
+        name,
+        labels: suffix.split("."),
+        skeleton: skeleton(suffix),
+        lookalikes,
+      });
+    }
   }
-  return { entries, domains, byDomainSkeleton, byLabelSkeleton };
+  return { entries, suffixes, domains, byDomainSkeleton, byLabelSkeleton };
+}
+
+/**
+ * Prepares protected domains and suffixes for lookup by lookalike form.
+ * The first entry wins on a collision, and the result is reused for the same packs array.
+ */
+export function buildProtectedIndex(packs: readonly ProtectedPack[]): ProtectedIndex {
+  let index = cache.get(packs);
+  if (!index) {
+    index = build(packs);
+    cache.set(packs, index);
+  }
+  return index;
 }

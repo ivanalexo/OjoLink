@@ -65,6 +65,8 @@ El comando valida las fuentes, escribe los módulos y muestra un resumen, con la
 
 No hace falta tocar los archivos de otros países.
 
+Un sufijo protegido, como `gob.bo`, puede declarar en `lookalikes` las terminaciones que lo imitan, como `gov.bo`. Solo se detectan las que están en esa lista.
+
 ### Confirmar una entidad
 
 Cada entidad lleva un registro de verificación. Solo las confirmadas llegan al motor.

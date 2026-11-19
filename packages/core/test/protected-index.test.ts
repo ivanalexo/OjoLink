@@ -65,6 +65,24 @@ describe("buildProtectedIndex", () => {
     expect(collided.domains.has("banc0.com")).toBe(true);
   });
 
+  it("lists protected suffixes with their group name", () => {
+    expect(index.suffixes).toEqual([
+      {
+        suffix: "gob.bo",
+        name: "Estado Plurinacional de Bolivia",
+        labels: ["gob", "bo"],
+        skeleton: skeleton("gob.bo"),
+        lookalikes: ["gov.bo"],
+      },
+    ]);
+  });
+
+  it("reuses the index for the same packs array and rebuilds for another", () => {
+    expect(buildProtectedIndex(PROTECTED_PACKS)).toBe(index);
+    expect(buildProtectedIndex([...PROTECTED_PACKS])).not.toBe(index);
+    expect(buildProtectedIndex([...PROTECTED_PACKS])).toEqual(index);
+  });
+
   it("builds an empty index without packs", () => {
     expect(buildProtectedIndex([]).entries).toEqual([]);
   });

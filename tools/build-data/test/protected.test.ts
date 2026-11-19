@@ -105,6 +105,36 @@ describe("validateProtected", () => {
     expect(errors.join("\n")).toMatch(/not a public suffix/);
   });
 
+  it("accepts declared imitations of a suffix and ships them sorted", () => {
+    const source = file(
+      "bo",
+      [],
+      [{ suffix: "gob.bo", name: "Estado", lookalikes: ["gov.bo", "gab.bo"] }],
+    );
+    expect(validateProtected([source])).toEqual([]);
+    expect(buildProtected([source]).packs[0]?.suffixes).toEqual([
+      { suffix: "gob.bo", name: "Estado", lookalikes: ["gab.bo", "gov.bo"] },
+    ]);
+  });
+
+  it.each([
+    ["a real public suffix", "com.bo", /real public suffix/],
+    ["the protected suffix itself", "gob.bo", /real public suffix/],
+    ["an uppercase ending", "GOV.bo", /lowercase ASCII/],
+  ])("rejects %s as an imitation of a suffix", (_name, lookalike, message) => {
+    const source = file("bo", [], [{ suffix: "gob.bo", name: "Estado", lookalikes: [lookalike] }]);
+    expect(validateProtected([source]).join("\n")).toMatch(message);
+  });
+
+  it("rejects an imitation that is also listed as a protected domain", () => {
+    const source = file(
+      "bo",
+      [entity("bcp.com.bo")],
+      [{ suffix: "gob.bo", name: "Estado", lookalikes: ["bcp.com.bo"] }],
+    );
+    expect(validateProtected([source]).join("\n")).toMatch(/already listed/);
+  });
+
   it("rejects an invalid or repeated country code", () => {
     expect(validateProtected([file("BOL", [])]).join("\n")).toMatch(/two-letter/);
     expect(validateProtected([file("bo", []), file("bo", [])]).join("\n")).toMatch(
@@ -145,7 +175,7 @@ describe("buildProtected", () => {
   });
 
   it("keeps suffixes apart from domains", () => {
-    expect(pack?.suffixes).toEqual([{ suffix: "gob.bo", name: "Estado" }]);
+    expect(pack?.suffixes).toEqual([{ suffix: "gob.bo", name: "Estado", lookalikes: [] }]);
     expect(domains).not.toContain("gob.bo");
   });
 

@@ -24,6 +24,11 @@ const HOMOGRAPH_ADVICE =
   "Si esperabas un mensaje de {entity}, escribe {imitated} tú mismo o abre su app.";
 const HOMOGRAPH_CONSEQUENCE = "Para tu navegador es otro sitio, registrado por otra persona.";
 
+const SUBDOMAIN_SUFFIX_TITLE = "Este enlace no termina en {shown}";
+const SUBDOMAIN_SUFFIX_ADVICE =
+  "Si buscas un sitio oficial, comprueba que la dirección termine en {shown}.";
+const SUBDOMAIN_OFFICIAL = "Los sitios oficiales ({entity}) terminan en {shown}.";
+
 const INVISIBLE_TITLE = "Este enlace tiene caracteres que no se ven";
 const INVISIBLE_HOST_ADVICE =
   "Revisa que {openedHost} sea el sitio que esperabas antes de abrirlo.";
@@ -115,6 +120,31 @@ export const es: Messages = {
       explanation: `En «{label}», {count} de las letras son de alfabetos distintos al resto del nombre, que usa letras {ownScript|scriptMany}. ${MIXED_SCRIPT_CONSEQUENCE}`,
       advice: MIXED_SCRIPT_ADVICE,
       technical: "Letras ajenas: {codePoints}. Dirección real: {asciiHost}.",
+    },
+    "subdomain/domain": {
+      tooltip: "No es de {shown}: el sitio real es {realDomain}.",
+      title: "Este enlace no es de {shown}",
+      explanation:
+        "El sitio real es {realDomain}. «{shown}» es solo una parte del nombre, puesta para que parezca el sitio de {entity}.",
+      advice: "Si esperabas un mensaje de {entity}, escribe {shown} tú mismo o abre su app.",
+      technical:
+        "Dirección completa: {asciiHost}. Sitio real: {realDomain}. Nombre mostrado: {shown}.",
+    },
+    "subdomain/suffix": {
+      tooltip: "No termina en {shown}: el sitio real es {realDomain}.",
+      title: SUBDOMAIN_SUFFIX_TITLE,
+      explanation: `El sitio real es {realDomain}. «{shown}» aparece dentro del nombre, pero no es su terminación. ${SUBDOMAIN_OFFICIAL}`,
+      advice: SUBDOMAIN_SUFFIX_ADVICE,
+      technical:
+        "Dirección completa: {asciiHost}. Sitio real: {realDomain}. Terminación mostrada: {shown}.",
+    },
+    "subdomain/suffix-lookalike": {
+      tooltip: "Termina en {written}, que se parece a {shown} pero no es lo mismo.",
+      title: SUBDOMAIN_SUFFIX_TITLE,
+      explanation: `La dirección termina en {written}, que se parece a {shown}. ${SUBDOMAIN_OFFICIAL}`,
+      advice: SUBDOMAIN_SUFFIX_ADVICE,
+      technical:
+        "Dirección completa: {asciiHost}. Terminación escrita: {written}. Terminación protegida: {shown}.",
     },
     "invisible-characters/host-one": {
       tooltip: "Tiene 1 carácter invisible en el nombre del sitio; en realidad abre {openedHost}.",

@@ -26,6 +26,13 @@ export interface CuratedEntity {
 export interface CuratedSuffix {
   readonly suffix: string;
   readonly name: string;
+  readonly lookalikes?: readonly string[];
+}
+
+export interface PackSuffix {
+  readonly suffix: string;
+  readonly name: string;
+  readonly lookalikes: readonly string[];
 }
 
 export interface CuratedPack {
@@ -47,7 +54,7 @@ export interface PackEntry {
 
 export interface Pack {
   readonly country: string;
-  readonly suffixes: readonly CuratedSuffix[];
+  readonly suffixes: readonly PackSuffix[];
   readonly entries: readonly PackEntry[];
 }
 
@@ -117,6 +124,16 @@ export function validateProtected(sources: readonly SourceFile<CuratedPack>[]): 
       if (!isText(suffix.suffix) || getPublicSuffix(suffix.suffix, PSL) !== suffix.suffix) {
         errors.push(`${where}: not a public suffix`);
       }
+      for (const lookalike of suffix.lookalikes ?? []) {
+        const lookalikeWhere = `${where} lookalike "${String(lookalike)}"`;
+        if (!isText(lookalike) || !LOWERCASE_ASCII.test(lookalike)) {
+          errors.push(`${lookalikeWhere}: not a lowercase ASCII ending`);
+        } else if (getPublicSuffix(lookalike, PSL) === lookalike) {
+          errors.push(`${lookalikeWhere}: is a real public suffix, not an imitation`);
+        } else {
+          claim(lookalike, lookalikeWhere);
+        }
+      }
     }
 
     for (const entity of content.entities ?? []) {
@@ -160,7 +177,13 @@ export function buildProtected(sources: readonly SourceFile<CuratedPack>[]): Pro
     }
     return {
       country: content.country,
-      suffixes: [...content.suffixes].sort((a, b) => a.suffix.localeCompare(b.suffix, "en")),
+      suffixes: content.suffixes
+        .map(({ suffix, name, lookalikes }): PackSuffix => ({
+          suffix,
+          name,
+          lookalikes: [...(lookalikes ?? [])].sort(),
+        }))
+        .sort((a, b) => a.suffix.localeCompare(b.suffix, "en")),
       entries: entries.sort((a, b) => a.domain.localeCompare(b.domain, "en")),
     };
   });
@@ -182,6 +205,7 @@ export interface ProtectedEntry {
 export interface ProtectedSuffix {
   readonly suffix: string;
   readonly name: string;
+  readonly lookalikes: readonly string[];
 }
 
 export interface ProtectedPack {

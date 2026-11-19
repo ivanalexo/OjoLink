@@ -1,6 +1,8 @@
 {
   "country": "bo",
-  "suffixes": [{ "suffix": "gob.bo", "name": "Estado Plurinacional de Bolivia" }],
+  "suffixes": [
+    { "suffix": "gob.bo", "name": "Estado Plurinacional de Bolivia", "lookalikes": ["gov.bo"] }
+  ],
   "entities": [
     {
       "domain": "bnb.com.bo",

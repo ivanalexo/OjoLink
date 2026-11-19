@@ -36,6 +36,8 @@ export type { NormalizedUrl, NormalizeFailureReason, NormalizeResult } from "./n
 export type { Level } from "./score.js";
 export { createHomographSignal } from "./signals/homograph.js";
 export type { HomographCharacter, HomographDetails } from "./signals/homograph.js";
+export { createSubdomainSignal } from "./signals/subdomain.js";
+export type { SubdomainCase, SubdomainDetails } from "./signals/subdomain.js";
 export type {
   InvisibleCharacter,
   InvisibleCharacterKind,

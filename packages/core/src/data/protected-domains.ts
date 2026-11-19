@@ -13,6 +13,7 @@ export interface ProtectedEntry {
 export interface ProtectedSuffix {
   readonly suffix: string;
   readonly name: string;
+  readonly lookalikes: readonly string[];
 }
 
 export interface ProtectedPack {
@@ -27,7 +28,10 @@ export const PROTECTED_PACKS: readonly ProtectedPack[] = [
     "suffixes": [
       {
         "suffix": "gob.bo",
-        "name": "Estado Plurinacional de Bolivia"
+        "name": "Estado Plurinacional de Bolivia",
+        "lookalikes": [
+          "gov.bo"
+        ]
       }
     ],
     "entries": [
