@@ -29,6 +29,10 @@ const SUBDOMAIN_SUFFIX_ADVICE =
   "Si buscas un sitio oficial, comprueba que la dirección termine en {shown}.";
 const SUBDOMAIN_OFFICIAL = "Los sitios oficiales ({entity}) terminan en {shown}.";
 
+const HIDDEN_TITLE = "No se sabe a dónde lleva este enlace";
+const HIDDEN_ADVICE =
+  "Revela el destino antes de abrirlo. Si no esperabas este mensaje, no lo abras.";
+
 const INVISIBLE_TITLE = "Este enlace tiene caracteres que no se ven";
 const INVISIBLE_HOST_ADVICE =
   "Revisa que {openedHost} sea el sitio que esperabas antes de abrirlo.";
@@ -120,6 +124,22 @@ export const es: Messages = {
       explanation: `En «{label}», {count} de las letras son de alfabetos distintos al resto del nombre, que usa letras {ownScript|scriptMany}. ${MIXED_SCRIPT_CONSEQUENCE}`,
       advice: MIXED_SCRIPT_ADVICE,
       technical: "Letras ajenas: {codePoints}. Dirección real: {asciiHost}.",
+    },
+    "hidden-destination/shortener": {
+      tooltip: "No muestra a dónde lleva: usa el acortador {service}.",
+      title: HIDDEN_TITLE,
+      explanation:
+        "Usa un acortador, {service}, que oculta el destino. Hasta revelarlo no se puede saber a qué sitio lleva.",
+      advice: HIDDEN_ADVICE,
+      technical: "Servicio: {service} (acortador). Enlace a resolver: {link}.",
+    },
+    "hidden-destination/tracker": {
+      tooltip: "No muestra a dónde lleva: es un enlace de seguimiento de {service}.",
+      title: HIDDEN_TITLE,
+      explanation:
+        "Es un enlace de seguimiento, de los que usan los envíos masivos de correo. Pasa por {service} antes de llegar a su destino, que no se muestra.",
+      advice: HIDDEN_ADVICE,
+      technical: "Servicio: {service} (seguimiento). Enlace a resolver: {link}.",
     },
     "subdomain/domain": {
       tooltip: "No es de {shown}: el sitio real es {realDomain}.",
