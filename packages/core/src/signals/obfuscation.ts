@@ -1,4 +1,4 @@
-import { rawAuthority } from "./raw.js";
+import { rawAuthority } from "../raw.js";
 import type { Signal } from "./types.js";
 
 const DOMAIN_SHAPE = /^[\p{L}\p{N}-]+(\.[\p{L}\p{N}-]+)+$/u;

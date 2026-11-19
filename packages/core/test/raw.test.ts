@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { rawAuthority } from "../src/signals/raw.js";
+import { rawAuthority } from "../src/raw.js";
 
 describe("rawAuthority", () => {
   it.each([

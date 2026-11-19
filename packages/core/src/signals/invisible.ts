@@ -1,4 +1,4 @@
-import { rawAuthority } from "./raw.js";
+import { rawAuthority } from "../raw.js";
 import type { Signal } from "./types.js";
 
 export type InvisibleCharacterKind = "invisible" | "direction";

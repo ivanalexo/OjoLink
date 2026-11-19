@@ -150,6 +150,44 @@ describe("links without a scheme", () => {
   });
 });
 
+describe("email addresses and bare numbers", () => {
+  it.each(["juan@gmail.com", "soporte@bcp.com.bo", "nombre.apellido@empresa.com.bo"])(
+    "reports %s as an email address",
+    (input) => {
+      expect(reason(input)).toBe("email-address");
+    },
+  );
+
+  it.each(["juan@gmail.com/perfil", "juan@gmail.com?x=1", "a@b@c.com"])(
+    "reports the scheme-less input %s as not a link",
+    (input) => {
+      expect(reason(input)).toBe("not-a-link");
+    },
+  );
+
+  it("still normalizes a link with a scheme and a user part", () => {
+    expect(ok("https://google.com@evil.io/").host).toBe("evil.io");
+    expect(ok("https://juan@gmail.com/").host).toBe("gmail.com");
+  });
+
+  it.each(["1.2.3", "3232235786", "2.4", "0x7f.1", "1.2.3/x"])(
+    "reports the bare number %s as not a link",
+    (input) => {
+      expect(reason(input)).toBe("not-a-link");
+    },
+  );
+
+  it("still normalizes a dotted address without a scheme", () => {
+    expect(ok("192.168.1.10/login").isIp).toBe(true);
+    expect(ok("192.168.1.10.").isIp).toBe(true);
+  });
+
+  it("still normalizes a disguised address written with a scheme", () => {
+    expect(ok("http://3232235786/").asciiHost).toBe("192.168.1.10");
+    expect(ok("http://1.2.3/").isIp).toBe(true);
+  });
+});
+
 describe("invalid input", () => {
   it.each(["", "   ", "\n\t"])("reports empty input for %j", (input) => {
     expect(reason(input)).toBe("empty");

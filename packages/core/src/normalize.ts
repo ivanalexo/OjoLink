@@ -1,5 +1,6 @@
 import { parse } from "tldts";
 import { decodeLabel } from "./punycode.js";
+import { rawAuthority } from "./raw.js";
 import { unwrapUrl, type Wrapper } from "./unwrap.js";
 
 export interface NormalizedUrl {
@@ -20,7 +21,8 @@ export interface NormalizedUrl {
   readonly wrapperLimitReached: boolean;
 }
 
-export type NormalizeFailureReason = "empty" | "not-a-link" | "unsupported-scheme";
+export type NormalizeFailureReason =
+  "empty" | "not-a-link" | "unsupported-scheme" | "email-address";
 
 export type NormalizeResult =
   | { readonly ok: true; readonly url: NormalizedUrl }
@@ -29,6 +31,8 @@ export type NormalizeResult =
 const WEB_SCHEME = /^https?:\/\//i;
 const SCHEME_PREFIX = /^[a-z][a-z0-9+.-]*:/i;
 const PORT_AFTER_COLON = /^\d{1,5}(?:[/?#]|$)/;
+const EMAIL_SHAPE = /^[^\s@/?#]+@[^\s@/?#:]+$/;
+const DOTTED_QUAD = /^\d{1,3}(\.\d{1,3}){3}$/;
 
 function classifyScheme(text: string): "web" | "none" | "not-a-link" | "unsupported-scheme" {
   if (WEB_SCHEME.test(text)) return "web";
@@ -54,6 +58,11 @@ export function normalizeUrl(input: string): NormalizeResult {
   const kind = classifyScheme(trimmed);
   if (kind === "not-a-link" || kind === "unsupported-scheme") return fail(kind);
 
+  const written = kind === "none" ? rawAuthority(trimmed) : null;
+  if (written && written.userInfo !== null) {
+    return fail(EMAIL_SHAPE.test(trimmed) ? "email-address" : "not-a-link");
+  }
+
   const candidate = kind === "none" ? `https://${trimmed}` : trimmed;
   const unwrapped = unwrapUrl(candidate);
   const wasWrapped = unwrapped.wrappers.length > 0;
@@ -78,6 +87,10 @@ export function normalizeUrl(input: string): NormalizeResult {
   const isIp = info.isIp === true;
   const suffixKnown = info.isIcann === true || info.isPrivate === true;
   if (schemeAssumed && !isIp && !suffixKnown) return fail("not-a-link");
+  if (schemeAssumed && isIp && written) {
+    const host = written.host.replace(/\.$/, "");
+    if (!DOTTED_QUAD.test(host) && !host.startsWith("[")) return fail("not-a-link");
+  }
 
   const labels = isIp ? [] : asciiHost.split(".").map(decodeLabel);
   const registrableDomain = isIp ? null : toUnicode(info.domain);

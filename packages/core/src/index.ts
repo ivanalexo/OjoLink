@@ -11,6 +11,7 @@ export type {
   Verdict,
 } from "./analyze.js";
 export { DEFAULT_CALIBRATION } from "./calibration.js";
+export { extractUrls } from "./extract.js";
 export { SHORTENERS } from "./data/index.js";
 export type {
   ProtectedCategory,

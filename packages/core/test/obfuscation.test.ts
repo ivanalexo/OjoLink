@@ -51,8 +51,7 @@ describe("credentials before the host", () => {
   });
 
   it("does not trigger for an email address pasted without a scheme", () => {
-    expect(hit(credentials, "juan@gmail.com")).toBeNull();
-    expect(verdict("juan@gmail.com").signals).toEqual([]);
+    expect(analyze("juan@gmail.com")).toEqual({ analyzed: false, reason: "email-address" });
   });
 
   it("does not trigger for an at sign later in the link", () => {
