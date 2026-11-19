@@ -33,6 +33,13 @@ const HIDDEN_TITLE = "No se sabe a dónde lleva este enlace";
 const HIDDEN_ADVICE =
   "Revela el destino antes de abrirlo. Si no esperabas este mensaje, no lo abras.";
 
+const TYPOSQUAT_TITLE = "Este enlace se parece a {imitated}";
+const TYPOSQUAT_ADVICE =
+  "Si querías entrar al sitio de {entity}, escribe {imitated} tú mismo en el navegador.";
+const TYPOSQUAT_DOUBT = "Puede ser otro sitio que aprovecha el parecido.";
+const TYPOSQUAT_TECHNICAL =
+  "Escrito: {written}. Se parece a: {imitated}. Diferencias: {edits}. Sitio real: {realDomain}.";
+
 const INVISIBLE_TITLE = "Este enlace tiene caracteres que no se ven";
 const INVISIBLE_HOST_ADVICE =
   "Revisa que {openedHost} sea el sitio que esperabas antes de abrirlo.";
@@ -140,6 +147,49 @@ export const es: Messages = {
         "Es un enlace de seguimiento, de los que usan los envíos masivos de correo. Pasa por {service} antes de llegar a su destino, que no se muestra.",
       advice: HIDDEN_ADVICE,
       technical: "Servicio: {service} (seguimiento). Enlace a resolver: {link}.",
+    },
+    "typosquat/changed": {
+      tooltip: "Se parece a {imitated}: tiene «{writtenChar}» en lugar de «{expectedChar}».",
+      title: TYPOSQUAT_TITLE,
+      explanation: `El nombre es casi igual al de {imitated}, pero tiene «{writtenChar}» donde va «{expectedChar}». ${TYPOSQUAT_DOUBT}`,
+      advice: TYPOSQUAT_ADVICE,
+      technical: TYPOSQUAT_TECHNICAL,
+    },
+    "typosquat/extra": {
+      tooltip: "Se parece a {imitated}: le sobra una «{writtenChar}».",
+      title: TYPOSQUAT_TITLE,
+      explanation: `El nombre tiene una letra más que {imitated}: le sobra una «{writtenChar}». ${TYPOSQUAT_DOUBT}`,
+      advice: TYPOSQUAT_ADVICE,
+      technical: TYPOSQUAT_TECHNICAL,
+    },
+    "typosquat/missing": {
+      tooltip: "Se parece a {imitated}: le falta la «{expectedChar}».",
+      title: TYPOSQUAT_TITLE,
+      explanation: `El nombre tiene una letra menos que {imitated}: le falta la «{expectedChar}». ${TYPOSQUAT_DOUBT}`,
+      advice: TYPOSQUAT_ADVICE,
+      technical: TYPOSQUAT_TECHNICAL,
+    },
+    "typosquat/swapped": {
+      tooltip: "Se parece a {imitated}: tiene «{writtenChar}» donde va «{expectedChar}».",
+      title: TYPOSQUAT_TITLE,
+      explanation: `El nombre es casi igual al de {imitated}, pero tiene dos letras cambiadas de lugar: «{writtenChar}» donde va «{expectedChar}». ${TYPOSQUAT_DOUBT}`,
+      advice: TYPOSQUAT_ADVICE,
+      technical: TYPOSQUAT_TECHNICAL,
+    },
+    "typosquat/two": {
+      tooltip: "Se parece a {imitated}: difiere en 2 letras.",
+      title: TYPOSQUAT_TITLE,
+      explanation: `El nombre es casi igual al de {imitated}: solo difiere en 2 letras. ${TYPOSQUAT_DOUBT}`,
+      advice: TYPOSQUAT_ADVICE,
+      technical: TYPOSQUAT_TECHNICAL,
+    },
+    "typosquat/ending": {
+      tooltip: "Se parece a {imitated}: termina en {writtenEnding} en lugar de {expectedEnding}.",
+      title: TYPOSQUAT_TITLE,
+      explanation:
+        "El nombre es el mismo, pero la dirección termina en {writtenEnding} y no en {expectedEnding}. El sitio real es {realDomain}.",
+      advice: TYPOSQUAT_ADVICE,
+      technical: TYPOSQUAT_TECHNICAL,
     },
     "subdomain/domain": {
       tooltip: "No es de {shown}: el sitio real es {realDomain}.",

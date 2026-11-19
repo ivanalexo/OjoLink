@@ -39,6 +39,8 @@ export type { HomographCharacter, HomographDetails } from "./signals/homograph.j
 export { createHiddenDestinationSignal, matchShortener } from "./signals/shortener.js";
 export type { HiddenDestinationDetails } from "./signals/shortener.js";
 export { createSubdomainSignal } from "./signals/subdomain.js";
+export { createTyposquatSignal } from "./signals/typosquat.js";
+export type { TyposquatDetails, TyposquatKind } from "./signals/typosquat.js";
 export type { SubdomainCase, SubdomainDetails } from "./signals/subdomain.js";
 export type {
   InvisibleCharacter,

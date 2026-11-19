@@ -176,8 +176,8 @@ describe("default engine", () => {
   });
 
   it("reports caution for a known imitation of the state suffix", () => {
-    expect(verdict("impuestos.gov.bo")).toMatchObject({ level: "caution", score: 50 });
-    const { tooltip, explanation } = first("impuestos.gov.bo");
+    expect(verdict("tramites.gov.bo")).toMatchObject({ level: "caution", score: 50 });
+    const { tooltip, explanation } = first("tramites.gov.bo");
     expect(tooltip).toBe("Termina en gov.bo, que se parece a gob.bo pero no es lo mismo.");
     expect(explanation).toContain(`Los sitios oficiales (${STATE}) terminan en gob.bo.`);
   });
@@ -198,11 +198,7 @@ describe("default engine", () => {
   });
 
   it("leaves no placeholder unfilled in any variant", () => {
-    for (const host of [
-      "bcp.com.bo.verifica.net",
-      "tramites.gob.bo.algo.net",
-      "impuestos.gov.bo",
-    ]) {
+    for (const host of ["bcp.com.bo.verifica.net", "tramites.gob.bo.algo.net", "tramites.gov.bo"]) {
       const { tooltip, title, explanation, advice, technical } = first(host);
       for (const text of [tooltip, title, explanation, advice, technical]) {
         expect(text).not.toMatch(/[{}|]/);
