@@ -8,9 +8,12 @@ export interface AnalysisContext {
 
 export type SignalParams = Readonly<Record<string, string | number>>;
 
+export type SignalDetails = Readonly<Record<string, unknown>>;
+
 export interface SignalHit {
   readonly variant?: string;
   readonly params?: SignalParams;
+  readonly details?: SignalDetails;
 }
 
 export interface Signal {

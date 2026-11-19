@@ -18,6 +18,7 @@ export type {
   Messages,
   PartialMessages,
   SignalMessage,
+  SignalText,
 } from "./i18n/index.js";
 export { normalizeUrl } from "./normalize.js";
 export type { NormalizedUrl, NormalizeFailureReason, NormalizeResult } from "./normalize.js";
@@ -25,6 +26,7 @@ export type { Level } from "./score.js";
 export type {
   AnalysisContext,
   Signal,
+  SignalDetails,
   SignalHit,
   SignalKind,
   SignalParams,

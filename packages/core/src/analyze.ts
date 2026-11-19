@@ -5,6 +5,7 @@ import {
   fillTemplate,
   resolveLevelMessage,
   resolveSignalMessage,
+  SIGNAL_TEXTS,
   type Catalogs,
 } from "./i18n/index.js";
 import { normalizeUrl, type NormalizedUrl, type NormalizeFailureReason } from "./normalize.js";
@@ -15,6 +16,7 @@ import {
   signalKeys,
   type AnalysisContext,
   type Signal,
+  type SignalDetails,
   type SignalKind,
 } from "./signals/types.js";
 
@@ -23,8 +25,12 @@ export interface TriggeredSignal {
   readonly variant: string | null;
   readonly kind: SignalKind;
   readonly weight: number;
-  readonly simple: string;
+  readonly tooltip: string;
+  readonly title: string;
+  readonly explanation: string;
+  readonly advice: string;
   readonly technical: string;
+  readonly details: SignalDetails;
 }
 
 export interface Verdict {
@@ -61,6 +67,7 @@ export interface Engine {
 }
 
 const EMPTY_CONTEXT: AnalysisContext = Object.freeze({});
+const EMPTY_DETAILS: SignalDetails = Object.freeze({});
 
 function validateSignals(signals: readonly Signal[], messages: Catalogs): void {
   const seen = new Set<string>();
@@ -69,7 +76,7 @@ function validateSignals(signals: readonly Signal[], messages: Catalogs): void {
     seen.add(signal.id);
     for (const key of signalKeys(signal)) {
       const message = resolveSignalMessage(messages, DEFAULT_LOCALE, key);
-      if (!message || message.simple.trim() === "" || message.technical.trim() === "") {
+      if (!message || SIGNAL_TEXTS.some((text) => (message[text] ?? "").trim() === "")) {
         throw new Error(`Missing Spanish message for "${key}"`);
       }
     }
@@ -103,8 +110,12 @@ export function createEngine(config: EngineConfig): Engine {
       variant: hit.variant ?? null,
       kind: signal.kind,
       weight,
-      simple: fillTemplate(message.simple, hit.params),
+      tooltip: fillTemplate(message.tooltip, hit.params),
+      title: fillTemplate(message.title, hit.params),
+      explanation: fillTemplate(message.explanation, hit.params),
+      advice: fillTemplate(message.advice, hit.params),
       technical: fillTemplate(message.technical, hit.params),
+      details: hit.details ?? EMPTY_DETAILS,
     };
   }
 

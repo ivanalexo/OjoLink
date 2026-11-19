@@ -6,6 +6,7 @@ import {
   type Catalogs,
   type Signal,
   type SignalHit,
+  type SignalMessage,
   type Verdict,
 } from "../src/index.js";
 import { es } from "../src/i18n/es.js";
@@ -21,10 +22,18 @@ function hidden(id = "shortener"): Signal {
   return { id, kind: "hidden-destination", evaluate: () => ({}) };
 }
 
+function message(text: string): SignalMessage {
+  return {
+    tooltip: `Motivo ${text}`,
+    title: `Titulo ${text}`,
+    explanation: `Explicacion ${text}`,
+    advice: `Consejo ${text}`,
+    technical: `Detalle ${text}`,
+  };
+}
+
 function messagesFor(...keys: string[]): Catalogs {
-  const signals = Object.fromEntries(
-    keys.map((key) => [key, { simple: `Motivo ${key}`, technical: `Detalle ${key}` }]),
-  );
+  const signals = Object.fromEntries(keys.map((key) => [key, message(key)]));
   return { es: { levels: es.levels, signals } };
 }
 
@@ -161,8 +170,12 @@ describe("explainable signals", () => {
     expect(second.signals).toEqual(first.signals);
   });
 
-  it("renders the hit params into both explanations", () => {
-    const homograph = risk("homograph", { params: { imitated: "bcp.com.bo", count: 2 } });
+  it("renders the hit params into every text and passes details through", () => {
+    const characters = [{ char: "b", script: "Latin" }];
+    const homograph = risk("homograph", {
+      params: { imitated: "bcp.com.bo", count: 2 },
+      details: { characters },
+    });
     const result = verdict(
       createEngine({
         signals: [homograph],
@@ -172,7 +185,11 @@ describe("explainable signals", () => {
             levels: es.levels,
             signals: {
               homograph: {
-                simple: "Imita a {imitated}",
+                tooltip: "Imita a {imitated}",
+                title: "Este enlace imita a {imitated}",
+                explanation:
+                  "Se ve como {imitated}, pero {count} de sus letras son de otro alfabeto.",
+                advice: "Escribe {imitated} tú mismo.",
                 technical: "{count} caracteres confundibles con {imitated}",
               },
             },
@@ -185,9 +202,18 @@ describe("explainable signals", () => {
       variant: null,
       kind: "risk",
       weight: 90,
-      simple: "Imita a bcp.com.bo",
+      tooltip: "Imita a bcp.com.bo",
+      title: "Este enlace imita a bcp.com.bo",
+      explanation: "Se ve como bcp.com.bo, pero 2 de sus letras son de otro alfabeto.",
+      advice: "Escribe bcp.com.bo tú mismo.",
       technical: "2 caracteres confundibles con bcp.com.bo",
+      details: { characters },
     });
+  });
+
+  it("gives every signal an empty details object by default", () => {
+    const result = verdict(engine([risk("a")], { a: 40 }).analyze(LINK));
+    expect(result.signals[0]?.details).toEqual({});
   });
 
   it("uses the weight and message of the reported variant", () => {
@@ -203,7 +229,8 @@ describe("explainable signals", () => {
     expect(result.signals[0]).toMatchObject({
       variant: "distance-2",
       weight: 30,
-      simple: "Motivo typosquat/distance-2",
+      tooltip: "Motivo typosquat/distance-2",
+      title: "Titulo typosquat/distance-2",
     });
   });
 });
@@ -230,7 +257,7 @@ describe("engine creation", () => {
       createEngine({
         signals: [hidden()],
         messages: {
-          es: { levels: es.levels, signals: { shortener: { simple: " ", technical: "x" } } },
+          es: { levels: es.levels, signals: { shortener: { ...message("x"), advice: " " } } },
         },
       }),
     ).toThrow(/Missing Spanish message/);
@@ -252,9 +279,12 @@ describe("context and language", () => {
     signals: [reader],
     calibration: { thresholds, weights: { reader: 40 } },
     messages: {
-      es: { levels: es.levels, signals: { reader: { simple: "Texto {text}", technical: "t" } } },
+      es: {
+        levels: es.levels,
+        signals: { reader: { ...message("t"), tooltip: "Texto {text}", technical: "t" } },
+      },
       en: {
-        signals: { reader: { simple: "Text {text}" } },
+        signals: { reader: { tooltip: "Text {text}" } },
         levels: { caution: { label: "Caution" } },
       },
     },
@@ -268,7 +298,7 @@ describe("context and language", () => {
 
   it("passes the context to signals", () => {
     const result = verdict(readerEngine.analyze(LINK, { context: { visibleText: "bcp.com.bo" } }));
-    expect(result.signals[0]?.simple).toBe("Texto bcp.com.bo");
+    expect(result.signals[0]?.tooltip).toBe("Texto bcp.com.bo");
   });
 
   it("gives signals a context they cannot modify", () => {
@@ -288,7 +318,8 @@ describe("context and language", () => {
   it("uses the requested language with Spanish fallback", () => {
     const options = { context: { visibleText: "x" }, locale: "en" };
     const result = verdict(readerEngine.analyze(LINK, options));
-    expect(result.signals[0]?.simple).toBe("Text x");
+    expect(result.signals[0]?.tooltip).toBe("Text x");
+    expect(result.signals[0]?.title).toBe("Titulo t");
     expect(result.signals[0]?.technical).toBe("t");
     expect(result.levelLabel).toBe("Caution");
     expect(result.levelDescription).toBe(es.levels.caution.description);
@@ -298,7 +329,7 @@ describe("context and language", () => {
     const result = verdict(
       readerEngine.analyze(LINK, { context: { visibleText: "x" }, locale: "qu" }),
     );
-    expect(result.signals[0]?.simple).toBe("Texto x");
+    expect(result.signals[0]?.tooltip).toBe("Texto x");
   });
 });
 

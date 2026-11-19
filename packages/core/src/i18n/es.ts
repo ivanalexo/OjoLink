@@ -5,10 +5,11 @@ export interface LevelMessage {
   readonly description: string;
 }
 
-export interface SignalMessage {
-  readonly simple: string;
-  readonly technical: string;
-}
+export const SIGNAL_TEXTS = ["tooltip", "title", "explanation", "advice", "technical"] as const;
+
+export type SignalText = (typeof SIGNAL_TEXTS)[number];
+
+export type SignalMessage = Readonly<Record<SignalText, string>>;
 
 export interface Messages {
   readonly levels: Readonly<Record<Level, LevelMessage>>;

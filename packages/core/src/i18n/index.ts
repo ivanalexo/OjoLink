@@ -1,6 +1,13 @@
 import type { Level } from "../score.js";
 import type { SignalParams } from "../signals/types.js";
-import { es, type LevelMessage, type Messages, type SignalMessage } from "./es.js";
+import {
+  es,
+  SIGNAL_TEXTS,
+  type LevelMessage,
+  type Messages,
+  type SignalMessage,
+  type SignalText,
+} from "./es.js";
 
 export interface PartialMessages {
   readonly levels?: Readonly<Partial<Record<Level, Partial<LevelMessage>>>>;
@@ -46,10 +53,10 @@ export function resolveSignalMessage(
   if (!fallback) return null;
   const signals = catalogFor(catalogs, locale).signals;
   const translated = signals && Object.hasOwn(signals, key) ? signals[key] : undefined;
-  return {
-    simple: translated?.simple ?? fallback.simple,
-    technical: translated?.technical ?? fallback.technical,
-  };
+  const resolved = {} as Record<SignalText, string>;
+  for (const text of SIGNAL_TEXTS) resolved[text] = translated?.[text] ?? fallback[text];
+  return resolved;
 }
 
-export type { LevelMessage, Messages, SignalMessage };
+export { SIGNAL_TEXTS };
+export type { LevelMessage, Messages, SignalMessage, SignalText };

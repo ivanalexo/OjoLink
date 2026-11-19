@@ -25,12 +25,18 @@ const catalogs: Catalogs = {
   es: {
     levels: es.levels,
     signals: {
-      homograph: { simple: "Imita a {imitated}", technical: "Skeleton igual a {imitated}" },
+      homograph: {
+        tooltip: "Imita a {imitated}",
+        title: "Este enlace imita a {imitated}",
+        explanation: "Se ve como {imitated}.",
+        advice: "Escribe {imitated} tú mismo.",
+        technical: "Skeleton igual a {imitated}",
+      },
     },
   },
   en: {
     levels: { danger: { label: "Danger" } },
-    signals: { homograph: { simple: "Imitates {imitated}" } },
+    signals: { homograph: { tooltip: "Imitates {imitated}" } },
   },
 };
 
@@ -53,11 +59,11 @@ describe("fillTemplate", () => {
 
 describe("message resolution", () => {
   it("uses Spanish for the default language", () => {
-    expect(resolveSignalMessage(catalogs, "es", "homograph")?.simple).toBe("Imita a {imitated}");
+    expect(resolveSignalMessage(catalogs, "es", "homograph")?.tooltip).toBe("Imita a {imitated}");
   });
 
   it("uses the requested language when it has the text", () => {
-    expect(resolveSignalMessage(catalogs, "en", "homograph")?.simple).toBe("Imitates {imitated}");
+    expect(resolveSignalMessage(catalogs, "en", "homograph")?.tooltip).toBe("Imitates {imitated}");
     expect(resolveLevelMessage(catalogs, "en", "danger").label).toBe("Danger");
   });
 
@@ -72,8 +78,18 @@ describe("message resolution", () => {
   });
 
   it("falls back to Spanish for an unknown language", () => {
-    expect(resolveSignalMessage(catalogs, "qu", "homograph")?.simple).toBe("Imita a {imitated}");
+    expect(resolveSignalMessage(catalogs, "qu", "homograph")?.tooltip).toBe("Imita a {imitated}");
     expect(resolveLevelMessage(catalogs, "constructor", "safe")).toEqual(es.levels.safe);
+  });
+
+  it("falls back text by text", () => {
+    expect(resolveSignalMessage(catalogs, "en", "homograph")).toEqual({
+      tooltip: "Imitates {imitated}",
+      title: "Este enlace imita a {imitated}",
+      explanation: "Se ve como {imitated}.",
+      advice: "Escribe {imitated} tú mismo.",
+      technical: "Skeleton igual a {imitated}",
+    });
   });
 
   it("returns null for an unknown signal key", () => {
@@ -85,7 +101,7 @@ describe("message resolution", () => {
 describe("Spanish catalog tone", () => {
   const strings = [
     ...Object.values(es.levels).flatMap((level) => [level.label, level.description]),
-    ...Object.values(es.signals).flatMap((signal) => [signal.simple, signal.technical]),
+    ...Object.values(es.signals).flatMap((signal) => Object.values(signal)),
   ];
 
   it.each(strings)("follows the tone rules: %s", (text) => {
