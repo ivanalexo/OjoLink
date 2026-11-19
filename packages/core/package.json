@@ -1,0 +1,24 @@
+{
+  "name": "@ojolink/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "tsc -p tsconfig.json --noEmit && vitest run",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "vitest": "^5.1.1"
+  }
+}
