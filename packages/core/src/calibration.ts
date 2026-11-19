@@ -18,6 +18,17 @@ export const DEFAULT_CALIBRATION: Calibration = {
     "mixed-script/one": 80,
     "mixed-script/many": 80,
     "mixed-script/several": 80,
+    "invisible-characters/host-one": 80,
+    "invisible-characters/host-many": 80,
+    "invisible-characters/text-one": 80,
+    "invisible-characters/text-many": 80,
+    "invisible-characters/link-one": 40,
+    "invisible-characters/link-many": 40,
+    "credentials/decoy": 70,
+    "credentials/plain": 40,
+    "ip-host/encoded": 60,
+    "ip-host/public": 40,
+    "encoded-host": 30,
   },
 };
 

@@ -25,6 +25,12 @@ export type {
 export { normalizeUrl } from "./normalize.js";
 export type { NormalizedUrl, NormalizeFailureReason, NormalizeResult } from "./normalize.js";
 export type { Level } from "./score.js";
+export type {
+  InvisibleCharacter,
+  InvisibleCharacterKind,
+  InvisibleCharacterLocation,
+  InvisibleCharactersDetails,
+} from "./signals/invisible.js";
 export type { MixedLabel, MixedScriptDetails, ScriptCharacter } from "./signals/mixed-script.js";
 export type {
   AnalysisContext,
