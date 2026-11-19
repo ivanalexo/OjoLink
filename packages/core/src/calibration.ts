@@ -15,6 +15,10 @@ export interface Calibration {
 export const DEFAULT_CALIBRATION: Calibration = {
   thresholds: { caution: 30, danger: 70 },
   weights: {
+    "homograph/letters-one": 90,
+    "homograph/letters-many": 90,
+    "homograph/whole-script": 90,
+    "homograph/lookalike": 90,
     "mixed-script/one": 80,
     "mixed-script/many": 80,
     "mixed-script/several": 80,

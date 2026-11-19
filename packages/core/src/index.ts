@@ -12,7 +12,14 @@ export type {
 } from "./analyze.js";
 export { DEFAULT_CALIBRATION } from "./calibration.js";
 export { SHORTENERS } from "./data/index.js";
-export type { Shortener, ShortenerKind } from "./data/index.js";
+export type {
+  ProtectedCategory,
+  ProtectedEntry,
+  ProtectedPack,
+  ProtectedSuffix,
+  Shortener,
+  ShortenerKind,
+} from "./data/index.js";
 export type { Calibration, Thresholds } from "./calibration.js";
 export { describeScript } from "./i18n/index.js";
 export type {
@@ -27,6 +34,8 @@ export type {
 export { normalizeUrl } from "./normalize.js";
 export type { NormalizedUrl, NormalizeFailureReason, NormalizeResult } from "./normalize.js";
 export type { Level } from "./score.js";
+export { createHomographSignal } from "./signals/homograph.js";
+export type { HomographCharacter, HomographDetails } from "./signals/homograph.js";
 export type {
   InvisibleCharacter,
   InvisibleCharacterKind,

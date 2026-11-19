@@ -19,6 +19,11 @@ export interface Messages {
   readonly terms?: Terms;
 }
 
+const HOMOGRAPH_TITLE = "Este enlace imita a {imitated}";
+const HOMOGRAPH_ADVICE =
+  "Si esperabas un mensaje de {entity}, escribe {imitated} tú mismo o abre su app.";
+const HOMOGRAPH_CONSEQUENCE = "Para tu navegador es otro sitio, registrado por otra persona.";
+
 const INVISIBLE_TITLE = "Este enlace tiene caracteres que no se ven";
 const INVISIBLE_HOST_ADVICE =
   "Revisa que {openedHost} sea el sitio que esperabas antes de abrirlo.";
@@ -53,6 +58,41 @@ export const es: Messages = {
     },
   },
   signals: {
+    "homograph/letters-one": {
+      tooltip:
+        "Imita a {imitated}: 1 de sus letras es {foreignScript|scriptOne} y se ve igual a una latina.",
+      title: HOMOGRAPH_TITLE,
+      explanation: `Se ve como {imitated}, pero 1 de sus letras es {foreignScript|scriptOne}. ${HOMOGRAPH_CONSEQUENCE}`,
+      advice: HOMOGRAPH_ADVICE,
+      technical:
+        "Dirección real: {asciiDomain}. Imita a {imitated}. Letra sustituida: {codePoints}.",
+    },
+    "homograph/letters-many": {
+      tooltip:
+        "Imita a {imitated}: {count} de sus letras son {foreignScript|scriptMany} y se ven iguales a las latinas.",
+      title: HOMOGRAPH_TITLE,
+      explanation: `Se ve como {imitated}, pero {count} de sus letras son {foreignScript|scriptMany}. ${HOMOGRAPH_CONSEQUENCE}`,
+      advice: HOMOGRAPH_ADVICE,
+      technical:
+        "Dirección real: {asciiDomain}. Imita a {imitated}. Letras sustituidas: {codePoints}.",
+    },
+    "homograph/whole-script": {
+      tooltip: "Imita a {imitated}: todas sus letras son {foreignScript|scriptMany}.",
+      title: HOMOGRAPH_TITLE,
+      explanation:
+        "No mezcla alfabetos: todas sus letras son {foreignScript|scriptMany}, pero juntas se ven idénticas a {imitated}. Es un dominio distinto.",
+      advice: HOMOGRAPH_ADVICE,
+      technical:
+        "Dirección real: {asciiDomain}. Imita a {imitated}. Letras sustituidas: {codePoints}.",
+    },
+    "homograph/lookalike": {
+      tooltip: "Imita a {imitated}: usa «{written}» en lugar de «{readsAs}».",
+      title: HOMOGRAPH_TITLE,
+      explanation: `Se ve como {imitated}, pero usa «{written}» en lugar de «{readsAs}». ${HOMOGRAPH_CONSEQUENCE}`,
+      advice: HOMOGRAPH_ADVICE,
+      technical:
+        "Dirección real: {asciiDomain}. Imita a {imitated}. Caracteres sustituidos: {codePoints}.",
+    },
     "mixed-script/one": {
       tooltip:
         "Mezcla alfabetos: 1 de sus letras es {foreignScript|scriptOne}, aunque parece {ownScript|scriptOne}.",
