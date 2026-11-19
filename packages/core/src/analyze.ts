@@ -5,6 +5,7 @@ import {
   fillTemplate,
   resolveLevelMessage,
   resolveSignalMessage,
+  resolveTerm,
   SIGNAL_TEXTS,
   type Catalogs,
 } from "./i18n/index.js";
@@ -104,17 +105,21 @@ export function createEngine(config: EngineConfig): Engine {
     const message = resolveSignalMessage(messages, locale, key);
     const weight = signal.kind === "risk" ? calibration.weights[key] : 0;
     if (!message || weight === undefined) throw new Error(`Unknown signal key "${key}"`);
+    const render = (template: string) =>
+      fillTemplate(template, hit.params, (group, value) =>
+        resolveTerm(messages, locale, group, value),
+      );
 
     return {
       id: signal.id,
       variant: hit.variant ?? null,
       kind: signal.kind,
       weight,
-      tooltip: fillTemplate(message.tooltip, hit.params),
-      title: fillTemplate(message.title, hit.params),
-      explanation: fillTemplate(message.explanation, hit.params),
-      advice: fillTemplate(message.advice, hit.params),
-      technical: fillTemplate(message.technical, hit.params),
+      tooltip: render(message.tooltip),
+      title: render(message.title),
+      explanation: render(message.explanation),
+      advice: render(message.advice),
+      technical: render(message.technical),
       details: hit.details ?? EMPTY_DETAILS,
     };
   }

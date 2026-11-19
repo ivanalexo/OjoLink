@@ -14,7 +14,11 @@ export interface Calibration {
 /** Provisional values. The test-corpus-calibration change replaces them with measured ones. */
 export const DEFAULT_CALIBRATION: Calibration = {
   thresholds: { caution: 30, danger: 70 },
-  weights: {},
+  weights: {
+    "mixed-script/one": 80,
+    "mixed-script/many": 80,
+    "mixed-script/several": 80,
+  },
 };
 
 function isPositiveInteger(value: unknown): value is number {

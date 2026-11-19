@@ -333,6 +333,42 @@ describe("context and language", () => {
   });
 });
 
+describe("translated terms", () => {
+  it("renders a term in every text of a signal", () => {
+    const termEngine = createEngine({
+      signals: [risk("mix", { params: { script: "Cyrillic" } })],
+      calibration: { thresholds, weights: { mix: 40 } },
+      messages: {
+        es: {
+          levels: es.levels,
+          signals: {
+            mix: {
+              tooltip: "a {script|scriptOne}",
+              title: "b {script|scriptOne}",
+              explanation: "c {script|scriptOne}",
+              advice: "d {script|scriptOne}",
+              technical: "e {script|scriptOne} {script}",
+            },
+          },
+          terms: { scriptOne: { Cyrillic: "cirílica" } },
+        },
+        en: { terms: { scriptOne: { Cyrillic: "Cyrillic letter" } } },
+      },
+    });
+
+    expect(verdict(termEngine.analyze(LINK)).signals[0]).toMatchObject({
+      tooltip: "a cirílica",
+      title: "b cirílica",
+      explanation: "c cirílica",
+      advice: "d cirílica",
+      technical: "e cirílica Cyrillic",
+    });
+    expect(verdict(termEngine.analyze(LINK, { locale: "en" })).signals[0]?.tooltip).toBe(
+      "a Cyrillic letter",
+    );
+  });
+});
+
 describe("failure isolation", () => {
   const broken: Signal = {
     id: "broken",
@@ -379,11 +415,11 @@ describe("determinism", () => {
     "http://0x7f.1/",
     "https://xn--abc-!!!.com/",
     "https://www.google.com/url?q=javascript:alert(1)",
-    "https://a​b.com/",
+    "https://a\u200Bb.com/",
     "https://exa mple.com/",
     "%%%",
     "://",
-    "‮https://bcp.com.bo",
+    "\u202Ehttps://bcp.com.bo",
     "\u0000\u0007https://bcp.com.bo",
     "x".repeat(5000),
     "",

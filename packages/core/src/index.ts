@@ -12,6 +12,7 @@ export type {
 } from "./analyze.js";
 export { DEFAULT_CALIBRATION } from "./calibration.js";
 export type { Calibration, Thresholds } from "./calibration.js";
+export { describeScript } from "./i18n/index.js";
 export type {
   Catalogs,
   LevelMessage,
@@ -19,10 +20,12 @@ export type {
   PartialMessages,
   SignalMessage,
   SignalText,
+  Terms,
 } from "./i18n/index.js";
 export { normalizeUrl } from "./normalize.js";
 export type { NormalizedUrl, NormalizeFailureReason, NormalizeResult } from "./normalize.js";
 export type { Level } from "./score.js";
+export type { MixedLabel, MixedScriptDetails, ScriptCharacter } from "./signals/mixed-script.js";
 export type {
   AnalysisContext,
   Signal,

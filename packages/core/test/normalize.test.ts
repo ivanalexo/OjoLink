@@ -12,7 +12,7 @@ function reason(input: string): string {
   return result.ok ? "ok" : result.reason;
 }
 
-const CYRILLIC_APPLE = "аррӏе.com";
+const CYRILLIC_APPLE = "\u0430\u0440\u0440\u04CF\u0435.com";
 
 describe("normalized form", () => {
   it("lowercases the host and keeps the original input", () => {
@@ -221,11 +221,11 @@ describe("determinism", () => {
     "http://0x7f.1/",
     "https://xn--abc-!!!.com/",
     "https://www.google.com/url?q=javascript:alert(1)",
-    "https://a​b.com/",
+    "https://a\u200Bb.com/",
     "https://exa mple.com/",
     "%%%",
     "://",
-    "‮https://bcp.com.bo",
+    "\u202Ehttps://bcp.com.bo",
     "x".repeat(5000),
     "",
   ];

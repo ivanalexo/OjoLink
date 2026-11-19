@@ -4,6 +4,7 @@ import {
   fillTemplate,
   resolveLevelMessage,
   resolveSignalMessage,
+  resolveTerm,
   type Catalogs,
 } from "../src/i18n/index.js";
 
@@ -57,6 +58,59 @@ describe("fillTemplate", () => {
   });
 });
 
+describe("translated terms", () => {
+  const withTerms: Catalogs = {
+    es: {
+      levels: es.levels,
+      signals: {},
+      terms: {
+        scriptOne: { Cyrillic: "cirílica", Greek: "griega", other: "de otro alfabeto" },
+        plain: { Cyrillic: "cirílico" },
+      },
+    },
+    en: { terms: { scriptOne: { Cyrillic: "Cyrillic letter", other: "from another alphabet" } } },
+    fr: {},
+  };
+  const term = (locale: string) => (group: string, value: string) =>
+    resolveTerm(withTerms, locale, group, value);
+
+  it("replaces a value with its term", () => {
+    expect(fillTemplate("Es {script|scriptOne}", { script: "Cyrillic" }, term("es"))).toBe(
+      "Es cirílica",
+    );
+  });
+
+  it("uses the group's other entry for an unknown value", () => {
+    expect(resolveTerm(withTerms, "es", "scriptOne", "Other")).toBe("de otro alfabeto");
+    expect(resolveTerm(withTerms, "es", "scriptOne", "constructor")).toBe("de otro alfabeto");
+  });
+
+  it("keeps the raw value when the group is missing or has no other entry", () => {
+    expect(resolveTerm(withTerms, "es", "missing", "Cyrillic")).toBe("Cyrillic");
+    expect(resolveTerm(withTerms, "es", "plain", "Greek")).toBe("Greek");
+    expect(resolveTerm(withTerms, "es", "constructor", "x")).toBe("x");
+  });
+
+  it("prefers the requested language, including its other entry", () => {
+    expect(resolveTerm(withTerms, "en", "scriptOne", "Cyrillic")).toBe("Cyrillic letter");
+    expect(resolveTerm(withTerms, "en", "scriptOne", "Greek")).toBe("from another alphabet");
+  });
+
+  it("falls back to Spanish for a language without the term", () => {
+    expect(resolveTerm(withTerms, "fr", "scriptOne", "Greek")).toBe("griega");
+    expect(resolveTerm(withTerms, "en", "plain", "Cyrillic")).toBe("cirílico");
+    expect(resolveTerm(withTerms, "qu", "scriptOne", "Cyrillic")).toBe("cirílica");
+  });
+
+  it("leaves plain placeholders and missing params unchanged", () => {
+    expect(fillTemplate("{script} {count}", { script: "Cyrillic", count: 2 }, term("es"))).toBe(
+      "Cyrillic 2",
+    );
+    expect(fillTemplate("{script|scriptOne}", {}, term("es"))).toBe("{script|scriptOne}");
+    expect(fillTemplate("{script|scriptOne}", { script: "Cyrillic" })).toBe("Cyrillic");
+  });
+});
+
 describe("message resolution", () => {
   it("uses Spanish for the default language", () => {
     expect(resolveSignalMessage(catalogs, "es", "homograph")?.tooltip).toBe("Imita a {imitated}");
@@ -102,7 +156,19 @@ describe("Spanish catalog tone", () => {
   const strings = [
     ...Object.values(es.levels).flatMap((level) => [level.label, level.description]),
     ...Object.values(es.signals).flatMap((signal) => Object.values(signal)),
+    ...Object.values(es.terms ?? {}).flatMap((group) => Object.values(group)),
   ];
+
+  it("only references term groups that exist, each with an other entry", () => {
+    const templates = Object.values(es.signals).flatMap((signal) => Object.values(signal));
+    const groups = templates.flatMap((text) =>
+      [...text.matchAll(/\{\w+\|(\w+)\}/g)].map((match) => match[1]),
+    );
+    expect(groups.length).toBeGreaterThan(0);
+    for (const group of groups) {
+      expect(es.terms?.[group ?? ""]).toHaveProperty("other");
+    }
+  });
 
   it.each(strings)("follows the tone rules: %s", (text) => {
     expect(toneViolations(text)).toEqual([]);
