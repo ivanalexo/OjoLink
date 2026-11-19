@@ -11,6 +11,8 @@ export type {
   Verdict,
 } from "./analyze.js";
 export { DEFAULT_CALIBRATION } from "./calibration.js";
+export { SHORTENERS } from "./data/index.js";
+export type { Shortener, ShortenerKind } from "./data/index.js";
 export type { Calibration, Thresholds } from "./calibration.js";
 export { describeScript } from "./i18n/index.js";
 export type {

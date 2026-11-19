@@ -1,0 +1,19 @@
+{
+  "name": "@ojolink/build-data",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node src/generate.ts",
+    "refresh:unicode": "node src/refresh-unicode.ts",
+    "test": "tsc -p tsconfig.json && vitest run",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "tldts": "^7.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "vitest": "^5.1.1"
+  }
+}

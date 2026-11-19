@@ -1,0 +1,252 @@
+{
+  "country": "bo",
+  "suffixes": [{ "suffix": "gob.bo", "name": "Estado Plurinacional de Bolivia" }],
+  "entities": [
+    {
+      "domain": "bnb.com.bo",
+      "name": "BNB",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.semrush.com/trending-websites/bo/banking",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "bmsc.com.bo",
+      "name": "Banco Mercantil Santa Cruz",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.semrush.com/trending-websites/bo/banking",
+        "checked": "2026-11-18"
+      },
+      "aliases": [
+        {
+          "domain": "bancomercantil.com.bo",
+          "verification": {
+            "status": "unconfirmed",
+            "source": "Directorio SIPAV del BCB; falta confirmar que el banco aún lo controla"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "bisa.com",
+      "name": "Banco BISA",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.semrush.com/trending-websites/bo/banking",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "bcp.com.bo",
+      "name": "BCP",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.semrush.com/trending-websites/bo/banking",
+        "checked": "2026-11-18"
+      },
+      "aliases": [
+        {
+          "domain": "bancodecredito.com.bo",
+          "verification": {
+            "status": "unconfirmed",
+            "source": "Directorio SIPAV del BCB; falta confirmar que el banco aún lo controla"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "baneco.com.bo",
+      "name": "Banco Económico",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://baneco.com.bo/assets/content/docs/institucional/BEC_2023_Informe_RSE.pdf",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "bg.com.bo",
+      "name": "Banco Ganadero",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.semrush.com/trending-websites/bo/banking",
+        "checked": "2026-11-18"
+      },
+      "aliases": [
+        {
+          "domain": "bancoganadero.com.bo",
+          "verification": {
+            "status": "unconfirmed",
+            "source": "Directorio SIPAV del BCB; falta confirmar que el banco aún lo controla"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "bancosol.com.bo",
+      "name": "BancoSol",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.semrush.com/trending-websites/bo/banking",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "bancofie.com.bo",
+      "name": "Banco FIE",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.semrush.com/trending-websites/bo/banking",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "bna.com.ar",
+      "name": "Banco de la Nación Argentina",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.bcb.gob.bo/webdocs/serviciosbcb/pago_altovalor/contactos_sipav.pdf",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "bancoecofuturo.com.bo",
+      "name": "Banco Ecofuturo",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://en.wikipedia.org/wiki/Banco_PyME_Ecofuturo",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "prodem.bo",
+      "name": "Banco Prodem",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.prodem.bo/",
+        "checked": "2026-11-19"
+      }
+    },
+    {
+      "domain": "bancofortaleza.com.bo",
+      "name": "Banco Fortaleza",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.bancofortaleza.com.bo/",
+        "checked": "2026-11-19"
+      }
+    },
+    {
+      "domain": "bco.com.bo",
+      "name": "BanComunidad",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.bco.com.bo",
+        "checked": "2026-11-19"
+      }
+    },
+    {
+      "domain": "bancounion.com.bo",
+      "name": "Banco Unión",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://unglobalcompact.org/what-is-gc/participants/205390-BANCO-UNI-N-S-A-",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "bdp.com.bo",
+      "name": "BDP",
+      "category": "bank",
+      "verification": {
+        "status": "unconfirmed",
+        "source": "Sin fuente aún"
+      }
+    },
+    {
+      "domain": "asfi.gob.bo",
+      "name": "ASFI",
+      "category": "government",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.semrush.com/trending-websites/bo/banking",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "bcb.gob.bo",
+      "name": "Banco Central de Bolivia",
+      "category": "government",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.bcb.gob.bo/webdocs/files_noticias/COMUNICADO%20C3%202026%20DEL%20BCB.pdf",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "impuestos.gob.bo",
+      "name": "Impuestos Nacionales",
+      "category": "government",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://sac.impuestos.gob.bo/formularios/pdf/TEXTO%20CERTIFICACIONES%20RCN%2009-25.pdf",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "aduana.gob.bo",
+      "name": "Aduana Nacional",
+      "category": "government",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.aduana.gob.bo",
+        "checked": "2026-11-19"
+      }
+    },
+    {
+      "domain": "agetic.gob.bo",
+      "name": "AGETIC",
+      "category": "government",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://agetic.gob.bo/?p=3625",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "gestora.bo",
+      "name": "Gestora Pública",
+      "category": "government",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.lostiempos.com/actualidad/economia/20240510/gestora-rinde-cuentas-su-primer-ano-trabajo",
+        "checked": "2026-11-18"
+      }
+    },
+    {
+      "domain": "segip.gob.bo",
+      "name": "SEGIP",
+      "category": "government",
+      "verification": {
+        "status": "confirmed",
+        "source": "https://www.segip.gob.bo/",
+        "checked": "2026-11-19"
+      }
+    }
+  ]
+}
