@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { CONFUSABLES, CONFUSABLES_UNICODE_VERSION, PROTECTED_PACKS } from "../src/data/index.js";
-import { SHORTENERS } from "../src/index.js";
+import { HOSTING_SERVICES, LURE_WORDS, SHORTENERS } from "../src/index.js";
 
 const cp = (value: number) => String.fromCodePoint(value);
 
@@ -86,5 +86,36 @@ describe("shorteners", () => {
     const hosts = SHORTENERS.map((entry) => entry.host);
     expect(new Set(hosts).size).toBe(hosts.length);
     for (const host of hosts) expect(host).toBe(host.toLowerCase());
+  });
+});
+
+describe("hosting services and lure words", () => {
+  it("lists services that give each user a subdomain", () => {
+    for (const host of ["github.io", "zya.me"]) {
+      expect(HOSTING_SERVICES.find((service) => service.host === host)).toMatchObject({
+        assignment: "subdomain",
+        prefix: null,
+      });
+    }
+  });
+
+  it("lists Google Sites by its path", () => {
+    expect(HOSTING_SERVICES).toContainEqual({
+      name: "Google Sites",
+      host: "sites.google.com",
+      assignment: "path",
+      prefix: "/view/",
+    });
+  });
+
+  it("keeps the accent in the shown form of a lure word", () => {
+    expect(LURE_WORDS).toContainEqual({ match: "mensajeria", shown: "mensajería", brand: false });
+    expect(LURE_WORDS.find((word) => word.match === "paypal")?.brand).toBe(true);
+  });
+
+  it("has unique matching forms of five or more plain letters", () => {
+    const forms = LURE_WORDS.map((word) => word.match);
+    expect(new Set(forms).size).toBe(forms.length);
+    for (const form of forms) expect(form).toMatch(/^[a-z]{5,}$/);
   });
 });

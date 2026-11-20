@@ -56,6 +56,14 @@ const TYPOSQUAT_DOUBT = "Puede ser otro sitio que aprovecha el parecido.";
 const TYPOSQUAT_TECHNICAL =
   "Escrito: {written}. Se parece a: {imitated}. Diferencias: {edits}. Sitio real: {realDomain}.";
 
+const HOSTING_TITLE = "Esta página está en un servicio donde cualquiera puede publicar";
+const HOSTING_FACT =
+  "Esta página está alojada en {service}, un servicio donde cualquier persona puede publicar. No es el sitio oficial de ninguna empresa.";
+const HOSTING_ADVICE =
+  "Las empresas no piden verificar una cuenta desde una página así. Si el mensaje dice venir de una empresa, entra a su sitio escribiendo la dirección tú mismo.";
+const HOSTING_TECHNICAL =
+  "Servicio: {service} ({host}). Nombre elegido por quien publica: {publisherName}. Palabras encontradas: {count}.";
+
 const INVISIBLE_TITLE = "Este enlace tiene caracteres que no se ven";
 const INVISIBLE_HOST_ADVICE =
   "Revisa que {openedHost} sea el sitio que esperabas antes de abrirlo.";
@@ -206,6 +214,34 @@ export const es: Messages = {
         "El nombre es el mismo, pero la dirección termina en {writtenEnding} y no en {expectedEnding}. El sitio real es {realDomain}.",
       advice: TYPOSQUAT_ADVICE,
       technical: TYPOSQUAT_TECHNICAL,
+    },
+    "hosting/plain": {
+      tooltip: "Está en {service}, un servicio donde cualquiera puede publicar una página.",
+      title: HOSTING_TITLE,
+      explanation: HOSTING_FACT,
+      advice: HOSTING_ADVICE,
+      technical: HOSTING_TECHNICAL,
+    },
+    "hosting/one-word": {
+      tooltip: "Está en {service}, donde cualquiera puede publicar, y su dirección usa {words}.",
+      title: HOSTING_TITLE,
+      explanation: `${HOSTING_FACT} Su dirección usa la palabra {words}, común en mensajes que se hacen pasar por un servicio.`,
+      advice: HOSTING_ADVICE,
+      technical: HOSTING_TECHNICAL,
+    },
+    "hosting/two-words": {
+      tooltip: "Está en {service}, donde cualquiera puede publicar, y su dirección usa {words}.",
+      title: HOSTING_TITLE,
+      explanation: `${HOSTING_FACT} Su dirección usa las palabras {words}, comunes en mensajes que se hacen pasar por un servicio.`,
+      advice: HOSTING_ADVICE,
+      technical: HOSTING_TECHNICAL,
+    },
+    "hosting/words": {
+      tooltip: "Está en {service}, donde cualquiera puede publicar, y su dirección usa {words}.",
+      title: HOSTING_TITLE,
+      explanation: `${HOSTING_FACT} Su dirección usa las palabras {words}, comunes en mensajes que se hacen pasar por un servicio.`,
+      advice: HOSTING_ADVICE,
+      technical: HOSTING_TECHNICAL,
     },
     "subdomain/domain": {
       tooltip: "No es de {shown}: el sitio real es {realDomain}.",

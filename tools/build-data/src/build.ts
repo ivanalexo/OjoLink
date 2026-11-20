@@ -3,6 +3,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gzipSync } from "node:zlib";
 import { parseConfusables, renderConfusables } from "./confusables.ts";
+import { buildHosting, renderHosting, type CuratedHosting } from "./hosting.ts";
 import { buildProtected, renderProtected, type CuratedPack, type SourceFile } from "./protected.ts";
 import { buildShorteners, renderShorteners, type CuratedShorteners } from "./shorteners.ts";
 
@@ -15,6 +16,7 @@ export interface Sources {
   readonly confusables: string;
   readonly protected: readonly SourceFile<CuratedPack>[];
   readonly shorteners: SourceFile<CuratedShorteners>;
+  readonly hosting: SourceFile<CuratedHosting>;
 }
 
 export interface BuildResult {
@@ -41,6 +43,10 @@ export function loadSources(sourcesDir: string = SOURCES_DIR): Sources {
       file: "shorteners.json",
       content: readJson<CuratedShorteners>(join(sourcesDir, "shorteners.json")),
     },
+    hosting: {
+      file: "hosting.json",
+      content: readJson<CuratedHosting>(join(sourcesDir, "hosting.json")),
+    },
   };
 }
 
@@ -54,11 +60,13 @@ export function build(sources: Sources): BuildResult {
   const confusables = parseConfusables(sources.confusables);
   const protectedDomains = buildProtected(sources.protected);
   const shorteners = buildShorteners(sources.shorteners);
+  const hosting = buildHosting(sources.hosting);
 
   const files = {
     "confusables.ts": renderConfusables(confusables),
     "protected-domains.ts": renderProtected(protectedDomains),
     "shorteners.ts": renderShorteners(shorteners, sources.shorteners.content.updated),
+    "hosting.ts": renderHosting(hosting, sources.hosting.content.updated),
   };
 
   const summary = [
@@ -69,6 +77,7 @@ export function build(sources: Sources): BuildResult {
     ),
     `protected-domains.ts: ${size(files["protected-domains.ts"])}`,
     `shorteners.ts: ${shorteners.length} hosts (${size(files["shorteners.ts"])})`,
+    `hosting.ts: ${hosting.services.length} services and ${hosting.lureWords.length} lure words (${size(files["hosting.ts"])})`,
     ...protectedDomains.leftOut.map((entry) => `left out (unconfirmed): ${entry}`),
   ];
   return { files, summary };

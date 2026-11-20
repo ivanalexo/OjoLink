@@ -14,7 +14,7 @@ export interface CuratedShorteners {
   readonly hosts: readonly CuratedShortener[];
 }
 
-const HOST = /^(?=.{1,253}$)([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}$/;
+export const HOST = /^(?=.{1,253}$)([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}$/;
 
 export function validateShorteners({ file, content }: SourceFile<CuratedShorteners>): string[] {
   const errors: string[] = [];

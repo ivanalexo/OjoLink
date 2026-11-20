@@ -24,8 +24,11 @@ export type {
   WarningParts,
 } from "./describe.js";
 export { extractUrls } from "./extract.js";
-export { SHORTENERS } from "./data/index.js";
+export { HOSTING_SERVICES, LURE_WORDS, SHORTENERS } from "./data/index.js";
 export type {
+  HostingAssignment,
+  HostingService,
+  LureWord,
   ProtectedCategory,
   ProtectedEntry,
   ProtectedPack,
@@ -50,6 +53,8 @@ export { normalizeUrl } from "./normalize.js";
 export type { NormalizedUrl, NormalizeFailureReason, NormalizeResult } from "./normalize.js";
 export type { Level } from "./score.js";
 export { createHomographSignal } from "./signals/homograph.js";
+export { createHostingSignal, findLureWords } from "./signals/hosting.js";
+export type { HostedPage, HostingDetails } from "./signals/hosting.js";
 export type { HomographCharacter, HomographDetails } from "./signals/homograph.js";
 export { createHiddenDestinationSignal, matchShortener } from "./signals/shortener.js";
 export type { HiddenDestinationDetails } from "./signals/shortener.js";

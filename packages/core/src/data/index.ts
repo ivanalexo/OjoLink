@@ -1,4 +1,6 @@
 export { CONFUSABLES, CONFUSABLES_UNICODE_VERSION } from "./confusables.js";
+export { HOSTING_SERVICES, LURE_WORDS } from "./hosting.js";
+export type { HostingAssignment, HostingService, LureWord } from "./hosting.js";
 export { PROTECTED_PACKS } from "./protected-domains.js";
 export type {
   ProtectedCategory,
