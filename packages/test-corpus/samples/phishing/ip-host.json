@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ip-host-public-address",
+    "input": "http://203.0.113.45/login",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "ip-host-public-address-port",
+    "input": "http://198.51.100.7:8080/banca/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "ip-host-encoded-hexadecimal",
+    "input": "http://0xCB007107/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "ip-host-encoded-decimal",
+    "input": "http://3405803821/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "ip-host-encoded-octal",
+    "input": "http://0313.0.0161.055/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "out-of-reach-ordinary-domain-login",
+    "input": "https://clientes.example.com/bcp/ingresar",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano: un dominio corriente registrado para el ataque. Ninguna se\u00f1al local puede detectarlo."
+  },
+  {
+    "id": "out-of-reach-ordinary-domain-update",
+    "input": "https://actualizacion-datos.example.net/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano: un dominio corriente registrado para el ataque. Ninguna se\u00f1al local puede detectarlo."
+  },
+  {
+    "id": "out-of-reach-ordinary-domain-php",
+    "input": "https://example.org/banca/login.php?id=1",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano: un dominio corriente registrado para el ataque. Ninguna se\u00f1al local puede detectarlo."
+  },
+  {
+    "id": "out-of-reach-ordinary-domain-bono",
+    "input": "https://bono-2026.example.net/registro",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano: un dominio corriente registrado para el ataque. Ninguna se\u00f1al local puede detectarlo."
+  }
+]

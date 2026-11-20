@@ -1,0 +1,72 @@
+[
+  {
+    "id": "subdomain-bcp-domain",
+    "input": "https://bcp.com.bo.example.net/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-bcp-domain-verifica",
+    "input": "bcp.com.bo.verifica.net",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Fila \u00abSubdominio enga\u00f1oso\u00bb de la tabla de textos. Construido a mano."
+  },
+  {
+    "id": "subdomain-bnb-domain-www",
+    "input": "https://www.bnb.com.bo.example.org/banca",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-impuestos-domain",
+    "input": "https://impuestos.gob.bo.example.com/siat/login",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-bancounion-domain-deep",
+    "input": "https://uninet.bancounion.com.bo.clientes.example.net/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-bisa-domain",
+    "input": "https://pagos.bisa.com.example.org/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-state-suffix",
+    "input": "https://tramites.gob.bo.example.net/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-state-suffix-bare",
+    "input": "https://gob.bo.example.com/bono",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-state-suffix-lookalike",
+    "input": "https://tramites.gov.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-state-suffix-lookalike-www",
+    "input": "https://www.bonos.gov.bo/registro",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  }
+]

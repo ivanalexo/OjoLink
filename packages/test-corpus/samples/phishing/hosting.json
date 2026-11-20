@@ -1,0 +1,93 @@
+[
+  {
+    "id": "hosting-real-2026-11-19-google-sites",
+    "input": "https://sites.google.com/view/serivciosbandejamensajeriaen/",
+    "source": "real",
+    "collected": "2026-11-19",
+    "note": "Bot\u00f3n del correo \u00abMantenimiento y Comunicado Seguro\u00bb, remitente \u00abEquipo de Microsoft\u00bb."
+  },
+  {
+    "id": "hosting-real-2026-11-19-zya-redirect",
+    "input": "http://www.google.com/url?q=http%3A%2F%2Fasistenciatecnicaserviciosmensajeria.zya.me%2F&sa=D&sntz=1&usg=AOvVaw152VXhZrFqUA-a_cU2CXQG",
+    "source": "real",
+    "collected": "2026-11-19",
+    "note": "Enlace dentro de la p\u00e1gina de Google Sites del mismo correo. El par\u00e1metro usg firma el enlace, no identifica al destinatario."
+  },
+  {
+    "id": "hosting-plain-random-name",
+    "input": "https://sites.google.com/view/xk29djq7/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "hosting-plain-form",
+    "input": "https://docs.google.com/forms/d/e/1FAIpQLSdExampleExampleExampleExampleExampleExample/viewform",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "hosting-plain-blog",
+    "input": "https://promo2026bo.blogspot.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "hosting-one-word-soporte",
+    "input": "https://soporte-xk29.web.app/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "hosting-one-word-banca",
+    "input": "https://banca-movil-bo.netlify.app/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "hosting-two-words-verificar-cuenta",
+    "input": "https://verificar-cuenta.netlify.app/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "hosting-two-words-actualizar-usuario",
+    "input": "https://actualizar-usuario.weebly.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "hosting-words-bank",
+    "input": "https://banca-verificar-cuenta-bo.web.app/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "hosting-words-brand",
+    "input": "https://microsoft-login.pages.dev/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "hosting-words-brand-outlook",
+    "input": "https://outlook-soporte.glitch.me/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "hosting-words-mailbox",
+    "input": "https://sites.google.com/view/soporte-correo-bloqueo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  }
+]

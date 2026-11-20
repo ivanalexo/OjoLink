@@ -1,0 +1,142 @@
+[
+  {
+    "id": "shortener-bit-ly",
+    "input": "https://bit.ly/3ExAmPle",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-bit-ly-2",
+    "input": "bit.ly/x",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-t-co",
+    "input": "https://t.co/ExAmPle123",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-tinyurl-com",
+    "input": "https://tinyurl.com/example-boletin",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-lnkd-in",
+    "input": "https://lnkd.in/eXaMpLe1",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-amzn-to",
+    "input": "https://amzn.to/3ExAmPl",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-goo-gl",
+    "input": "https://goo.gl/maps/ExAmPle12345",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-ow-ly",
+    "input": "https://ow.ly/ExAm50Ple",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-buff-ly",
+    "input": "https://buff.ly/3ExAmPl",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-is-gd",
+    "input": "https://is.gd/ExAmPl",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-rb-gy",
+    "input": "https://rb.gy/exampl",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-cutt-ly",
+    "input": "https://cutt.ly/ExAmPle",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-rebrand-ly",
+    "input": "https://rebrand.ly/example",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-t-ly",
+    "input": "https://t.ly/ExAm",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-mailchi-mp",
+    "input": "https://mailchi.mp/example/boletin-noviembre",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-youtu-be",
+    "input": "https://youtu.be/jNQXAC9IVRw",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-maps-app-goo-gl",
+    "input": "https://maps.app.goo.gl/ExAmPle12345",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-fb-me",
+    "input": "https://fb.me/example",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-wa-me",
+    "input": "https://wa.me/message/EXAMPLEEXAMPLE",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "shortener-g-co",
+    "input": "https://g.co/kgs/ExAmPle",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  }
+]

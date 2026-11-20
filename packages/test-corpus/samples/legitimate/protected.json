@@ -1,0 +1,443 @@
+[
+  {
+    "id": "protected-aduana-gob-bo",
+    "input": "https://www.aduana.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-aduana-gob-bo-2",
+    "input": "http://anbsw01.aduana.gob.bo:7401/viajero/Publico250.jsp",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-aduana-gob-bo-3",
+    "input": "http://anbsw01.aduana.gob.bo:7601/app_suite/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-aduana-gob-bo-4",
+    "input": "https://www.aduana.gob.bo/Servi_formularios",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-agetic-gob-bo",
+    "input": "https://agetic.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-agetic-gob-bo-2",
+    "input": "https://citc2025.agetic.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-agetic-gob-bo-3",
+    "input": "https://agetic.gob.bo/normativa/reglamentos-vigentes",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-asfi-gob-bo",
+    "input": "https://www.asfi.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-asfi-gob-bo-2",
+    "input": "https://appweb2.asfi.gob.bo/PaginasPublicas2/VistaDeudasENEjecucion/DeudasEjecucion.aspx",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-asfi-gob-bo-3",
+    "input": "https://asfi.gob.bo/la/tarifarios",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-asfi-gob-bo-4",
+    "input": "https://www.asfi.gob.bo/pb/mision-vision-y-valores",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancoecofuturo-com-bo",
+    "input": "https://www.bancoecofuturo.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancoecofuturo-com-bo-2",
+    "input": "https://www.bancoecofuturo.com.bo/Productos/Cartera/ParaMI",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancoecofuturo-com-bo-3",
+    "input": "https://www.bancoecofuturo.com.bo/Biblioteca/ConvocatoriasaJuntasdeAccionistas",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancofie-com-bo",
+    "input": "https://www.bancofie.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancofie-com-bo-2",
+    "input": "https://bancadigital.bancofie.com.bo/login",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancofie-com-bo-3",
+    "input": "https://consultafacturas.bancofie.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancofie-com-bo-4",
+    "input": "https://www.bancofie.com.bo/novedades/comunicados",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancofortaleza-com-bo",
+    "input": "https://www.bancofortaleza.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancofortaleza-com-bo-2",
+    "input": "https://www.bancofortaleza.com.bo/nuestro-compromiso",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancofortaleza-com-bo-3",
+    "input": "https://www.bancofortaleza.com.bo/coeficiente-de-adecuacion-patrimonial",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancosol-com-bo",
+    "input": "https://www.bancosol.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancosol-com-bo-2",
+    "input": "https://portal.bancosol.com.bo/portalprincipal/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancosol-com-bo-3",
+    "input": "https://servicios.bancosol.com.bo/PuntoReclamo/PuntoReclamoWebCer",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancosol-com-bo-4",
+    "input": "https://www.bancosol.com.bo/politicas-de-privacidad",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancounion-com-bo",
+    "input": "https://www.bancounion.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancounion-com-bo-2",
+    "input": "http://bancounion.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancounion-com-bo-3",
+    "input": "https://proveedores.bancounion.com.bo/Login",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bancounion-com-bo-4",
+    "input": "https://www.bancounion.com.bo/GrupoUnion/SAFIProductos",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-baneco-com-bo",
+    "input": "https://www.baneco.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina de inicio; el sitio no permiti\u00f3 leer m\u00e1s enlaces."
+  },
+  {
+    "id": "protected-baneco-com-bo-2",
+    "input": "https://baneco.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina de inicio; el sitio no permiti\u00f3 leer m\u00e1s enlaces."
+  },
+  {
+    "id": "protected-baneco-com-bo-3",
+    "input": "https://baneco.com.bo/assets/content/docs/institucional/BEC_2023_Informe_RSE.pdf",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina de inicio; el sitio no permiti\u00f3 leer m\u00e1s enlaces."
+  },
+  {
+    "id": "protected-bcb-gob-bo",
+    "input": "https://www.bcb.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bcb-gob-bo-2",
+    "input": "https://deudaexternapublica.bcb.gob.bo/uploads/REGLAM_DEXT_2022.pdf",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bcb-gob-bo-3",
+    "input": "https://registros.bcb.gob.bo/postulantes/resultados",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bcb-gob-bo-4",
+    "input": "https://www.bcb.gob.bo/webdocs/files_noticias/NP9-18%20MAYO.pdf",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bco-com-bo",
+    "input": "https://www.bco.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bco-com-bo-2",
+    "input": "https://www.bco.com.bo/per-credito-consumo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bco-com-bo-3",
+    "input": "https://www.bco.com.bo/pol-seg-desgravamen-hipotecario/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bcp-com-bo",
+    "input": "https://www.bcp.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bcp-com-bo-2",
+    "input": "https://apppro.bcp.com.bo/WebQR/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bcp-com-bo-3",
+    "input": "https://digital.bcp.com.bo/m/StoresApertura",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bcp-com-bo-4",
+    "input": "https://www.bcp.com.bo/Empresas/CuentaCorriente",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bg-com-bo",
+    "input": "https://www.bg.com.bo/personas/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bg-com-bo-2",
+    "input": "https://www.bg.com.bo/institucional/directores-ejecutivos/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bg-com-bo-3",
+    "input": "https://www.bg.com.bo/personas/financiamiento/casa/casa-propia-residentes-bolivianos/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bisa-com",
+    "input": "https://www.bisa.com/home",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bisa-com-2",
+    "input": "https://sjoven.bisa.com/assets/upload/files/semblanza-don-julio-leon.pdf",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bisa-com-3",
+    "input": "https://www.bisa.com/personas/seguro-vida-grupo",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bmsc-com-bo",
+    "input": "https://www.bmsc.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bmsc-com-bo-2",
+    "input": "https://bnet.bmsc.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bmsc-com-bo-3",
+    "input": "https://www.bmsc.com.bo/help/questions",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bna-com-ar",
+    "input": "https://www.bna.com.ar/Personas",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bna-com-ar-2",
+    "input": "https://bna.com.ar/bnatesuma/microsegurosYSegurosInclusivos.html",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bna-com-ar-3",
+    "input": "https://digital.bna.com.ar/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bna-com-ar-4",
+    "input": "https://www.bna.com.ar/Personas/CreditosHipotecarios",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-bnb-com-bo",
+    "input": "https://www.bnb.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina de inicio; el sitio no permiti\u00f3 leer m\u00e1s enlaces."
+  },
+  {
+    "id": "protected-bnb-com-bo-2",
+    "input": "http://www.bnb.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina de inicio; el sitio no permiti\u00f3 leer m\u00e1s enlaces."
+  },
+  {
+    "id": "protected-bnb-com-bo-3",
+    "input": "http://www.bnb.com.bo/PortalBNB/Principal/BancaPersonas",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina de inicio; el sitio no permiti\u00f3 leer m\u00e1s enlaces."
+  },
+  {
+    "id": "protected-gestora-bo",
+    "input": "https://www.gestora.bo/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina de inicio; el sitio no permiti\u00f3 leer m\u00e1s enlaces."
+  },
+  {
+    "id": "protected-gestora-bo-2",
+    "input": "https://gestora.bo/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina de inicio; el sitio no permiti\u00f3 leer m\u00e1s enlaces."
+  },
+  {
+    "id": "protected-gestora-bo-3",
+    "input": "http://www.gestora.bo/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina de inicio; el sitio no permiti\u00f3 leer m\u00e1s enlaces."
+  },
+  {
+    "id": "protected-impuestos-gob-bo",
+    "input": "https://www.impuestos.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-impuestos-gob-bo-2",
+    "input": "http://descargas.impuestos.gob.bo/form4/nayra.php",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-impuestos-gob-bo-3",
+    "input": "https://www.impuestos.gob.bo/index.php/estadisticas-de-denuncias/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-prodem-bo",
+    "input": "https://www.prodem.bo/Inicio",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-prodem-bo-2",
+    "input": "https://prodemnet.prodem.bo/ticket/ticketweb",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-prodem-bo-3",
+    "input": "https://prodemweb.prodem.bo:9000/repositorioDigital",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-prodem-bo-4",
+    "input": "https://www.prodem.bo/Images/637757872942745188Requisitos_REFINANCIAMIENTOS%20Y%20REPROGRAMACIONES.pdf",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-segip-gob-bo",
+    "input": "https://www.segip.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-segip-gob-bo-2",
+    "input": "https://www.segip.gob.bo/licencia-para-conducir/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-segip-gob-bo-3",
+    "input": "https://www.segip.gob.bo/nota_prensa/segip-registra-mas-de-6-585-cedulas-de-identidad-emitidas-en-oficinas-del-exterior-durante-agosto-y-septiembre/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  }
+]

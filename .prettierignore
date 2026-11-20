@@ -14,3 +14,4 @@ packages/core/src/data/hosting.ts
 tools/build-data/sources/unicode
 dev-dist
 apps/web/public
+packages/test-corpus/report.md

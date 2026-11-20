@@ -31,13 +31,14 @@ Ninguno de estos comandos necesita conexión a internet.
 
 ## Estructura
 
-| Carpeta            | Contenido                                                 |
-| ------------------ | --------------------------------------------------------- |
-| `packages/core`    | Motor de análisis (`@ojolink/core`)                       |
-| `apps/web`         | Aplicación web instalable (`@ojolink/web`)                |
-| `tools/build-data` | Generador de los datos del motor (`@ojolink/build-data`)  |
-| `architecture/`    | Requerimientos, arquitectura y plan de tareas, en español |
-| `openspec/`        | Changes y specs de OpenSpec, en inglés                    |
+| Carpeta                | Contenido                                                   |
+| ---------------------- | ----------------------------------------------------------- |
+| `packages/core`        | Motor de análisis (`@ojolink/core`)                         |
+| `packages/test-corpus` | Corpus de calibración y su reporte (`@ojolink/test-corpus`) |
+| `apps/web`             | Aplicación web instalable (`@ojolink/web`)                  |
+| `tools/build-data`     | Generador de los datos del motor (`@ojolink/build-data`)    |
+| `architecture/`        | Requerimientos, arquitectura y plan de tareas, en español   |
+| `openspec/`            | Changes y specs de OpenSpec, en inglés                      |
 
 ## Aplicación web
 
@@ -140,6 +141,63 @@ El tamaño también se puede medir solo, con el reparto entre datos embebidos, `
 ```bash
 pnpm --filter @ojolink/core size
 ```
+
+## Corpus de calibración
+
+`packages/test-corpus` guarda enlaces legítimos y de phishing etiquetados. El motor se mide contra ellos, y `pnpm test` falla si deja de cumplir las metas. Por eso un cambio en un peso o un umbral de `packages/core/src/calibration.ts` no pasa sin esta medición.
+
+| Meta                                                                                    | Límite         | Medido (20 nov 2026)     |
+| --------------------------------------------------------------------------------------- | -------------- | ------------------------ |
+| Enlaces legítimos en «peligro»                                                          | 0              | 0 fuera de 2 excepciones |
+| Enlaces legítimos en «precaución», sin contar páginas de alojamiento ni nombres vecinos | 5 % como mucho | 0 % (0 de 329)           |
+| Páginas reales de dominios protegidos en «seguro»                                       | todas          | 72 de 72                 |
+| Phishing que el motor cubre con un nivel distinto de «seguro»                           | 90 % o más     | 100 % (86 de 86)         |
+
+Un límite a tener en cuenta: casi todo el phishing del corpus está construido a mano para mostrar una técnica. La tasa de detección sirve para notar que un cambio rompió una señal. No dice cuánto phishing real detecta el motor. Cada muestra real que llegue vale más que diez construidas.
+
+### Agregar una muestra
+
+Cada muestra es un enlace. La etiqueta y el tipo salen de la carpeta y del archivo:
+
+- `samples/legitimate/<tipo>.json`, con los tipos `protected`, `general`, `idn`, `tracker`, `shortener`, `hosting` y `near-neighbour`.
+- `samples/phishing/<técnica>.json`, con un archivo por señal del motor, y `out-of-reach.json` para el phishing que ninguna señal local puede detectar.
+
+```json
+{
+  "id": "subdomain-bcp-domain",
+  "input": "https://bcp.com.bo.example.net/",
+  "source": "constructed",
+  "collected": "2026-11-20",
+  "note": "Construido a mano para mostrar la técnica; no observado."
+}
+```
+
+`source` es `real` (recibido en un mensaje), `constructed` (armado a mano) u `observed` (dirección legítima tomada de la web pública). Los campos opcionales son `expected`, `userDomains`, `visibleText` y `outOfReach`.
+
+Reglas:
+
+- Sin datos personales. La comprobación falla si un enlace o una nota contiene una dirección de correo. En un enlace real, reemplaza los identificadores del destinatario por un marcador y dilo en la nota.
+- Los caracteres parecidos o invisibles se escriben como escapes `\u` para que se vean al revisar.
+- En el phishing construido, el dominio del atacante es un nombre reservado (`example.net`) siempre que la técnica lo permita.
+
+Después de agregar muestras:
+
+```bash
+pnpm --filter @ojolink/test-corpus report
+pnpm --filter @ojolink/test-corpus test
+```
+
+El primer comando reescribe `report.md`, que se confirma junto con las muestras. Para comprobar por DNS que existen los dominios de las muestras `observed` (usa la red; no forma parte de las pruebas):
+
+```bash
+pnpm --filter @ojolink/test-corpus check:dns
+```
+
+### Leer el reporte
+
+[packages/test-corpus/report.md](packages/test-corpus/report.md) muestra las metas, el tamaño del corpus por tipo, y por cada señal cuántos enlaces legítimos marcó y cuántos de phishing de su técnica dejó pasar. También lista cada resultado equivocado, las excepciones aceptadas con su motivo, los casos fijos de la tabla «Textos por caso» (los pendientes dicen qué change los destraba) y el motivo de cada peso y umbral, que se guarda en `calibration.json`.
+
+Si una muestra legítima recibe un nivel equivocado y el proyecto lo acepta, se anota en `exceptions.json` con su motivo. Una excepción que ya no hace falta hace fallar la comprobación, y una página real de un dominio protegido no admite excepción.
 
 ## Licencias de terceros
 

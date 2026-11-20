@@ -1,0 +1,230 @@
+[
+  {
+    "id": "hosting-microsoft-github-io",
+    "input": "https://microsoft.github.io/monaco-editor/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-google-github-io",
+    "input": "https://google.github.io/styleguide/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-kubernetes-github-io",
+    "input": "https://kubernetes.github.io/ingress-nginx/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-rust-lang-github-io",
+    "input": "https://rust-lang.github.io/rustup/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-tc39-github-io",
+    "input": "https://tc39.github.io/ecma262/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-netflix-github-io",
+    "input": "https://netflix.github.io/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-googlechrome-github-io",
+    "input": "https://googlechrome.github.io/samples/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-facebook-github-io",
+    "input": "https://facebook.github.io/react-native/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-paypal-github-io",
+    "input": "https://paypal.github.io/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-googleblog-blogspot-com",
+    "input": "https://googleblog.blogspot.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-android-developers-blogspot-com",
+    "input": "https://android-developers.blogspot.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-swr-vercel-app",
+    "input": "https://swr.vercel.app/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-the-internet-herokuapp-com",
+    "input": "https://the-internet.herokuapp.com/login",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-restful-booker-herokuapp-com",
+    "input": "https://restful-booker.herokuapp.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-wordpress-com",
+    "input": "https://wordpress.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-sites-google-com",
+    "input": "https://sites.google.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-docs-google-com",
+    "input": "https://docs.google.com/document/d/1ExAmPleExAmPleExAmPleExAmPleExAmPleExAmPle/edit",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "hosting-page-sites-google-com",
+    "input": "https://sites.google.com/view/colegio-san-ignacio-promo-2026/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-sites-google-com-2",
+    "input": "https://sites.google.com/view/club-de-lectura-cochabamba/inicio",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-docs-google-com",
+    "input": "https://docs.google.com/forms/d/e/1FAIpQLSeExampleExampleExampleExampleExampleExampleEx/viewform",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-forms-gle",
+    "input": "https://forms.gle/ExAmPle1234567",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-recetas-de-la-abuela-blogspot-com",
+    "input": "https://recetas-de-la-abuela.blogspot.com/2026/11/saltenas.html",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-fotografia-lapaz-wordpress-com",
+    "input": "https://fotografia-lapaz.wordpress.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-mi-portafolio-netlify-app",
+    "input": "https://mi-portafolio.netlify.app/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-taller-arduino-web-app",
+    "input": "https://taller-arduino.web.app/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-juanperez-github-io",
+    "input": "https://juanperez.github.io/cv/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-tienda-artesanias-wixsite-com",
+    "input": "https://tienda-artesanias.wixsite.com/inicio",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-calculadora-aguinaldo-vercel-app",
+    "input": "https://calculadora-aguinaldo.vercel.app/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-soporte-usuarios-biblioteca-blogspot-com",
+    "input": "https://soporte-usuarios-biblioteca.blogspot.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-login-password-demo-netlify-app",
+    "input": "https://login-password-demo.netlify.app/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-facebook-login-clone-vercel-app",
+    "input": "https://facebook-login-clone.vercel.app/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-office-update-notes-pages-dev",
+    "input": "https://office-update-notes.pages.dev/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-curso-seguridad-informatica-gitlab-io",
+    "input": "https://curso-seguridad-informatica.gitlab.io/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-banco-de-alimentos-bolivia-weebly-com",
+    "input": "https://banco-de-alimentos-bolivia.weebly.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  },
+  {
+    "id": "hosting-page-microsoft-excel-trucos-blogspot-com",
+    "input": "https://microsoft-excel-trucos.blogspot.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "P\u00e1gina corriente construida a mano: un nombre que cualquiera podr\u00eda usar en este servicio."
+  }
+]

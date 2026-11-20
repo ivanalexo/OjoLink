@@ -1,0 +1,109 @@
+[
+  {
+    "id": "homograph-bcp-one-cyrillic",
+    "input": "https://b\u0441p.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-bisa-dotless-i",
+    "input": "https://b\u0131sa.com/banca",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-aduana-one-cyrillic",
+    "input": "https://\u0430duana.gob.bo/tramites",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-gestora-one-cyrillic",
+    "input": "https://www.g\u0435stora.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-bcp-two-cyrillic",
+    "input": "https://b\u0441\u0440.com.bo/validar",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-bancosol-three-cyrillic",
+    "input": "https://b\u0430n\u0441\u043esol.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-baneco-two-cyrillic",
+    "input": "https://b\u0430n\u0435co.com.bo/ingreso",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-bcp-other-ending",
+    "input": "https://b\u0441\u0440.net/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-bancosol-digit-one",
+    "input": "https://bancoso1.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-bancosol-digit-zero",
+    "input": "https://banc0sol.com.bo/acceso",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-bmsc-rn",
+    "input": "https://brnsc.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-impuestos-rn",
+    "input": "https://irnpuestos.gob.bo/siat",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-apple-whole-cyrillic",
+    "input": "https://\u0430\u0440\u0440\u04cf\u0435.com/id",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano. apple.com entra como dominio del usuario porque a\u00fan no est\u00e1 en ning\u00fan paquete.",
+    "userDomains": ["apple.com"]
+  },
+  {
+    "id": "homograph-paypal-whole-cyrillic",
+    "input": "https://\u0440\u0430\u0443\u0440\u0430\u04cf.com/signin",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano. paypal.com entra como dominio del usuario porque a\u00fan no est\u00e1 en ning\u00fan paquete.",
+    "userDomains": ["paypal.com"]
+  },
+  {
+    "id": "homograph-bcp-in-safelinks",
+    "input": "https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fxn--b-5tbc.com.bo%2F&data=05",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano: el dominio falso va dentro de una redirecci\u00f3n de Safe Links."
+  }
+]

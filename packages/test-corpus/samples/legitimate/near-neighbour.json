@@ -1,0 +1,212 @@
+[
+  {
+    "id": "near-neighbour-banco-com-bo",
+    "input": "https://banco.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Palabra corriente a una letra de un dominio protegido. Construido a mano: el dominio no existe hoy."
+  },
+  {
+    "id": "near-neighbour-gestor-bo",
+    "input": "https://gestor.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Palabra corriente a una letra de un dominio protegido. Construido a mano: el dominio no existe hoy."
+  },
+  {
+    "id": "near-neighbour-gestoria-bo",
+    "input": "https://gestoria.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Palabra corriente a una letra de un dominio protegido. Construido a mano: el dominio no existe hoy."
+  },
+  {
+    "id": "near-neighbour-bancofin-com-bo",
+    "input": "https://bancofin.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Palabra corriente a una letra de un dominio protegido. Construido a mano: el dominio no existe hoy."
+  },
+  {
+    "id": "near-neighbour-prodeo-bo",
+    "input": "https://prodeo.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Palabra corriente a una letra de un dominio protegido. Construido a mano: el dominio no existe hoy."
+  },
+  {
+    "id": "near-neighbour-visa-com",
+    "input": "https://www.visa.com/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-pisa-com",
+    "input": "https://www.pisa.com/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-lisa-com",
+    "input": "https://www.lisa.com/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-misa-com",
+    "input": "https://www.misa.com/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-aduana-cl",
+    "input": "https://www.aduana.cl/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-aduana-gob-ec",
+    "input": "https://www.aduana.gob.ec/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-aduanas-gob-do",
+    "input": "https://www.aduanas.gob.do/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-aduana-gov-py",
+    "input": "https://www.aduana.gov.py/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-bcp-gov-py",
+    "input": "https://www.bcp.gov.py/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-bcb-gov-br",
+    "input": "https://www.bcb.gov.br/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-banesco-com",
+    "input": "https://www.banesco.com/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-agesic-gub-uy",
+    "input": "https://www.agesic.gub.uy/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-asf-gob-mx",
+    "input": "https://www.asf.gob.mx/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-bmc-com",
+    "input": "https://www.bmc.com/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-boa-bo",
+    "input": "https://www.boa.bo/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-bna-ao",
+    "input": "https://www.bna.ao/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-bcp-pt",
+    "input": "https://www.bcp.pt/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-viabcp-com",
+    "input": "https://www.viabcp.com/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-bancounion-com",
+    "input": "https://www.bancounion.com/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-segib-org",
+    "input": "https://www.segib.org/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-prodam-sp-gov-br",
+    "input": "https://www.prodam.sp.gov.br/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-bga-com",
+    "input": "https://www.bga.com/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-bg-com",
+    "input": "https://www.bg.com/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-gestor-com",
+    "input": "https://www.gestor.com/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-bancofie-com",
+    "input": "https://www.bancofie.com/",
+    "source": "observed",
+    "collected": "2026-11-20",
+    "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  }
+]

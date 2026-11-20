@@ -1,0 +1,23 @@
+[
+  {
+    "id": "encoded-host-one-letter",
+    "input": "https://exa%6dple.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "encoded-host-several-letters",
+    "input": "https://%65%78ample.net/bcp",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "encoded-host-encoded-dot",
+    "input": "https://bcp%2Eexample.org/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  }
+]

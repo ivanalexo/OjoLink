@@ -1,0 +1,44 @@
+[
+  {
+    "id": "mixed-script-one-cyrillic-letter",
+    "input": "https://p\u0430ypal.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "mixed-script-one-cyrillic-letter-shop",
+    "input": "https://tiend\u0430-ofertas.example.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "mixed-script-many-cyrillic-letters",
+    "input": "https://mi\u0441r\u043es\u043eft.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "mixed-script-many-cyrillic-letters-google",
+    "input": "https://g\u043e\u043egl\u0435.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "mixed-script-cyrillic-and-greek",
+    "input": "https://\u0430p\u03c1le.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "mixed-script-cyrillic-and-greek-netflix",
+    "input": "https://n\u0435tfl\u03b9x.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  }
+]

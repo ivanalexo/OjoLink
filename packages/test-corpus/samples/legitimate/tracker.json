@@ -1,0 +1,142 @@
+[
+  {
+    "id": "tracker-mailchimp",
+    "input": "https://example.us12.list-manage.com/track/click?u=0123456789abcdef01234567a&id=0123456789&e=0123456789",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-mailchimp-subscribe",
+    "input": "https://example.us5.list-manage.com/subscribe?u=0123456789abcdef01234567a&id=0123456789",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-mailchimp-unsubscribe",
+    "input": "https://example.us12.list-manage.com/unsubscribe?u=0123456789abcdef01234567a&id=0123456789&e=0123456789&c=0123456789",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-sendgrid",
+    "input": "https://u1234567.ct.sendgrid.net/ls/click?upn=u001.EXAMPLEEXAMPLEEXAMPLEEXAMPLE-2BEXAMPLE-3D",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-sendgrid-wf",
+    "input": "https://u1234567.ct.sendgrid.net/wf/click?upn=EXAMPLEEXAMPLEEXAMPLEEXAMPLE-2FEXAMPLE-3D-3D",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-hubspot",
+    "input": "https://d2xR2K04.na1.hubspotlinks.com/Ctc/GD+113/d2xR2K04/EXAMPLEEXAMPLEEXAMPLEEXAMPLE",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-hubspot-eu",
+    "input": "https://d3aB1C02.eu1.hubspotlinks.com/Ctc/5F+113/d3aB1C02/EXAMPLEEXAMPLEEXAMPLE",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-mandrill",
+    "input": "https://mandrillapp.com/track/click/30000000/www.example.com?p=EXAMPLEEXAMPLEEXAMPLEEXAMPLE",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-google-redirect",
+    "input": "https://www.google.com/url?q=https%3A%2F%2Fwww.lostiempos.com%2F&sa=D&sntz=1",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-google-redirect-bank",
+    "input": "https://www.google.com/url?q=https%3A%2F%2Fwww.bcp.com.bo%2F&sa=D",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-safelinks",
+    "input": "https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.impuestos.gob.bo%2F&data=05%7C02%7C&reserved=0",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-safelinks-news",
+    "input": "https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Feldeber.com.bo%2F&data=05%7C02%7C&reserved=0",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-facebook-redirect",
+    "input": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.unitel.bo%2F&h=EXAMPLE",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-linkedin-redirect",
+    "input": "https://www.linkedin.com/redir/redirect?url=https%3A%2F%2Fwww.upb.edu%2F&urlhash=EXAM",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-youtube-redirect",
+    "input": "https://www.youtube.com/redirect?q=https%3A%2F%2Fwww.umsa.bo%2F&v=jNQXAC9IVRw",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-brand-click-domain",
+    "input": "https://click.e.mercadolibre.com/?qs=EXAMPLEEXAMPLEEXAMPLEEXAMPLE",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-brand-links-domain",
+    "input": "https://links.e.booking.com/ls/click?upn=EXAMPLEEXAMPLEEXAMPLE",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-mailgun-shape",
+    "input": "https://email.mg.example.com/c/EXAMPLEEXAMPLEEXAMPLEEXAMPLEEXAMPLE",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-amazon-ses-shape",
+    "input": "https://example.r.us-east-1.awstrack.me/L0/https:%2F%2Fwww.example.com%2F/1/EXAMPLE-000000/EXAMPLE=1",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "tracker-utm-parameters",
+    "input": "https://www.lostiempos.com/?utm_source=boletin&utm_medium=email&utm_campaign=titulares",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Forma real del servicio; los identificadores son inventados."
+  }
+]

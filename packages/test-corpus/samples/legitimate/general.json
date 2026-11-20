@@ -1,0 +1,1160 @@
+[
+  {
+    "id": "general-abi-bo",
+    "input": "https://abi.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-abi-bo-2",
+    "input": "https://historico.abi.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-abi-bo-3",
+    "input": "https://abi.bo/category/noticias-destacadas/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-atb-com-bo",
+    "input": "https://www.atb.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-atb-com-bo-2",
+    "input": "https://www.atb.com.bo/categoria/tecnologia/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-atb-com-bo-3",
+    "input": "https://www.atb.com.bo/2026/09/11/solaria-se-convierte-en-la-unica-empresa-boliviana-en-alcanzar-el-nivel-gold-de-huawei-digital-power/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-att-gob-bo",
+    "input": "https://www.att.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-att-gob-bo-2",
+    "input": "https://appdigitales.att.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-att-gob-bo-3",
+    "input": "https://www.att.gob.bo/en/rendicion-publica-de-cuentas",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-boa-bo",
+    "input": "https://www.boa.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-brujuladigital-net",
+    "input": "https://brujuladigital.net/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-brujuladigital-net-2",
+    "input": "https://brujuladigital.net/mundo/2026/11/16/el-papa-agradece-a-los-peruanos-por-su-participacion-su-presencia-y-su-acogida-69226",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-brujuladigital-net-3",
+    "input": "https://brujuladigital.net/multimedia/brujula-streaming-con-la-analista-jimena-costa-analizaremos-la-marcha-del-estado-y-la-reaparicion-de-figuras-relacionadas-al-mas-18112026-239",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-cainco-org-bo",
+    "input": "https://www.cainco.org.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-cainco-org-bo-2",
+    "input": "https://academy.cainco.org.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-cainco-org-bo-3",
+    "input": "https://www.cainco.org.bo/formulario-de-aplicacion/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-cancilleria-gob-bo",
+    "input": "https://cancilleria.gob.bo/mre/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-cancilleria-gob-bo-2",
+    "input": "https://consulados.cancilleria.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-cancilleria-gob-bo-3",
+    "input": "https://cancilleria.gob.bo/mre/auditoria-interna",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-cinecenter-com-bo",
+    "input": "https://www.cinecenter.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-cinecenter-com-bo-2",
+    "input": "https://www.cinecenter.com.bo/PaginaInformativa/descargaapp",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-correodelsur-com",
+    "input": "https://correodelsur.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-correodelsur-com-2",
+    "input": "https://market.correodelsur.com/evento/historiaconsabor",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-correodelsur-com-3",
+    "input": "https://correodelsur.com/pendulo-politico",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-cotas-com-bo",
+    "input": "http://www.cotas.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-cre-com-bo",
+    "input": "https://www.cre.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-cre-com-bo-2",
+    "input": "https://www.cre.com.bo/entender-mi-consumo/conoce-las-tarifas/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-cre-com-bo-3",
+    "input": "https://www.cre.com.bo/grandes-consumidores/mediana-demanda/notificacion-de-avisos-y-cortes/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-eju-tv",
+    "input": "https://eju.tv/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-eju-tv-2",
+    "input": "https://necrologicos.eju.tv/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-eju-tv-3",
+    "input": "https://eju.tv/category/ciencia-tecnologia/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-eldeber-com-bo",
+    "input": "https://eldeber.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-eldeber-com-bo-2",
+    "input": "https://atodomotor.eldeber.com.bo/articulo/gac-y-viaggio-amplan-su-beneficio-a-5-aos-o-150000-km-de-mantenimiento-sin-costo-1246",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-eldeber-com-bo-3",
+    "input": "https://eldeber.com.bo/santa-cruz/alarma-palacio-justicia-genera-movimiento-policial-bomberos_1795146167",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-elpotosi-net",
+    "input": "https://elpotosi.net/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-elpotosi-net-2",
+    "input": "http://hemeroteca.elpotosi.net/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-elpotosi-net-3",
+    "input": "https://elpotosi.net/local/20261120_maestros-urbanos-marchan-y-alistan-nuevas-movilizaciones.html",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-emi-edu-bo",
+    "input": "https://www.emi.edu.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-emi-edu-bo-2",
+    "input": "https://corin2.emi.edu.bo/buscar-tramite",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-emi-edu-bo-3",
+    "input": "https://www.emi.edu.bo/servicios/residencia-universitaria",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-entel-bo",
+    "input": "https://www.entel.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-entel-bo-2",
+    "input": "https://appwebjb.entel.bo/actualizaentel/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-entel-bo-3",
+    "input": "https://www.entel.bo/SorteoPromoMillon",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-erbol-com-bo",
+    "input": "https://www.erbol.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-erbol-com-bo-2",
+    "input": "https://erbol.com.bo/afiliados",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-erbol-com-bo-3",
+    "input": "https://www.erbol.com.bo/seguridad/gabriela-araoz-presidir%C3%A1-la-magistratura-en-2027-en-medio-de-cuestionamientos-spencer",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-farmacorp-com",
+    "input": "https://farmacorp.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-farmacorp-com-2",
+    "input": "https://farmacorp.com/products/7804920006929",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-farmacorp-com-3",
+    "input": "https://farmacorp.com/collections/chin-chin-siempre-hay-motivos-para-celebrar",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-fexpocruz-com-bo",
+    "input": "https://www.fexpocruz.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-fexpocruz-com-bo-2",
+    "input": "https://www.fexpocruz.com.bo/feria/agropecruz",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-fexpocruz-com-bo-3",
+    "input": "https://www.fexpocruz.com.bo/feria/https-www-fexpocruz-com-bo-expocruz-2026",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-fidalga-com",
+    "input": "https://www.fidalga.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-fidalga-com-2",
+    "input": "https://www.fidalga.com/collections/despensa-y-abarrotes",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-fidalga-com-3",
+    "input": "https://www.fidalga.com/products/salsa-la-costena-frijoles-bayos-refritos-con-chorizo-440-gr",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-gob-bo",
+    "input": "https://www.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-hipermaxi-com",
+    "input": "https://www.hipermaxi.com/santa-cruz/hipermaxi-roca-y-coronado",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-hipermaxi-com-2",
+    "input": "https://hipermaxi.com/santa-cruz/hipermaxi-roca-y-coronado/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-hipermaxi-com-3",
+    "input": "https://www.hipermaxi.com/santa-cruz/hipermaxi-roca-y-coronado/producto/076015/pollo-frial-entero-sofia-kg",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-ine-gob-bo",
+    "input": "https://www.ine.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-ine-gob-bo-2",
+    "input": "http://anda.ine.gob.bo/index.php/home",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-ine-gob-bo-3",
+    "input": "https://www.ine.gob.bo/index.php/servicios-al-ciudadano/formulario-de-consultas/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-larazon-bo",
+    "input": "https://larazon.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-lapatria-bo",
+    "input": "https://lapatria.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-lapatria-bo-2",
+    "input": "https://lapatria.bo/opinion/columnas/violencia-sexual-ninez-no-p/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-lapatria-bo-3",
+    "input": "https://lapatria.bo/enfoque-nacional/solidaridad/aldeas-infantiles-sos-impulsa-cuidado-infantil-proteccion/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-lostiempos-com",
+    "input": "https://www.lostiempos.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-lostiempos-com-2",
+    "input": "http://clasificados.lostiempos.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-lostiempos-com-3",
+    "input": "https://www.lostiempos.com/actualidad/opinion/20261118/columna/justicia-purga-reforma",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-minedu-gob-bo",
+    "input": "https://www.minedu.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-minedu-gob-bo-2",
+    "input": "https://www.minedu.gob.bo/files/publicaciones/ver/dgep/2026/EstrategiasDGEP/PRIMARIA_MATEMATICA_ANEXOS.pdf",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-minsalud-gob-bo",
+    "input": "https://www.minsalud.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-minsalud-gob-bo-2",
+    "input": "https://mail.minsalud.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-minsalud-gob-bo-3",
+    "input": "https://www.minsalud.gob.bo/normativa/resoluciones/resoluciones-ministeriales",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-multicine-com-bo",
+    "input": "https://www.multicine.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-oep-org-bo",
+    "input": "https://www.oep.org.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-oep-org-bo-2",
+    "input": "https://beni.oep.org.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-opinion-com-bo",
+    "input": "https://www.opinion.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-opinion-com-bo-2",
+    "input": "https://www.opinion.com.bo/cultura/samaipata-abre-puertas-arte-cuarta-version-festival-dicu-dicu/20261119145324999366.html",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-opinion-com-bo-3",
+    "input": "https://www.opinion.com.bo/policial/recuperan-bebe-raptado-quillacollo-dos-aprehendidos-buscan-principal-autora/20261119112916999352.html",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-pedidosya-com-bo",
+    "input": "https://www.pedidosya.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-presidencia-gob-bo",
+    "input": "https://presidencia.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-presidencia-gob-bo-2",
+    "input": "https://justicia-mov-sociales.presidencia.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-presidencia-gob-bo-3",
+    "input": "https://presidencia.gob.bo/index.php/manuales-de-procedimiento/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-reduno-com-bo",
+    "input": "https://www.reduno.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-reduno-com-bo-2",
+    "input": "https://mediakit.reduno.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-reduno-com-bo-3",
+    "input": "https://www.reduno.com.bo/economia/trabajaste-solo-unos-meses-asi-deben-calcular-tu-aguinaldo-de-navidad-2026-2026112072021",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-saguapac-com-bo",
+    "input": "https://www.saguapac.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-saguapac-com-bo-2",
+    "input": "https://consulta.saguapac.com.bo/preventavehiculo/presolicitud.jsf",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-saguapac-com-bo-3",
+    "input": "https://www.saguapac.com.bo/informacion-sobre-el-agua/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-senasag-gob-bo",
+    "input": "https://www.senasag.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-tigo-com-bo",
+    "input": "https://www.tigo.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-tumomo-com",
+    "input": "https://www.tumomo.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-tumomo-com-2",
+    "input": "https://www.tumomo.com/musica-y-videos-b451-es.html",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-tumomo-com-3",
+    "input": "https://www.tumomo.com/equipamiento-industr-b443-es.html",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-uagrm-edu-bo",
+    "input": "https://www.uagrm.edu.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-uagrm-edu-bo-2",
+    "input": "https://bibliotecas.uagrm.edu.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-uagrm-edu-bo-3",
+    "input": "https://www.uagrm.edu.bo/organos-especiales",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-ucb-edu-bo",
+    "input": "https://www.ucb.edu.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-ucb-edu-bo-2",
+    "input": "https://academico.ucb.edu.bo/AcademicoNacional/login",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-ucb-edu-bo-3",
+    "input": "https://www.ucb.edu.bo/sedes-academicas-de-la-ucb/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-umsa-bo",
+    "input": "https://www.umsa.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-umsa-bo-2",
+    "input": "https://ae.umsa.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-umsa-bo-3",
+    "input": "https://www.umsa.bo/web/guest/quienes-somos",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-umss-edu-bo",
+    "input": "https://www.umss.edu.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-umss-edu-bo-2",
+    "input": "https://www.umss.edu.bo/formulario-de-contacto/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-umss-edu-bo-3",
+    "input": "https://www.umss.edu.bo/homenaje-a-los-docentes-que-cumplen-10-y-25-anos-de-servicio-institucional-en-la-umss-este-2026/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-unitel-bo",
+    "input": "https://unitel.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-unitel-bo-2",
+    "input": "https://estaticos.unitel.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-unitel-bo-3",
+    "input": "https://unitel.bo/noticias/mundo/video-el-curioso-momento-entre-keiko-fujimori-y-jose-antonio-kast-en-china-AM24936215",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-univalle-edu",
+    "input": "https://www.univalle.edu/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-univalle-edu-2",
+    "input": "https://enlace.univalle.edu/san/webform/PAutenticar.aspx",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-upb-edu",
+    "input": "https://www.upb.edu/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-upb-edu-2",
+    "input": "https://postulaciones.upb.edu/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-upb-edu-3",
+    "input": "https://www.upb.edu/vinculacion-profesional",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-upsa-edu-bo",
+    "input": "https://www.upsa.edu.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-upsa-edu-bo-2",
+    "input": "https://cenace.upsa.edu.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-upsa-edu-bo-3",
+    "input": "https://www.upsa.edu.bo/podcastupsa-umberto-eco-y-el-fascismo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-usfx-bo",
+    "input": "https://usfx.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-usfx-bo-2",
+    "input": "https://bibliotecas.usfx.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-usfx-bo-3",
+    "input": "https://usfx.bo/inicio/institucional/memorias/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-uto-edu-bo",
+    "input": "https://www.uto.edu.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-uto-edu-bo-2",
+    "input": "https://biblioteca.uto.edu.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-uto-edu-bo-3",
+    "input": "https://www.uto.edu.bo/tecnologia-de-inf-y-com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-viva-com-bo",
+    "input": "https://www.viva.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-viva-com-bo-2",
+    "input": "https://app.viva.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-viva-com-bo-3",
+    "input": "https://www.viva.com.bo/personas/terminos-y-condiciones/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-yapame-com-bo",
+    "input": "https://yapame.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-yapame-com-bo-2",
+    "input": "https://yapame.com.bo/terminos-y-condiciones/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-yapame-com-bo-3",
+    "input": "https://yapame.com.bo/deberian-las-agencias-de-diseno-web-preocuparse-por-la-ia/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-ypfb-gob-bo",
+    "input": "https://www.ypfb.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-ypfb-gob-bo-2",
+    "input": "https://cnih.ypfb.gob.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-ypfb-gob-bo-3",
+    "input": "https://www.ypfb.gob.bo/pagina-lista-boletines",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-google-com",
+    "input": "https://www.google.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-accounts-google-com",
+    "input": "https://accounts.google.com/signin",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-mail-google-com",
+    "input": "https://mail.google.com/mail/u/0/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-drive-google-com",
+    "input": "https://drive.google.com/drive/my-drive",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-support-google-com",
+    "input": "https://support.google.com/accounts/answer/41078",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-myaccount-google-com",
+    "input": "https://myaccount.google.com/security",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-youtube-com",
+    "input": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-es-wikipedia-org",
+    "input": "https://es.wikipedia.org/wiki/Bolivia",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-wikipedia-org",
+    "input": "https://www.wikipedia.org/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-facebook-com",
+    "input": "https://www.facebook.com/login/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-facebook-com-2",
+    "input": "https://www.facebook.com/help/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-instagram-com",
+    "input": "https://www.instagram.com/accounts/login/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-whatsapp-com",
+    "input": "https://www.whatsapp.com/download",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-faq-whatsapp-com",
+    "input": "https://faq.whatsapp.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-web-whatsapp-com",
+    "input": "https://web.whatsapp.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-microsoft-com",
+    "input": "https://www.microsoft.com/es-es/microsoft-365",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-login-microsoftonline-com",
+    "input": "https://login.microsoftonline.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-outlook-live-com",
+    "input": "https://outlook.live.com/mail/0/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-support-microsoft-com",
+    "input": "https://support.microsoft.com/es-es/account-billing",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-account-microsoft-com",
+    "input": "https://account.microsoft.com/security",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-office-com",
+    "input": "https://www.office.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-apple-com",
+    "input": "https://www.apple.com/la/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-support-apple-com",
+    "input": "https://support.apple.com/es-lamr/apple-account",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-icloud-com",
+    "input": "https://www.icloud.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-amazon-com",
+    "input": "https://www.amazon.com/gp/help/customer/display.html",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-netflix-com",
+    "input": "https://www.netflix.com/login",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-help-netflix-com",
+    "input": "https://help.netflix.com/es",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-paypal-com",
+    "input": "https://www.paypal.com/signin",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-paypal-com-2",
+    "input": "https://www.paypal.com/bo/home",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-github-com",
+    "input": "https://github.com/login",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-docs-github-com",
+    "input": "https://docs.github.com/es/authentication",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-linkedin-com",
+    "input": "https://www.linkedin.com/login",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-x-com",
+    "input": "https://x.com/i/flow/login",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-mercadolibre-com",
+    "input": "https://www.mercadolibre.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-zoom-us",
+    "input": "https://zoom.us/signin",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-dropbox-com",
+    "input": "https://www.dropbox.com/login",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-spotify-com",
+    "input": "https://www.spotify.com/bo/account/overview/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-booking-com",
+    "input": "https://www.booking.com/index.es.html",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-airbnb-com",
+    "input": "https://www.airbnb.com/help",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-stackoverflow-com",
+    "input": "https://stackoverflow.com/questions",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-reddit-com",
+    "input": "https://www.reddit.com/login/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-tiktok-com",
+    "input": "https://www.tiktok.com/login",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-telegram-org",
+    "input": "https://telegram.org/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-canva-com",
+    "input": "https://www.canva.com/es_419/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-coursera-org",
+    "input": "https://www.coursera.org/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-duolingo-com",
+    "input": "https://www.duolingo.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-bbc-com",
+    "input": "https://www.bbc.com/mundo",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-elpais-com",
+    "input": "https://elpais.com/america/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-who-int",
+    "input": "https://www.who.int/es",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-un-org",
+    "input": "https://www.un.org/es/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-cloudflare-com",
+    "input": "https://www.cloudflare.com/es-es/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-mozilla-org",
+    "input": "https://www.mozilla.org/es-ES/firefox/new/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-visa-com-bo",
+    "input": "https://www.visa.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-mastercard-com",
+    "input": "https://www.mastercard.com/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-westernunion-com",
+    "input": "https://www.westernunion.com/bo/es/home.html",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-binance-com",
+    "input": "https://www.binance.com/es/login",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-dhl-com",
+    "input": "https://www.dhl.com/bo-es/home.html",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-latamairlines-com",
+    "input": "https://www.latamairlines.com/bo/es",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-adobe-com",
+    "input": "https://www.adobe.com/la/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  },
+  {
+    "id": "general-www-samsung-com",
+    "input": "https://www.samsung.com/latin/",
+    "source": "observed",
+    "collected": "2026-11-20"
+  }
+]

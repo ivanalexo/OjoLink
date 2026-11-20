@@ -1,0 +1,90 @@
+[
+  {
+    "id": "invisible-characters-host-zero-width-space",
+    "input": "https://bcp\u200b.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "invisible-characters-host-soft-hyphen",
+    "input": "https://bc\u00adp.com.bo/login",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "invisible-characters-host-two-characters",
+    "input": "https://b\u200bc\u00adp.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "invisible-characters-host-two-in-bancosol",
+    "input": "https://ban\u200bco\u00adsol.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "invisible-characters-link-left-to-right-mark",
+    "input": "https://example.com/a\u200eb",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "invisible-characters-link-reversed-file-name",
+    "input": "https://example.com/doc\u202efdp.exe",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "invisible-characters-link-two-characters",
+    "input": "https://example.com/a\u202eb\u200b",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "invisible-characters-link-two-reversals",
+    "input": "https://example.net/factura\u202efdp\u202e.exe",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "invisible-characters-text-reversed",
+    "input": "https://example.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado.",
+    "visibleText": "factura\u202efdp.exe"
+  },
+  {
+    "id": "invisible-characters-text-reversed-statement",
+    "input": "https://example.org/descarga",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado.",
+    "visibleText": "extracto\u202eslx.exe"
+  },
+  {
+    "id": "invisible-characters-text-two-reversals",
+    "input": "https://example.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado.",
+    "visibleText": "a\u202eb\u202e"
+  },
+  {
+    "id": "invisible-characters-text-reversal-and-space",
+    "input": "https://example.net/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado.",
+    "visibleText": "comprobante\u202efdp\u200b.exe"
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "id": "typosquat-changed-bancosol",
+    "input": "https://bancosul.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-changed-bancofie",
+    "input": "https://bancofia.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-extra-bancosol",
+    "input": "https://bancosoll.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-extra-prodem",
+    "input": "https://prodemm.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-changed-digit-bancofie",
+    "input": "https://bancof1e.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-missing-bancofie",
+    "input": "https://bancofe.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-missing-bancofortaleza",
+    "input": "https://bancofortalza.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-swapped-bancounion",
+    "input": "https://bancounoin.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-swapped-bancosol",
+    "input": "https://bancoslo.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-two-bancoecofuturo",
+    "input": "https://bancoecofturro.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-two-bancofortaleza",
+    "input": "https://bancofortalesaa.com.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-other-ending-bancosol",
+    "input": "https://bancosol.com/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano: el mismo nombre con otra terminaci\u00f3n real. El motor no lo marca por dise\u00f1o; queda fuera de su alcance.",
+    "outOfReach": true
+  },
+  {
+    "id": "typosquat-other-ending-bancounion",
+    "input": "https://bancounion.com.pe/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano: el mismo nombre con otra terminaci\u00f3n real. El motor no lo marca por dise\u00f1o; queda fuera de su alcance.",
+    "outOfReach": true
+  },
+  {
+    "id": "typosquat-ending-typo-bancosol",
+    "input": "https://bancosol.cm.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-ending-typo-bnb",
+    "input": "https://bnb.con.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-ending-typo",
+    "input": "https://bcp.con.bo/",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "hidden-destination-bitly",
+    "input": "https://bit.ly/3QxExample",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano: un acortador en un SMS falso de bono. El c\u00f3digo es inventado."
+  },
+  {
+    "id": "hidden-destination-tinyurl",
+    "input": "https://tinyurl.com/bono-example",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano. El c\u00f3digo es inventado."
+  },
+  {
+    "id": "hidden-destination-cuttly",
+    "input": "https://cutt.ly/Example123",
+    "source": "constructed",
+    "collected": "2026-11-20",
+    "note": "Construido a mano. El c\u00f3digo es inventado."
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "id": "alfabetos-mezclados",
+    "row": "Alfabetos mezclados",
+    "input": "b\u0441\u0440.com.bo",
+    "expectedLevel": "danger",
+    "expectedSignal": "homograph",
+    "expectedTitle": "Este enlace imita a bcp.com.bo"
+  },
+  {
+    "id": "todo-cirilico",
+    "row": "Todo cir\u00edlico",
+    "input": "\u0430\u0440\u0440\u04cf\u0435.com",
+    "expectedLevel": "danger",
+    "expectedSignal": "homograph",
+    "expectedTitle": "Este enlace imita a apple.com",
+    "pending": {
+      "change": "protected-domains-global",
+      "reason": "apple.com is in no embedded pack of protected domains"
+    }
+  },
+  {
+    "id": "typosquatting",
+    "row": "Typosquatting",
+    "input": "micros0ft.com",
+    "expectedLevel": "caution",
+    "expectedSignal": "typosquat",
+    "expectedTitle": "Este enlace imita a microsoft.com",
+    "pending": {
+      "change": "protected-domains-global",
+      "reason": "microsoft.com is in no embedded pack of protected domains"
+    }
+  },
+  {
+    "id": "subdominio-enganoso",
+    "row": "Subdominio enga\u00f1oso",
+    "input": "bcp.com.bo.verifica.net",
+    "expectedLevel": "danger",
+    "expectedSignal": "subdomain",
+    "expectedTitle": "Este enlace no es de bcp.com.bo"
+  },
+  {
+    "id": "texto-distinto-del-destino",
+    "row": "Texto distinto del destino",
+    "input": "https://example.net/",
+    "visibleText": "bcp.com.bo",
+    "expectedLevel": "danger",
+    "expectedSignal": "link-text-mismatch",
+    "expectedTitle": "Este enlace no va a donde dice",
+    "pending": {
+      "change": "signal-link-text-mismatch",
+      "reason": "the engine has no signal yet for link text that differs from its destination"
+    }
+  },
+  {
+    "id": "destino-oculto",
+    "row": "Destino oculto",
+    "input": "bit.ly/x",
+    "expectedLevel": "hidden-destination",
+    "expectedSignal": "hidden-destination",
+    "expectedTitle": "No se sabe a d\u00f3nde lleva este enlace"
+  },
+  {
+    "id": "idn-legitimo",
+    "row": "IDN leg\u00edtimo",
+    "input": "yuri\u00f1a.gob.bo",
+    "expectedLevel": "safe",
+    "expectedSignal": null,
+    "expectedTitle": null
+  }
+]

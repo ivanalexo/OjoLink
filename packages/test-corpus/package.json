@@ -1,0 +1,20 @@
+{
+  "name": "@ojolink/test-corpus",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "report": "node src/cli.ts report",
+    "check": "node src/cli.ts check",
+    "check:dns": "node src/cli.ts dns",
+    "test": "tsc -p tsconfig.json && vitest run",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@ojolink/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "vitest": "^5.1.1"
+  }
+}

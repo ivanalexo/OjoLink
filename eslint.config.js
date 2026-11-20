@@ -20,7 +20,7 @@ export default tseslint.config(
   prettier,
   ...svelte.configs.prettier,
   {
-    files: ["**/scripts/**"],
+    files: ["**/scripts/**", "packages/test-corpus/**"],
     languageOptions: { globals: globals.node },
   },
   {

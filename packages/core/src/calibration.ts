@@ -11,7 +11,7 @@ export interface Calibration {
   readonly weights: Readonly<Record<string, number>>;
 }
 
-/** Provisional values. The test-corpus-calibration change replaces them with measured ones. */
+/** Measured against packages/test-corpus, which records the reason for each value and fails when a target is missed. */
 export const DEFAULT_CALIBRATION: Calibration = {
   thresholds: { caution: 30, danger: 70 },
   weights: {
