@@ -2,7 +2,7 @@
 
 Capa preventiva contra phishing: analiza los enlaces antes del clic, en el dispositivo, y explica por qué un enlace es sospechoso. Un mismo motor sirve a una extensión de navegador y a una web instalable (PWA).
 
-El proyecto está en su etapa inicial. Hoy el repositorio contiene el motor de análisis con sus señales de detección, los datos que usa, y una primera versión de la aplicación web. La extensión de navegador todavía no existe.
+El proyecto está en su etapa inicial. Hoy el repositorio contiene el motor de análisis con sus señales de detección, los datos que usa, una primera versión de la aplicación web y el resolutor de enlaces cortos, listo para desplegar. La extensión de navegador todavía no existe.
 
 ## Requisitos
 
@@ -27,7 +27,7 @@ Todos se ejecutan desde la raíz y corren en cada paquete del workspace.
 | `pnpm format`       | Da formato al código con Prettier          |
 | `pnpm format:check` | Verifica el formato sin modificar archivos |
 
-Ninguno de estos comandos necesita conexión a internet.
+Ninguno de estos comandos necesita conexión a internet ni una cuenta en ningún servicio.
 
 ## Estructura
 
@@ -36,6 +36,7 @@ Ninguno de estos comandos necesita conexión a internet.
 | `packages/core`        | Motor de análisis (`@ojolink/core`)                         |
 | `packages/test-corpus` | Corpus de calibración y su reporte (`@ojolink/test-corpus`) |
 | `apps/web`             | Aplicación web instalable (`@ojolink/web`)                  |
+| `apps/resolver`        | Resolutor de enlaces cortos (`@ojolink/resolver`)           |
 | `tools/build-data`     | Generador de los datos del motor (`@ojolink/build-data`)    |
 | `architecture/`        | Requerimientos, arquitectura y plan de tareas, en español   |
 | `openspec/`            | Changes y specs de OpenSpec, en inglés                      |
@@ -62,6 +63,79 @@ Los dos comandos muestran la dirección local que hay que abrir en el navegador.
 También se le puede pasar un enlace en la dirección, después de `#u=` y codificado. Por ejemplo, agregar `#u=https%3A%2F%2Fbit.ly%2F3xYz` al final de la dirección local abre la página con ese enlace ya analizado. El enlace va en el fragmento y no en la consulta, para que nunca llegue a un servidor.
 
 La aplicación todavía no está publicada.
+
+## Resolutor de enlaces cortos
+
+`apps/resolver` es un Cloudflare Worker que dice a dónde lleva un enlace corto, como los de `bit.ly`, sin abrirlo. Es la única pieza de OjoLink que recibe algo desde el dispositivo, y lo único que recibe es el enlace corto.
+
+Qué hace y qué no hace:
+
+- Solo acepta enlaces de la lista de acortadores y servicios de seguimiento del motor. Cualquier otro recibe un error y el resolutor no contacta a nadie.
+- Le pregunta al acortador a dónde redirige, salto por salto. En cuanto el siguiente salto sale de la lista, se detiene y devuelve esa dirección. Nunca visita el destino.
+- Si el acortador responde con una página, busca en ella una redirección escrita (`meta refresh` o una asignación a `location`), sin ejecutar nada.
+- No dice si el destino es seguro. Ese veredicto lo da el motor, en el dispositivo.
+- No registra enlaces y no le pasa al acortador ningún dato de quien pregunta.
+
+### Petición y respuestas
+
+```http
+POST /resolve
+Content-Type: application/json
+
+{ "url": "https://bit.ly/3xYz" }
+```
+
+| Respuesta              | Estado | Contenido                                                                           |
+| ---------------------- | ------ | ----------------------------------------------------------------------------------- |
+| Destino revelado       | 200    | `{ "status": "resolved", "destination": "…", "hops": ["…"], "method": "redirect" }` |
+| No se pudo revelar     | 200    | `{ "status": "unresolved", "reason": "no-redirect", "hops": ["…"] }`                |
+| Petición mal formada   | 400    | `{ "error": "invalid-request" }`                                                    |
+| Host fuera de la lista | 403    | `{ "error": "host-not-allowed" }`                                                   |
+| Demasiadas peticiones  | 429    | `{ "error": "rate-limited" }`, con `Retry-After`                                    |
+
+`method` es `redirect` o `html`. Los motivos de «no resuelto» son `no-redirect`, `too-many-hops`, `loop`, `unsupported-destination`, `shortener-error` y `timeout`. Un «no resuelto» nunca significa que el enlace sea seguro.
+
+`GET /privacidad` devuelve la política de privacidad.
+
+### Límites
+
+| Límite                             | Valor         |
+| ---------------------------------- | ------------- |
+| Peticiones al acortador por enlace | 5             |
+| Tiempo por salto y en total        | 4 s y 8 s     |
+| Lectura de una página              | 64 KB         |
+| Peticiones por dirección IP        | 20 por minuto |
+| Caché de un destino revelado       | 1 hora        |
+| Caché de un «no resuelto» estable  | 10 minutos    |
+
+Los valores están en `apps/resolver/src/limits.ts`. El límite por IP también está en `apps/resolver/wrangler.json`, y una prueba comprueba que coinciden.
+
+### Comandos
+
+```bash
+pnpm --filter @ojolink/resolver test
+pnpm --filter @ojolink/resolver build
+pnpm --filter @ojolink/resolver dev
+```
+
+`test` usa respuestas simuladas de acortadores y no necesita red. `build` empaqueta el Worker en `apps/resolver/dist` sin desplegarlo. `dev` lo levanta en local y muestra la dirección; ahí sí consulta acortadores reales.
+
+### Desplegar
+
+Hace falta una cuenta de Cloudflare. El plan gratuito alcanza.
+
+```bash
+pnpm --filter @ojolink/resolver exec wrangler login
+pnpm --filter @ojolink/resolver run deploy
+```
+
+El segundo comando muestra la dirección pública, que termina en `workers.dev`. Después del primer despliegue conviene comprobar tres cosas:
+
+1. Que `/privacidad` abre en esa dirección.
+2. Que en el panel de Cloudflare los registros del Worker (Workers Logs) aparecen desactivados.
+3. Que una petición de prueba con un enlace corto devuelve su destino.
+
+Para volver a la versión anterior: `pnpm --filter @ojolink/resolver exec wrangler rollback`.
 
 ## Datos
 

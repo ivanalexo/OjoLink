@@ -12,6 +12,7 @@ export default tseslint.config(
       "**/node_modules/**",
       "**/.turbo/**",
       "**/coverage/**",
+      "**/.wrangler/**",
     ],
   },
   js.configs.recommended,
@@ -20,8 +21,12 @@ export default tseslint.config(
   prettier,
   ...svelte.configs.prettier,
   {
-    files: ["**/scripts/**", "packages/test-corpus/**"],
+    files: ["**/scripts/**", "packages/test-corpus/**", "apps/resolver/**"],
     languageOptions: { globals: globals.node },
+  },
+  {
+    files: ["apps/resolver/src/**"],
+    rules: { "no-console": "error" },
   },
   {
     files: ["apps/web/**"],

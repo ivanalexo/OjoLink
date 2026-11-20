@@ -13,3 +13,6 @@ minimumReleaseAgeExclude:
   - "@vitest/spy@5.1.1"
   - turbo@2.11.13
   - vitest@5.1.1
+allowBuilds:
+  esbuild: false
+  workerd: false

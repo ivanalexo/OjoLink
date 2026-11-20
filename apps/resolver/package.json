@@ -1,0 +1,21 @@
+{
+  "name": "@ojolink/resolver",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "tsc -p tsconfig.json && vitest run",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@ojolink/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "vitest": "^5.1.1",
+    "wrangler": "^4.165.0"
+  }
+}

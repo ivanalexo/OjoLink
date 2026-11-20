@@ -1,0 +1,9 @@
+export const MAX_URL_LENGTH = 2048;
+export const MAX_BODY_LENGTH = 4096;
+export const MAX_REQUESTS = 5;
+export const HOP_TIMEOUT_MS = 4000;
+export const TOTAL_TIMEOUT_MS = 8000;
+export const MAX_PAGE_BYTES = 64 * 1024;
+export const RESOLVED_TTL_SECONDS = 3600;
+export const STABLE_TTL_SECONDS = 600;
+export const RATE_LIMIT = { limit: 20, period: 60 } as const;
