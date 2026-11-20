@@ -5,7 +5,7 @@ import { skeleton } from "./skeleton.js";
 export interface ProtectedDomain {
   readonly domain: string;
   readonly entity: string;
-  readonly category: ProtectedCategory;
+  readonly category: ProtectedCategory | "user";
   readonly label: string;
   readonly suffix: string;
 }
@@ -26,7 +26,8 @@ export interface ProtectedIndex {
   readonly byLabelSkeleton: ReadonlyMap<string, ProtectedDomain>;
 }
 
-const cache = new WeakMap<readonly ProtectedPack[], ProtectedIndex>();
+const NO_USER_DOMAINS: readonly string[] = Object.freeze([]);
+const cache = new WeakMap<readonly ProtectedPack[], WeakMap<readonly string[], ProtectedIndex>>();
 
 /** The part of a registrable domain in front of its public suffix. */
 export function labelOf(domain: string, suffix: string): string {
@@ -35,32 +36,34 @@ export function labelOf(domain: string, suffix: string): string {
     : domain;
 }
 
-function build(packs: readonly ProtectedPack[]): ProtectedIndex {
+function build(packs: readonly ProtectedPack[], userDomains: readonly string[]): ProtectedIndex {
   const entries: ProtectedDomain[] = [];
   const suffixes: ProtectedSuffixGroup[] = [];
   const domains = new Set<string>();
   const byDomainSkeleton = new Map<string, ProtectedDomain>();
   const byLabelSkeleton = new Map<string, ProtectedDomain>();
 
-  for (const pack of packs) {
-    for (const entry of pack.entries) {
-      if (domains.has(entry.domain)) continue;
-      const suffix = parse(entry.domain, { allowPrivateDomains: true }).publicSuffix ?? "";
-      const item: ProtectedDomain = {
-        domain: entry.domain,
-        entity: entry.name,
-        category: entry.category,
-        label: labelOf(entry.domain, suffix),
-        suffix,
-      };
-      entries.push(item);
-      domains.add(item.domain);
+  const add = (domain: string, entity: string, category: ProtectedDomain["category"]) => {
+    if (domains.has(domain)) return;
+    const suffix = parse(domain, { allowPrivateDomains: true }).publicSuffix ?? "";
+    const item: ProtectedDomain = {
+      domain,
+      entity,
+      category,
+      label: labelOf(domain, suffix),
+      suffix,
+    };
+    entries.push(item);
+    domains.add(domain);
 
-      const domainKey = skeleton(item.domain);
-      if (!byDomainSkeleton.has(domainKey)) byDomainSkeleton.set(domainKey, item);
-      const labelKey = skeleton(item.label);
-      if (!byLabelSkeleton.has(labelKey)) byLabelSkeleton.set(labelKey, item);
-    }
+    const domainKey = skeleton(domain);
+    if (!byDomainSkeleton.has(domainKey)) byDomainSkeleton.set(domainKey, item);
+    const labelKey = skeleton(item.label);
+    if (!byLabelSkeleton.has(labelKey)) byLabelSkeleton.set(labelKey, item);
+  };
+
+  for (const pack of packs) {
+    for (const entry of pack.entries) add(entry.domain, entry.name, entry.category);
 
     for (const { suffix, name, lookalikes } of pack.suffixes) {
       if (suffixes.some((group) => group.suffix === suffix)) continue;
@@ -73,18 +76,28 @@ function build(packs: readonly ProtectedPack[]): ProtectedIndex {
       });
     }
   }
+  for (const domain of userDomains) add(domain, domain, "user");
   return { entries, suffixes, domains, byDomainSkeleton, byLabelSkeleton };
 }
 
 /**
  * Prepares protected domains and suffixes for lookup by lookalike form.
- * The first entry wins on a collision, and the result is reused for the same packs array.
+ * User domains come after the embedded ones, the first entry wins on a collision,
+ * and the result is reused for the same packs and user domains arrays.
  */
-export function buildProtectedIndex(packs: readonly ProtectedPack[]): ProtectedIndex {
-  let index = cache.get(packs);
+export function buildProtectedIndex(
+  packs: readonly ProtectedPack[],
+  userDomains: readonly string[] = NO_USER_DOMAINS,
+): ProtectedIndex {
+  let byUserDomains = cache.get(packs);
+  if (!byUserDomains) {
+    byUserDomains = new WeakMap();
+    cache.set(packs, byUserDomains);
+  }
+  let index = byUserDomains.get(userDomains);
   if (!index) {
-    index = build(packs);
-    cache.set(packs, index);
+    index = build(packs, userDomains);
+    byUserDomains.set(userDomains, index);
   }
   return index;
 }

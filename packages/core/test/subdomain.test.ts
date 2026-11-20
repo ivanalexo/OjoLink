@@ -218,3 +218,21 @@ describe("default engine", () => {
     expect(verdict(host)).toMatchObject({ level: "safe", signals: [] });
   });
 });
+
+describe("user domains", () => {
+  const own = createSubdomainSignal(PROTECTED_PACKS, ["miempresa.com.bo"]);
+
+  it("finds a user domain shown inside another site's address", () => {
+    expect(hit("miempresa.com.bo.verifica.net", own)?.details).toMatchObject({
+      case: "domain",
+      shown: "miempresa.com.bo",
+      entity: "miempresa.com.bo",
+      realDomain: "verifica.net",
+    });
+    expect(hit("miempresa.com.bo.verifica.net")).toBeNull();
+  });
+
+  it("does not trigger on subdomains of the user domain", () => {
+    expect(hit("portal.miempresa.com.bo", own)).toBeNull();
+  });
+});

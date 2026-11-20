@@ -64,13 +64,14 @@ La aplicación todavía no está publicada.
 
 ## Datos
 
-El motor usa tres conjuntos de datos: los caracteres confundibles de Unicode, los dominios protegidos y los acortadores de enlaces. Los archivos de `packages/core/src/data/` se generan y no se editan a mano. Lo que se edita son sus fuentes, en `tools/build-data/sources/`:
+El motor usa cuatro conjuntos de datos: los caracteres confundibles de Unicode, los dominios protegidos, los acortadores de enlaces y los servicios donde cualquiera puede publicar una página, con las palabras típicas de engaño. Los archivos de `packages/core/src/data/` se generan y no se editan a mano. Lo que se edita son sus fuentes, en `tools/build-data/sources/`:
 
-| Fuente                    | Contenido                                            |
-| ------------------------- | ---------------------------------------------------- |
-| `unicode/confusables.txt` | Archivo de Unicode (UTS #39), sin modificar          |
-| `protected/<país>.json`   | Entidades protegidas de un país, un archivo por país |
-| `shorteners.json`         | Acortadores y dominios de seguimiento                |
+| Fuente                    | Contenido                                               |
+| ------------------------- | ------------------------------------------------------- |
+| `unicode/confusables.txt` | Archivo de Unicode (UTS #39), sin modificar             |
+| `protected/<país>.json`   | Entidades protegidas de un país, un archivo por país    |
+| `shorteners.json`         | Acortadores y dominios de seguimiento                   |
+| `hosting.json`            | Servicios donde cualquiera publica y palabras de engaño |
 
 Después de cambiar una fuente hay que regenerar:
 
@@ -109,6 +110,36 @@ pnpm --filter @ojolink/build-data generate
 ```
 
 En lugar de `latest` se puede indicar una versión, por ejemplo `18.0.0`.
+
+## Dominios del usuario y presupuestos
+
+El motor puede proteger dominios que no están en ninguna lista embebida, como el banco o el empleador de quien lo usa:
+
+```ts
+import { checkUserDomain, createDefaultEngine } from "@ojolink/core";
+
+checkUserDomain("https://www.MiEmpresa.com.bo/login"); // { ok: true, domain: "miempresa.com.bo" }
+
+const engine = createDefaultEngine({ userDomains: ["miempresa.com.bo", "com.bo"] });
+engine.userDomains.entries; // qué entradas se aceptaron y por qué se rechazó el resto
+engine.analyze("https://miempresa.com.bo.verifica.net/"); // peligro
+```
+
+Se aceptan hasta 100 dominios. El motor no guarda la lista: la aporta quien lo llama, y `analyze` sin motor propio sigue usando solo las listas embebidas.
+
+`pnpm test` comprueba dos presupuestos y falla si alguno se supera:
+
+| Presupuesto                                           | Límite | Medido (19 nov 2026) |
+| ----------------------------------------------------- | ------ | -------------------- |
+| Tiempo medio por enlace, con 100 dominios del usuario | 1 ms   | 0,027 ms             |
+| Preparación de las listas                             | 50 ms  | 1,2 ms               |
+| Motor empaquetado con datos y dependencias, gzip      | 300 KB | 85,7 KB              |
+
+El tamaño también se puede medir solo, con el reparto entre datos embebidos, `tldts` y código:
+
+```bash
+pnpm --filter @ojolink/core size
+```
 
 ## Licencias de terceros
 

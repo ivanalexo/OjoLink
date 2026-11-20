@@ -11,7 +11,8 @@ import {
 } from "./i18n/index.js";
 import { normalizeUrl, type NormalizedUrl, type NormalizeFailureReason } from "./normalize.js";
 import { computeLevel, computeScore, type Level } from "./score.js";
-import { DEFAULT_SIGNALS } from "./signals/index.js";
+import { prepareUserDomains, type UserDomainReport } from "./user-domains.js";
+import { createDefaultSignals, DEFAULT_SIGNALS } from "./signals/index.js";
 import {
   signalKey,
   signalKeys,
@@ -168,6 +169,21 @@ export function createEngine(config: EngineConfig): Engine {
       };
     },
   };
+}
+
+export interface DefaultEngineOptions {
+  readonly userDomains?: readonly string[];
+}
+
+export interface DefaultEngine extends Engine {
+  readonly userDomains: UserDomainReport;
+}
+
+/** Builds an engine with the built-in signals that also protects the user's own domains. */
+export function createDefaultEngine(options: DefaultEngineOptions = {}): DefaultEngine {
+  const userDomains = prepareUserDomains(options.userDomains ?? []);
+  const engine = createEngine({ signals: createDefaultSignals(userDomains.domains) });
+  return { analyze: engine.analyze, userDomains };
 }
 
 const defaultEngine = createEngine({ signals: DEFAULT_SIGNALS });

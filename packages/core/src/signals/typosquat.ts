@@ -60,8 +60,11 @@ function describeSlip(written: string, expected: string): Slip {
 }
 
 /** Builds the signal for domains one slip of the keyboard away from a protected domain. */
-export function createTyposquatSignal(packs: readonly ProtectedPack[]): Signal {
-  const index = buildProtectedIndex(packs);
+export function createTyposquatSignal(
+  packs: readonly ProtectedPack[],
+  userDomains?: readonly string[],
+): Signal {
+  const index = buildProtectedIndex(packs, userDomains);
   const groups = new Map<string, Target[]>();
   const labelCounts = new Set<number>();
 

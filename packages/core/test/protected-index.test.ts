@@ -87,3 +87,35 @@ describe("buildProtectedIndex", () => {
     expect(buildProtectedIndex([]).entries).toEqual([]);
   });
 });
+
+describe("user domains in the index", () => {
+  const userDomains = ["miempresa.com.bo", "bcp.com.bo", "bcp.bo"];
+  const own = buildProtectedIndex(PROTECTED_PACKS, userDomains);
+
+  it("adds each user domain with itself as the entity", () => {
+    expect(own.domains.has("miempresa.com.bo")).toBe(true);
+    expect(own.entries.find((entry) => entry.domain === "miempresa.com.bo")).toEqual({
+      domain: "miempresa.com.bo",
+      entity: "miempresa.com.bo",
+      category: "user",
+      label: "miempresa",
+      suffix: "com.bo",
+    });
+    expect(own.byDomainSkeleton.get(skeleton("miempresa.com.bo"))?.category).toBe("user");
+    expect(own.byLabelSkeleton.get(skeleton("miempresa"))?.domain).toBe("miempresa.com.bo");
+  });
+
+  it("puts user domains after the embedded ones and keeps the embedded entry on a collision", () => {
+    expect(own.entries.slice(0, index.entries.length)).toEqual(index.entries);
+    expect(own.entries.filter((entry) => entry.domain === "bcp.com.bo")).toHaveLength(1);
+    expect(own.byDomainSkeleton.get(skeleton("bcp.com.bo"))?.entity).toBe("BCP");
+    expect(own.byLabelSkeleton.get(skeleton("bcp"))?.domain).toBe("bcp.com.bo");
+    expect(own.domains.has("bcp.bo")).toBe(true);
+  });
+
+  it("reuses the index for the same arrays and leaves the embedded one untouched", () => {
+    expect(buildProtectedIndex(PROTECTED_PACKS, userDomains)).toBe(own);
+    expect(buildProtectedIndex(PROTECTED_PACKS)).toBe(index);
+    expect(index.domains.has("miempresa.com.bo")).toBe(false);
+  });
+});

@@ -84,8 +84,11 @@ function pickVariant(written: string, characters: readonly HomographCharacter[])
 }
 
 /** Builds the signal that names the protected domain a lookalike domain imitates. */
-export function createHomographSignal(packs: readonly ProtectedPack[]): Signal {
-  const index = buildProtectedIndex(packs);
+export function createHomographSignal(
+  packs: readonly ProtectedPack[],
+  userDomains?: readonly string[],
+): Signal {
+  const index = buildProtectedIndex(packs, userDomains);
 
   function findImitated(domain: string, label: string, suffix: string): ProtectedDomain | null {
     const sameDomain = index.byDomainSkeleton.get(skeleton(domain));

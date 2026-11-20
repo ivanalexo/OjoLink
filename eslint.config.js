@@ -20,6 +20,10 @@ export default tseslint.config(
   prettier,
   ...svelte.configs.prettier,
   {
+    files: ["**/scripts/**"],
+    languageOptions: { globals: globals.node },
+  },
+  {
     files: ["apps/web/**"],
     languageOptions: { globals: globals.browser },
   },

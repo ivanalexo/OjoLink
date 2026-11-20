@@ -259,3 +259,16 @@ describe("default engine", () => {
     expect(verdict(host)).toMatchObject({ level: "safe", signals: [] });
   });
 });
+
+describe("user domains", () => {
+  const own = createTyposquatSignal(PROTECTED_PACKS, ["miempresa.com.bo"]);
+
+  it("finds a misspelling of a user domain", () => {
+    expect(details("miempreza.com.bo", own)).toMatchObject({ imitated: "miempresa.com.bo" });
+    expect(hit("miempreza.com.bo")).toBeNull();
+  });
+
+  it("does not trigger on the user domain itself", () => {
+    expect(hit("miempresa.com.bo", own)).toBeNull();
+  });
+});

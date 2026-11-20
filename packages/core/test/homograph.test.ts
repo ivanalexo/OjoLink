@@ -270,3 +270,17 @@ describe("default engine", () => {
     },
   );
 });
+
+describe("user domains", () => {
+  const own = createHomographSignal(PROTECTED_PACKS, ["miempresa.com.bo"]);
+  const fake = `https://mi${cp(0x0435)}mpresa.com.bo/`;
+
+  it("names the user domain a lookalike imitates", () => {
+    expect(details(fake, own)).toMatchObject({ imitated: "miempresa.com.bo" });
+    expect(hit(fake)).toBeNull();
+  });
+
+  it("does not trigger on the user domain itself", () => {
+    expect(hit("https://miempresa.com.bo/", own)).toBeNull();
+  });
+});

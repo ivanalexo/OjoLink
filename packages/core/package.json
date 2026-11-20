@@ -15,10 +15,12 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "test": "tsc -p tsconfig.json --noEmit && vitest run",
+    "test": "tsc -p tsconfig.json --noEmit && vitest run && node scripts/check-size.mjs",
+    "size": "node scripts/check-size.mjs",
     "lint": "eslint ."
   },
   "devDependencies": {
+    "esbuild": "^0.28.2",
     "vitest": "^5.1.1"
   },
   "dependencies": {

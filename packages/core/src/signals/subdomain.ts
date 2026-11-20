@@ -21,8 +21,11 @@ function windows(tokens: readonly string[], size: number): string[] {
 }
 
 /** Builds the signal for protected names and endings shown inside another site's address. */
-export function createSubdomainSignal(packs: readonly ProtectedPack[]): Signal {
-  const index = buildProtectedIndex(packs);
+export function createSubdomainSignal(
+  packs: readonly ProtectedPack[],
+  userDomains?: readonly string[],
+): Signal {
+  const index = buildProtectedIndex(packs, userDomains);
   const domainSizes = [...new Set(index.entries.map((entry) => entry.domain.split(".").length))];
 
   return {

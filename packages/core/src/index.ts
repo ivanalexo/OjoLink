@@ -1,9 +1,11 @@
 export const VERSION = "0.0.0";
 
-export { analyze, createEngine } from "./analyze.js";
+export { analyze, createDefaultEngine, createEngine } from "./analyze.js";
 export type {
   AnalysisResult,
   AnalyzeOptions,
+  DefaultEngine,
+  DefaultEngineOptions,
   Engine,
   EngineConfig,
   NotAnalyzed,
@@ -52,6 +54,7 @@ export type {
 export { normalizeUrl } from "./normalize.js";
 export type { NormalizedUrl, NormalizeFailureReason, NormalizeResult } from "./normalize.js";
 export type { Level } from "./score.js";
+export { createDefaultSignals, DEFAULT_SIGNALS } from "./signals/index.js";
 export { createHomographSignal } from "./signals/homograph.js";
 export { createHostingSignal, findLureWords } from "./signals/hosting.js";
 export type { HostedPage, HostingDetails } from "./signals/hosting.js";
@@ -78,4 +81,11 @@ export type {
   SignalParams,
 } from "./signals/types.js";
 export { unwrapUrl } from "./unwrap.js";
+export { checkUserDomain, prepareUserDomains, USER_DOMAIN_LIMIT } from "./user-domains.js";
+export type {
+  UserDomainCheck,
+  UserDomainEntry,
+  UserDomainRejection,
+  UserDomainReport,
+} from "./user-domains.js";
 export type { UnwrapResult, Wrapper } from "./unwrap.js";
