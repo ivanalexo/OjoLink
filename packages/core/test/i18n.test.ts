@@ -157,6 +157,8 @@ describe("Spanish catalog tone", () => {
     ...Object.values(es.levels).flatMap((level) => [level.label, level.description]),
     ...Object.values(es.signals).flatMap((signal) => Object.values(signal)),
     ...Object.values(es.terms ?? {}).flatMap((group) => Object.values(group)),
+    ...Object.values(es.reasons ?? {}),
+    ...Object.values(es.labels ?? {}),
   ];
 
   it("only references term groups that exist, each with an other entry", () => {

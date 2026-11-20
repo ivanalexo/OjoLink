@@ -1,3 +1,4 @@
+import type { NormalizeFailureReason } from "../normalize.js";
 import type { Level } from "../score.js";
 
 export interface LevelMessage {
@@ -13,10 +14,25 @@ export type SignalMessage = Readonly<Record<SignalText, string>>;
 
 export type Terms = Readonly<Record<string, Readonly<Record<string, string>>>>;
 
+export const PRESENTATION_LABELS = [
+  "comparison",
+  "realAddress",
+  "technical",
+  "substituted",
+  "score",
+  "notEvaluated",
+] as const;
+
+export type PresentationLabels = Readonly<Record<(typeof PRESENTATION_LABELS)[number], string>>;
+
+export type ReasonMessages = Readonly<Record<NormalizeFailureReason, string>>;
+
 export interface Messages {
   readonly levels: Readonly<Record<Level, LevelMessage>>;
   readonly signals: Readonly<Record<string, SignalMessage>>;
   readonly terms?: Terms;
+  readonly reasons?: ReasonMessages;
+  readonly labels?: PresentationLabels;
 }
 
 const HOMOGRAPH_TITLE = "Este enlace imita a {imitated}";
@@ -305,6 +321,21 @@ export const es: Messages = {
       advice: "Revisa que {realHost} sea el sitio que esperabas antes de abrirlo.",
       technical: WRITTEN_AND_OPENED,
     },
+  },
+  reasons: {
+    empty: "Pega un enlace o un mensaje para revisarlo.",
+    "not-a-link": "No encontramos ningún enlace en este texto.",
+    "unsupported-scheme":
+      "Este tipo de enlace no se analiza. Solo se revisan enlaces web, los que empiezan con http o https.",
+    "email-address": "Esto es una dirección de correo, no un enlace.",
+  },
+  labels: {
+    comparison: "Letra por letra",
+    realAddress: "Dirección real",
+    technical: "Ver detalle técnico",
+    substituted: "sustituida",
+    score: "Puntaje",
+    notEvaluated: "Señales que no se pudieron evaluar",
   },
   terms: {
     scriptOne: {

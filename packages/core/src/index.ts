@@ -11,6 +11,18 @@ export type {
   Verdict,
 } from "./analyze.js";
 export { DEFAULT_CALIBRATION } from "./calibration.js";
+export { describeResult } from "./describe.js";
+export type {
+  Comparison,
+  ComparisonUnit,
+  DescribeOptions,
+  NotAnalyzedDescription,
+  ResultDescription,
+  TechnicalDetail,
+  TechnicalSignal,
+  VerdictDescription,
+  WarningParts,
+} from "./describe.js";
 export { extractUrls } from "./extract.js";
 export { SHORTENERS } from "./data/index.js";
 export type {
@@ -28,6 +40,8 @@ export type {
   LevelMessage,
   Messages,
   PartialMessages,
+  PresentationLabels,
+  ReasonMessages,
   SignalMessage,
   SignalText,
   Terms,

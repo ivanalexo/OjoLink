@@ -2,7 +2,7 @@
 
 Capa preventiva contra phishing: analiza los enlaces antes del clic, en el dispositivo, y explica por qué un enlace es sospechoso. Un mismo motor sirve a una extensión de navegador y a una web instalable (PWA).
 
-El proyecto está en su etapa inicial. Hoy el repositorio contiene el motor de análisis, con sus primeras señales de detección, y los datos que usa. La PWA y la extensión todavía no existen.
+El proyecto está en su etapa inicial. Hoy el repositorio contiene el motor de análisis con sus señales de detección, los datos que usa, y una primera versión de la aplicación web. La extensión de navegador todavía no existe.
 
 ## Requisitos
 
@@ -34,11 +34,33 @@ Ninguno de estos comandos necesita conexión a internet.
 | Carpeta            | Contenido                                                 |
 | ------------------ | --------------------------------------------------------- |
 | `packages/core`    | Motor de análisis (`@ojolink/core`)                       |
+| `apps/web`         | Aplicación web instalable (`@ojolink/web`)                |
 | `tools/build-data` | Generador de los datos del motor (`@ojolink/build-data`)  |
 | `architecture/`    | Requerimientos, arquitectura y plan de tareas, en español |
 | `openspec/`        | Changes y specs de OpenSpec, en inglés                    |
 
-La carpeta `apps/` se agrega en changes posteriores.
+## Aplicación web
+
+`apps/web` es una página que revisa un enlace o un mensaje completo y muestra un veredicto por cada enlace. Todo se analiza en el dispositivo: no envía ni guarda lo que se pega.
+
+Para usarla en local, con recarga automática:
+
+```bash
+pnpm --filter @ojolink/web dev
+```
+
+Para probar la versión de producción, que es la que funciona sin conexión y lleva la política de seguridad:
+
+```bash
+pnpm build
+pnpm --filter @ojolink/web preview
+```
+
+Los dos comandos muestran la dirección local que hay que abrir en el navegador.
+
+También se le puede pasar un enlace en la dirección, después de `#u=` y codificado. Por ejemplo, agregar `#u=https%3A%2F%2Fbit.ly%2F3xYz` al final de la dirección local abre la página con ese enlace ya analizado. El enlace va en el fragmento y no en la consulta, para que nunca llegue a un servidor.
+
+La aplicación todavía no está publicada.
 
 ## Datos
 

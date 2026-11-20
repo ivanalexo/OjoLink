@@ -1,10 +1,14 @@
 import type { Level } from "../score.js";
+import type { NormalizeFailureReason } from "../normalize.js";
 import type { SignalParams } from "../signals/types.js";
 import {
   es,
+  PRESENTATION_LABELS,
   SIGNAL_TEXTS,
   type LevelMessage,
   type Messages,
+  type PresentationLabels,
+  type ReasonMessages,
   type SignalMessage,
   type SignalText,
   type Terms,
@@ -14,6 +18,8 @@ export interface PartialMessages {
   readonly levels?: Readonly<Partial<Record<Level, Partial<LevelMessage>>>>;
   readonly signals?: Readonly<Record<string, Partial<SignalMessage>>>;
   readonly terms?: Terms;
+  readonly reasons?: Partial<ReasonMessages>;
+  readonly labels?: Partial<PresentationLabels>;
 }
 
 export type TermResolver = (group: string, value: string) => string;
@@ -104,5 +110,32 @@ export function resolveSignalMessage(
   return resolved;
 }
 
-export { SIGNAL_TEXTS };
-export type { LevelMessage, Messages, SignalMessage, SignalText, Terms };
+/** Plain-words message for input that was not analyzed, in the locale or in Spanish. */
+export function resolveReason(
+  catalogs: Catalogs,
+  locale: string,
+  reason: NormalizeFailureReason,
+): string {
+  return catalogFor(catalogs, locale).reasons?.[reason] ?? es.reasons?.[reason] ?? reason;
+}
+
+/** Labels shared by every client that shows a warning, in the locale or in Spanish. */
+export function resolveLabels(catalogs: Catalogs, locale: string): PresentationLabels {
+  const translated = catalogFor(catalogs, locale).labels;
+  const resolved = {} as Record<keyof PresentationLabels, string>;
+  for (const key of PRESENTATION_LABELS) {
+    resolved[key] = translated?.[key] ?? es.labels?.[key] ?? key;
+  }
+  return resolved;
+}
+
+export { PRESENTATION_LABELS, SIGNAL_TEXTS };
+export type {
+  LevelMessage,
+  Messages,
+  PresentationLabels,
+  ReasonMessages,
+  SignalMessage,
+  SignalText,
+  Terms,
+};

@@ -11,3 +11,5 @@ packages/core/src/data/confusables.ts
 packages/core/src/data/protected-domains.ts
 packages/core/src/data/shorteners.ts
 tools/build-data/sources/unicode
+dev-dist
+apps/web/public
