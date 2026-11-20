@@ -1,3 +1,4 @@
+import type { DeepBrowser, PageRequest, Verdict } from "../src/deep.ts";
 import type { AnswerCache, HandlerDeps, Limiter } from "../src/handler.ts";
 import type { Fetcher } from "../src/hops.ts";
 
@@ -70,15 +71,62 @@ export function deps(fake: Shorteners, extra: Partial<HandlerDeps> = {}): Handle
     fetch: fake.fetch,
     now: () => Date.now(),
     limiter: limiterFor(),
+    deepLimiter: limiterFor(),
     cache: memoryCache(),
+    browser: browserThat([]),
     ...extra,
   };
 }
 
-export function post(url: unknown, headers: Record<string, string> = {}): Request {
+export function post(
+  url: unknown,
+  headers: Record<string, string> = {},
+  extra: Record<string, unknown> = {},
+): Request {
   return new Request("https://resolver.test/resolve", {
     method: "POST",
     headers: { "Content-Type": "application/json", "CF-Connecting-IP": "203.0.113.7", ...headers },
-    body: JSON.stringify({ url }),
+    body: JSON.stringify({ url, ...extra }),
   });
+}
+
+export interface FakeBrowser extends DeepBrowser {
+  opened: unknown[][];
+  verdicts: [string, Verdict][];
+  closed: number;
+}
+
+export const navigation = (url: string): PageRequest => ({
+  url,
+  navigation: true,
+  type: "document",
+});
+export const asset = (url: string, type: string): PageRequest => ({ url, navigation: false, type });
+
+export function browserThat(
+  requests: PageRequest[],
+  behaviour: { open?: () => Promise<void>; close?: () => Promise<void> } = {},
+): FakeBrowser {
+  const fake: FakeBrowser = {
+    opened: [],
+    verdicts: [],
+    closed: 0,
+    async open(...args) {
+      const [url, onRequest] = args;
+      fake.opened.push(args);
+      await behaviour.open?.();
+      void Promise.resolve().then(() => {
+        for (const request of [navigation(url), ...requests]) {
+          fake.verdicts.push([request.url, onRequest(request)]);
+        }
+      });
+      return {
+        close: async () => {
+          fake.closed += 1;
+          await behaviour.close?.();
+        },
+      };
+    },
+  };
+  return fake;
 }

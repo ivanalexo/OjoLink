@@ -37,6 +37,9 @@ h2 { font-size: 1.1rem; margin-top: 1.6rem; }
 <h2>Qué hacemos con el enlace</h2>
 <p>Le preguntamos al servicio acortador a dónde redirige y te devolvemos esa dirección. Nunca visitamos el sitio de destino, así que quien lo controla no ve ninguna visita. Al acortador no le pasamos nada tuyo: ni tu dirección IP, ni tus cookies, ni tu navegador.</p>
 
+<h2>Análisis profundo</h2>
+<p>Si lo pides, y solo entonces, abrimos el enlace corto en un navegador que corre en el servidor, para los acortadores que redirigen con código. Ese navegador empieza limpio cada vez, sin cookies ni historial, y tampoco visita el destino: se detiene justo antes.</p>
+
 <h2>Qué se guarda</h2>
 <p>No guardamos registros de los enlaces que se consultan ni de quién los consulta. La respuesta se conserva en una memoria temporal durante ${resolved} cuando se pudo revelar el destino, o ${stable} cuando no se pudo, para no repetir la consulta. Esa copia contiene el enlace corto y su destino, y nada sobre ti.</p>
 

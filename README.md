@@ -73,6 +73,7 @@ Qué hace y qué no hace:
 - Solo acepta enlaces de la lista de acortadores y servicios de seguimiento del motor. Cualquier otro recibe un error y el resolutor no contacta a nadie.
 - Le pregunta al acortador a dónde redirige, salto por salto. En cuanto el siguiente salto sale de la lista, se detiene y devuelve esa dirección. Nunca visita el destino.
 - Si el acortador responde con una página, busca en ella una redirección escrita (`meta refresh` o una asignación a `location`), sin ejecutar nada.
+- Solo si la petición lo pide, abre el enlace en un navegador en el servidor para los acortadores que redirigen con código. El navegador corta toda petición que salga de la lista, así que tampoco visita el destino.
 - No dice si el destino es seguro. Ese veredicto lo da el motor, en el dispositivo.
 - No registra enlaces y no le pasa al acortador ningún dato de quien pregunta.
 
@@ -93,22 +94,38 @@ Content-Type: application/json
 | Host fuera de la lista | 403    | `{ "error": "host-not-allowed" }`                                                   |
 | Demasiadas peticiones  | 429    | `{ "error": "rate-limited" }`, con `Retry-After`                                    |
 
-`method` es `redirect` o `html`. Los motivos de «no resuelto» son `no-redirect`, `too-many-hops`, `loop`, `unsupported-destination`, `shortener-error` y `timeout`. Un «no resuelto» nunca significa que el enlace sea seguro.
+`method` es `redirect`, `html` o `headless`. Los motivos de «no resuelto» son `no-redirect`, `too-many-hops`, `loop`, `unsupported-destination`, `shortener-error`, `timeout` y `deep-unavailable`. Un «no resuelto» nunca significa que el enlace sea seguro.
+
+### Análisis profundo
+
+Con `"deep": true` el resolutor puede usar un navegador (Cloudflare Browser Run):
+
+```json
+{ "url": "https://t.co/abc", "deep": true }
+```
+
+Primero prueba los pasos normales. El navegador solo arranca si esos terminan en `no-redirect` o `shortener-error`, y un destino encontrado así lleva `"method": "headless"`. Sin `deep`, nunca arranca un navegador.
+
+El navegador es un recurso escaso en el plan gratuito: 10 minutos al día y un navegador nuevo cada 20 segundos en toda la cuenta. Cuando no se puede arrancar uno, la respuesta es «no resuelto» con el motivo `deep-unavailable`, y se puede reintentar más tarde.
+
+Si la cuenta de Cloudflare está en un plan de pago, el tiempo de navegador que pase de lo incluido se cobra. El resolutor no lleva la cuenta de ese tiempo: se apoya en el corte del plan gratuito. Antes de desplegar en una cuenta de pago hay que agregar un contador propio.
 
 `GET /privacidad` devuelve la política de privacidad.
 
 ### Límites
 
-| Límite                             | Valor         |
-| ---------------------------------- | ------------- |
-| Peticiones al acortador por enlace | 5             |
-| Tiempo por salto y en total        | 4 s y 8 s     |
-| Lectura de una página              | 64 KB         |
-| Peticiones por dirección IP        | 20 por minuto |
-| Caché de un destino revelado       | 1 hora        |
-| Caché de un «no resuelto» estable  | 10 minutos    |
+| Límite                              | Valor         |
+| ----------------------------------- | ------------- |
+| Peticiones al acortador por enlace  | 5             |
+| Tiempo por salto y en total         | 4 s y 8 s     |
+| Lectura de una página               | 64 KB         |
+| Peticiones por dirección IP         | 20 por minuto |
+| Análisis profundos por dirección IP | 2 por minuto  |
+| Duración de un análisis profundo    | 10 s          |
+| Caché de un destino revelado        | 1 hora        |
+| Caché de un «no resuelto» estable   | 10 minutos    |
 
-Los valores están en `apps/resolver/src/limits.ts`. El límite por IP también está en `apps/resolver/wrangler.json`, y una prueba comprueba que coinciden.
+Los valores están en `apps/resolver/src/limits.ts`. Los dos límites por IP también están en `apps/resolver/wrangler.json`, y una prueba comprueba que coinciden.
 
 ### Comandos
 
@@ -134,6 +151,7 @@ El segundo comando muestra la dirección pública, que termina en `workers.dev`.
 1. Que `/privacidad` abre en esa dirección.
 2. Que en el panel de Cloudflare los registros del Worker (Workers Logs) aparecen desactivados.
 3. Que una petición de prueba con un enlace corto devuelve su destino.
+4. Que una petición con `"deep": true` para un enlace que redirige con código devuelve `"method": "headless"`, y que en el panel la sesión del navegador aparece cerrada. Las pruebas automáticas usan un navegador simulado, así que esta es la única comprobación con uno real.
 
 Para volver a la versión anterior: `pnpm --filter @ojolink/resolver exec wrangler rollback`.
 

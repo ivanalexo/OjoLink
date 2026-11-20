@@ -1,6 +1,13 @@
 import { validateRequest } from "./allow.ts";
+import { resolveDeep, type DeepBrowser } from "./deep.ts";
 import { resolve, type Fetcher, type Resolution } from "./hops.ts";
-import { MAX_BODY_LENGTH, RATE_LIMIT, RESOLVED_TTL_SECONDS, STABLE_TTL_SECONDS } from "./limits.ts";
+import {
+  DEEP_RATE_LIMIT,
+  MAX_BODY_LENGTH,
+  RATE_LIMIT,
+  RESOLVED_TTL_SECONDS,
+  STABLE_TTL_SECONDS,
+} from "./limits.ts";
 import { policyPage } from "./policy.ts";
 
 export interface Limiter {
@@ -16,7 +23,9 @@ export interface HandlerDeps {
   fetch: Fetcher;
   now: () => number;
   limiter: Limiter;
+  deepLimiter: Limiter;
   cache: AnswerCache;
+  browser: DeepBrowser;
 }
 
 const CORS: Readonly<Record<string, string>> = {
@@ -42,11 +51,18 @@ function failure(status: number, error: string, headers?: Record<string, string>
   return json(status, JSON.stringify({ error }), headers);
 }
 
+const PASSING = new Set<string>(["timeout", "shortener-error", "deep-unavailable"]);
+
 function ttlFor(answer: Resolution): number {
   if (answer.status === "resolved") return RESOLVED_TTL_SECONDS;
-  return answer.reason === "timeout" || answer.reason === "shortener-error"
-    ? 0
-    : STABLE_TTL_SECONDS;
+  return PASSING.has(answer.reason) ? 0 : STABLE_TTL_SECONDS;
+}
+
+function needsBrowser(answer: Resolution): boolean {
+  return (
+    answer.status === "unresolved" &&
+    (answer.reason === "no-redirect" || answer.reason === "shortener-error")
+  );
 }
 
 async function resolveRequest(request: Request, deps: HandlerDeps): Promise<Response> {
@@ -61,14 +77,26 @@ async function resolveRequest(request: Request, deps: HandlerDeps): Promise<Resp
   }
 
   const key = checked.url.href;
+  const keep = async (answer: Resolution): Promise<string> => {
+    const text = JSON.stringify(answer);
+    const ttl = ttlFor(answer);
+    if (ttl > 0) await deps.cache.put(key, text, ttl).catch(() => undefined);
+    return text;
+  };
+
   const cached = await deps.cache.get(key).catch(() => null);
-  if (cached !== null) return json(200, cached);
+  if (cached !== null && !(checked.deep && cached.includes('"status":"unresolved"'))) {
+    return json(200, cached);
+  }
 
   const answer = await resolve(checked.url, deps);
-  const text = JSON.stringify(answer);
-  const ttl = ttlFor(answer);
-  if (ttl > 0) await deps.cache.put(key, text, ttl).catch(() => undefined);
-  return json(200, text);
+  const text = await keep(answer);
+  if (!checked.deep || !needsBrowser(answer)) return json(200, text);
+
+  if (!(await deps.deepLimiter.allow(address))) {
+    return failure(429, "rate-limited", { "Retry-After": String(DEEP_RATE_LIMIT.period) });
+  }
+  return json(200, await keep(await resolveDeep(answer.hops, deps.browser)));
 }
 
 /** Answers one request to the resolver. Nothing here writes a URL to a log. */

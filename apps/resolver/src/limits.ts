@@ -7,3 +7,6 @@ export const MAX_PAGE_BYTES = 64 * 1024;
 export const RESOLVED_TTL_SECONDS = 3600;
 export const STABLE_TTL_SECONDS = 600;
 export const RATE_LIMIT = { limit: 20, period: 60 } as const;
+export const DEEP_TIMEOUT_MS = 10000;
+export const DEEP_CLOSE_WAIT_MS = 2000;
+export const DEEP_RATE_LIMIT = { limit: 2, period: 60 } as const;

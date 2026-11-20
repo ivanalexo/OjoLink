@@ -3,7 +3,7 @@ import { MAX_URL_LENGTH } from "./limits.ts";
 
 export type RequestError = "invalid-request" | "host-not-allowed";
 
-export type Validation = { ok: true; url: URL } | { ok: false; error: RequestError };
+export type Validation = { ok: true; url: URL; deep: boolean } | { ok: false; error: RequestError };
 
 export function isWeb(url: URL): boolean {
   return url.protocol === "http:" || url.protocol === "https:";
@@ -33,14 +33,14 @@ export function validateRequest(body: string): Validation {
   } catch {
     return { ok: false, error: "invalid-request" };
   }
-  const text =
-    typeof data === "object" && data !== null ? (data as { url?: unknown }).url : undefined;
-  if (typeof text !== "string" || text.length > MAX_URL_LENGTH) {
+  const fields = typeof data === "object" && data !== null ? (data as Record<string, unknown>) : {};
+  const { url: text, deep = false } = fields;
+  if (typeof text !== "string" || text.length > MAX_URL_LENGTH || typeof deep !== "boolean") {
     return { ok: false, error: "invalid-request" };
   }
   const url = parseUrl(text.trim());
   if (!url || !isPlain(url)) return { ok: false, error: "invalid-request" };
   if (!contactable(url)) return { ok: false, error: "host-not-allowed" };
   url.hash = "";
-  return { ok: true, url };
+  return { ok: true, url, deep };
 }

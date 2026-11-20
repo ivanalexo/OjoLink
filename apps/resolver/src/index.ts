@@ -1,7 +1,15 @@
+import type { BrowserWorker } from "@cloudflare/puppeteer";
+import { edgeBrowser } from "./browser.ts";
 import { handle, type AnswerCache, type Limiter } from "./handler.ts";
 
+interface RateLimit {
+  limit(options: { key: string }): Promise<{ success: boolean }>;
+}
+
 interface Env {
-  LIMITER: { limit(options: { key: string }): Promise<{ success: boolean }> };
+  LIMITER: RateLimit;
+  DEEP_LIMITER: RateLimit;
+  BROWSER: BrowserWorker;
 }
 
 interface EdgeCache {
@@ -27,10 +35,10 @@ function edgeCache(): AnswerCache {
   };
 }
 
-function edgeLimiter(env: Env): Limiter {
+function edgeLimiter(binding: RateLimit): Limiter {
   return {
     async allow(key) {
-      return (await env.LIMITER.limit({ key })).success;
+      return (await binding.limit({ key })).success;
     },
   };
 }
@@ -40,8 +48,10 @@ export default {
     return handle(request, {
       fetch: (url, init) => fetch(url, init),
       now: () => Date.now(),
-      limiter: edgeLimiter(env),
+      limiter: edgeLimiter(env.LIMITER),
+      deepLimiter: edgeLimiter(env.DEEP_LIMITER),
       cache: edgeCache(),
+      browser: edgeBrowser(env.BROWSER),
     });
   },
 };

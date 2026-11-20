@@ -2,7 +2,7 @@ import { contactable, isWeb, parseUrl } from "./allow.ts";
 import { findRedirect } from "./html.ts";
 import { HOP_TIMEOUT_MS, MAX_PAGE_BYTES, MAX_REQUESTS, TOTAL_TIMEOUT_MS } from "./limits.ts";
 
-export type Method = "redirect" | "html";
+export type Method = "redirect" | "html" | "headless";
 
 export type Reason =
   | "no-redirect"
@@ -10,7 +10,8 @@ export type Reason =
   | "loop"
   | "unsupported-destination"
   | "shortener-error"
-  | "timeout";
+  | "timeout"
+  | "deep-unavailable";
 
 export type Resolution =
   | { status: "resolved"; destination: string; hops: string[]; method: Method }
