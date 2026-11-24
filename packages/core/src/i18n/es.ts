@@ -27,12 +27,38 @@ export type PresentationLabels = Readonly<Record<(typeof PRESENTATION_LABELS)[nu
 
 export type ReasonMessages = Readonly<Record<NormalizeFailureReason, string>>;
 
+export const REVEAL_TEXTS = [
+  "waiting",
+  "waitingDeep",
+  "manual",
+  "revealButton",
+  "retryButton",
+  "deepButton",
+  "leadsTo",
+  "viaShortener",
+  "safeDestination",
+  "failedTitle",
+  "failedUnresolved",
+  "failedOffline",
+  "failedLimited",
+  "failedDeepUnavailable",
+  "failedError",
+  "failedAdvice",
+  "sentNotice",
+  "policyLink",
+  "announceRevealed",
+  "announceFailed",
+] as const;
+
+export type RevealTexts = Readonly<Record<(typeof REVEAL_TEXTS)[number], string>>;
+
 export interface Messages {
   readonly levels: Readonly<Record<Level, LevelMessage>>;
   readonly signals: Readonly<Record<string, SignalMessage>>;
   readonly terms?: Terms;
   readonly reasons?: ReasonMessages;
   readonly labels?: PresentationLabels;
+  readonly reveal?: RevealTexts;
 }
 
 const HOMOGRAPH_TITLE = "Este enlace imita a {imitated}";
@@ -372,6 +398,30 @@ export const es: Messages = {
     substituted: "sustituida",
     score: "Puntaje",
     notEvaluated: "Señales que no se pudieron evaluar",
+  },
+  reveal: {
+    waiting: "Revelando el destino…",
+    waitingDeep: "Analizando a fondo. Puede tardar unos segundos.",
+    manual: "Este mensaje tiene muchos enlaces cortos. Revela este cuando quieras.",
+    revealButton: "Revelar destino",
+    retryButton: "Reintentar",
+    deepButton: "Análisis profundo",
+    leadsTo: "Lleva a",
+    viaShortener:
+      "Este enlace pasa por un acortador. El resultado es el de la dirección a la que lleva.",
+    safeDestination: "No se encontraron señales de alerta en la dirección a la que lleva.",
+    failedTitle: "No se pudo revelar el destino",
+    failedUnresolved: "El acortador no dejó ver a dónde lleva este enlace.",
+    failedOffline: "Sin conexión no se puede revelar el destino.",
+    failedLimited: "Se hicieron muchas consultas seguidas. Intenta de nuevo en un momento.",
+    failedDeepUnavailable: "El análisis profundo no está disponible ahora. Intenta más tarde.",
+    failedError: "El servicio que revela destinos no respondió.",
+    failedAdvice:
+      "Mientras no se sepa a dónde lleva, trátalo con cuidado. Si no esperabas este mensaje, no lo abras.",
+    sentNotice: "Para revelar el destino, el enlace corto se envió al servicio de OjoLink.",
+    policyLink: "Política de privacidad",
+    announceRevealed: "Destino revelado: {level}.",
+    announceFailed: "No se pudo revelar el destino de un enlace.",
   },
   terms: {
     scriptOne: {

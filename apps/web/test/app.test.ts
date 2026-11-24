@@ -177,7 +177,10 @@ describe("showing a warning", () => {
   it("never renders the analyzed link as an active link", async () => {
     render(App);
     await analyze(`${FAKE_BCP} https://bit.ly/abc https://bcp.com.bo/login`);
-    expect(document.querySelectorAll("a")).toHaveLength(0);
+    expect(document.querySelectorAll("article a")).toHaveLength(0);
+    for (const link of document.querySelectorAll("a")) {
+      expect(link.getAttribute("href")).toBe("#ios");
+    }
     expect((cards()[0] as HTMLElement).querySelector(".link code")?.textContent).toBe(FAKE_BCP);
   });
 

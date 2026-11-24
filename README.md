@@ -43,7 +43,7 @@ Ninguno de estos comandos necesita conexión a internet ni una cuenta en ningún
 
 ## Aplicación web
 
-`apps/web` es una página que revisa un enlace o un mensaje completo y muestra un veredicto por cada enlace. Todo se analiza en el dispositivo: no envía ni guarda lo que se pega.
+`apps/web` es una página que revisa un enlace o un mensaje completo y muestra un veredicto por cada enlace. Todo se analiza en el dispositivo: no guarda lo que se pega, y solo envía algo cuando está configurado el resolutor, como se explica más abajo.
 
 Para usarla en local, con recarga automática:
 
@@ -63,6 +63,47 @@ Los dos comandos muestran la dirección local que hay que abrir en el navegador.
 También se le puede pasar un enlace en la dirección, después de `#u=` y codificado. Por ejemplo, agregar `#u=https%3A%2F%2Fbit.ly%2F3xYz` al final de la dirección local abre la página con ese enlace ya analizado. El enlace va en el fragmento y no en la consulta, para que nunca llegue a un servidor.
 
 La aplicación todavía no está publicada.
+
+### Ajustes de compilación
+
+Los dos son opcionales y se leen al construir, desde el entorno o desde un archivo `apps/web/.env.local`:
+
+| Variable                | Para qué sirve                                                                                  |
+| ----------------------- | ----------------------------------------------------------------------------------------------- |
+| `VITE_RESOLVER_URL`     | Dirección del resolutor de enlaces cortos. Sin ella, la app no hace ninguna petición de red     |
+| `VITE_IOS_SHORTCUT_URL` | Enlace de iCloud del Atajo de iOS ya preparado. Sin él, la guía muestra solo los pasos manuales |
+
+`VITE_RESOLVER_URL` tiene que ser una dirección `https`, o `http` en `localhost`. Un valor mal escrito detiene la compilación. La política de seguridad de la página solo permite conectarse a ese origen.
+
+### Qué envía la app y cuándo
+
+Sin resolutor configurado, nada. Con resolutor, lo único que sale del dispositivo es un enlace corto (por ejemplo de `bit.ly`), solo, para preguntar a dónde lleva:
+
+- Al analizar, la app consulta hasta 5 enlaces cortos por su cuenta. Los demás muestran un botón «Revelar destino».
+- El destino que devuelve el resolutor se analiza en el dispositivo, y el resultado que se ve es el de ese destino. La app nunca abre el destino.
+- Si no se pudo revelar, el resultado se muestra como «Precaución», nunca como seguro, con un botón «Reintentar».
+- El botón «Análisis profundo» aparece cuando el intento normal no alcanzó. Solo se envía al pulsarlo.
+
+El único archivo de la app que puede usar la red es `apps/web/src/lib/reveal.ts`; una prueba falla si otro lo intenta.
+
+Para probarlo en local, con el resolutor en una terminal y la app en otra:
+
+```bash
+pnpm --filter @ojolink/resolver dev
+```
+
+```bash
+VITE_RESOLVER_URL=http://localhost:8787 pnpm --filter @ojolink/web dev
+```
+
+En PowerShell, la variable se define antes: `$env:VITE_RESOLVER_URL = "http://localhost:8787"`.
+
+### Compartir desde el teléfono
+
+- **Android:** al instalar la app desde Chrome, OjoLink aparece en el menú de compartir. Lo compartido llega a la ruta `/analizar`, que responde la copia de la app guardada en el dispositivo.
+- **iPhone y iPad:** iOS no deja que una app web reciba lo compartido, así que se usa un Atajo. La app incluye una guía con los pasos, en `#ios`. El Atajo abre la página en Safari.
+
+Los pasos para comprobarlo en teléfonos reales están en [apps/web/COMPATIBILIDAD.md](apps/web/COMPATIBILIDAD.md).
 
 ## Resolutor de enlaces cortos
 

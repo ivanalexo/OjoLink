@@ -39,7 +39,7 @@ export type {
   ShortenerKind,
 } from "./data/index.js";
 export type { Calibration, Thresholds } from "./calibration.js";
-export { describeScript } from "./i18n/index.js";
+export { describeLevel, describeReveal, describeScript } from "./i18n/index.js";
 export type {
   Catalogs,
   LevelMessage,
@@ -47,6 +47,7 @@ export type {
   PartialMessages,
   PresentationLabels,
   ReasonMessages,
+  RevealTexts,
   SignalMessage,
   SignalText,
   Terms,

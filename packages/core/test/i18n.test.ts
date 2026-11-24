@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { es } from "../src/i18n/es.js";
+import { es, REVEAL_TEXTS } from "../src/i18n/es.js";
 import {
+  describeLevel,
+  describeReveal,
   fillTemplate,
   resolveLevelMessage,
   resolveSignalMessage,
@@ -159,6 +161,7 @@ describe("Spanish catalog tone", () => {
     ...Object.values(es.terms ?? {}).flatMap((group) => Object.values(group)),
     ...Object.values(es.reasons ?? {}),
     ...Object.values(es.labels ?? {}),
+    ...Object.values(es.reveal ?? {}),
   ];
 
   it("only references term groups that exist, each with an other entry", () => {
@@ -193,5 +196,27 @@ describe("Spanish catalog tone", () => {
       expect(level.label.trim()).not.toBe("");
       expect(level.description.trim()).not.toBe("");
     }
+  });
+});
+
+describe("reveal texts", () => {
+  it("has a Spanish text for every key", () => {
+    const texts = describeReveal();
+    expect(Object.keys(texts).sort()).toEqual([...REVEAL_TEXTS].sort());
+    for (const key of REVEAL_TEXTS) {
+      expect(texts[key], key).not.toBe(key);
+      expect(texts[key].length, key).toBeGreaterThan(3);
+    }
+  });
+
+  it("falls back to Spanish for a locale that lacks a text", () => {
+    const catalogs: Catalogs = { es, en: { reveal: { retryButton: "Try again" } } };
+    const texts = describeReveal("en", catalogs);
+    expect(texts.retryButton).toBe("Try again");
+    expect(texts.failedTitle).toBe(es.reveal?.failedTitle);
+  });
+
+  it("gives the label of a level without an analysis", () => {
+    expect(describeLevel("caution")).toEqual(es.levels.caution);
   });
 });

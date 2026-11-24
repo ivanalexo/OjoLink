@@ -4,11 +4,13 @@ import type { SignalParams } from "../signals/types.js";
 import {
   es,
   PRESENTATION_LABELS,
+  REVEAL_TEXTS,
   SIGNAL_TEXTS,
   type LevelMessage,
   type Messages,
   type PresentationLabels,
   type ReasonMessages,
+  type RevealTexts,
   type SignalMessage,
   type SignalText,
   type Terms,
@@ -20,6 +22,7 @@ export interface PartialMessages {
   readonly terms?: Terms;
   readonly reasons?: Partial<ReasonMessages>;
   readonly labels?: Partial<PresentationLabels>;
+  readonly reveal?: Partial<RevealTexts>;
 }
 
 export type TermResolver = (group: string, value: string) => string;
@@ -129,12 +132,31 @@ export function resolveLabels(catalogs: Catalogs, locale: string): PresentationL
   return resolved;
 }
 
-export { PRESENTATION_LABELS, SIGNAL_TEXTS };
+/** Label and description of a level, for clients that show one without an analysis result. */
+export function describeLevel(level: Level, locale: string = DEFAULT_LOCALE): LevelMessage {
+  return resolveLevelMessage(DEFAULT_CATALOGS, locale, level);
+}
+
+/** Texts for revealing where a short link leads, in the locale or in Spanish. */
+export function describeReveal(
+  locale: string = DEFAULT_LOCALE,
+  catalogs: Catalogs = DEFAULT_CATALOGS,
+): RevealTexts {
+  const translated = catalogFor(catalogs, locale).reveal;
+  const resolved = {} as Record<keyof RevealTexts, string>;
+  for (const key of REVEAL_TEXTS) {
+    resolved[key] = translated?.[key] ?? es.reveal?.[key] ?? key;
+  }
+  return resolved;
+}
+
+export { PRESENTATION_LABELS, REVEAL_TEXTS, SIGNAL_TEXTS };
 export type {
   LevelMessage,
   Messages,
   PresentationLabels,
   ReasonMessages,
+  RevealTexts,
   SignalMessage,
   SignalText,
   Terms,

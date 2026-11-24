@@ -72,7 +72,14 @@ describe("privacy", () => {
     expect(sources.length).toBeGreaterThan(8);
   });
 
-  it.each(sources)("%s makes no request and stores nothing", (file) => {
+  const NETWORK_MODULE = join("src", "lib", "reveal.ts");
+  const offline = sources.filter((file) => !file.endsWith(NETWORK_MODULE));
+
+  it("lets exactly one source file reach the network", () => {
+    expect(sources.length - offline.length).toBe(1);
+  });
+
+  it.each(offline)("%s makes no request and stores nothing", (file) => {
     expect(readFileSync(file, "utf8")).not.toMatch(forbidden);
   });
 
@@ -115,6 +122,21 @@ describe("privacy", () => {
     expect(manifest.icons.map((icon: { sizes: string }) => icon.sizes)).toEqual(
       expect.arrayContaining(["192x192", "512x512"]),
     );
+  });
+
+  it("registers the share target and answers its route from the device", () => {
+    const manifest = JSON.parse(readFileSync(join(root, "dist", "manifest.webmanifest"), "utf8"));
+    expect(manifest.share_target).toEqual({
+      action: "analizar",
+      method: "GET",
+      params: { title: "title", text: "text", url: "url" },
+    });
+    expect(readFileSync(join(root, "dist", "sw.js"), "utf8")).toMatch(
+      /NavigationRoute\([^)]*createHandlerBoundToURL\("index\.html"\)/,
+    );
+    const page = readFileSync(join(root, "dist", "index.html"), "utf8");
+    expect(readFileSync(join(root, "dist", "analizar.html"), "utf8")).toBe(page);
+    expect(page).not.toMatch(/(?:src|href)="\/(?!\/)/);
   });
 });
 
