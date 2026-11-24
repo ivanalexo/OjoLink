@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "deploy": "wrangler deploy",
     "test": "svelte-check --tsconfig ./tsconfig.json && vitest run",
     "lint": "eslint ."
   },
@@ -24,6 +25,7 @@
     "vite": "^8.3.8",
     "vite-plugin-pwa": "^2.0.0",
     "vitest": "^5.1.1",
-    "workbox-window": "^7.4.1"
+    "workbox-window": "^7.4.1",
+    "wrangler": "^4.165.0"
   }
 }

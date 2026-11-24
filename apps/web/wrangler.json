@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ojolink",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "send_metrics": false,
+  "observability": { "enabled": false },
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

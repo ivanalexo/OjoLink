@@ -2,7 +2,7 @@
 
 Capa preventiva contra phishing: analiza los enlaces antes del clic, en el dispositivo, y explica por qué un enlace es sospechoso. Un mismo motor sirve a una extensión de navegador y a una web instalable (PWA).
 
-El proyecto está en su etapa inicial. Hoy el repositorio contiene el motor de análisis con sus señales de detección, los datos que usa, una primera versión de la aplicación web y el resolutor de enlaces cortos, listo para desplegar. La extensión de navegador todavía no existe.
+El proyecto está en su etapa inicial. Hoy el repositorio contiene el motor de análisis con sus señales de detección, los datos que usa, la aplicación web y el resolutor de enlaces cortos, ambos publicados en Cloudflare. La extensión de navegador todavía no existe.
 
 ## Requisitos
 
@@ -62,7 +62,20 @@ Los dos comandos muestran la dirección local que hay que abrir en el navegador.
 
 También se le puede pasar un enlace en la dirección, después de `#u=` y codificado. Por ejemplo, agregar `#u=https%3A%2F%2Fbit.ly%2F3xYz` al final de la dirección local abre la página con ese enlace ya analizado. El enlace va en el fragmento y no en la consulta, para que nunca llegue a un servidor.
 
-La aplicación todavía no está publicada.
+### Publicar
+
+La aplicación se publica en Cloudflare como un Worker que solo sirve archivos estáticos (`apps/web/wrangler.json`). El plan gratuito alcanza.
+
+```bash
+pnpm build
+pnpm --filter @ojolink/web run deploy
+```
+
+El primer comando construye la app con los ajustes de `apps/web/.env.local`. El segundo sube `apps/web/dist` y muestra la dirección pública, que termina en `workers.dev`. Hace falta haber iniciado sesión antes con `pnpm --filter @ojolink/web exec wrangler login`.
+
+Después de publicar conviene abrir la dirección y revisar un enlace corto, para comprobar que la app llega al resolutor. Para volver a la versión anterior: `pnpm --filter @ojolink/web exec wrangler rollback`.
+
+Las cabeceras de seguridad de la página publicada están en `apps/web/public/_headers`.
 
 ### Ajustes de compilación
 
