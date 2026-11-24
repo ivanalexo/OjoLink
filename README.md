@@ -2,7 +2,7 @@
 
 Capa preventiva contra phishing: analiza los enlaces antes del clic, en el dispositivo, y explica por qué un enlace es sospechoso. Un mismo motor sirve a una extensión de navegador y a una web instalable (PWA).
 
-El proyecto está en su etapa inicial. Hoy el repositorio contiene el motor de análisis con sus señales de detección, los datos que usa, la aplicación web y el resolutor de enlaces cortos, ambos publicados en Cloudflare, y el armazón de la extensión de navegador, que todavía no marca enlaces.
+El proyecto está en su etapa inicial. Hoy el repositorio contiene el motor de análisis con sus señales de detección, los datos que usa, la aplicación web y el resolutor de enlaces cortos, ambos publicados en Cloudflare, y la extensión de navegador, que ya marca los enlaces sospechosos en el correo pero todavía no bloquea el clic.
 
 ## Requisitos
 
@@ -212,7 +212,23 @@ Para volver a la versión anterior: `pnpm --filter @ojolink/resolver exec wrangl
 
 ## Extensión de navegador
 
-`apps/extension` es una extensión Manifest V3 para Chrome, Edge y Brave, construida con WXT. Hoy es solo el armazón: se instala, carga el motor en las páginas de correo y deja fijado su modelo de permisos. Todavía no marca enlaces ni muestra avisos.
+`apps/extension` es una extensión Manifest V3 para Chrome, Edge y Brave, construida con WXT. Revisa cada enlace de la página con el mismo motor que la app web y pone una marca junto a los sospechosos: «Peligro», «Precaución» o «Destino oculto», con un ícono y su color. Al pasar el mouse, o al llegar con el teclado, muestra una frase con el motivo.
+
+Para que se note que revisó la página aunque no haya nada sospechoso, da dos señales más:
+
+- Un indicador abajo, al centro de la página: «OjoLink · 12 enlaces revisados, sin señales de alerta», o cuántos tienen aviso. A los pocos segundos se reduce a «OjoLink» con un número.
+- Al dejar el mouse sobre cualquier enlace revisado, sea texto, botón o imagen, una nota dice su resultado y a qué sitio lleva de verdad.
+
+La extensión nunca dice que un enlace es seguro: dice que no le encontró señales de alerta.
+
+Límites de hoy:
+
+- No bloquea el clic ni muestra el aviso completo. Un enlace marcado se abre como siempre.
+- No revela a dónde lleva un enlace corto.
+- No revisa enlaces dentro de marcos. Gmail y Outlook muestran el mensaje en la página principal, pero un correo web que use marcos no mostrará marcas.
+- No conoce todavía los dominios propios de quien la usa.
+
+La marca no cambia el mensaje: no altera la dirección ni el texto del enlace, no entra en lo que se copia y no aparece en un correo que se está escribiendo. Los enlaces se buscan por lo que son, sin depender de los nombres internos de Gmail u Outlook.
 
 ### Dónde corre
 

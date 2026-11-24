@@ -4,6 +4,12 @@ export const strings = {
   name: "OjoLink",
   description:
     "Revisa los enlaces de tu correo antes de que los abras. Todo se analiza en tu equipo.",
+  checkedOne: "1 enlace revisado",
+  checkedMany: "{count} enlaces revisados",
+  noSigns: "sin señales de alerta",
+  flaggedOne: "1 con aviso",
+  flaggedMany: "{count} con avisos",
+  leadsTo: "Lleva a {host}.",
   optionsTitle: "Sitios donde funciona OjoLink",
   defaultHeading: "Siempre activo",
   defaultIntro: "OjoLink revisa los enlaces en estos sitios de correo desde que se instala.",

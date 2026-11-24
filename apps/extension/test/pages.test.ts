@@ -143,20 +143,20 @@ describe("options page", () => {
 });
 
 describe("page script", () => {
-  it("changes nothing in the page and exposes nothing to it", async () => {
-    vi.stubGlobal("chrome", { runtime: { id: "test", getManifest: () => ({ version: "9.9.9" }) } });
-    const debug = vi.spyOn(console, "debug").mockImplementation(() => undefined);
-    document.body.innerHTML = '<a href="https://bcp.com.bo.verifica.net/">Entrar</a>';
-    const before = document.documentElement.outerHTML;
+  it("marks a dangerous link, leaves a safe one alone, and exposes nothing to the page", async () => {
+    document.body.innerHTML =
+      '<p><a href="https://bcp.com.bo.verifica.net/">Entrar</a> <a href="https://www.lostiempos.com/">Noticias</a></p>';
     const globals = new Set(Object.keys(window));
+    const debug = vi.spyOn(console, "debug").mockImplementation(() => undefined);
 
     const { default: script } = await import("../entrypoints/content.ts");
     await script.main({} as never);
+    await new Promise((resolve) => setTimeout(resolve, 80));
 
-    expect(document.documentElement.outerHTML).toBe(before);
+    const marks = document.querySelectorAll("ojolink-mark");
+    expect(marks).toHaveLength(1);
+    expect(marks[0]?.previousElementSibling?.textContent).toBe("Entrar");
     expect(Object.keys(window).filter((key) => !globals.has(key))).toEqual([]);
-    expect(debug).toHaveBeenCalledTimes(1);
-    expect(debug).toHaveBeenCalledWith("OjoLink 9.9.9: engine ready, self-check danger");
-    vi.unstubAllGlobals();
+    expect(debug).not.toHaveBeenCalled();
   });
 });

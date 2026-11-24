@@ -10,7 +10,6 @@ import {
   REQUIRED_HOSTS,
 } from "../src/permissions.ts";
 import { PAGE_SCRIPT } from "../src/registration.ts";
-import { describeSelfCheck, SELF_CHECK_LINK, selfCheck } from "../src/self-check.ts";
 import { DEFAULT_PATTERNS } from "../src/sites.ts";
 
 const root = process.cwd();
@@ -166,7 +165,7 @@ describe("no network", () => {
   ];
 
   it("has source files to check", () => {
-    expect(sources.length).toBeGreaterThanOrEqual(9);
+    expect(sources.length).toBeGreaterThanOrEqual(14);
   });
 
   it.each(sources)("%s makes no request and loads no remote script", (file) => {
@@ -185,7 +184,6 @@ describe("no network", () => {
       "mail.google.com",
       "outlook.office.com",
       "outlook.live.com",
-      "bcp.com.bo.verifica.net",
     ]);
     const hosts = new Set<string>();
     for (const file of files(output, [".js", ".html", ".css", ".json"])) {
@@ -200,17 +198,24 @@ describe("no network", () => {
 });
 
 describe("the engine inside the extension", () => {
-  it("gives the self-check link the verdict the web app gives", () => {
-    const result = analyze(SELF_CHECK_LINK);
-    expect(result.analyzed && result.level).toBe("danger");
-    expect(selfCheck()).toBe("danger");
-    expect(describeSelfCheck("1.2.3")).toBe("OjoLink 1.2.3: engine ready, self-check danger");
-  });
-
-  it("is bundled into the page script", () => {
+  it("is bundled into the page script, with its data and its texts", () => {
     const script = readFileSync(join(output, PAGE_SCRIPT), "utf8");
     expect(script).toContain("bcp.com.bo");
-    expect(script).toContain("engine ready");
+    expect(script).toContain("Destino oculto");
+    expect(script).toContain("ojolink-mark");
     expect(script.length).toBeGreaterThan(100_000);
+  });
+
+  it("judges a link as the web app does", () => {
+    const result = analyze("https://bcp.com.bo.verifica.net/");
+    expect(result.analyzed && result.level).toBe("danger");
+  });
+
+  it("writes nothing to the console", () => {
+    for (const file of files(join(root, "src"), [".ts"]).concat(
+      files(join(root, "entrypoints"), [".ts"]),
+    )) {
+      expect(readFileSync(file, "utf8"), file).not.toMatch(/console\.\w+\(/);
+    }
   });
 });
