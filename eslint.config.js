@@ -13,6 +13,8 @@ export default tseslint.config(
       "**/.turbo/**",
       "**/coverage/**",
       "**/.wrangler/**",
+      "**/.output/**",
+      "**/.wxt/**",
     ],
   },
   js.configs.recommended,
@@ -31,6 +33,14 @@ export default tseslint.config(
   {
     files: ["apps/web/**"],
     languageOptions: { globals: globals.browser },
+  },
+  {
+    files: ["apps/extension/**"],
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+  },
+  {
+    files: ["apps/extension/src/**", "apps/extension/entrypoints/**"],
+    rules: { "no-console": "error" },
   },
   {
     files: ["**/*.svelte", "**/*.svelte.ts"],

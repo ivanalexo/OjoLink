@@ -2,7 +2,7 @@
 
 Capa preventiva contra phishing: analiza los enlaces antes del clic, en el dispositivo, y explica por qué un enlace es sospechoso. Un mismo motor sirve a una extensión de navegador y a una web instalable (PWA).
 
-El proyecto está en su etapa inicial. Hoy el repositorio contiene el motor de análisis con sus señales de detección, los datos que usa, la aplicación web y el resolutor de enlaces cortos, ambos publicados en Cloudflare. La extensión de navegador todavía no existe.
+El proyecto está en su etapa inicial. Hoy el repositorio contiene el motor de análisis con sus señales de detección, los datos que usa, la aplicación web y el resolutor de enlaces cortos, ambos publicados en Cloudflare, y el armazón de la extensión de navegador, que todavía no marca enlaces.
 
 ## Requisitos
 
@@ -37,6 +37,7 @@ Ninguno de estos comandos necesita conexión a internet ni una cuenta en ningún
 | `packages/test-corpus` | Corpus de calibración y su reporte (`@ojolink/test-corpus`) |
 | `apps/web`             | Aplicación web instalable (`@ojolink/web`)                  |
 | `apps/resolver`        | Resolutor de enlaces cortos (`@ojolink/resolver`)           |
+| `apps/extension`       | Extensión de navegador (`@ojolink/extension`)               |
 | `tools/build-data`     | Generador de los datos del motor (`@ojolink/build-data`)    |
 | `architecture/`        | Requerimientos, arquitectura y plan de tareas, en español   |
 | `openspec/`            | Changes y specs de OpenSpec, en inglés                      |
@@ -208,6 +209,48 @@ El segundo comando muestra la dirección pública, que termina en `workers.dev`.
 4. Que una petición con `"deep": true` para un enlace que redirige con código devuelve `"method": "headless"`, y que en el panel la sesión del navegador aparece cerrada. Las pruebas automáticas usan un navegador simulado, así que esta es la única comprobación con uno real.
 
 Para volver a la versión anterior: `pnpm --filter @ojolink/resolver exec wrangler rollback`.
+
+## Extensión de navegador
+
+`apps/extension` es una extensión Manifest V3 para Chrome, Edge y Brave, construida con WXT. Hoy es solo el armazón: se instala, carga el motor en las páginas de correo y deja fijado su modelo de permisos. Todavía no marca enlaces ni muestra avisos.
+
+### Dónde corre
+
+Desde que se instala, solo en tres sitios: `mail.google.com`, `outlook.office.com` y `outlook.live.com`. Nunca pide acceso a todos los sitios.
+
+Quien la usa puede agregar otro correo web, uno a la vez, desde la página de opciones de la extensión. Cada sitio necesita su acción y el aviso de permiso del propio navegador, y se puede quitar cuando quiera.
+
+### Permisos
+
+| Permiso                            | Para qué                                                                                               |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `storage`                          | Recordar los ajustes en el equipo. No se sincroniza con ningún servidor                                |
+| `scripting`                        | Revisar enlaces en un sitio que la persona agregó, además de los tres por defecto                      |
+| Acceso a los tres sitios de correo | Revisar los enlaces de los mensajes                                                                    |
+| `https://*/*`, opcional            | Permite agregar un sitio a la vez. Por sí solo no concede nada: el navegador no lo muestra al instalar |
+
+No usa `tabs`, `history`, `cookies`, `downloads`, `webRequest` ni `<all_urls>`. Los motivos están en `apps/extension/src/permissions.ts`, y `pnpm test` falla si el paquete declara un permiso que no figure ahí.
+
+La extensión no hace ninguna petición de red ni carga código de fuera de su paquete. El motor va dentro.
+
+### Comandos
+
+```bash
+pnpm --filter @ojolink/extension build
+pnpm --filter @ojolink/extension test
+pnpm --filter @ojolink/extension dev
+pnpm --filter @ojolink/extension zip
+```
+
+`build` deja el paquete en `apps/extension/.output/chrome-mv3`. `dev` abre un navegador con la extensión cargada y la recarga al guardar. `zip` genera el archivo para una tienda de extensiones.
+
+### Cargarla en tu navegador
+
+1. Ejecuta `pnpm build`.
+2. Abre `chrome://extensions` (o `edge://extensions`, `brave://extensions`) y activa el «Modo de desarrollador».
+3. Pulsa «Cargar descomprimida» y elige `apps/extension/.output/chrome-mv3`.
+
+Los pasos para comprobarla en cada navegador están en [apps/extension/COMPATIBILIDAD.md](apps/extension/COMPATIBILIDAD.md).
 
 ## Datos
 
