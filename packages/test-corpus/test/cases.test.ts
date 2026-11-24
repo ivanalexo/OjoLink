@@ -12,7 +12,7 @@ const byId = (id: string) => {
 };
 
 describe("fixed cases of the warning text table", () => {
-  it("has one case per row: four active and three pending", () => {
+  it("has one case per row: six active and one pending", () => {
     expect(cases.map((fixed) => fixed.row)).toEqual([
       "Alfabetos mezclados",
       "Todo cirílico",
@@ -24,11 +24,7 @@ describe("fixed cases of the warning text table", () => {
     ]);
     expect(
       cases.filter((fixed) => fixed.pending).map((fixed) => [fixed.id, fixed.pending?.change]),
-    ).toEqual([
-      ["todo-cirilico", "protected-domains-global"],
-      ["typosquatting", "protected-domains-global"],
-      ["texto-distinto-del-destino", "signal-link-text-mismatch"],
-    ]);
+    ).toEqual([["texto-distinto-del-destino", "signal-link-text-mismatch"]]);
   });
 
   it("writes lookalike characters as escapes", () => {

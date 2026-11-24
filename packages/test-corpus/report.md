@@ -8,10 +8,10 @@ Most phishing samples in this corpus were built by hand to show one technique ea
 
 | Target | Measured | Limit | Result |
 | --- | --- | --- | --- |
-| Legitimate samples at danger | 2 of 394 (2 accepted as exceptions) | 0 outside exceptions | met |
-| Legitimate samples at caution, not counting hosting pages and near-neighbour names | 0.0% (0 of 329) | at most 5.0% | met |
-| Real pages of protected domains at safe | 72 of 72 | all | met |
-| Covered phishing samples with a level other than safe | 100.0% (86 of 86) | at least 90.0% | met |
+| Legitimate samples at danger | 2 of 760 (2 accepted as exceptions) | 0 outside exceptions | met |
+| Legitimate samples at caution, not counting hosting pages and near-neighbour names | 0.0% (0 of 627) | at most 5.0% | met |
+| Real pages of protected domains at safe | 370 of 370 | all | met |
+| Covered phishing samples with a level other than safe | 100.0% (121 of 121) | at least 90.0% | met |
 
 Every check passes.
 
@@ -19,16 +19,18 @@ Every check passes.
 
 | Label | Kind | Samples | Safe | Hidden destination | Caution | Danger |
 | --- | --- | --- | --- | --- | --- | --- |
-| legitimate | protected | 72 | 72 | 0 | 0 | 0 |
+| legitimate | protected | 370 | 370 | 0 | 0 | 0 |
 | legitimate | general | 193 | 193 | 0 | 0 | 0 |
 | legitimate | idn | 24 | 24 | 0 | 0 | 0 |
 | legitimate | tracker | 20 | 12 | 8 | 0 | 0 |
 | legitimate | shortener | 20 | 4 | 16 | 0 | 0 |
 | legitimate | hosting | 35 | 3 | 0 | 30 | 2 |
-| legitimate | near-neighbour | 30 | 25 | 0 | 5 | 0 |
-| phishing | homograph | 15 | 0 | 0 | 0 | 15 |
-| phishing | subdomain | 10 | 0 | 0 | 4 | 6 |
-| phishing | typosquat | 16 | 2 | 0 | 14 | 0 |
+| legitimate | near-neighbour | 58 | 25 | 0 | 33 | 0 |
+| legitimate | brand-word | 40 | 37 | 0 | 3 | 0 |
+| phishing | homograph | 22 | 0 | 0 | 0 | 22 |
+| phishing | subdomain | 15 | 0 | 0 | 4 | 11 |
+| phishing | typosquat | 24 | 2 | 0 | 22 | 0 |
+| phishing | combosquat | 15 | 0 | 0 | 4 | 11 |
 | phishing | hosting | 13 | 0 | 0 | 7 | 6 |
 | phishing | mixed-script | 6 | 0 | 0 | 0 | 6 |
 | phishing | invisible-characters | 12 | 0 | 0 | 4 | 8 |
@@ -38,14 +40,14 @@ Every check passes.
 | phishing | hidden-destination | 3 | 0 | 3 | 0 | 0 |
 | phishing | out-of-reach | 4 | 4 | 0 | 0 | 0 |
 
-Legitimate: 394 (minimum 200). Phishing the engine covers: 86 (minimum 50). Out of reach: 6.
+Legitimate: 760 (minimum 200). Phishing the engine covers: 121 (minimum 50). Out of reach: 6.
 
 ## Real and constructed samples
 
 | Source | Covered phishing samples | Detected | Missed |
 | --- | --- | --- | --- |
 | real | 2 | 2 | 0 |
-| constructed | 84 | 84 | 0 |
+| constructed | 119 | 119 | 0 |
 
 ## Signals
 
@@ -53,9 +55,10 @@ Legitimate samples marked: legitimate samples where the signal triggered. Missed
 
 | Signal | Legitimate samples marked | Of them, wrong results | Phishing samples of its technique | Missed |
 | --- | --- | --- | --- | --- |
-| homograph | 0 | 0 | 15 | 0 |
-| subdomain | 0 | 0 | 10 | 0 |
-| typosquat | 5 | 0 | 14 | 0 |
+| homograph | 0 | 0 | 22 | 0 |
+| subdomain | 0 | 0 | 15 | 0 |
+| typosquat | 34 | 0 | 22 | 0 |
+| combosquat | 2 | 0 | 15 | 0 |
 | hosting | 32 | 2 | 13 | 0 |
 | mixed-script | 0 | 0 | 6 | 0 |
 | invisible-characters | 0 | 0 | 12 | 0 |
@@ -68,28 +71,30 @@ Legitimate samples marked: legitimate samples where the signal triggered. Missed
 
 | Value | Now | Phishing samples that trigger it | Legitimate samples that trigger it | Reason |
 | --- | --- | --- | --- | --- |
-| threshold: caution | 30 |  |  | Equal to the lowest weight, so any risk signal alone gives at least caution. Measured: 0 of 329 legitimate samples outside hosting pages and near-neighbour names reach it. |
-| threshold: danger | 70 |  |  | Signals that prove an imitation alone (70 or more) reach it alone; a typo-distance match (60) does not, because real names exist one letter away. Measured: 2 of 394 legitimate samples reach it, both accepted exceptions, and 44 of 86 covered phishing samples do. |
-| homograph/letters-one | 90 | 3 | 0 | Imitating a protected domain with lookalike characters has no innocent use, so it reaches danger alone. Measured: 3 phishing samples trigger it, 0 of 394 legitimate ones, including 24 internationalized domains. |
-| homograph/letters-many | 90 | 5 | 0 | Imitating a protected domain with lookalike characters has no innocent use, so it reaches danger alone. Measured: 5 phishing samples trigger it, 0 of 394 legitimate ones, including 24 internationalized domains. |
-| homograph/whole-script | 90 | 2 | 0 | Imitating a protected domain with lookalike characters has no innocent use, so it reaches danger alone. Measured: 2 phishing samples trigger it, 0 of 394 legitimate ones, including 24 internationalized domains. |
-| homograph/lookalike | 90 | 5 | 0 | Imitating a protected domain with lookalike characters has no innocent use, so it reaches danger alone. Measured: 5 phishing samples trigger it, 0 of 394 legitimate ones, including 24 internationalized domains. |
-| typosquat/changed | 60 | 3 | 2 | One letter away from a protected domain is how a typo domain looks, but real names sit there too, so it stays under danger and gives caution. Measured: 3 phishing samples, 2 legitimate near-neighbour samples, all at caution; the 25 real organizations' names close to a protected domain trigger nothing. |
-| typosquat/extra | 60 | 2 | 1 | One letter away from a protected domain is how a typo domain looks, but real names sit there too, so it stays under danger and gives caution. Measured: 2 phishing samples, 1 legitimate near-neighbour samples, all at caution; the 25 real organizations' names close to a protected domain trigger nothing. |
-| typosquat/missing | 60 | 2 | 2 | One letter away from a protected domain is how a typo domain looks, but real names sit there too, so it stays under danger and gives caution. Measured: 2 phishing samples, 2 legitimate near-neighbour samples, all at caution; the 25 real organizations' names close to a protected domain trigger nothing. |
-| typosquat/swapped | 60 | 2 | 0 | One letter away from a protected domain is how a typo domain looks, but real names sit there too, so it stays under danger and gives caution. Measured: 2 phishing samples, 0 legitimate near-neighbour samples, all at caution; the 25 real organizations' names close to a protected domain trigger nothing. |
+| threshold: caution | 30 |  |  | Equal to the lowest weight, so any risk signal alone gives at least caution. Measured: 0 of 625 legitimate samples outside hosting pages, near-neighbour names, and names that contain a brand reach it. |
+| threshold: danger | 70 |  |  | Signals that prove an imitation alone (70 or more) reach it alone; a typo-distance match (60) and a brand name beside a neutral word (40) do not, because real names exist there. Measured: 2 of 760 legitimate samples reach it, both accepted exceptions, and 67 of 121 covered phishing samples do. |
+| homograph/letters-one | 90 | 6 | 0 | Imitating a protected domain with lookalike characters has no innocent use, so it reaches danger alone. Measured: 6 phishing samples trigger it, 0 of 760 legitimate ones, including 24 internationalized domains and 368 real pages of protected domains. |
+| homograph/letters-many | 90 | 9 | 0 | Imitating a protected domain with lookalike characters has no innocent use, so it reaches danger alone. Measured: 9 phishing samples trigger it, 0 of 760 legitimate ones, including 24 internationalized domains and 368 real pages of protected domains. |
+| homograph/whole-script | 90 | 2 | 0 | Imitating a protected domain with lookalike characters has no innocent use, so it reaches danger alone. Measured: 2 phishing samples trigger it, 0 of 760 legitimate ones, including 24 internationalized domains and 368 real pages of protected domains. |
+| homograph/lookalike | 90 | 10 | 0 | Imitating a protected domain with lookalike characters has no innocent use, so it reaches danger alone. Measured: 10 phishing samples trigger it, 0 of 760 legitimate ones, including 24 internationalized domains and 368 real pages of protected domains. |
+| typosquat/changed | 60 | 4 | 15 | One letter away from a protected domain is how a typo domain looks, but real names sit there too, so it stays under danger and gives caution. Measured: 4 phishing samples and 15 legitimate ones, all at caution. Of 58 real names close to a protected domain, 25 trigger nothing; the rest are ordinary words one letter from a brand, such as cloud.com beside icloud.com. |
+| typosquat/extra | 60 | 4 | 9 | One letter away from a protected domain is how a typo domain looks, but real names sit there too, so it stays under danger and gives caution. Measured: 4 phishing samples and 9 legitimate ones, all at caution. Of 58 real names close to a protected domain, 25 trigger nothing; the rest are ordinary words one letter from a brand, such as cloud.com beside icloud.com. |
+| typosquat/missing | 60 | 5 | 10 | One letter away from a protected domain is how a typo domain looks, but real names sit there too, so it stays under danger and gives caution. Measured: 5 phishing samples and 10 legitimate ones, all at caution. Of 58 real names close to a protected domain, 25 trigger nothing; the rest are ordinary words one letter from a brand, such as cloud.com beside icloud.com. |
+| typosquat/swapped | 60 | 4 | 0 | One letter away from a protected domain is how a typo domain looks, but real names sit there too, so it stays under danger and gives caution. Measured: 4 phishing samples and 0 legitimate ones, all at caution. Of 58 real names close to a protected domain, 25 trigger nothing; the rest are ordinary words one letter from a brand, such as cloud.com beside icloud.com. |
 | typosquat/ending | 60 | 3 | 0 | A protected name under a mistyped ending such as con.bo. Same weight as the other one-slip variants. Measured: 3 phishing samples, 0 legitimate ones. |
 | typosquat/two | 40 | 2 | 0 | Two slips are weaker evidence than one, so it gives caution with room to spare. Measured: 2 phishing samples, 0 legitimate ones. |
+| combosquat/brand | 40 | 4 | 2 | A brand's name beside a neutral word is how a combination domain looks, but fan sites, resellers, and the brand's own extra domains look the same, so it gives caution and the text says it may be another site. Measured: 4 phishing samples and 2 legitimate ones (netflix-codes.com and paypal-community.com), all at caution. |
+| combosquat/lure | 70 | 11 | 0 | A brand's name beside a lure word such as «seguridad» or «verificar», in a domain that is not the brand's, is the shape of a phishing address, so it reaches danger alone. Measured: 11 phishing samples, 0 of 760 legitimate ones. Brands that are common words or short names trigger only in this variant. |
 | hosting/plain | 30 | 3 | 21 | Anyone can publish on these services, and most pages on them are honest, so the lowest weight that still shows a mark. Measured: 21 of 35 legitimate hosting samples and 3 phishing samples; none at danger. |
 | hosting/one-word | 50 | 2 | 7 | One lure word in the publisher's name is common in honest pages. Measured: 7 legitimate samples and 2 phishing samples, all at caution. |
 | hosting/two-words | 50 | 2 | 2 | Two lure words without a brand name appear in honest pages too, so it stays at caution. Measured: 2 legitimate samples and 2 phishing samples. |
 | hosting/words | 70 | 6 | 2 | Three lure words, or a brand name beside a lure word, is the shape of the real phishing email of 19 November 2026, so it reaches danger alone. Measured: 6 phishing samples, 2 of them real, and 2 constructed legitimate samples that are accepted exceptions. |
-| subdomain/domain | 80 | 6 | 0 | A whole protected domain at the start of another site's name has no innocent use. Measured: 6 phishing samples, 0 of 394 legitimate ones. |
+| subdomain/domain | 80 | 11 | 0 | A whole protected domain at the start of another site's name has no innocent use. Measured: 11 phishing samples, 0 of 760 legitimate ones. |
 | subdomain/suffix | 50 | 2 | 0 | The state's ending inside another site's name, with no protected domain named: suspicious, not proof. Measured: 2 phishing samples, 0 legitimate ones. |
 | subdomain/suffix-lookalike | 50 | 2 | 0 | An ending that looks like the state's. A registry could hand it out honestly, so it gives caution. Measured: 2 phishing samples, 0 legitimate ones. |
-| mixed-script/one | 80 | 5 | 0 | A name that mixes alphabets has no innocent use in the corpus, so it reaches danger alone. Measured: 5 phishing samples, 0 of 394 legitimate ones. |
-| mixed-script/many | 80 | 7 | 0 | A name that mixes alphabets has no innocent use in the corpus, so it reaches danger alone. Measured: 7 phishing samples, 0 of 394 legitimate ones. |
-| mixed-script/several | 80 | 2 | 0 | A name that mixes alphabets has no innocent use in the corpus, so it reaches danger alone. Measured: 2 phishing samples, 0 of 394 legitimate ones. |
+| mixed-script/one | 80 | 7 | 0 | A name that mixes alphabets has no innocent use in the corpus, so it reaches danger alone. Measured: 7 phishing samples, 0 of 760 legitimate ones. |
+| mixed-script/many | 80 | 7 | 0 | A name that mixes alphabets has no innocent use in the corpus, so it reaches danger alone. Measured: 7 phishing samples, 0 of 760 legitimate ones. |
+| mixed-script/several | 80 | 2 | 0 | A name that mixes alphabets has no innocent use in the corpus, so it reaches danger alone. Measured: 2 phishing samples, 0 of 760 legitimate ones. |
 | invisible-characters/host-one | 80 | 2 | 0 | A character nobody can see inside the name of the site, or in the text of the link, has no innocent use. Measured: 2 phishing samples, 0 of 394 legitimate ones. |
 | invisible-characters/host-many | 80 | 2 | 0 | A character nobody can see inside the name of the site, or in the text of the link, has no innocent use. Measured: 2 phishing samples, 0 of 394 legitimate ones. |
 | invisible-characters/text-one | 80 | 2 | 0 | A character nobody can see inside the name of the site, or in the text of the link, has no innocent use. Measured: 2 phishing samples, 0 of 394 legitimate ones. |
@@ -116,12 +121,21 @@ Legitimate samples marked: legitimate samples where the signal triggered. Missed
 | hosting-page-facebook-login-clone-vercel-app | danger | hosting/words | A brand name beside a lure word in the publisher's name is the rule that catches the real phishing sample; a practice project named this way cannot be told apart by its address. |
 | hosting-page-office-update-notes-pages-dev | danger | hosting/words | "Office" counts as a brand name and "update" as a lure word. Both words stay in the list because they are common in phishing against mail accounts; see design.md of test-corpus-calibration. |
 
+## Changes since the baseline
+
+`baseline.json` records the level of every legitimate sample at the last accepted calibration. A sample that rises fails the check until it is resolved by a data change, a weight change, or a recorded exception.
+
+No legitimate sample changed level (760 compared).
+
 ## Legitimate samples marked by a signal
 
 Includes the kinds where the mark is the designed result: hidden destination for trackers and shorteners, caution for hosting pages and near-neighbour names.
 
 | Sample | Kind | Source | Level | Score | Signals | Input |
 | --- | --- | --- | --- | --- | --- | --- |
+| brand-word-www-netflix-codes-com | brand-word | observed | caution | 40 | combosquat/brand | `https://www.netflix-codes.com/` |
+| brand-word-www-paypal-community-com | brand-word | observed | caution | 40 | combosquat/brand | `https://www.paypal-community.com/` |
+| brand-word-www-stripes-com | brand-word | observed | caution | 60 | typosquat/extra | `https://www.stripes.com/` |
 | hosting-android-developers-blogspot-com | hosting | observed | caution | 30 | hosting/plain | `https://android-developers.blogspot.com/` |
 | hosting-facebook-github-io | hosting | observed | caution | 50 | hosting/one-word | `https://facebook.github.io/react-native/` |
 | hosting-google-github-io | hosting | observed | caution | 30 | hosting/plain | `https://google.github.io/styleguide/` |
@@ -154,11 +168,39 @@ Includes the kinds where the mark is the designed result: hidden destination for
 | hosting-swr-vercel-app | hosting | observed | caution | 30 | hosting/plain | `https://swr.vercel.app/` |
 | hosting-tc39-github-io | hosting | observed | caution | 30 | hosting/plain | `https://tc39.github.io/ecma262/` |
 | hosting-the-internet-herokuapp-com | hosting | observed | caution | 30 | hosting/plain | `https://the-internet.herokuapp.com/login` |
+| near-neighbour-apples-com | near-neighbour | observed | caution | 60 | typosquat/extra | `https://apples.com/` |
+| near-neighbour-apply-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://apply.com/` |
 | near-neighbour-banco-com-bo | near-neighbour | constructed | caution | 60 | typosquat/missing | `https://banco.com.bo/` |
 | near-neighbour-bancofin-com-bo | near-neighbour | constructed | caution | 60 | typosquat/changed | `https://bancofin.com.bo/` |
+| near-neighbour-black-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://black.com/` |
+| near-neighbour-bookings-com | near-neighbour | observed | caution | 60 | typosquat/extra | `https://bookings.com/` |
+| near-neighbour-canvas-com | near-neighbour | observed | caution | 60 | typosquat/extra | `https://canvas.com/` |
+| near-neighbour-clara-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://clara.com/` |
+| near-neighbour-cloud-com | near-neighbour | observed | caution | 60 | typosquat/missing | `https://cloud.com/` |
+| near-neighbour-cooking-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://cooking.com/` |
+| near-neighbour-correo-es | near-neighbour | observed | caution | 60 | typosquat/missing | `https://correo.es/` |
+| near-neighbour-discovery-com | near-neighbour | observed | caution | 60 | typosquat/extra | `https://discovery.com/` |
+| near-neighbour-fiber-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://fiber.com/` |
+| near-neighbour-finder-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://finder.com/` |
 | near-neighbour-gestor-bo | near-neighbour | constructed | caution | 60 | typosquat/missing | `https://gestor.bo/` |
 | near-neighbour-gestoria-bo | near-neighbour | constructed | caution | 60 | typosquat/extra | `https://gestoria.bo/` |
+| near-neighbour-humble-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://humble.com/` |
+| near-neighbour-interest-com | near-neighbour | observed | caution | 60 | typosquat/missing | `https://interest.com/` |
+| near-neighbour-kinder-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://kinder.com/` |
+| near-neighbour-ledge-com | near-neighbour | observed | caution | 60 | typosquat/missing | `https://ledge.com/` |
+| near-neighbour-looking-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://looking.com/` |
+| near-neighbour-offices-com | near-neighbour | observed | caution | 60 | typosquat/extra | `https://offices.com/` |
+| near-neighbour-phase-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://phase.com/` |
 | near-neighbour-prodeo-bo | near-neighbour | constructed | caution | 60 | typosquat/changed | `https://prodeo.bo/` |
+| near-neighbour-quota-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://quota.com/` |
+| near-neighbour-revolt-com | near-neighbour | observed | caution | 60 | typosquat/missing | `https://revolt.com/` |
+| near-neighbour-rumble-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://rumble.com/` |
+| near-neighbour-skill-com | near-neighbour | observed | caution | 60 | typosquat/missing | `https://skill.com/` |
+| near-neighbour-snack-com | near-neighbour | observed | caution | 60 | typosquat/changed | `https://snack.com/` |
+| near-neighbour-targets-com | near-neighbour | observed | caution | 60 | typosquat/extra | `https://targets.com/` |
+| near-neighbour-telex-com | near-neighbour | observed | caution | 60 | typosquat/missing | `https://telex.com/` |
+| near-neighbour-tumbler-com | near-neighbour | observed | caution | 60 | typosquat/extra | `https://tumbler.com/` |
+| near-neighbour-window-com | near-neighbour | observed | caution | 60 | typosquat/missing | `https://window.com/` |
 | shortener-amzn-to | shortener | constructed | hidden-destination | 0 | hidden-destination/shortener | `https://amzn.to/3ExAmPl` |
 | shortener-bit-ly | shortener | constructed | hidden-destination | 0 | hidden-destination/shortener | `https://bit.ly/3ExAmPle` |
 | shortener-bit-ly-2 | shortener | constructed | hidden-destination | 0 | hidden-destination/shortener | `bit.ly/x` |
@@ -189,8 +231,8 @@ Includes the kinds where the mark is the designed result: hidden destination for
 | Case | Input | Expected | Got | State |
 | --- | --- | --- | --- | --- |
 | Alfabetos mezclados | `b\u{0441}\u{0440}.com.bo` | danger, homograph | danger, homograph | passes |
-| Todo cirílico | `\u{0430}\u{0440}\u{0440}\u{04CF}\u{0435}.com` | danger, homograph | safe, no signal | pending on protected-domains-global: apple.com is in no embedded pack of protected domains |
-| Typosquatting | `micros0ft.com` | caution, typosquat | safe, no signal | pending on protected-domains-global: microsoft.com is in no embedded pack of protected domains |
+| Todo cirílico | `\u{0430}\u{0440}\u{0440}\u{04CF}\u{0435}.com` | danger, homograph | danger, homograph | passes |
+| Typosquatting | `micros0ft.com` | danger, homograph | danger, homograph | passes |
 | Subdominio engañoso | `bcp.com.bo.verifica.net` | danger, subdomain | danger, subdomain | passes |
 | Texto distinto del destino | `https://example.net/` | danger, link-text-mismatch | safe, no signal | pending on signal-link-text-mismatch: the engine has no signal yet for link text that differs from its destination |
 | Destino oculto | `bit.ly/x` | hidden-destination, hidden-destination | hidden-destination, hidden-destination | passes |

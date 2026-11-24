@@ -48,4 +48,6 @@ export const BENCHMARK_LINKS: readonly string[] = [
   "https://sites.google.com/view/serivciosbandejamensajeriaen/",
   "http://www.google.com/url?q=http%3A%2F%2Fasistenciatecnicaserviciosmensajeria.zya.me%2F&sa=D&sntz=1",
   "https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fbcp.com.bo.verifica.net%2F&data=05",
+  "https://netflix-pago-seguro.com/cuenta",
+  "https://paypalseguridad.com/",
 ];

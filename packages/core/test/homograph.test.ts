@@ -86,7 +86,10 @@ describe("lookalike of a protected domain", () => {
       variant: "whole-script",
       params: { imitated: "apple.com", entity: "Apple", foreignScript: "Cyrillic", count: 5 },
     });
-    expect(hit(`https://${FAKE_APPLE}.com/id`)).toBeNull();
+    expect(hit(`https://${FAKE_APPLE}.com/id`)?.params).toMatchObject({
+      imitated: "apple.com",
+      entity: "Apple",
+    });
   });
 });
 

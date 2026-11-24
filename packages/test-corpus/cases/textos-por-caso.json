@@ -13,23 +13,15 @@
     "input": "\u0430\u0440\u0440\u04cf\u0435.com",
     "expectedLevel": "danger",
     "expectedSignal": "homograph",
-    "expectedTitle": "Este enlace imita a apple.com",
-    "pending": {
-      "change": "protected-domains-global",
-      "reason": "apple.com is in no embedded pack of protected domains"
-    }
+    "expectedTitle": "Este enlace imita a apple.com"
   },
   {
     "id": "typosquatting",
     "row": "Typosquatting",
     "input": "micros0ft.com",
-    "expectedLevel": "caution",
-    "expectedSignal": "typosquat",
-    "expectedTitle": "Este enlace imita a microsoft.com",
-    "pending": {
-      "change": "protected-domains-global",
-      "reason": "microsoft.com is in no embedded pack of protected domains"
-    }
+    "expectedLevel": "danger",
+    "expectedSignal": "homograph",
+    "expectedTitle": "Este enlace imita a microsoft.com"
   },
   {
     "id": "subdominio-enganoso",

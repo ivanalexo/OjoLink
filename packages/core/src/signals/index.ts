@@ -1,4 +1,5 @@
 import { HOSTING_SERVICES, LURE_WORDS, PROTECTED_PACKS, SHORTENERS } from "../data/index.js";
+import { createCombosquatSignal } from "./combosquat.js";
 import { createHomographSignal } from "./homograph.js";
 import { createHostingSignal } from "./hosting.js";
 import { invisibleCharacters } from "./invisible.js";
@@ -12,11 +13,19 @@ import type { Signal } from "./types.js";
 /** The built-in signals in their fixed order, protecting the given user domains too. */
 export function createDefaultSignals(userDomains?: readonly string[]): readonly Signal[] {
   const extra = userDomains && userDomains.length > 0 ? userDomains : undefined;
+  const homograph = createHomographSignal(PROTECTED_PACKS, extra);
+  const subdomain = createSubdomainSignal(PROTECTED_PACKS, extra);
+  const typosquat = createTyposquatSignal(PROTECTED_PACKS, extra);
+  const hosting = createHostingSignal(HOSTING_SERVICES, LURE_WORDS);
   return [
-    createHomographSignal(PROTECTED_PACKS, extra),
-    createSubdomainSignal(PROTECTED_PACKS, extra),
-    createTyposquatSignal(PROTECTED_PACKS, extra),
-    createHostingSignal(HOSTING_SERVICES, LURE_WORDS),
+    homograph,
+    subdomain,
+    typosquat,
+    createCombosquatSignal(PROTECTED_PACKS, LURE_WORDS, extra, {
+      isHosted: (url) => hosting.match(url) !== null,
+      others: [homograph, subdomain, typosquat],
+    }),
+    hosting,
     mixedScript,
     invisibleCharacters,
     credentials,

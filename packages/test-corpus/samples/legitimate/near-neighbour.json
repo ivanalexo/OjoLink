@@ -208,5 +208,201 @@
     "source": "observed",
     "collected": "2026-11-20",
     "note": "Nombre real o palabra corriente a una letra de un dominio protegido."
+  },
+  {
+    "id": "near-neighbour-skill-com",
+    "input": "https://skill.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de skrill.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-revolt-com",
+    "input": "https://revolt.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de revolut.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-canvas-com",
+    "input": "https://canvas.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de canva.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-tumbler-com",
+    "input": "https://tumbler.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de tumblr.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-cloud-com",
+    "input": "https://cloud.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de icloud.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-window-com",
+    "input": "https://window.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de windows.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-interest-com",
+    "input": "https://interest.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de pinterest.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-kinder-com",
+    "input": "https://kinder.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de tinder.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-humble-com",
+    "input": "https://humble.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de bumble.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-rumble-com",
+    "input": "https://rumble.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de bumble.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-snack-com",
+    "input": "https://snack.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de slack.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-black-com",
+    "input": "https://black.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de slack.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-discovery-com",
+    "input": "https://discovery.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de discover.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-looking-com",
+    "input": "https://looking.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de booking.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-cooking-com",
+    "input": "https://cooking.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de booking.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-bookings-com",
+    "input": "https://bookings.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de booking.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-apply-com",
+    "input": "https://apply.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de apple.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-apples-com",
+    "input": "https://apples.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de apple.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-telex-com",
+    "input": "https://telex.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de telmex.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-quota-com",
+    "input": "https://quota.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de quora.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-fiber-com",
+    "input": "https://fiber.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de viber.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-finder-com",
+    "input": "https://finder.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de tinder.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-phase-com",
+    "input": "https://phase.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de chase.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-clara-com",
+    "input": "https://clara.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de claro.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-correo-es",
+    "input": "https://correo.es/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de correos.es, del paquete global."
+  },
+  {
+    "id": "near-neighbour-offices-com",
+    "input": "https://offices.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de office.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-targets-com",
+    "input": "https://targets.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de target.com, del paquete global."
+  },
+  {
+    "id": "near-neighbour-ledge-com",
+    "input": "https://ledge.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre real a una letra de ledger.com, del paquete global."
   }
 ]

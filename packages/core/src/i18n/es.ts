@@ -82,6 +82,12 @@ const TYPOSQUAT_DOUBT = "Puede ser otro sitio que aprovecha el parecido.";
 const TYPOSQUAT_TECHNICAL =
   "Escrito: {written}. Se parece a: {imitated}. Diferencias: {edits}. Sitio real: {realDomain}.";
 
+const COMBOSQUAT_TITLE = "Este enlace usa el nombre de {entity}, pero no es de {imitated}";
+const COMBOSQUAT_FACT =
+  "La dirección incluye la palabra «{word}», pero el sitio es {realDomain}, que no figura entre las direcciones de {entity}.";
+const COMBOSQUAT_TECHNICAL =
+  "Escrito: {host}. Nombre encontrado: {word}. Dirección de {entity}: {imitated}. Palabras de engaño: {count}.";
+
 const HOSTING_TITLE = "Esta página está en un servicio donde cualquiera puede publicar";
 const HOSTING_FACT =
   "Esta página está alojada en {service}, un servicio donde cualquier persona puede publicar. No es el sitio oficial de ninguna empresa.";
@@ -247,6 +253,21 @@ export const es: Messages = {
       explanation: HOSTING_FACT,
       advice: HOSTING_ADVICE,
       technical: HOSTING_TECHNICAL,
+    },
+    "combosquat/brand": {
+      tooltip: "Usa el nombre de {entity}, pero no es {imitated}.",
+      title: COMBOSQUAT_TITLE,
+      explanation: `${COMBOSQUAT_FACT} Puede ser otro sitio que usa ese nombre.`,
+      advice: "Si buscabas a {entity}, escribe {imitated} tú mismo en el navegador.",
+      technical: COMBOSQUAT_TECHNICAL,
+    },
+    "combosquat/lure": {
+      tooltip: "Usa el nombre de {entity} junto a {words}, pero no es {imitated}.",
+      title: COMBOSQUAT_TITLE,
+      explanation: `${COMBOSQUAT_FACT} Además usa {words}, algo común en mensajes que se hacen pasar por un servicio.`,
+      advice:
+        "Te recomendamos no abrirlo. Si esperabas un mensaje de {entity}, escribe {imitated} tú mismo o abre su app.",
+      technical: COMBOSQUAT_TECHNICAL,
     },
     "hosting/one-word": {
       tooltip: "Está en {service}, donde cualquiera puede publicar, y su dirección usa {words}.",

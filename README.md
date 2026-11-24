@@ -204,6 +204,7 @@ El motor usa cuatro conjuntos de datos: los caracteres confundibles de Unicode, 
 | ------------------------- | ------------------------------------------------------- |
 | `unicode/confusables.txt` | Archivo de Unicode (UTS #39), sin modificar             |
 | `protected/<país>.json`   | Entidades protegidas de un país, un archivo por país    |
+| `protected/global.json`   | Marcas que el phishing suplanta en cualquier país       |
 | `shorteners.json`         | Acortadores y dominios de seguimiento                   |
 | `hosting.json`            | Servicios donde cualquiera publica y palabras de engaño |
 
@@ -234,9 +235,36 @@ Cada entidad lleva un registro de verificación. Solo las confirmadas llegan al 
 
 El dominio debe ser el registrable, sin `www` ni otros subdominios: `bcp.com.bo`, no `www.bcp.com.bo`.
 
+### Marcas globales
+
+`protected/global.json` reúne las marcas que más se suplantan: pagos, banca, correo y cuentas, streaming, redes y mensajería, compras, envíos y telefonía. No es un ranking de sitios populares: los primeros puestos de un ranking son sobre todo infraestructura que nadie suplanta en un mensaje.
+
+Usa el mismo formato que el archivo de un país, con dos campos opcionales:
+
+- `names`: los nombres con los que se busca la marca dentro de otras direcciones. Si falta, es el nombre de su dominio (`paypal` para `paypal.com`). Una lista vacía indica que ese dominio no se busca por nombre.
+- `commonWord`: `true` cuando el nombre es una palabra corriente, como `apple` o `amazon`. Esas marcas solo se señalan si la dirección trae además una palabra de engaño.
+
+Los demás dominios oficiales de una marca van en `aliases`, para que el motor nunca tome el sitio real por una imitación: `live.com` y `outlook.com` son de Microsoft.
+
+Cada entrada se confirma de una de dos formas, que se anota en `verification`:
+
+- `"method": "ranking"`: el dominio figura en Majestic Million. Es lo habitual en este archivo.
+- `"method": "site"`: se comprobó en el sitio del dueño, con la dirección consultada en `source`.
+
+Para agregar o corregir una marca, edita el archivo y ejecuta:
+
+```bash
+pnpm --filter @ojolink/build-data refresh:ranking
+pnpm --filter @ojolink/build-data generate
+```
+
+El primer comando usa la red: descarga Majestic Million (unos 80 MB), anota la posición de cada dominio y avisa de los que no encontró. El ranking no se guarda en el repositorio. Majestic pide no descargarlo más de una vez al día. El segundo comando funciona sin red.
+
+Después hay que agregar al corpus una página real de cada dominio nuevo; si falta, `pnpm test` lo nombra.
+
 ### Actualizar los datos de Unicode
 
-Es el único comando que usa la red:
+Usa la red, como el de las marcas globales:
 
 ```bash
 pnpm --filter @ojolink/build-data refresh:unicode latest
@@ -279,12 +307,12 @@ pnpm --filter @ojolink/core size
 
 `packages/test-corpus` guarda enlaces legítimos y de phishing etiquetados. El motor se mide contra ellos, y `pnpm test` falla si deja de cumplir las metas. Por eso un cambio en un peso o un umbral de `packages/core/src/calibration.ts` no pasa sin esta medición.
 
-| Meta                                                                                    | Límite         | Medido (20 nov 2026)     |
-| --------------------------------------------------------------------------------------- | -------------- | ------------------------ |
-| Enlaces legítimos en «peligro»                                                          | 0              | 0 fuera de 2 excepciones |
-| Enlaces legítimos en «precaución», sin contar páginas de alojamiento ni nombres vecinos | 5 % como mucho | 0 % (0 de 329)           |
-| Páginas reales de dominios protegidos en «seguro»                                       | todas          | 72 de 72                 |
-| Phishing que el motor cubre con un nivel distinto de «seguro»                           | 90 % o más     | 100 % (86 de 86)         |
+| Meta                                                                                                                     | Límite         | Medido (23 nov 2026)     |
+| ------------------------------------------------------------------------------------------------------------------------ | -------------- | ------------------------ |
+| Enlaces legítimos en «peligro»                                                                                           | 0              | 0 fuera de 2 excepciones |
+| Enlaces legítimos en «precaución», sin contar páginas de alojamiento, nombres vecinos ni nombres que contienen una marca | 5 % como mucho | 0 % (0 de 625)           |
+| Páginas reales de dominios protegidos en «seguro»                                                                        | todas          | 370 de 370               |
+| Phishing que el motor cubre con un nivel distinto de «seguro»                                                            | 90 % o más     | 100 % (121 de 121)       |
 
 Un límite a tener en cuenta: casi todo el phishing del corpus está construido a mano para mostrar una técnica. La tasa de detección sirve para notar que un cambio rompió una señal. No dice cuánto phishing real detecta el motor. Cada muestra real que llegue vale más que diez construidas.
 
@@ -292,7 +320,7 @@ Un límite a tener en cuenta: casi todo el phishing del corpus está construido 
 
 Cada muestra es un enlace. La etiqueta y el tipo salen de la carpeta y del archivo:
 
-- `samples/legitimate/<tipo>.json`, con los tipos `protected`, `general`, `idn`, `tracker`, `shortener`, `hosting` y `near-neighbour`.
+- `samples/legitimate/<tipo>.json`, con los tipos `protected`, `general`, `idn`, `tracker`, `shortener`, `hosting`, `near-neighbour` y `brand-word` (nombres reales que contienen el de una marca).
 - `samples/phishing/<técnica>.json`, con un archivo por señal del motor, y `out-of-reach.json` para el phishing que ninguna señal local puede detectar.
 
 ```json
@@ -329,6 +357,8 @@ pnpm --filter @ojolink/test-corpus check:dns
 ### Leer el reporte
 
 [packages/test-corpus/report.md](packages/test-corpus/report.md) muestra las metas, el tamaño del corpus por tipo, y por cada señal cuántos enlaces legítimos marcó y cuántos de phishing de su técnica dejó pasar. También lista cada resultado equivocado, las excepciones aceptadas con su motivo, los casos fijos de la tabla «Textos por caso» (los pendientes dicen qué change los destraba) y el motivo de cada peso y umbral, que se guarda en `calibration.json`.
+
+`baseline.json` guarda el nivel de cada muestra legítima en la última calibración aceptada. Si una sube de nivel, por ejemplo al agregar marcas, la comprobación falla y la nombra hasta que se resuelva. Cuando el resultado nuevo se acepta, la línea base se reescribe con `pnpm --filter @ojolink/test-corpus run baseline`.
 
 Si una muestra legítima recibe un nivel equivocado y el proyecto lo acepta, se anota en `exceptions.json` con su motivo. Una excepción que ya no hace falta hace fallar la comprobación, y una página real de un dominio protegido no admite excepción.
 

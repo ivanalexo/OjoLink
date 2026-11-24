@@ -36,7 +36,7 @@ describe("protected domains", () => {
   const domains = bo?.entries.map((entry) => entry.domain) ?? [];
 
   it("ships the Bolivia pack", () => {
-    expect(PROTECTED_PACKS.map((pack) => pack.country)).toEqual(["bo"]);
+    expect(PROTECTED_PACKS.map((pack) => pack.country)).toEqual(["bo", "global"]);
     expect(domains).toHaveLength(21);
   });
 

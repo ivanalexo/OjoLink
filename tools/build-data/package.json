@@ -6,6 +6,7 @@
   "scripts": {
     "generate": "node src/generate.ts",
     "refresh:unicode": "node src/refresh-unicode.ts",
+    "refresh:ranking": "node src/refresh-ranking.ts",
     "test": "tsc -p tsconfig.json && vitest run",
     "lint": "eslint ."
   },

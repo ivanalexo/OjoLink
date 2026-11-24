@@ -439,5 +439,2091 @@
     "input": "https://www.segip.gob.bo/nota_prensa/segip-registra-mas-de-6-585-cedulas-de-identidad-emitidas-en-oficinas-del-exterior-durante-agosto-y-septiembre/",
     "source": "observed",
     "collected": "2026-11-20"
+  },
+  {
+    "id": "protected-global-paypal-com",
+    "input": "https://paypal.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de PayPal, del paquete global."
+  },
+  {
+    "id": "protected-global-stripe-com",
+    "input": "https://stripe.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Stripe, del paquete global."
+  },
+  {
+    "id": "protected-global-wise-com",
+    "input": "https://wise.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Wise, del paquete global."
+  },
+  {
+    "id": "protected-global-revolut-com",
+    "input": "https://revolut.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Revolut, del paquete global."
+  },
+  {
+    "id": "protected-global-venmo-com",
+    "input": "https://venmo.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Venmo, del paquete global."
+  },
+  {
+    "id": "protected-global-squareup-com",
+    "input": "https://squareup.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Square, del paquete global."
+  },
+  {
+    "id": "protected-global-westernunion-com",
+    "input": "https://westernunion.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Western Union, del paquete global."
+  },
+  {
+    "id": "protected-global-moneygram-com",
+    "input": "https://moneygram.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de MoneyGram, del paquete global."
+  },
+  {
+    "id": "protected-global-skrill-com",
+    "input": "https://skrill.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Skrill, del paquete global."
+  },
+  {
+    "id": "protected-global-neteller-com",
+    "input": "https://neteller.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Neteller, del paquete global."
+  },
+  {
+    "id": "protected-global-payoneer-com",
+    "input": "https://payoneer.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Payoneer, del paquete global."
+  },
+  {
+    "id": "protected-global-klarna-com",
+    "input": "https://klarna.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Klarna, del paquete global."
+  },
+  {
+    "id": "protected-global-affirm-com",
+    "input": "https://affirm.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Affirm, del paquete global."
+  },
+  {
+    "id": "protected-global-remitly-com",
+    "input": "https://remitly.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Remitly, del paquete global."
+  },
+  {
+    "id": "protected-global-xoom-com",
+    "input": "https://xoom.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Xoom, del paquete global."
+  },
+  {
+    "id": "protected-global-zellepay-com",
+    "input": "https://zellepay.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Zelle, del paquete global."
+  },
+  {
+    "id": "protected-global-paysafecard-com",
+    "input": "https://paysafecard.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de paysafecard, del paquete global."
+  },
+  {
+    "id": "protected-global-visa-com",
+    "input": "https://visa.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Visa, del paquete global."
+  },
+  {
+    "id": "protected-global-mastercard-com",
+    "input": "https://mastercard.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mastercard, del paquete global."
+  },
+  {
+    "id": "protected-global-americanexpress-com",
+    "input": "https://americanexpress.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de American Express, del paquete global."
+  },
+  {
+    "id": "protected-global-amex-com",
+    "input": "https://amex.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de American Express, del paquete global."
+  },
+  {
+    "id": "protected-global-discover-com",
+    "input": "https://discover.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Discover, del paquete global."
+  },
+  {
+    "id": "protected-global-alipay-com",
+    "input": "https://alipay.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Alipay, del paquete global."
+  },
+  {
+    "id": "protected-global-payu-com",
+    "input": "https://payu.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de PayU, del paquete global."
+  },
+  {
+    "id": "protected-global-mercadopago-com",
+    "input": "https://mercadopago.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mercado Pago, del paquete global."
+  },
+  {
+    "id": "protected-global-mercadopago-com-ar",
+    "input": "https://mercadopago.com.ar/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mercado Pago, del paquete global."
+  },
+  {
+    "id": "protected-global-mercadopago-com-br",
+    "input": "https://mercadopago.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mercado Pago, del paquete global."
+  },
+  {
+    "id": "protected-global-mercadopago-com-mx",
+    "input": "https://mercadopago.com.mx/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mercado Pago, del paquete global."
+  },
+  {
+    "id": "protected-global-nequi-com-co",
+    "input": "https://nequi.com.co/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Nequi, del paquete global."
+  },
+  {
+    "id": "protected-global-yape-com-pe",
+    "input": "https://yape.com.pe/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Yape, del paquete global."
+  },
+  {
+    "id": "protected-global-binance-com",
+    "input": "https://binance.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Binance, del paquete global."
+  },
+  {
+    "id": "protected-global-coinbase-com",
+    "input": "https://coinbase.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Coinbase, del paquete global."
+  },
+  {
+    "id": "protected-global-kraken-com",
+    "input": "https://kraken.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Kraken, del paquete global."
+  },
+  {
+    "id": "protected-global-blockchain-com",
+    "input": "https://blockchain.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Blockchain.com, del paquete global."
+  },
+  {
+    "id": "protected-global-metamask-io",
+    "input": "https://metamask.io/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de MetaMask, del paquete global."
+  },
+  {
+    "id": "protected-global-trustwallet-com",
+    "input": "https://trustwallet.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Trust Wallet, del paquete global."
+  },
+  {
+    "id": "protected-global-ledger-com",
+    "input": "https://ledger.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Ledger, del paquete global."
+  },
+  {
+    "id": "protected-global-chase-com",
+    "input": "https://chase.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Chase, del paquete global."
+  },
+  {
+    "id": "protected-global-bankofamerica-com",
+    "input": "https://bankofamerica.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Bank of America, del paquete global."
+  },
+  {
+    "id": "protected-global-wellsfargo-com",
+    "input": "https://wellsfargo.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Wells Fargo, del paquete global."
+  },
+  {
+    "id": "protected-global-citi-com",
+    "input": "https://citi.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Citi, del paquete global."
+  },
+  {
+    "id": "protected-global-citibank-com",
+    "input": "https://citibank.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Citi, del paquete global."
+  },
+  {
+    "id": "protected-global-capitalone-com",
+    "input": "https://capitalone.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Capital One, del paquete global."
+  },
+  {
+    "id": "protected-global-usbank-com",
+    "input": "https://usbank.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de U.S. Bank, del paquete global."
+  },
+  {
+    "id": "protected-global-pnc-com",
+    "input": "https://pnc.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de PNC, del paquete global."
+  },
+  {
+    "id": "protected-global-hsbc-com",
+    "input": "https://hsbc.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de HSBC, del paquete global."
+  },
+  {
+    "id": "protected-global-barclays-co-uk",
+    "input": "https://barclays.co.uk/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Barclays, del paquete global."
+  },
+  {
+    "id": "protected-global-barclays-com",
+    "input": "https://barclays.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Barclays, del paquete global."
+  },
+  {
+    "id": "protected-global-lloydsbank-com",
+    "input": "https://lloydsbank.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Lloyds Bank, del paquete global."
+  },
+  {
+    "id": "protected-global-natwest-com",
+    "input": "https://natwest.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de NatWest, del paquete global."
+  },
+  {
+    "id": "protected-global-ing-com",
+    "input": "https://ing.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de ING, del paquete global."
+  },
+  {
+    "id": "protected-global-deutsche-bank-de",
+    "input": "https://deutsche-bank.de/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Deutsche Bank, del paquete global."
+  },
+  {
+    "id": "protected-global-rbcroyalbank-com",
+    "input": "https://rbcroyalbank.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de RBC, del paquete global."
+  },
+  {
+    "id": "protected-global-scotiabank-com",
+    "input": "https://scotiabank.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Scotiabank, del paquete global."
+  },
+  {
+    "id": "protected-global-scotiabank-com-pe",
+    "input": "https://scotiabank.com.pe/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Scotiabank, del paquete global."
+  },
+  {
+    "id": "protected-global-scotiabank-com-mx",
+    "input": "https://scotiabank.com.mx/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Scotiabank, del paquete global."
+  },
+  {
+    "id": "protected-global-santander-com",
+    "input": "https://santander.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Santander, del paquete global."
+  },
+  {
+    "id": "protected-global-bancosantander-es",
+    "input": "https://bancosantander.es/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Santander, del paquete global."
+  },
+  {
+    "id": "protected-global-santander-com-br",
+    "input": "https://santander.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Santander, del paquete global."
+  },
+  {
+    "id": "protected-global-santander-com-mx",
+    "input": "https://santander.com.mx/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Santander, del paquete global."
+  },
+  {
+    "id": "protected-global-santander-com-ar",
+    "input": "https://santander.com.ar/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Santander, del paquete global."
+  },
+  {
+    "id": "protected-global-santander-cl",
+    "input": "https://banco.santander.cl/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Santander, del paquete global."
+  },
+  {
+    "id": "protected-global-bbva-com",
+    "input": "https://bbva.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de BBVA, del paquete global."
+  },
+  {
+    "id": "protected-global-bbva-es",
+    "input": "https://bbva.es/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de BBVA, del paquete global."
+  },
+  {
+    "id": "protected-global-bbva-mx",
+    "input": "https://bbva.mx/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de BBVA, del paquete global."
+  },
+  {
+    "id": "protected-global-bbva-com-ar",
+    "input": "https://bbva.com.ar/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de BBVA, del paquete global."
+  },
+  {
+    "id": "protected-global-bbva-pe",
+    "input": "https://bbva.pe/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de BBVA, del paquete global."
+  },
+  {
+    "id": "protected-global-bbva-com-co",
+    "input": "https://bbva.com.co/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de BBVA, del paquete global."
+  },
+  {
+    "id": "protected-global-caixabank-es",
+    "input": "https://caixabank.es/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de CaixaBank, del paquete global."
+  },
+  {
+    "id": "protected-global-itau-com-br",
+    "input": "https://itau.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Ita\u00fa, del paquete global."
+  },
+  {
+    "id": "protected-global-bradesco-com-br",
+    "input": "https://bradesco.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Bradesco, del paquete global."
+  },
+  {
+    "id": "protected-global-bb-com-br",
+    "input": "https://bb.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Banco do Brasil, del paquete global."
+  },
+  {
+    "id": "protected-global-caixa-gov-br",
+    "input": "https://caixa.gov.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Caixa Econ\u00f4mica Federal, del paquete global."
+  },
+  {
+    "id": "protected-global-nubank-com-br",
+    "input": "https://nubank.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Nubank, del paquete global."
+  },
+  {
+    "id": "protected-global-bancolombia-com",
+    "input": "https://bancolombia.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Bancolombia, del paquete global."
+  },
+  {
+    "id": "protected-global-davivienda-com",
+    "input": "https://davivienda.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Davivienda, del paquete global."
+  },
+  {
+    "id": "protected-global-viabcp-com",
+    "input": "https://viabcp.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de BCP Per\u00fa, del paquete global."
+  },
+  {
+    "id": "protected-global-interbank-pe",
+    "input": "https://interbank.pe/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Interbank, del paquete global."
+  },
+  {
+    "id": "protected-global-banorte-com",
+    "input": "https://banorte.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Banorte, del paquete global."
+  },
+  {
+    "id": "protected-global-banamex-com",
+    "input": "https://banamex.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Citibanamex, del paquete global."
+  },
+  {
+    "id": "protected-global-bancoestado-cl",
+    "input": "https://www.bancoestado.cl/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de BancoEstado, del paquete global."
+  },
+  {
+    "id": "protected-global-bancochile-cl",
+    "input": "https://bancochile.cl/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Banco de Chile, del paquete global."
+  },
+  {
+    "id": "protected-global-bci-cl",
+    "input": "https://bci.cl/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Bci, del paquete global."
+  },
+  {
+    "id": "protected-global-bancogalicia-com",
+    "input": "https://bancogalicia.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Banco Galicia, del paquete global."
+  },
+  {
+    "id": "protected-global-macro-com-ar",
+    "input": "https://macro.com.ar/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Banco Macro, del paquete global."
+  },
+  {
+    "id": "protected-global-pichincha-com",
+    "input": "https://pichincha.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Banco Pichincha, del paquete global."
+  },
+  {
+    "id": "protected-global-google-com",
+    "input": "https://google.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Google, del paquete global."
+  },
+  {
+    "id": "protected-global-gmail-com",
+    "input": "https://gmail.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Google, del paquete global."
+  },
+  {
+    "id": "protected-global-microsoft-com",
+    "input": "https://microsoft.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-live-com",
+    "input": "https://live.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-outlook-com",
+    "input": "https://outlook.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-office-com",
+    "input": "https://office.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-hotmail-com",
+    "input": "https://hotmail.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-msn-com",
+    "input": "https://msn.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-microsoftonline-com",
+    "input": "https://login.microsoftonline.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-office365-com",
+    "input": "https://office365.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-sharepoint-com",
+    "input": "https://sharepoint.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-onedrive-com",
+    "input": "https://onedrive.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-skype-com",
+    "input": "https://skype.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-windows-com",
+    "input": "https://windows.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-xbox-com",
+    "input": "https://xbox.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-bing-com",
+    "input": "https://bing.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Microsoft, del paquete global."
+  },
+  {
+    "id": "protected-global-apple-com",
+    "input": "https://apple.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Apple, del paquete global."
+  },
+  {
+    "id": "protected-global-icloud-com",
+    "input": "https://icloud.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Apple, del paquete global."
+  },
+  {
+    "id": "protected-global-yahoo-com",
+    "input": "https://yahoo.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Yahoo, del paquete global."
+  },
+  {
+    "id": "protected-global-proton-me",
+    "input": "https://proton.me/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Proton, del paquete global."
+  },
+  {
+    "id": "protected-global-protonmail-com",
+    "input": "https://protonmail.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Proton, del paquete global."
+  },
+  {
+    "id": "protected-global-zoho-com",
+    "input": "https://zoho.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Zoho, del paquete global."
+  },
+  {
+    "id": "protected-global-aol-com",
+    "input": "https://aol.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de AOL, del paquete global."
+  },
+  {
+    "id": "protected-global-gmx-net",
+    "input": "https://gmx.net/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de GMX, del paquete global."
+  },
+  {
+    "id": "protected-global-yandex-com",
+    "input": "https://yandex.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Yandex, del paquete global."
+  },
+  {
+    "id": "protected-global-yandex-ru",
+    "input": "https://yandex.ru/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Yandex, del paquete global."
+  },
+  {
+    "id": "protected-global-dropbox-com",
+    "input": "https://dropbox.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Dropbox, del paquete global."
+  },
+  {
+    "id": "protected-global-adobe-com",
+    "input": "https://adobe.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Adobe, del paquete global."
+  },
+  {
+    "id": "protected-global-docusign-com",
+    "input": "https://docusign.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de DocuSign, del paquete global."
+  },
+  {
+    "id": "protected-global-docusign-net",
+    "input": "https://docusign.net/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de DocuSign, del paquete global."
+  },
+  {
+    "id": "protected-global-zoom-us",
+    "input": "https://zoom.us/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Zoom, del paquete global."
+  },
+  {
+    "id": "protected-global-slack-com",
+    "input": "https://slack.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Slack, del paquete global."
+  },
+  {
+    "id": "protected-global-github-com",
+    "input": "https://github.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de GitHub, del paquete global."
+  },
+  {
+    "id": "protected-global-gitlab-com",
+    "input": "https://gitlab.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de GitLab, del paquete global."
+  },
+  {
+    "id": "protected-global-atlassian-com",
+    "input": "https://atlassian.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Atlassian, del paquete global."
+  },
+  {
+    "id": "protected-global-salesforce-com",
+    "input": "https://salesforce.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Salesforce, del paquete global."
+  },
+  {
+    "id": "protected-global-okta-com",
+    "input": "https://okta.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Okta, del paquete global."
+  },
+  {
+    "id": "protected-global-wetransfer-com",
+    "input": "https://wetransfer.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de WeTransfer, del paquete global."
+  },
+  {
+    "id": "protected-global-box-com",
+    "input": "https://box.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Box, del paquete global."
+  },
+  {
+    "id": "protected-global-godaddy-com",
+    "input": "https://godaddy.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de GoDaddy, del paquete global."
+  },
+  {
+    "id": "protected-global-namecheap-com",
+    "input": "https://namecheap.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Namecheap, del paquete global."
+  },
+  {
+    "id": "protected-global-cloudflare-com",
+    "input": "https://cloudflare.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Cloudflare, del paquete global."
+  },
+  {
+    "id": "protected-global-wordpress-com",
+    "input": "https://wordpress.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de WordPress, del paquete global."
+  },
+  {
+    "id": "protected-global-openai-com",
+    "input": "https://openai.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de OpenAI, del paquete global."
+  },
+  {
+    "id": "protected-global-chatgpt-com",
+    "input": "https://chatgpt.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de OpenAI, del paquete global."
+  },
+  {
+    "id": "protected-global-notion-so",
+    "input": "https://notion.so/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Notion, del paquete global."
+  },
+  {
+    "id": "protected-global-canva-com",
+    "input": "https://canva.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Canva, del paquete global."
+  },
+  {
+    "id": "protected-global-intuit-com",
+    "input": "https://intuit.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Intuit, del paquete global."
+  },
+  {
+    "id": "protected-global-quickbooks-com",
+    "input": "https://quickbooks.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Intuit, del paquete global."
+  },
+  {
+    "id": "protected-global-turbotax-com",
+    "input": "https://turbotax.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Intuit, del paquete global."
+  },
+  {
+    "id": "protected-global-hubspot-com",
+    "input": "https://hubspot.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de HubSpot, del paquete global."
+  },
+  {
+    "id": "protected-global-mailchimp-com",
+    "input": "https://mailchimp.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mailchimp, del paquete global."
+  },
+  {
+    "id": "protected-global-netflix-com",
+    "input": "https://netflix.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Netflix, del paquete global."
+  },
+  {
+    "id": "protected-global-disneyplus-com",
+    "input": "https://disneyplus.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Disney+, del paquete global."
+  },
+  {
+    "id": "protected-global-disney-com",
+    "input": "https://disney.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Disney+, del paquete global."
+  },
+  {
+    "id": "protected-global-hbo-com",
+    "input": "https://hbo.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de HBO, del paquete global."
+  },
+  {
+    "id": "protected-global-hbomax-com",
+    "input": "https://hbomax.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de HBO, del paquete global."
+  },
+  {
+    "id": "protected-global-primevideo-com",
+    "input": "https://primevideo.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Prime Video, del paquete global."
+  },
+  {
+    "id": "protected-global-spotify-com",
+    "input": "https://spotify.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Spotify, del paquete global."
+  },
+  {
+    "id": "protected-global-youtube-com",
+    "input": "https://youtube.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de YouTube, del paquete global."
+  },
+  {
+    "id": "protected-global-youtu-be",
+    "input": "https://youtu.be/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de YouTube, del paquete global."
+  },
+  {
+    "id": "protected-global-hulu-com",
+    "input": "https://hulu.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Hulu, del paquete global."
+  },
+  {
+    "id": "protected-global-paramountplus-com",
+    "input": "https://paramountplus.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Paramount+, del paquete global."
+  },
+  {
+    "id": "protected-global-crunchyroll-com",
+    "input": "https://crunchyroll.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Crunchyroll, del paquete global."
+  },
+  {
+    "id": "protected-global-deezer-com",
+    "input": "https://deezer.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Deezer, del paquete global."
+  },
+  {
+    "id": "protected-global-soundcloud-com",
+    "input": "https://soundcloud.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de SoundCloud, del paquete global."
+  },
+  {
+    "id": "protected-global-twitch-tv",
+    "input": "https://twitch.tv/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Twitch, del paquete global."
+  },
+  {
+    "id": "protected-global-steampowered-com",
+    "input": "https://steampowered.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Steam, del paquete global."
+  },
+  {
+    "id": "protected-global-steamcommunity-com",
+    "input": "https://steamcommunity.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Steam, del paquete global."
+  },
+  {
+    "id": "protected-global-epicgames-com",
+    "input": "https://epicgames.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Epic Games, del paquete global."
+  },
+  {
+    "id": "protected-global-roblox-com",
+    "input": "https://roblox.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Roblox, del paquete global."
+  },
+  {
+    "id": "protected-global-playstation-com",
+    "input": "https://playstation.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de PlayStation, del paquete global."
+  },
+  {
+    "id": "protected-global-nintendo-com",
+    "input": "https://nintendo.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Nintendo, del paquete global."
+  },
+  {
+    "id": "protected-global-blizzard-com",
+    "input": "https://blizzard.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Blizzard, del paquete global."
+  },
+  {
+    "id": "protected-global-riotgames-com",
+    "input": "https://riotgames.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Riot Games, del paquete global."
+  },
+  {
+    "id": "protected-global-ea-com",
+    "input": "https://ea.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Electronic Arts, del paquete global."
+  },
+  {
+    "id": "protected-global-facebook-com",
+    "input": "https://facebook.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Facebook, del paquete global."
+  },
+  {
+    "id": "protected-global-fb-com",
+    "input": "https://fb.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Facebook, del paquete global."
+  },
+  {
+    "id": "protected-global-messenger-com",
+    "input": "https://messenger.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Facebook, del paquete global."
+  },
+  {
+    "id": "protected-global-meta-com",
+    "input": "https://meta.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Facebook, del paquete global."
+  },
+  {
+    "id": "protected-global-instagram-com",
+    "input": "https://instagram.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Instagram, del paquete global."
+  },
+  {
+    "id": "protected-global-whatsapp-com",
+    "input": "https://whatsapp.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de WhatsApp, del paquete global."
+  },
+  {
+    "id": "protected-global-whatsapp-net",
+    "input": "https://whatsapp.net/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de WhatsApp, del paquete global."
+  },
+  {
+    "id": "protected-global-wa-me",
+    "input": "https://wa.me/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de WhatsApp, del paquete global."
+  },
+  {
+    "id": "protected-global-twitter-com",
+    "input": "https://twitter.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de X (Twitter), del paquete global."
+  },
+  {
+    "id": "protected-global-x-com",
+    "input": "https://x.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de X (Twitter), del paquete global."
+  },
+  {
+    "id": "protected-global-tiktok-com",
+    "input": "https://tiktok.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de TikTok, del paquete global."
+  },
+  {
+    "id": "protected-global-linkedin-com",
+    "input": "https://linkedin.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de LinkedIn, del paquete global."
+  },
+  {
+    "id": "protected-global-snapchat-com",
+    "input": "https://snapchat.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Snapchat, del paquete global."
+  },
+  {
+    "id": "protected-global-telegram-org",
+    "input": "https://telegram.org/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Telegram, del paquete global."
+  },
+  {
+    "id": "protected-global-t-me",
+    "input": "https://t.me/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Telegram, del paquete global."
+  },
+  {
+    "id": "protected-global-discord-com",
+    "input": "https://discord.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Discord, del paquete global."
+  },
+  {
+    "id": "protected-global-discord-gg",
+    "input": "https://discord.gg/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Discord, del paquete global."
+  },
+  {
+    "id": "protected-global-discordapp-com",
+    "input": "https://discordapp.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Discord, del paquete global."
+  },
+  {
+    "id": "protected-global-reddit-com",
+    "input": "https://reddit.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Reddit, del paquete global."
+  },
+  {
+    "id": "protected-global-pinterest-com",
+    "input": "https://pinterest.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Pinterest, del paquete global."
+  },
+  {
+    "id": "protected-global-tumblr-com",
+    "input": "https://tumblr.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Tumblr, del paquete global."
+  },
+  {
+    "id": "protected-global-signal-org",
+    "input": "https://signal.org/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Signal, del paquete global."
+  },
+  {
+    "id": "protected-global-wechat-com",
+    "input": "https://wechat.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de WeChat, del paquete global."
+  },
+  {
+    "id": "protected-global-viber-com",
+    "input": "https://viber.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Viber, del paquete global."
+  },
+  {
+    "id": "protected-global-quora-com",
+    "input": "https://quora.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Quora, del paquete global."
+  },
+  {
+    "id": "protected-global-onlyfans-com",
+    "input": "https://onlyfans.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de OnlyFans, del paquete global."
+  },
+  {
+    "id": "protected-global-tinder-com",
+    "input": "https://tinder.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Tinder, del paquete global."
+  },
+  {
+    "id": "protected-global-bumble-com",
+    "input": "https://bumble.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Bumble, del paquete global."
+  },
+  {
+    "id": "protected-global-badoo-com",
+    "input": "https://badoo.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Badoo, del paquete global."
+  },
+  {
+    "id": "protected-global-amazon-com",
+    "input": "https://amazon.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Amazon, del paquete global."
+  },
+  {
+    "id": "protected-global-amazonaws-com",
+    "input": "https://amazonaws.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Amazon, del paquete global."
+  },
+  {
+    "id": "protected-global-ebay-com",
+    "input": "https://ebay.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de eBay, del paquete global."
+  },
+  {
+    "id": "protected-global-aliexpress-com",
+    "input": "https://aliexpress.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de AliExpress, del paquete global."
+  },
+  {
+    "id": "protected-global-alibaba-com",
+    "input": "https://alibaba.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Alibaba, del paquete global."
+  },
+  {
+    "id": "protected-global-mercadolibre-com",
+    "input": "https://mercadolibre.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mercado Libre, del paquete global."
+  },
+  {
+    "id": "protected-global-mercadolibre-com-ar",
+    "input": "https://mercadolibre.com.ar/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mercado Libre, del paquete global."
+  },
+  {
+    "id": "protected-global-mercadolibre-com-mx",
+    "input": "https://mercadolibre.com.mx/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mercado Libre, del paquete global."
+  },
+  {
+    "id": "protected-global-mercadolibre-com-co",
+    "input": "https://mercadolibre.com.co/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mercado Libre, del paquete global."
+  },
+  {
+    "id": "protected-global-mercadolibre-cl",
+    "input": "https://mercadolibre.cl/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mercado Libre, del paquete global."
+  },
+  {
+    "id": "protected-global-mercadolibre-com-pe",
+    "input": "https://mercadolibre.com.pe/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mercado Libre, del paquete global."
+  },
+  {
+    "id": "protected-global-mercadolivre-com-br",
+    "input": "https://mercadolivre.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Mercado Libre, del paquete global."
+  },
+  {
+    "id": "protected-global-walmart-com",
+    "input": "https://walmart.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Walmart, del paquete global."
+  },
+  {
+    "id": "protected-global-target-com",
+    "input": "https://target.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Target, del paquete global."
+  },
+  {
+    "id": "protected-global-bestbuy-com",
+    "input": "https://bestbuy.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Best Buy, del paquete global."
+  },
+  {
+    "id": "protected-global-costco-com",
+    "input": "https://costco.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Costco, del paquete global."
+  },
+  {
+    "id": "protected-global-ikea-com",
+    "input": "https://ikea.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de IKEA, del paquete global."
+  },
+  {
+    "id": "protected-global-shein-com",
+    "input": "https://shein.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de SHEIN, del paquete global."
+  },
+  {
+    "id": "protected-global-temu-com",
+    "input": "https://temu.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Temu, del paquete global."
+  },
+  {
+    "id": "protected-global-etsy-com",
+    "input": "https://etsy.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Etsy, del paquete global."
+  },
+  {
+    "id": "protected-global-shopify-com",
+    "input": "https://shopify.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Shopify, del paquete global."
+  },
+  {
+    "id": "protected-global-booking-com",
+    "input": "https://booking.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Booking.com, del paquete global."
+  },
+  {
+    "id": "protected-global-airbnb-com",
+    "input": "https://airbnb.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Airbnb, del paquete global."
+  },
+  {
+    "id": "protected-global-expedia-com",
+    "input": "https://expedia.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Expedia, del paquete global."
+  },
+  {
+    "id": "protected-global-tripadvisor-com",
+    "input": "https://tripadvisor.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Tripadvisor, del paquete global."
+  },
+  {
+    "id": "protected-global-despegar-com",
+    "input": "https://despegar.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Despegar, del paquete global."
+  },
+  {
+    "id": "protected-global-uber-com",
+    "input": "https://uber.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Uber, del paquete global."
+  },
+  {
+    "id": "protected-global-rappi-com",
+    "input": "https://rappi.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Rappi, del paquete global."
+  },
+  {
+    "id": "protected-global-pedidosya-com",
+    "input": "https://pedidosya.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de PedidosYa, del paquete global."
+  },
+  {
+    "id": "protected-global-ifood-com-br",
+    "input": "https://ifood.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de iFood, del paquete global."
+  },
+  {
+    "id": "protected-global-cabify-com",
+    "input": "https://cabify.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Cabify, del paquete global."
+  },
+  {
+    "id": "protected-global-falabella-com",
+    "input": "https://falabella.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Falabella, del paquete global."
+  },
+  {
+    "id": "protected-global-americanas-com-br",
+    "input": "https://americanas.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Americanas, del paquete global."
+  },
+  {
+    "id": "protected-global-magazineluiza-com-br",
+    "input": "https://magazineluiza.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Magazine Luiza, del paquete global."
+  },
+  {
+    "id": "protected-global-nike-com",
+    "input": "https://nike.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Nike, del paquete global."
+  },
+  {
+    "id": "protected-global-adidas-com",
+    "input": "https://adidas.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Adidas, del paquete global."
+  },
+  {
+    "id": "protected-global-zara-com",
+    "input": "https://zara.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Zara, del paquete global."
+  },
+  {
+    "id": "protected-global-samsung-com",
+    "input": "https://samsung.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Samsung, del paquete global."
+  },
+  {
+    "id": "protected-global-xiaomi-com",
+    "input": "https://xiaomi.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Xiaomi, del paquete global."
+  },
+  {
+    "id": "protected-global-huawei-com",
+    "input": "https://huawei.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Huawei, del paquete global."
+  },
+  {
+    "id": "protected-global-lenovo-com",
+    "input": "https://lenovo.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Lenovo, del paquete global."
+  },
+  {
+    "id": "protected-global-dell-com",
+    "input": "https://dell.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Dell, del paquete global."
+  },
+  {
+    "id": "protected-global-hp-com",
+    "input": "https://hp.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de HP, del paquete global."
+  },
+  {
+    "id": "protected-global-sony-com",
+    "input": "https://sony.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Sony, del paquete global."
+  },
+  {
+    "id": "protected-global-latamairlines-com",
+    "input": "https://latamairlines.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de LATAM Airlines, del paquete global."
+  },
+  {
+    "id": "protected-global-avianca-com",
+    "input": "https://avianca.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Avianca, del paquete global."
+  },
+  {
+    "id": "protected-global-copaair-com",
+    "input": "https://copaair.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Copa Airlines, del paquete global."
+  },
+  {
+    "id": "protected-global-delta-com",
+    "input": "https://delta.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Delta Air Lines, del paquete global."
+  },
+  {
+    "id": "protected-global-united-com",
+    "input": "https://united.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de United Airlines, del paquete global."
+  },
+  {
+    "id": "protected-global-ticketmaster-com",
+    "input": "https://ticketmaster.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Ticketmaster, del paquete global."
+  },
+  {
+    "id": "protected-global-dhl-com",
+    "input": "https://dhl.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de DHL, del paquete global."
+  },
+  {
+    "id": "protected-global-fedex-com",
+    "input": "https://fedex.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de FedEx, del paquete global."
+  },
+  {
+    "id": "protected-global-ups-com",
+    "input": "https://ups.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de UPS, del paquete global."
+  },
+  {
+    "id": "protected-global-usps-com",
+    "input": "https://usps.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de USPS, del paquete global."
+  },
+  {
+    "id": "protected-global-royalmail-com",
+    "input": "https://royalmail.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Royal Mail, del paquete global."
+  },
+  {
+    "id": "protected-global-correos-es",
+    "input": "https://correos.es/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Correos, del paquete global."
+  },
+  {
+    "id": "protected-global-dpd-com",
+    "input": "https://dpd.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de DPD, del paquete global."
+  },
+  {
+    "id": "protected-global-tnt-com",
+    "input": "https://tnt.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de TNT, del paquete global."
+  },
+  {
+    "id": "protected-global-aramex-com",
+    "input": "https://aramex.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Aramex, del paquete global."
+  },
+  {
+    "id": "protected-global-maersk-com",
+    "input": "https://maersk.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Maersk, del paquete global."
+  },
+  {
+    "id": "protected-global-auspost-com-au",
+    "input": "https://auspost.com.au/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Australia Post, del paquete global."
+  },
+  {
+    "id": "protected-global-deutschepost-de",
+    "input": "https://deutschepost.de/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Deutsche Post, del paquete global."
+  },
+  {
+    "id": "protected-global-laposte-net",
+    "input": "https://laposte.net/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de La Poste, del paquete global."
+  },
+  {
+    "id": "protected-global-cainiao-com",
+    "input": "https://cainiao.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Cainiao, del paquete global."
+  },
+  {
+    "id": "protected-global-correoargentino-com-ar",
+    "input": "https://www.correoargentino.com.ar/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Correo Argentino, del paquete global."
+  },
+  {
+    "id": "protected-global-servientrega-com",
+    "input": "https://www.servientrega.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Servientrega, del paquete global."
+  },
+  {
+    "id": "protected-global-estafeta-com",
+    "input": "https://estafeta.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Estafeta, del paquete global."
+  },
+  {
+    "id": "protected-global-chilexpress-cl",
+    "input": "https://chilexpress.cl/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Chilexpress, del paquete global."
+  },
+  {
+    "id": "protected-global-att-com",
+    "input": "https://att.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de AT&T, del paquete global."
+  },
+  {
+    "id": "protected-global-verizon-com",
+    "input": "https://verizon.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Verizon, del paquete global."
+  },
+  {
+    "id": "protected-global-t-mobile-com",
+    "input": "https://t-mobile.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de T-Mobile, del paquete global."
+  },
+  {
+    "id": "protected-global-vodafone-com",
+    "input": "https://vodafone.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Vodafone, del paquete global."
+  },
+  {
+    "id": "protected-global-orange-com",
+    "input": "https://orange.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Orange, del paquete global."
+  },
+  {
+    "id": "protected-global-telefonica-com",
+    "input": "https://telefonica.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Telef\u00f3nica, del paquete global."
+  },
+  {
+    "id": "protected-global-movistar-com",
+    "input": "https://movistar.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Movistar, del paquete global."
+  },
+  {
+    "id": "protected-global-movistar-es",
+    "input": "https://movistar.es/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Movistar, del paquete global."
+  },
+  {
+    "id": "protected-global-movistar-com-ar",
+    "input": "https://movistar.com.ar/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Movistar, del paquete global."
+  },
+  {
+    "id": "protected-global-movistar-cl",
+    "input": "https://movistar.cl/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Movistar, del paquete global."
+  },
+  {
+    "id": "protected-global-movistar-com-pe",
+    "input": "https://movistar.com.pe/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Movistar, del paquete global."
+  },
+  {
+    "id": "protected-global-movistar-com-co",
+    "input": "https://movistar.com.co/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Movistar, del paquete global."
+  },
+  {
+    "id": "protected-global-movistar-com-mx",
+    "input": "https://movistar.com.mx/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Movistar, del paquete global."
+  },
+  {
+    "id": "protected-global-claro-com",
+    "input": "https://claro.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Claro, del paquete global."
+  },
+  {
+    "id": "protected-global-claro-com-ar",
+    "input": "https://claro.com.ar/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Claro, del paquete global."
+  },
+  {
+    "id": "protected-global-claro-com-br",
+    "input": "https://claro.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Claro, del paquete global."
+  },
+  {
+    "id": "protected-global-claro-com-co",
+    "input": "https://claro.com.co/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Claro, del paquete global."
+  },
+  {
+    "id": "protected-global-claro-com-pe",
+    "input": "https://claro.com.pe/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Claro, del paquete global."
+  },
+  {
+    "id": "protected-global-tigo-com-bo",
+    "input": "https://tigo.com.bo/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Tigo, del paquete global."
+  },
+  {
+    "id": "protected-global-tigo-com-co",
+    "input": "https://tigo.com.co/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Tigo, del paquete global."
+  },
+  {
+    "id": "protected-global-tigo-com-py",
+    "input": "https://tigo.com.py/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Tigo, del paquete global."
+  },
+  {
+    "id": "protected-global-entel-cl",
+    "input": "https://entel.cl/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Entel, del paquete global."
+  },
+  {
+    "id": "protected-global-entel-pe",
+    "input": "https://entel.pe/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Entel, del paquete global."
+  },
+  {
+    "id": "protected-global-entel-bo",
+    "input": "https://www.entel.bo/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Entel, del paquete global."
+  },
+  {
+    "id": "protected-global-telcel-com",
+    "input": "https://telcel.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Telcel, del paquete global."
+  },
+  {
+    "id": "protected-global-telmex-com",
+    "input": "https://telmex.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Telmex, del paquete global."
+  },
+  {
+    "id": "protected-global-personal-com-ar",
+    "input": "https://personal.com.ar/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Personal, del paquete global."
+  },
+  {
+    "id": "protected-global-vivo-com-br",
+    "input": "https://vivo.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Vivo, del paquete global."
+  },
+  {
+    "id": "protected-global-tim-com-br",
+    "input": "https://tim.com.br/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de TIM, del paquete global."
+  },
+  {
+    "id": "protected-global-comcast-com",
+    "input": "https://comcast.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Comcast, del paquete global."
+  },
+  {
+    "id": "protected-global-xfinity-com",
+    "input": "https://xfinity.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Comcast, del paquete global."
+  },
+  {
+    "id": "protected-global-spectrum-com",
+    "input": "https://spectrum.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Spectrum, del paquete global."
+  },
+  {
+    "id": "protected-global-bt-com",
+    "input": "https://bt.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de BT, del paquete global."
+  },
+  {
+    "id": "protected-global-sky-com",
+    "input": "https://sky.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Sky, del paquete global."
+  },
+  {
+    "id": "protected-global-telekom-de",
+    "input": "https://telekom.de/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Deutsche Telekom, del paquete global."
+  },
+  {
+    "id": "protected-global-airtel-in",
+    "input": "https://airtel.in/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Airtel, del paquete global."
+  },
+  {
+    "id": "protected-global-jio-com",
+    "input": "https://jio.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Jio, del paquete global."
+  },
+  {
+    "id": "protected-global-google-analytics-com",
+    "input": "https://www.google-analytics.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de Google, del paquete global."
+  },
+  {
+    "id": "protected-global-youtube-nocookie-com",
+    "input": "https://www.youtube-nocookie.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Direcci\u00f3n oficial de YouTube, del paquete global."
   }
 ]

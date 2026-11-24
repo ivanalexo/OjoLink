@@ -72,6 +72,7 @@ export function measured(
     score: level === "danger" ? 80 : level === "caution" ? 50 : 0,
     signals,
     outcome: OUTCOMES[outcome] ?? "correct",
-    countsTowardCaution: label === "legitimate" && kind !== "hosting" && kind !== "near-neighbour",
+    countsTowardCaution:
+      label === "legitimate" && !["hosting", "near-neighbour", "brand-word"].includes(kind),
   };
 }

@@ -44,7 +44,11 @@ describe("buildProtectedIndex", () => {
 
   it("has no skeleton collision among the shipped packs", () => {
     expect(index.byDomainSkeleton.size).toBe(index.entries.length);
-    expect(index.byLabelSkeleton.size).toBe(index.entries.length);
+    for (const entry of index.entries) {
+      expect(index.byLabelSkeleton.get(skeleton(entry.label))?.entity, entry.domain).toBe(
+        entry.entity,
+      );
+    }
   });
 
   it("keeps the first entry on a collision", () => {

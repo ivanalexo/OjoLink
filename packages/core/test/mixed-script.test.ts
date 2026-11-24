@@ -151,7 +151,8 @@ describe("default engine", () => {
   it("reports danger for a mixed label", () => {
     const result = verdict(PAYPAL);
     expect(result.level).toBe("danger");
-    expect(result.score).toBe(80);
+    expect(result.signals.map((item) => item.id)).toEqual(["homograph", "mixed-script"]);
+    expect(result.score).toBe(100);
     expect(result.notEvaluated).toEqual([]);
   });
 
@@ -200,12 +201,15 @@ describe("default engine", () => {
     expect(labels[0]?.foreignCount).toBe(2);
   });
 
-  it.each(["vuce.yuriña.gob.bo", CYRILLIC_APPLE, "bcp.com.bo"])(
-    "finds no signals for %s",
-    (host) => {
-      expect(verdict(host)).toMatchObject({ level: "safe", signals: [] });
-    },
-  );
+  it("reports a name written wholly in another alphabet through the lookalike signal", () => {
+    const result = verdict(CYRILLIC_APPLE);
+    expect(result.level).toBe("danger");
+    expect(result.signals.map((item) => item.id)).toEqual(["homograph"]);
+  });
+
+  it.each(["vuce.yuriña.gob.bo", "bcp.com.bo"])("finds no signals for %s", (host) => {
+    expect(verdict(host)).toMatchObject({ level: "safe", signals: [] });
+  });
 
   it("evaluates the destination of a wrapped link", () => {
     const wrapped = `https://www.google.com/url?q=${encodeURIComponent(`https://${PAYPAL}/`)}`;

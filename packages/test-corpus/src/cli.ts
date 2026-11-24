@@ -2,6 +2,7 @@ import { lookup } from "node:dns/promises";
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { normalizeUrl } from "@ojolink/core";
+import { BASELINE_FILE, buildBaseline, renderBaseline } from "./baseline.ts";
 import { describeRates } from "./evaluate.ts";
 import { CORPUS_ROOT, CorpusError, loadCorpus } from "./load.ts";
 import { measure, renderReport, REPORT_FILE } from "./report.ts";
@@ -26,6 +27,13 @@ function report(): void {
 function check(): void {
   const measurement = measure();
   printOutcome(measurement.failures, describeRates(measurement.check.rates));
+}
+
+/** Records the current level of every legitimate sample as the accepted state. */
+function baseline(): void {
+  const levels = buildBaseline(measure().evaluations);
+  writeFileSync(join(CORPUS_ROOT, BASELINE_FILE), renderBaseline(levels), "utf8");
+  console.log(`Wrote ${BASELINE_FILE} with ${Object.keys(levels).length} legitimate samples.`);
 }
 
 /** Uses the network: asks DNS for the domain of every sample taken from the public web. */
@@ -63,7 +71,7 @@ async function dns(): Promise<void> {
   process.exitCode = 1;
 }
 
-const commands: Record<string, () => void | Promise<void>> = { report, check, dns };
+const commands: Record<string, () => void | Promise<void>> = { report, check, baseline, dns };
 const command = commands[process.argv[2] ?? ""];
 
 try {

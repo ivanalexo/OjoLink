@@ -115,6 +115,7 @@ export default defineConfig(({ mode }) => {
     test: {
       environment: "jsdom",
       include: ["test/**/*.test.ts"],
+      env: { VITE_RESOLVER_URL: "", VITE_IOS_SHORTCUT_URL: "" },
     },
   };
 });

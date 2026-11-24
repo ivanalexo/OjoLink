@@ -13,6 +13,7 @@ export const LEGITIMATE_KINDS = [
   "shortener",
   "hosting",
   "near-neighbour",
+  "brand-word",
 ] as const;
 export const OUT_OF_REACH = "out-of-reach";
 export const TECHNIQUES: readonly string[] = DEFAULT_SIGNALS.map((signal) => signal.id);

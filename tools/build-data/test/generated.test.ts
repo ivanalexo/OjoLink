@@ -1,7 +1,8 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { build, loadSources, OUTPUT_DIR } from "../src/build.ts";
+import { build, loadSources, OUTPUT_DIR, SOURCES_DIR } from "../src/build.ts";
+import { buildProtected, GLOBAL_CATEGORIES } from "../src/protected.ts";
 
 const normalize = (text: string) => text.replaceAll("\r\n", "\n");
 const sources = loadSources();
@@ -67,11 +68,84 @@ describe("curated Bolivia pack", () => {
   });
 
   it("reports what was left out", () => {
-    expect(summary.filter((line) => line.startsWith("left out"))).toEqual([
+    expect(summary.filter((line) => line.startsWith("left out (unconfirmed): bo:"))).toEqual([
       "left out (unconfirmed): bo: bancodecredito.com.bo (BCP)",
       "left out (unconfirmed): bo: bancoganadero.com.bo (Banco Ganadero)",
       "left out (unconfirmed): bo: bancomercantil.com.bo (Banco Mercantil Santa Cruz)",
       "left out (unconfirmed): bo: bdp.com.bo (BDP)",
     ]);
+  });
+});
+
+describe("curated global pack", () => {
+  const source = sources.protected.find((file) => file.content.country === "global");
+  const pack = buildProtected(sources.protected).packs.find((item) => item.country === "global");
+  const domains = pack?.entries.map((entry) => entry.domain) ?? [];
+  const entities = new Set(pack?.entries.map((entry) => entry.name));
+
+  it("holds at least 150 confirmed brands in the eight categories", () => {
+    expect(entities.size).toBeGreaterThanOrEqual(150);
+    for (const category of GLOBAL_CATEGORIES) {
+      const count = new Set(
+        pack?.entries.filter((entry) => entry.category === category).map((entry) => entry.name),
+      ).size;
+      expect(count, category).toBeGreaterThanOrEqual(10);
+    }
+  });
+
+  it("holds the brands people get messages from, and no infrastructure", () => {
+    expect(domains).toEqual(
+      expect.arrayContaining([
+        "paypal.com",
+        "microsoft.com",
+        "apple.com",
+        "google.com",
+        "netflix.com",
+        "amazon.com",
+      ]),
+    );
+    expect(domains).not.toContain("googleusercontent.com");
+    expect(domains).not.toContain("doubleclick.net");
+  });
+
+  it("lists several official domains for one entity", () => {
+    const microsoft = pack?.entries.filter((entry) => entry.name === "Microsoft") ?? [];
+    expect(microsoft.map((entry) => entry.domain)).toEqual(
+      expect.arrayContaining(["microsoft.com", "live.com", "outlook.com"]),
+    );
+  });
+
+  it("marks common words, and declares further names", () => {
+    const entry = (domain: string) => pack?.entries.find((item) => item.domain === domain);
+    expect(entry("apple.com")?.common).toBe(true);
+    expect(entry("amazon.com")?.common).toBe(true);
+    expect(entry("paypal.com")?.common).toBeUndefined();
+    expect(entry("disneyplus.com")?.names).toEqual(["disneyplus", "disney"]);
+  });
+
+  it("records how every entry was confirmed: by the ranking, or against the owner's site", () => {
+    const items = (source?.content.entities ?? []).flatMap((entity) => [
+      entity,
+      ...(entity.aliases ?? []),
+    ]);
+    const byRanking = items.filter((item) => item.verification.method === "ranking");
+    expect(byRanking.length).toBeGreaterThan(250);
+    for (const item of byRanking) {
+      expect(item.verification.ranking, item.domain).toBe("majestic-million");
+      expect(item.verification.checked, item.domain).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    }
+    for (const item of items.filter((entry) => entry.verification.method !== "ranking")) {
+      expect(item.verification.source, item.domain).toBeTruthy();
+    }
+  });
+
+  it("keeps nothing of the ranking in the repository", () => {
+    expect(readdirSync(join(SOURCES_DIR)).sort()).toEqual([
+      "hosting.json",
+      "protected",
+      "shorteners.json",
+      "unicode",
+    ]);
+    expect(readdirSync(join(SOURCES_DIR, "protected")).sort()).toEqual(["bo.json", "global.json"]);
   });
 });

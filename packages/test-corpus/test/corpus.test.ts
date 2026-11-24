@@ -1,7 +1,8 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { createEngine, DEFAULT_CALIBRATION, DEFAULT_SIGNALS } from "@ojolink/core";
+import { createEngine, DEFAULT_CALIBRATION, DEFAULT_SIGNALS, PROTECTED_PACKS } from "@ojolink/core";
 import { describe, expect, it } from "vitest";
+import { checkProtectedPages, loadBaseline } from "../src/baseline.ts";
 import { checkTargets, describeRates, evaluateCorpus } from "../src/evaluate.ts";
 import { checkCoverage, CORPUS_ROOT, findEmailAddress, LEGITIMATE_KINDS } from "../src/load.ts";
 import { checkReasons, measure, renderReport, REPORT_FILE } from "../src/report.ts";
@@ -18,10 +19,6 @@ const byId = (id: string) => {
   return found;
 };
 const normalize = (text: string) => text.replaceAll("\r\n", "\n");
-
-interface PackSource {
-  entities: { domain: string; verification: { status: string } }[];
-}
 
 describe("the corpus", () => {
   it("covers every kind and reaches its minimum size", () => {
@@ -68,32 +65,28 @@ describe("the corpus", () => {
     expect(real[1]?.sample.input).toContain("zya.me");
   });
 
-  it("holds at least three real pages of every confirmed protected domain, all safe", () => {
-    const path = join(
-      CORPUS_ROOT,
-      "..",
-      "..",
-      "tools",
-      "build-data",
-      "sources",
-      "protected",
-      "bo.json",
-    );
-    const pack = JSON.parse(readFileSync(path, "utf8")) as PackSource;
-    const confirmed = pack.entities
-      .filter((entity) => entity.verification.status === "confirmed")
-      .map((entity) => entity.domain);
-    expect(confirmed.length).toBeGreaterThanOrEqual(21);
+  it("holds real pages of every protected domain, all safe", () => {
+    const domains = PROTECTED_PACKS.flatMap((pack) => pack.entries.map((entry) => entry.domain));
+    expect(domains.length).toBeGreaterThan(300);
+    expect(checkProtectedPages(measurement.corpus, PROTECTED_PACKS)).toEqual([]);
     const pages = of("legitimate", "protected");
-    for (const domain of confirmed) {
-      const own = pages.filter((item) =>
-        new URL(item.sample.input).hostname.match(
-          new RegExp(`(^|\\.)${domain.replaceAll(".", "\\.")}$`),
-        ),
-      );
-      expect(own.length, domain).toBeGreaterThanOrEqual(3);
-    }
+    expect(pages.length).toBeGreaterThanOrEqual(domains.length);
     expect(pages.filter((item) => item.level !== "safe")).toEqual([]);
+  });
+
+  it("holds real names that contain a brand, and none reaches danger", () => {
+    const names = of("legitimate", "brand-word");
+    expect(names.length).toBeGreaterThanOrEqual(30);
+    expect(names.filter((item) => item.level === "danger")).toEqual([]);
+  });
+
+  it("has a baseline for every legitimate sample, with nothing risen since", () => {
+    const baseline = loadBaseline();
+    const legitimate = measurement.evaluations.filter((item) => item.sample.label === "legitimate");
+    expect(Object.keys(baseline ?? {}).sort()).toEqual(
+      legitimate.map((item) => item.sample.id).sort(),
+    );
+    expect(measurement.baseline.raised).toEqual([]);
   });
 
   it("holds real names close to a protected domain, and none reaches danger", () => {
@@ -198,7 +191,7 @@ describe("the report", () => {
   });
 
   it("counts a legitimate sample under the signal that marked it and lists it with its level", () => {
-    expect(report).toMatch(/\| typosquat \| 5 \| 0 \| \d+ \| 0 \|/);
+    expect(report).toMatch(/\| typosquat \| 34 \| 0 \| \d+ \| 0 \|/);
     expect(report).toMatch(
       /\| near-neighbour-banco-com-bo \| near-neighbour \| constructed \| caution \| 60 \| typosquat\/missing \|/,
     );
@@ -211,7 +204,7 @@ describe("the report", () => {
         : item,
     );
     const changed = renderReport({ ...measurement, evaluations: missed });
-    expect(changed).toMatch(/\| typosquat \| 5 \| 0 \| \d+ \| 1 \|/);
+    expect(changed).toMatch(/\| typosquat \| 34 \| 0 \| \d+ \| 1 \|/);
     expect(changed).toMatch(
       /\| typosquat-two-bancoecofuturo \| typosquat \| constructed \| safe \| 0 \| none \|.*\| miss \|/,
     );
@@ -230,9 +223,9 @@ describe("the report", () => {
     expect(report).toMatch(
       /\| hosting-page-office-update-notes-pages-dev \| danger \| hosting\/words \| .+ \|/,
     );
-    expect(report).toMatch(
-      /pending on protected-domains-global: apple\.com is in no embedded pack/,
-    );
+    expect(report).not.toContain("pending on protected-domains-global");
+    expect(report).toMatch(/\| Todo cirílico \| .+ \| passes \|/);
+    expect(report).toMatch(/\| Typosquatting \| .+ \| passes \|/);
     expect(report).toMatch(/pending on signal-link-text-mismatch/);
     expect(report).toMatch(/\| out-of-reach-ordinary-domain-login \| out-of-reach \|/);
   });

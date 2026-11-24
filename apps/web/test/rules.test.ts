@@ -95,6 +95,12 @@ describe("privacy", () => {
   it("references no third-party address in the built files", () => {
     // Namespaces, and links printed in console messages by Svelte and Workbox. None is requested.
     const allowed = new Set(["www.w3.org", "svelte.dev", "bit.ly"]);
+    // The resolver this build was configured with, if any: the one origin its policy allows.
+    const shell = readFileSync(join(root, "dist", "index.html"), "utf8").replaceAll("&#39;", "'");
+    const policy = /connect-src ([^;"]*)/.exec(shell)?.[1] ?? "";
+    for (const origin of policy.match(/https?:\/\/[^\s;"&]+/g) ?? []) {
+      allowed.add(new URL(origin).host);
+    }
     const hosts = new Set<string>();
     for (const file of built) {
       for (const match of readFileSync(file, "utf8").matchAll(

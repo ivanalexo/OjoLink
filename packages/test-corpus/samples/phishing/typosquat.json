@@ -112,5 +112,61 @@
     "source": "constructed",
     "collected": "2026-11-20",
     "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-global-netfliix-com",
+    "input": "https://netfliix.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-global-faceboook-com",
+    "input": "https://faceboook.com/login",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-global-instagarm-com",
+    "input": "https://instagarm.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-global-whatsap-com",
+    "input": "https://whatsap.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-global-mercadolibr-com",
+    "input": "https://mercadolibr.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-global-santnader-com",
+    "input": "https://santnader.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-global-spotfy-com",
+    "input": "https://spotfy.com/premium",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "typosquat-global-linkedln-com",
+    "input": "https://linkedln.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
   }
 ]

@@ -26,7 +26,7 @@ export type {
   WarningParts,
 } from "./describe.js";
 export { extractUrls } from "./extract.js";
-export { HOSTING_SERVICES, LURE_WORDS, SHORTENERS } from "./data/index.js";
+export { HOSTING_SERVICES, LURE_WORDS, PROTECTED_PACKS, SHORTENERS } from "./data/index.js";
 export type {
   HostingAssignment,
   HostingService,
@@ -56,6 +56,8 @@ export { normalizeUrl } from "./normalize.js";
 export type { NormalizedUrl, NormalizeFailureReason, NormalizeResult } from "./normalize.js";
 export type { Level } from "./score.js";
 export { createDefaultSignals, DEFAULT_SIGNALS } from "./signals/index.js";
+export { createCombosquatSignal } from "./signals/combosquat.js";
+export type { CombosquatDetails } from "./signals/combosquat.js";
 export { createHomographSignal } from "./signals/homograph.js";
 export { createHostingSignal, findLureWords } from "./signals/hosting.js";
 export type { HostedPage, HostingDetails } from "./signals/hosting.js";

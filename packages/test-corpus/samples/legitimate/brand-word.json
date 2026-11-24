@@ -1,0 +1,282 @@
+[
+  {
+    "id": "brand-word-www-signal-iduna-de",
+    "input": "https://www.signal-iduna.de/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Aseguradora alemana. Contiene la palabra \u00absignal\u00bb, que tambi\u00e9n es una marca protegida."
+  },
+  {
+    "id": "brand-word-www-discover-the-world-com",
+    "input": "https://www.discover-the-world.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Agencia de viajes brit\u00e1nica. Contiene \u00abdiscover\u00bb."
+  },
+  {
+    "id": "brand-word-www-united-domains-de",
+    "input": "https://www.united-domains.de/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Registrador de dominios alem\u00e1n. Contiene \u00abunited\u00bb."
+  },
+  {
+    "id": "brand-word-www-sky-map-org",
+    "input": "https://www.sky-map.org/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Mapa del cielo. Contiene \u00absky\u00bb."
+  },
+  {
+    "id": "brand-word-www-hp-lexicon-org",
+    "input": "https://www.hp-lexicon.org/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Enciclopedia de Harry Potter. Contiene \u00abhp\u00bb."
+  },
+  {
+    "id": "brand-word-www-netflix-codes-com",
+    "input": "https://www.netflix-codes.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Cat\u00e1logo de categor\u00edas de Netflix hecho por terceros."
+  },
+  {
+    "id": "brand-word-www-applebees-com",
+    "input": "https://www.applebees.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Cadena de restaurantes. \u00abapple\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-pineapple-com",
+    "input": "https://www.pineapple.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "\u00abapple\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-snapple-com",
+    "input": "https://www.snapple.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Marca de bebidas. \u00abapple\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-targetoptical-com",
+    "input": "https://www.targetoptical.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "\u00d3ptica. \u00abtarget\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-deltafaucet-com",
+    "input": "https://www.deltafaucet.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Fabricante de grifer\u00eda. \u00abdelta\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-unitedhealthgroup-com",
+    "input": "https://www.unitedhealthgroup.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Aseguradora de salud. \u00abunited\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-amazonwatch-org",
+    "input": "https://amazonwatch.org/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Organizaci\u00f3n ambiental. \u00abamazon\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-zoominfo-com",
+    "input": "https://www.zoominfo.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Empresa de datos. \u00abzoom\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-notionpress-com",
+    "input": "https://notionpress.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Editorial. \u00abnotion\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-boxofficemojo-com",
+    "input": "https://www.boxofficemojo.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Taquilla de cine. \u00abbox\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-skyscanner-net",
+    "input": "https://www.skyscanner.net/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Buscador de vuelos. \u00absky\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-orangetheory-com",
+    "input": "https://www.orangetheory.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Gimnasios. \u00aborange\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-bookingbuddy-com",
+    "input": "https://www.bookingbuddy.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Comparador de viajes. \u00abbooking\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-appleinsider-com",
+    "input": "https://appleinsider.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Medio de noticias sobre Apple. \u00abapple\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-paypalobjects-com",
+    "input": "https://www.paypalobjects.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Dominio de recursos de PayPal. La marca va pegada a otra palabra."
+  },
+  {
+    "id": "brand-word-netflixtechblog-com",
+    "input": "https://netflixtechblog.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Blog t\u00e9cnico de Netflix. La marca va pegada a otra palabra."
+  },
+  {
+    "id": "brand-word-twitchtracker-com",
+    "input": "https://twitchtracker.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Estad\u00edsticas de Twitch hechas por terceros."
+  },
+  {
+    "id": "brand-word-steamdb-info",
+    "input": "https://steamdb.info/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Base de datos de Steam hecha por terceros."
+  },
+  {
+    "id": "brand-word-www-chasepaymentech-com",
+    "input": "https://www.chasepaymentech.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Servicio de pagos de Chase. \u00abchase\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-wisegeek-com",
+    "input": "https://www.wisegeek.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Sitio de divulgaci\u00f3n. \u00abwise\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-slackline-com",
+    "input": "https://www.slackline.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Deporte de equilibrio. \u00abslack\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-stripes-com",
+    "input": "https://www.stripes.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Diario militar estadounidense. Contiene \u00abstripe\u00bb con una letra m\u00e1s."
+  },
+  {
+    "id": "brand-word-www-discordapp-io",
+    "input": "https://www.discordapp.io/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Nombre que contiene \u00abdiscord\u00bb pegado a otra palabra."
+  },
+  {
+    "id": "brand-word-www-googleblog-com",
+    "input": "https://www.googleblog.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Blog de Google. La marca va pegada a otra palabra."
+  },
+  {
+    "id": "brand-word-www-microsoftstore-com",
+    "input": "https://www.microsoftstore.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Tienda de Microsoft. La marca va pegada a otra palabra."
+  },
+  {
+    "id": "brand-word-www-facebookmail-com",
+    "input": "https://www.facebookmail.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Dominio de correo de Facebook. La marca va pegada a otra palabra."
+  },
+  {
+    "id": "brand-word-www-uberconference-com",
+    "input": "https://www.uberconference.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Servicio de conferencias. \u00abuber\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-clarovideo-com",
+    "input": "https://www.clarovideo.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Servicio de video de Claro. \u00abclaro\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-spectrumnews-com",
+    "input": "https://www.spectrumnews.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Canal de noticias. \u00abspectrum\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-deltadental-com",
+    "input": "https://www.deltadental.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Seguros dentales. \u00abdelta\u00bb dentro de una palabra m\u00e1s larga."
+  },
+  {
+    "id": "brand-word-www-orange-business-com",
+    "input": "https://www.orange-business.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Divisi\u00f3n de empresas de Orange. Contiene \u00aborange\u00bb."
+  },
+  {
+    "id": "brand-word-www-amazon-adsystem-com",
+    "input": "https://aax.amazon-adsystem.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Publicidad de Amazon."
+  },
+  {
+    "id": "brand-word-www-paypal-community-com",
+    "input": "https://www.paypal-community.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Foro de ayuda de PayPal."
+  },
+  {
+    "id": "brand-word-www-apple-cloudkit-com",
+    "input": "https://www.apple-cloudkit.com/",
+    "source": "observed",
+    "collected": "2026-11-23",
+    "note": "Servicio de Apple para desarrolladores."
+  }
+]

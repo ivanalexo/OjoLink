@@ -105,5 +105,54 @@
     "source": "constructed",
     "collected": "2026-11-20",
     "note": "Construido a mano: el dominio falso va dentro de una redirecci\u00f3n de Safe Links."
+  },
+  {
+    "id": "homograph-global-paypa1-com",
+    "input": "https://paypa1.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-global-micros0ft-com",
+    "input": "https://micros0ft.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-global-amaz0n-com",
+    "input": "https://amaz0n.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-global-g00gle-com",
+    "input": "https://g00gle.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-global-cyrillic-apple-com",
+    "input": "https://\u0430pple.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-global-cyrillic-netflix-com",
+    "input": "https://netfl\u0456x.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "homograph-global-rnicrosoft-com",
+    "input": "https://rnicrosoft.com/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
   }
 ]

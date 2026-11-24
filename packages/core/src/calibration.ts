@@ -25,6 +25,8 @@ export const DEFAULT_CALIBRATION: Calibration = {
     "typosquat/swapped": 60,
     "typosquat/ending": 60,
     "typosquat/two": 40,
+    "combosquat/brand": 40,
+    "combosquat/lure": 70,
     "hosting/plain": 30,
     "hosting/one-word": 50,
     "hosting/two-words": 50,

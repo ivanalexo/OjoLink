@@ -68,5 +68,40 @@
     "source": "constructed",
     "collected": "2026-11-20",
     "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-global-paypal-com-verifica-net",
+    "input": "https://paypal.com.verifica.net/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-global-netflix-com-pago-example-net",
+    "input": "https://netflix.com.pago.example.net/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-global-login-microsoft-com-example-net",
+    "input": "https://login.microsoft.com.example.net/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-global-apple-com-id-example-org",
+    "input": "https://apple.com-id.example.org/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-global-www-mercadolibre-com-ar-ofertas-example-net",
+    "input": "https://www.mercadolibre.com.ar.ofertas.example.net/",
+    "source": "constructed",
+    "collected": "2026-11-23",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
   }
 ]

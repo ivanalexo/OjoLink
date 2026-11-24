@@ -1,0 +1,3612 @@
+{
+  "country": "global",
+  "suffixes": [],
+  "entities": [
+    {
+      "domain": "paypal.com",
+      "name": "PayPal",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 84,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "paypal-community.com",
+          "names": [],
+          "verification": {
+            "status": "unconfirmed",
+            "method": "site",
+            "source": "No se pudo abrir el sitio ni encontrar una mención en paypal.com"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "stripe.com",
+      "name": "Stripe",
+      "category": "payments",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 136,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "wise.com",
+      "name": "Wise",
+      "category": "payments",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2359,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "revolut.com",
+      "name": "Revolut",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 3256,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "venmo.com",
+      "name": "Venmo",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2819,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "squareup.com",
+      "name": "Square",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1029,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "westernunion.com",
+      "name": "Western Union",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 3951,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "moneygram.com",
+      "name": "MoneyGram",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 13522,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "skrill.com",
+      "name": "Skrill",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 7501,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "neteller.com",
+      "name": "Neteller",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 25863,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "payoneer.com",
+      "name": "Payoneer",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 7919,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "klarna.com",
+      "name": "Klarna",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1184,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "affirm.com",
+      "name": "Affirm",
+      "category": "payments",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 12298,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "remitly.com",
+      "name": "Remitly",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 17497,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "xoom.com",
+      "name": "Xoom",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4728,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "zellepay.com",
+      "name": "Zelle",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 15982,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "paysafecard.com",
+      "name": "paysafecard",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 18587,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "visa.com",
+      "name": "Visa",
+      "category": "payments",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1264,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "mastercard.com",
+      "name": "Mastercard",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 808,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "americanexpress.com",
+      "name": "American Express",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 968,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "amex.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 93020,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "discover.com",
+      "name": "Discover",
+      "category": "payments",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 5152,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "alipay.com",
+      "name": "Alipay",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 832,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "payu.com",
+      "name": "PayU",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 22242,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "mercadopago.com",
+      "name": "Mercado Pago",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 72955,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "mercadopago.com.ar",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 23404,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "mercadopago.com.br",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 35457,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "mercadopago.com.mx",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 47694,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "nequi.com.co",
+      "name": "Nequi",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 278069,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "yape.com.pe",
+      "name": "Yape",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 446440,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "binance.com",
+      "name": "Binance",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 812,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "coinbase.com",
+      "name": "Coinbase",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1371,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "kraken.com",
+      "name": "Kraken",
+      "category": "payments",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 3765,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "blockchain.com",
+      "name": "Blockchain.com",
+      "category": "payments",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 3740,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "metamask.io",
+      "name": "MetaMask",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4666,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "trustwallet.com",
+      "name": "Trust Wallet",
+      "category": "payments",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 11814,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "ledger.com",
+      "name": "Ledger",
+      "category": "payments",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4589,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "chase.com",
+      "name": "Chase",
+      "category": "bank",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 3310,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "bankofamerica.com",
+      "name": "Bank of America",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1865,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "wellsfargo.com",
+      "name": "Wells Fargo",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2986,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "citi.com",
+      "name": "Citi",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 5130,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "citibank.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 12459,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "capitalone.com",
+      "name": "Capital One",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4019,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "usbank.com",
+      "name": "U.S. Bank",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4336,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "pnc.com",
+      "name": "PNC",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 7527,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "hsbc.com",
+      "name": "HSBC",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4480,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "barclays.co.uk",
+      "name": "Barclays",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 9720,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "barclays.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 23751,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "lloydsbank.com",
+      "name": "Lloyds Bank",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 14305,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "natwest.com",
+      "name": "NatWest",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 16004,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "ing.com",
+      "name": "ING",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 6428,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "deutsche-bank.de",
+      "name": "Deutsche Bank",
+      "category": "bank",
+      "names": [
+        "deutschebank"
+      ],
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 17807,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "rbcroyalbank.com",
+      "name": "RBC",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 12051,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "scotiabank.com",
+      "name": "Scotiabank",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 9146,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "scotiabank.com.pe",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 46724,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "scotiabank.cl",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": null,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "scotiabank.com.mx",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 189098,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "santander.com",
+      "name": "Santander",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 11770,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "bancosantander.es",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 22199,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "santander.com.br",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 20415,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "santander.com.mx",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 79641,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "santander.com.ar",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 249446,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "santander.cl",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 124620,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "bbva.com",
+      "name": "BBVA",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 6652,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "bbva.es",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 24295,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "bbva.mx",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 48871,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "bbva.com.ar",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 188442,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "bbva.pe",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 334950,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "bbva.com.co",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 287292,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "caixabank.es",
+      "name": "CaixaBank",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 15690,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "bancosabadell.com",
+      "name": "Banco Sabadell",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": null,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "itau.com.br",
+      "name": "Itaú",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 13998,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "bradesco.com.br",
+      "name": "Bradesco",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 50650,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "bb.com.br",
+      "name": "Banco do Brasil",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 10867,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "caixa.gov.br",
+      "name": "Caixa Econômica Federal",
+      "category": "bank",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 6733,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "nubank.com.br",
+      "name": "Nubank",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 18307,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "bancolombia.com",
+      "name": "Bancolombia",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 84181,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "davivienda.com",
+      "name": "Davivienda",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 65040,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "viabcp.com",
+      "name": "BCP Perú",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 135151,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "interbank.pe",
+      "name": "Interbank",
+      "category": "bank",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 244377,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "banorte.com",
+      "name": "Banorte",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 85550,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "banamex.com",
+      "name": "Citibanamex",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 62156,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "bancoestado.cl",
+      "name": "BancoEstado",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 118437,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "bancochile.cl",
+      "name": "Banco de Chile",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 132223,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "bci.cl",
+      "name": "Bci",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 168091,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "bancogalicia.com",
+      "name": "Banco Galicia",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 557046,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "macro.com.ar",
+      "name": "Banco Macro",
+      "category": "bank",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 165547,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "pichincha.com",
+      "name": "Banco Pichincha",
+      "category": "bank",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 307179,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "google.com",
+      "name": "Google",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "gmail.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 853,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "google-analytics.com",
+          "names": [],
+          "verification": {
+            "status": "confirmed",
+            "method": "site",
+            "source": "https://developers.google.com/tag-platform/security/guides/csp",
+            "checked": "2026-11-23"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "microsoft.com",
+      "name": "Microsoft",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 9,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "live.com",
+          "commonWord": true,
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 79,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "outlook.com",
+          "commonWord": true,
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 138,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "office.com",
+          "commonWord": true,
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 64,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "hotmail.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 2782,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "msn.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 150,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "microsoftonline.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 305,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "office365.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 814,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "sharepoint.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 170,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "onedrive.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 23680,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "skype.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 405,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "windows.com",
+          "commonWord": true,
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 1811,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "xbox.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 877,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "bing.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 117,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "apple.com",
+      "name": "Apple",
+      "category": "mail",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 7,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "icloud.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 1302,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "yahoo.com",
+      "name": "Yahoo",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 51,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "proton.me",
+      "name": "Proton",
+      "category": "mail",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1662,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "protonmail.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 9033,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "zoho.com",
+      "name": "Zoho",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 651,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "aol.com",
+      "name": "AOL",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 209,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "gmx.net",
+      "name": "GMX",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 3954,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "yandex.com",
+      "name": "Yandex",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 679,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "yandex.ru",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 211,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "dropbox.com",
+      "name": "Dropbox",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 93,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "adobe.com",
+      "name": "Adobe",
+      "category": "mail",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 38,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "docusign.com",
+      "name": "DocuSign",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4261,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "docusign.net",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 21938,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "zoom.us",
+      "name": "Zoom",
+      "category": "mail",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 80,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "slack.com",
+      "name": "Slack",
+      "category": "mail",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 461,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "github.com",
+      "name": "GitHub",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 10,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "gitlab.com",
+      "name": "GitLab",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 154,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "atlassian.com",
+      "name": "Atlassian",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 502,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "salesforce.com",
+      "name": "Salesforce",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 344,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "okta.com",
+      "name": "Okta",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2081,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "wetransfer.com",
+      "name": "WeTransfer",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1170,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "box.com",
+      "name": "Box",
+      "category": "mail",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 558,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "godaddy.com",
+      "name": "GoDaddy",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 91,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "namecheap.com",
+      "name": "Namecheap",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 72,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "cloudflare.com",
+      "name": "Cloudflare",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 163,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "wordpress.com",
+      "name": "WordPress",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 39,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "openai.com",
+      "name": "OpenAI",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 120,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "chatgpt.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 179,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "notion.so",
+      "name": "Notion",
+      "category": "mail",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 810,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "canva.com",
+      "name": "Canva",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 167,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "intuit.com",
+      "name": "Intuit",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 546,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "quickbooks.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 71671,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "turbotax.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 171939,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "hubspot.com",
+      "name": "HubSpot",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 200,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "mailchimp.com",
+      "name": "Mailchimp",
+      "category": "mail",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 263,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "netflix.com",
+      "name": "Netflix",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 287,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "disneyplus.com",
+      "name": "Disney+",
+      "category": "streaming",
+      "names": [
+        "disneyplus",
+        "disney"
+      ],
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1574,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "disney.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 1265,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "hbo.com",
+      "name": "HBO",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2092,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "hbomax.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 2539,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "primevideo.com",
+      "name": "Prime Video",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2047,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "spotify.com",
+      "name": "Spotify",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 50,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "youtube.com",
+      "name": "YouTube",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 3,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "youtu.be",
+          "names": [],
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 14,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "youtube-nocookie.com",
+          "names": [],
+          "verification": {
+            "status": "confirmed",
+            "method": "site",
+            "source": "https://support.google.com/youtube/answer/171780",
+            "checked": "2026-11-23"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "hulu.com",
+      "name": "Hulu",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1800,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "paramountplus.com",
+      "name": "Paramount+",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2588,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "crunchyroll.com",
+      "name": "Crunchyroll",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 3158,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "deezer.com",
+      "name": "Deezer",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 763,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "soundcloud.com",
+      "name": "SoundCloud",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 74,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "twitch.tv",
+      "name": "Twitch",
+      "category": "streaming",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 168,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "steampowered.com",
+      "name": "Steam",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 254,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "steamcommunity.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 592,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "epicgames.com",
+      "name": "Epic Games",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1071,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "roblox.com",
+      "name": "Roblox",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1944,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "playstation.com",
+      "name": "PlayStation",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 678,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "nintendo.com",
+      "name": "Nintendo",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 894,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "blizzard.com",
+      "name": "Blizzard",
+      "category": "streaming",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1790,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "riotgames.com",
+      "name": "Riot Games",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 5741,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "ea.com",
+      "name": "Electronic Arts",
+      "category": "streaming",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 906,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "facebook.com",
+      "name": "Facebook",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "fb.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 310,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "messenger.com",
+          "commonWord": true,
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 1273,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "meta.com",
+          "commonWord": true,
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 601,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "instagram.com",
+      "name": "Instagram",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "whatsapp.com",
+      "name": "WhatsApp",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 24,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "whatsapp.net",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 246682,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "wa.me",
+          "names": [],
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 18,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "twitter.com",
+      "name": "X (Twitter)",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 6,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "x.com",
+          "names": [],
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 15,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "tiktok.com",
+      "name": "TikTok",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 22,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "linkedin.com",
+      "name": "LinkedIn",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 5,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "snapchat.com",
+      "name": "Snapchat",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 541,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "telegram.org",
+      "name": "Telegram",
+      "category": "social",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 270,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "t.me",
+          "names": [],
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 32,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "discord.com",
+      "name": "Discord",
+      "category": "social",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 94,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "discord.gg",
+          "commonWord": true,
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 104,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "discordapp.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 1401,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "reddit.com",
+      "name": "Reddit",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 48,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "pinterest.com",
+      "name": "Pinterest",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 21,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "tumblr.com",
+      "name": "Tumblr",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 58,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "signal.org",
+      "name": "Signal",
+      "category": "social",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2350,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "wechat.com",
+      "name": "WeChat",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4319,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "viber.com",
+      "name": "Viber",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2308,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "quora.com",
+      "name": "Quora",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 370,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "onlyfans.com",
+      "name": "OnlyFans",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 3395,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "tinder.com",
+      "name": "Tinder",
+      "category": "social",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 6667,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "bumble.com",
+      "name": "Bumble",
+      "category": "social",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 10952,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "badoo.com",
+      "name": "Badoo",
+      "category": "social",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 12500,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "amazon.com",
+      "name": "Amazon",
+      "category": "shopping",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 30,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "amazonaws.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 65,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "ebay.com",
+      "name": "eBay",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 202,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "aliexpress.com",
+      "name": "AliExpress",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 525,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "alibaba.com",
+      "name": "Alibaba",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 394,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "mercadolibre.com",
+      "name": "Mercado Libre",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 21130,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "mercadolibre.com.ar",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 11132,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "mercadolibre.com.mx",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 10763,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "mercadolibre.com.co",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 45349,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "mercadolibre.cl",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 47505,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "mercadolibre.com.pe",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 145173,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "mercadolivre.com.br",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 6225,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "walmart.com",
+      "name": "Walmart",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 511,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "target.com",
+      "name": "Target",
+      "category": "shopping",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 964,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "bestbuy.com",
+      "name": "Best Buy",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1425,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "costco.com",
+      "name": "Costco",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2907,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "ikea.com",
+      "name": "IKEA",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 543,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "shein.com",
+      "name": "SHEIN",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4935,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "temu.com",
+      "name": "Temu",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4965,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "etsy.com",
+      "name": "Etsy",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 185,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "shopify.com",
+      "name": "Shopify",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 86,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "booking.com",
+      "name": "Booking.com",
+      "category": "shopping",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 225,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "airbnb.com",
+      "name": "Airbnb",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 547,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "expedia.com",
+      "name": "Expedia",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1738,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "tripadvisor.com",
+      "name": "Tripadvisor",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 228,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "despegar.com",
+      "name": "Despegar",
+      "category": "shopping",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 110575,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "uber.com",
+      "name": "Uber",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 797,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "rappi.com",
+      "name": "Rappi",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 97700,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "pedidosya.com",
+      "name": "PedidosYa",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 275203,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "ifood.com.br",
+      "name": "iFood",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 25911,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "cabify.com",
+      "name": "Cabify",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 40905,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "falabella.com",
+      "name": "Falabella",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 47448,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "americanas.com.br",
+      "name": "Americanas",
+      "category": "shopping",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 27493,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "magazineluiza.com.br",
+      "name": "Magazine Luiza",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 23876,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "nike.com",
+      "name": "Nike",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 766,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "adidas.com",
+      "name": "Adidas",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2271,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "zara.com",
+      "name": "Zara",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2664,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "samsung.com",
+      "name": "Samsung",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 182,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "xiaomi.com",
+      "name": "Xiaomi",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 7551,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "huawei.com",
+      "name": "Huawei",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 275,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "lenovo.com",
+      "name": "Lenovo",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 700,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "dell.com",
+      "name": "Dell",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 454,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "hp.com",
+      "name": "HP",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 197,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "sony.com",
+      "name": "Sony",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1039,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "latamairlines.com",
+      "name": "LATAM Airlines",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 10245,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "avianca.com",
+      "name": "Avianca",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 15507,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "copaair.com",
+      "name": "Copa Airlines",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 19801,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "delta.com",
+      "name": "Delta Air Lines",
+      "category": "shopping",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1977,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "united.com",
+      "name": "United Airlines",
+      "category": "shopping",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2683,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "ticketmaster.com",
+      "name": "Ticketmaster",
+      "category": "shopping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1644,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "dhl.com",
+      "name": "DHL",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1075,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "fedex.com",
+      "name": "FedEx",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1017,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "ups.com",
+      "name": "UPS",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1054,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "usps.com",
+      "name": "USPS",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 1046,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "royalmail.com",
+      "name": "Royal Mail",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4971,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "correos.es",
+      "name": "Correos",
+      "category": "shipping",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 14526,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "dpd.com",
+      "name": "DPD",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 6289,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "tnt.com",
+      "name": "TNT",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 7030,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "aramex.com",
+      "name": "Aramex",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 27095,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "maersk.com",
+      "name": "Maersk",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 3886,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "auspost.com.au",
+      "name": "Australia Post",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 8622,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "deutschepost.de",
+      "name": "Deutsche Post",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 7122,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "laposte.net",
+      "name": "La Poste",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 72469,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "cainiao.com",
+      "name": "Cainiao",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 31849,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "correoargentino.com.ar",
+      "name": "Correo Argentino",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 37419,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "servientrega.com",
+      "name": "Servientrega",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 551073,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "estafeta.com",
+      "name": "Estafeta",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 160150,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "chilexpress.cl",
+      "name": "Chilexpress",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 497651,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "olvacourier.com",
+      "name": "Olva Courier",
+      "category": "shipping",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": null,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "att.com",
+      "name": "AT&T",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 987,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "verizon.com",
+      "name": "Verizon",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 995,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "t-mobile.com",
+      "name": "T-Mobile",
+      "category": "telecom",
+      "names": [
+        "tmobile"
+      ],
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2262,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "vodafone.com",
+      "name": "Vodafone",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 5677,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "orange.com",
+      "name": "Orange",
+      "category": "telecom",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 5317,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "telefonica.com",
+      "name": "Telefónica",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 7147,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "movistar.com",
+      "name": "Movistar",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 315562,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "movistar.es",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 20348,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "movistar.com.ar",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 178828,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "movistar.cl",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 132861,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "movistar.com.pe",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 341524,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "movistar.com.co",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 508704,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "movistar.com.mx",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 245431,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "claro.com",
+      "name": "Claro",
+      "category": "telecom",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 549247,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "claro.com.ar",
+          "commonWord": true,
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 213823,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "claro.com.br",
+          "commonWord": true,
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 54741,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "claro.com.co",
+          "commonWord": true,
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 145503,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "claro.com.pe",
+          "commonWord": true,
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 235781,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "tigo.com",
+      "name": "Tigo",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": null,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "tigo.com.bo",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 622227,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "tigo.com.co",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 314922,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "tigo.com.py",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 526279,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "entel.cl",
+      "name": "Entel",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 108501,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "entel.pe",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 432847,
+            "checked": "2026-11-24"
+          }
+        },
+        {
+          "domain": "entel.bo",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 420593,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "telcel.com",
+      "name": "Telcel",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 63479,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "telmex.com",
+      "name": "Telmex",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 63508,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "personal.com.ar",
+      "name": "Personal",
+      "category": "telecom",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 88340,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "vivo.com.br",
+      "name": "Vivo",
+      "category": "telecom",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 51350,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "tim.com.br",
+      "name": "TIM",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 56463,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "comcast.com",
+      "name": "Comcast",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 5049,
+        "checked": "2026-11-24"
+      },
+      "aliases": [
+        {
+          "domain": "xfinity.com",
+          "verification": {
+            "status": "confirmed",
+            "method": "ranking",
+            "ranking": "majestic-million",
+            "rank": 3578,
+            "checked": "2026-11-24"
+          }
+        }
+      ]
+    },
+    {
+      "domain": "spectrum.com",
+      "name": "Spectrum",
+      "category": "telecom",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 11794,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "bt.com",
+      "name": "BT",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 2821,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "sky.com",
+      "name": "Sky",
+      "category": "telecom",
+      "commonWord": true,
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 702,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "telekom.de",
+      "name": "Deutsche Telekom",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 4365,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "airtel.in",
+      "name": "Airtel",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 16961,
+        "checked": "2026-11-24"
+      }
+    },
+    {
+      "domain": "jio.com",
+      "name": "Jio",
+      "category": "telecom",
+      "verification": {
+        "status": "confirmed",
+        "method": "ranking",
+        "ranking": "majestic-million",
+        "rank": 24418,
+        "checked": "2026-11-24"
+      }
+    }
+  ]
+}

@@ -1,6 +1,13 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { DEFAULT_CALIBRATION } from "@ojolink/core";
+import { DEFAULT_CALIBRATION, PROTECTED_PACKS, type ProtectedPack } from "@ojolink/core";
+import {
+  checkBaseline,
+  checkProtectedPages,
+  compareWithBaseline,
+  loadBaseline,
+  type BaselineComparison,
+} from "./baseline.ts";
 import { checkCases, loadCases, runCase, type CaseResult } from "./cases.ts";
 import {
   checkTargets,
@@ -39,6 +46,7 @@ export interface Measurement {
   readonly check: CheckResult;
   readonly cases: readonly CaseResult[];
   readonly reasons: CalibrationReasons;
+  readonly baseline: BaselineComparison;
   readonly failures: readonly string[];
 }
 
@@ -67,20 +75,28 @@ export function checkReasons(reasons: CalibrationReasons): string[] {
 }
 
 /** Runs everything the calibration check asserts over the corpus on disk. */
-export function measure(root: string = CORPUS_ROOT): Measurement {
+export function measure(
+  root: string = CORPUS_ROOT,
+  packs: readonly ProtectedPack[] = PROTECTED_PACKS,
+): Measurement {
   const corpus = loadCorpus(root);
   const evaluations = evaluateCorpus(corpus);
   const exceptions = loadExceptions(root);
-  const check = checkTargets(evaluations, exceptions);
+  const baseline = compareWithBaseline(evaluations, loadBaseline(root));
+  const raised = new Set(baseline.raised.map((change) => change.evaluation.sample.id));
+  const check = checkTargets(evaluations, exceptions, raised);
+  const excepted = new Set(exceptions.map((exception) => exception.id));
   const cases = loadCases(root).map((fixed) => runCase(fixed));
   const reasons = loadReasons(root);
   const failures = [
     ...checkCoverage(corpus),
+    ...checkProtectedPages(corpus, packs),
     ...check.failures,
+    ...checkBaseline(baseline, excepted),
     ...checkCases(cases),
     ...checkReasons(reasons),
   ];
-  return { corpus, evaluations, exceptions, check, cases, reasons, failures };
+  return { corpus, evaluations, exceptions, check, cases, reasons, baseline, failures };
 }
 
 function table(header: readonly string[], rows: readonly (readonly (string | number)[])[]): string {
@@ -123,7 +139,7 @@ function signalIds(evaluation: Evaluation): string[] {
 }
 
 export function renderReport(measurement: Measurement): string {
-  const { evaluations, exceptions, check, cases, reasons } = measurement;
+  const { evaluations, exceptions, check, cases, reasons, baseline } = measurement;
   const { rates } = check;
   const legitimate = evaluations.filter((item) => item.sample.label === "legitimate");
   const phishing = evaluations.filter((item) => item.sample.label === "phishing");
@@ -315,6 +331,29 @@ export function renderReport(measurement: Measurement): string {
               exception.reason,
             ];
           }),
+        ),
+    "",
+  );
+
+  out.push("## Changes since the baseline", "");
+  out.push(
+    "`baseline.json` records the level of every legitimate sample at the last accepted calibration. A sample that rises fails the check until it is resolved by a data change, a weight change, or a recorded exception.",
+    "",
+  );
+  const changes = [...baseline.raised, ...baseline.lowered];
+  out.push(
+    changes.length === 0
+      ? `No legitimate sample changed level (${baseline.compared} compared).`
+      : table(
+          ["Sample", "Kind", "Before", "Now", "Signals", "Input"],
+          changes.map((change) => [
+            change.evaluation.sample.id,
+            change.evaluation.sample.kind,
+            change.before,
+            change.evaluation.level,
+            change.evaluation.signals.join(", ") || "none",
+            shown(change.evaluation.sample.input),
+          ]),
         ),
     "",
   );

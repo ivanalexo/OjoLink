@@ -7,7 +7,7 @@ export const MAX_CAUTION_RATE = 0.05;
 export const MIN_DETECTION_RATE = 0.9;
 
 /** Kinds where caution is the designed result; they stay out of the caution rate. */
-const CAUTION_BY_DESIGN: readonly string[] = ["hosting", "near-neighbour"];
+const CAUTION_BY_DESIGN: readonly string[] = ["hosting", "near-neighbour", "brand-word"];
 const HIDDEN_BY_DESIGN: readonly string[] = ["tracker", "shortener"];
 
 export type Outcome = "correct" | "false-positive" | "miss" | "out-of-reach";
@@ -149,6 +149,7 @@ export function measureRates(evaluations: readonly Evaluation[]): Rates {
 export function checkTargets(
   evaluations: readonly Evaluation[],
   exceptions: readonly Exception[] = [],
+  raisedIds: ReadonlySet<string> = new Set(),
 ): CheckResult {
   const failures: string[] = [];
   const rates = measureRates(evaluations);
@@ -164,7 +165,10 @@ export function checkTargets(
       failures.push(
         `Exception "${exception.id}" is not allowed: a real page of a protected domain must be safe`,
       );
-    } else if (evaluation.outcome === "correct" || evaluation.outcome === "out-of-reach") {
+    } else if (
+      (evaluation.outcome === "correct" || evaluation.outcome === "out-of-reach") &&
+      !raisedIds.has(exception.id)
+    ) {
       failures.push(
         `Exception "${exception.id}" no longer applies: the sample now gets ${evaluation.level}; remove it`,
       );

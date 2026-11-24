@@ -6,6 +6,7 @@
   "scripts": {
     "report": "node src/cli.ts report",
     "check": "node src/cli.ts check",
+    "baseline": "node src/cli.ts baseline",
     "check:dns": "node src/cli.ts dns",
     "test": "tsc -p tsconfig.json && vitest run",
     "lint": "eslint ."

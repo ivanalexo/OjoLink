@@ -16,3 +16,5 @@ dev-dist
 apps/web/public
 packages/test-corpus/report.md
 .wrangler
+tools/build-data/sources/protected/global.json
+packages/test-corpus/baseline.json
