@@ -40,7 +40,6 @@ Ninguno de estos comandos necesita conexión a internet ni una cuenta en ningún
 | `apps/extension`       | Extensión de navegador (`@ojolink/extension`)               |
 | `tools/build-data`     | Generador de los datos del motor (`@ojolink/build-data`)    |
 | `architecture/`        | Requerimientos, arquitectura y plan de tareas, en español   |
-| `openspec/`            | Changes y specs de OpenSpec, en inglés                      |
 
 ## Aplicación web
 
@@ -443,5 +442,3 @@ Los datos de terceros que incluye el motor y sus avisos están en [THIRD_PARTY_N
 - [Requerimientos](architecture/Requerimientos%20—%20Extensión%20anti-phishing%20de%20dominios%20falsos.md)
 - [Arquitectura](architecture/Arquitectura%20anti-phishing.html)
 - [Plan de tareas](architecture/Tareas%20—%20Extensión%20anti-phishing%20de%20dominios%20falsos.md)
-
-El trabajo se organiza con [OpenSpec](openspec/). Para ver los changes pendientes: `openspec list`.
