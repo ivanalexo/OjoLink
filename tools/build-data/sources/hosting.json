@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19",
+  "updated": "2026-11-25",
   "services": [
     { "name": "GitHub Pages", "host": "github.io", "assignment": "subdomain" },
     { "name": "GitLab Pages", "host": "gitlab.io", "assignment": "subdomain" },
@@ -14,6 +14,8 @@
     { "name": "WordPress.com", "host": "wordpress.com", "assignment": "subdomain" },
     { "name": "Weebly", "host": "weebly.com", "assignment": "subdomain" },
     { "name": "Wix", "host": "wixsite.com", "assignment": "subdomain" },
+    { "name": "Jimdo", "host": "jimdosite.com", "assignment": "subdomain" },
+    { "name": "Jimdo", "host": "jimdofree.com", "assignment": "subdomain" },
     { "name": "Webflow", "host": "webflow.io", "assignment": "subdomain" },
     { "name": "000webhost", "host": "000webhostapp.com", "assignment": "subdomain" },
     { "name": "zya.me", "host": "zya.me", "assignment": "subdomain" },

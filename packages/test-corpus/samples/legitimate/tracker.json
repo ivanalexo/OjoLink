@@ -138,5 +138,13 @@
     "source": "constructed",
     "collected": "2026-11-20",
     "note": "Forma real del servicio; los identificadores son inventados."
+  },
+  {
+    "id": "text-address-through-tracker",
+    "input": "https://example.us12.list-manage.com/track/click?u=0123456789abcdef01234567a&id=0123456790",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Forma habitual en correos leg\u00edtimos; construido a mano.",
+    "visibleText": "www.tienda-ejemplo.com"
   }
 ]

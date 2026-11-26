@@ -1,10 +1,13 @@
 import { INDICATOR_TAG } from "./indicator.ts";
 import { MARK_TAG } from "./marks.ts";
 import { TOOLTIP_TAG } from "./tooltip.ts";
+import { WARNING_TAG } from "./warning-dialog.ts";
 
 export const SLICE_MS = 3;
 const LINKS = "a[href]";
-const OWN_TAGS = new Set([MARK_TAG, TOOLTIP_TAG, INDICATOR_TAG].map((tag) => tag.toUpperCase()));
+const OWN_TAGS = new Set(
+  [MARK_TAG, TOOLTIP_TAG, INDICATOR_TAG, WARNING_TAG].map((tag) => tag.toUpperCase()),
+);
 
 export interface Deadline {
   timeRemaining(): number;

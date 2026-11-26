@@ -32,6 +32,8 @@ export interface Marks {
   apply(anchor: HTMLAnchorElement, verdict: LinkVerdict | null): void;
   /** Removes marks whose link is gone and puts back marks that were moved or dropped. */
   sweep(): void;
+  /** Removes every mark and gives each link back what it had. */
+  clear(): void;
   view(anchor: HTMLAnchorElement): MarkView | null;
   readonly count: number;
   /** How many links carry a mark, by level. */
@@ -170,6 +172,9 @@ export function createMarks(doc: Document, tooltip: Tooltip): Marks {
       entry.reason = verdict.reason;
       describe(anchor, entry);
       place(anchor, entry);
+    },
+    clear() {
+      for (const anchor of [...entries.keys()]) remove(anchor);
     },
     sweep() {
       const known = new Set<Element>();

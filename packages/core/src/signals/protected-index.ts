@@ -33,6 +33,7 @@ export interface ProtectedIndex {
   readonly entries: readonly ProtectedDomain[];
   readonly suffixes: readonly ProtectedSuffixGroup[];
   readonly domains: ReadonlySet<string>;
+  readonly byDomain: ReadonlyMap<string, ProtectedDomain>;
   readonly byDomainSkeleton: ReadonlyMap<string, ProtectedDomain>;
   readonly byLabelSkeleton: ReadonlyMap<string, ProtectedDomain>;
   readonly byName: ReadonlyMap<string, BrandName>;
@@ -54,6 +55,7 @@ function build(packs: readonly ProtectedPack[], userDomains: readonly string[]):
   const entries: ProtectedDomain[] = [];
   const suffixes: ProtectedSuffixGroup[] = [];
   const domains = new Set<string>();
+  const byDomain = new Map<string, ProtectedDomain>();
   const byDomainSkeleton = new Map<string, ProtectedDomain>();
   const byLabelSkeleton = new Map<string, ProtectedDomain>();
   const byName = new Map<string, BrandName>();
@@ -76,6 +78,7 @@ function build(packs: readonly ProtectedPack[], userDomains: readonly string[]):
     };
     entries.push(item);
     domains.add(domain);
+    byDomain.set(domain, item);
 
     const domainKey = skeleton(domain);
     if (!byDomainSkeleton.has(domainKey)) byDomainSkeleton.set(domainKey, item);
@@ -105,7 +108,7 @@ function build(packs: readonly ProtectedPack[], userDomains: readonly string[]):
     }
   }
   for (const domain of userDomains) add(domain, domain, "user");
-  return { entries, suffixes, domains, byDomainSkeleton, byLabelSkeleton, byName };
+  return { entries, suffixes, domains, byDomain, byDomainSkeleton, byLabelSkeleton, byName };
 }
 
 /**
@@ -128,4 +131,14 @@ export function buildProtectedIndex(
     byUserDomains.set(userDomains, index);
   }
   return index;
+}
+
+/** The protected domain a host is, or sits under, or null when nobody protected owns it. */
+export function ownerOf(index: ProtectedIndex, host: string): ProtectedDomain | null {
+  const labels = host.toLowerCase().replace(/\.$/, "").split(".");
+  for (let start = 0; start < labels.length - 1; start++) {
+    const owner = index.byDomain.get(labels.slice(start).join("."));
+    if (owner) return owner;
+  }
+  return null;
 }

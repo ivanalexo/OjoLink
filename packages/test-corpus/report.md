@@ -8,10 +8,10 @@ Most phishing samples in this corpus were built by hand to show one technique ea
 
 | Target | Measured | Limit | Result |
 | --- | --- | --- | --- |
-| Legitimate samples at danger | 2 of 760 (2 accepted as exceptions) | 0 outside exceptions | met |
-| Legitimate samples at caution, not counting hosting pages and near-neighbour names | 0.0% (0 of 627) | at most 5.0% | met |
-| Real pages of protected domains at safe | 370 of 370 | all | met |
-| Covered phishing samples with a level other than safe | 100.0% (121 of 121) | at least 90.0% | met |
+| Legitimate samples at danger | 2 of 771 (2 accepted as exceptions) | 0 outside exceptions | met |
+| Legitimate samples at caution, not counting hosting pages and near-neighbour names | 0.0% (0 of 638) | at most 5.0% | met |
+| Real pages of protected domains at safe | 373 of 373 | all | met |
+| Covered phishing samples with a level other than safe | 100.0% (129 of 129) | at least 90.0% | met |
 
 Every check passes.
 
@@ -19,11 +19,11 @@ Every check passes.
 
 | Label | Kind | Samples | Safe | Hidden destination | Caution | Danger |
 | --- | --- | --- | --- | --- | --- | --- |
-| legitimate | protected | 370 | 370 | 0 | 0 | 0 |
-| legitimate | general | 193 | 193 | 0 | 0 | 0 |
+| legitimate | protected | 373 | 373 | 0 | 0 | 0 |
+| legitimate | general | 199 | 199 | 0 | 0 | 0 |
 | legitimate | idn | 24 | 24 | 0 | 0 | 0 |
-| legitimate | tracker | 20 | 12 | 8 | 0 | 0 |
-| legitimate | shortener | 20 | 4 | 16 | 0 | 0 |
+| legitimate | tracker | 21 | 12 | 9 | 0 | 0 |
+| legitimate | shortener | 21 | 5 | 16 | 0 | 0 |
 | legitimate | hosting | 35 | 3 | 0 | 30 | 2 |
 | legitimate | near-neighbour | 58 | 25 | 0 | 33 | 0 |
 | legitimate | brand-word | 40 | 37 | 0 | 3 | 0 |
@@ -34,20 +34,21 @@ Every check passes.
 | phishing | hosting | 13 | 0 | 0 | 7 | 6 |
 | phishing | mixed-script | 6 | 0 | 0 | 0 | 6 |
 | phishing | invisible-characters | 12 | 0 | 0 | 4 | 8 |
+| phishing | link-text-mismatch | 8 | 0 | 0 | 3 | 5 |
 | phishing | credentials | 5 | 0 | 0 | 2 | 3 |
 | phishing | ip-host | 5 | 0 | 0 | 5 | 0 |
 | phishing | encoded-host | 3 | 0 | 0 | 3 | 0 |
 | phishing | hidden-destination | 3 | 0 | 3 | 0 | 0 |
 | phishing | out-of-reach | 4 | 4 | 0 | 0 | 0 |
 
-Legitimate: 760 (minimum 200). Phishing the engine covers: 121 (minimum 50). Out of reach: 6.
+Legitimate: 771 (minimum 200). Phishing the engine covers: 129 (minimum 50). Out of reach: 6.
 
 ## Real and constructed samples
 
 | Source | Covered phishing samples | Detected | Missed |
 | --- | --- | --- | --- |
-| real | 2 | 2 | 0 |
-| constructed | 119 | 119 | 0 |
+| real | 3 | 3 | 0 |
+| constructed | 126 | 126 | 0 |
 
 ## Signals
 
@@ -62,10 +63,11 @@ Legitimate samples marked: legitimate samples where the signal triggered. Missed
 | hosting | 32 | 2 | 13 | 0 |
 | mixed-script | 0 | 0 | 6 | 0 |
 | invisible-characters | 0 | 0 | 12 | 0 |
+| link-text-mismatch | 0 | 0 | 8 | 0 |
 | credentials | 0 | 0 | 5 | 0 |
 | ip-host | 0 | 0 | 5 | 0 |
 | encoded-host | 0 | 0 | 3 | 0 |
-| hidden-destination | 24 | 0 | 3 | 0 |
+| hidden-destination | 25 | 0 | 3 | 0 |
 
 ## Weights and thresholds
 
@@ -86,7 +88,7 @@ Legitimate samples marked: legitimate samples where the signal triggered. Missed
 | combosquat/brand | 40 | 4 | 2 | A brand's name beside a neutral word is how a combination domain looks, but fan sites, resellers, and the brand's own extra domains look the same, so it gives caution and the text says it may be another site. Measured: 4 phishing samples and 2 legitimate ones (netflix-codes.com and paypal-community.com), all at caution. |
 | combosquat/lure | 70 | 11 | 0 | A brand's name beside a lure word such as «seguridad» or «verificar», in a domain that is not the brand's, is the shape of a phishing address, so it reaches danger alone. Measured: 11 phishing samples, 0 of 760 legitimate ones. Brands that are common words or short names trigger only in this variant. |
 | hosting/plain | 30 | 3 | 21 | Anyone can publish on these services, and most pages on them are honest, so the lowest weight that still shows a mark. Measured: 21 of 35 legitimate hosting samples and 3 phishing samples; none at danger. |
-| hosting/one-word | 50 | 2 | 7 | One lure word in the publisher's name is common in honest pages. Measured: 7 legitimate samples and 2 phishing samples, all at caution. |
+| hosting/one-word | 50 | 3 | 7 | One lure word in the publisher's name is common in honest pages. Measured: 7 legitimate samples and 2 phishing samples, all at caution. |
 | hosting/two-words | 50 | 2 | 2 | Two lure words without a brand name appear in honest pages too, so it stays at caution. Measured: 2 legitimate samples and 2 phishing samples. |
 | hosting/words | 70 | 6 | 2 | Three lure words, or a brand name beside a lure word, is the shape of the real phishing email of 19 November 2026, so it reaches danger alone. Measured: 6 phishing samples, 2 of them real, and 2 constructed legitimate samples that are accepted exceptions. |
 | subdomain/domain | 80 | 11 | 0 | A whole protected domain at the start of another site's name has no innocent use. Measured: 11 phishing samples, 0 of 760 legitimate ones. |
@@ -101,6 +103,8 @@ Legitimate samples marked: legitimate samples where the signal triggered. Missed
 | invisible-characters/text-many | 80 | 2 | 0 | A character nobody can see inside the name of the site, or in the text of the link, has no innocent use. Measured: 2 phishing samples, 0 of 394 legitimate ones. |
 | invisible-characters/link-one | 40 | 2 | 0 | An invisible character after the site's name can come from careless copying, so it gives caution. Measured: 2 phishing samples, 0 legitimate ones. |
 | invisible-characters/link-many | 40 | 2 | 0 | Same reading as one character: caution. Measured: 2 phishing samples, 0 legitimate ones. |
+| link-text-mismatch/brand | 70 | 5 | 0 | The text of the link shows a protected domain and the link leads to a site that is not that organization's, with a destination that can be read. It is the shape of the real phishing email of 25 November 2026, so it reaches danger alone. Measured on 2026-11-25: 5 phishing samples, 1 of them real, and 0 of 771 legitimate ones, 11 of which carry visible text, including two domains of one organization and an address shown on a link through a listed tracker. |
+| link-text-mismatch/other | 40 | 3 | 0 | The text shows a domain nobody protected owns and the link leads elsewhere. Unlisted tracking domains and sites that moved look the same, so it gives caution alone and reaches danger only beside another sign such as a free hosting page. Measured on 2026-11-25: 3 phishing samples at caution, 0 legitimate ones. |
 | credentials/decoy | 70 | 3 | 0 | A site's name written before the @ shows the intent to deceive, so it reaches danger alone. Measured: 3 phishing samples, 0 of 394 legitimate ones. |
 | credentials/plain | 40 | 2 | 0 | A user name before the @ is rare and legal; caution. Measured: 2 phishing samples, 0 legitimate ones. |
 | ip-host/encoded | 60 | 3 | 0 | A number written so that it does not look like an address hides the destination on purpose, but names no victim; high caution. Measured: 3 phishing samples, 0 legitimate ones. |
@@ -125,7 +129,7 @@ Legitimate samples marked: legitimate samples where the signal triggered. Missed
 
 `baseline.json` records the level of every legitimate sample at the last accepted calibration. A sample that rises fails the check until it is resolved by a data change, a weight change, or a recorded exception.
 
-No legitimate sample changed level (760 compared).
+No legitimate sample changed level (771 compared).
 
 ## Legitimate samples marked by a signal
 
@@ -217,6 +221,7 @@ Includes the kinds where the mark is the designed result: hidden destination for
 | shortener-t-co | shortener | constructed | hidden-destination | 0 | hidden-destination/shortener | `https://t.co/ExAmPle123` |
 | shortener-t-ly | shortener | constructed | hidden-destination | 0 | hidden-destination/shortener | `https://t.ly/ExAm` |
 | shortener-tinyurl-com | shortener | constructed | hidden-destination | 0 | hidden-destination/shortener | `https://tinyurl.com/example-boletin` |
+| text-address-through-tracker | tracker | constructed | hidden-destination | 0 | hidden-destination/tracker | `https://example.us12.list-manage.com/track/click?u=0123456789abcdef01234567a&id=0123456790` |
 | tracker-hubspot | tracker | constructed | hidden-destination | 0 | hidden-destination/tracker | `https://d2xR2K04.na1.hubspotlinks.com/Ctc/GD+113/d2xR2K04/EXAMPLEEXAMPLEEXAMPLEEXAMPLE` |
 | tracker-hubspot-eu | tracker | constructed | hidden-destination | 0 | hidden-destination/tracker | `https://d3aB1C02.eu1.hubspotlinks.com/Ctc/5F+113/d3aB1C02/EXAMPLEEXAMPLEEXAMPLE` |
 | tracker-mailchimp | tracker | constructed | hidden-destination | 0 | hidden-destination/tracker | `https://example.us12.list-manage.com/track/click?u=0123456789abcdef01234567a&id=0123456789&e=0123456789` |
@@ -234,7 +239,7 @@ Includes the kinds where the mark is the designed result: hidden destination for
 | Todo cirílico | `\u{0430}\u{0440}\u{0440}\u{04CF}\u{0435}.com` | danger, homograph | danger, homograph | passes |
 | Typosquatting | `micros0ft.com` | danger, homograph | danger, homograph | passes |
 | Subdominio engañoso | `bcp.com.bo.verifica.net` | danger, subdomain | danger, subdomain | passes |
-| Texto distinto del destino | `https://example.net/` | danger, link-text-mismatch | safe, no signal | pending on signal-link-text-mismatch: the engine has no signal yet for link text that differs from its destination |
+| Texto distinto del destino | `https://example.net/` | danger, link-text-mismatch | danger, link-text-mismatch | passes |
 | Destino oculto | `bit.ly/x` | hidden-destination, hidden-destination | hidden-destination, hidden-destination | passes |
 | IDN legítimo | `yuri\u{00F1}a.gob.bo` | safe, no signal | safe, no signal | passes |
 

@@ -1,4 +1,5 @@
 import { createIndicator, type Indicator } from "./indicator.ts";
+import { createInterceptor } from "./interceptor.ts";
 import { createMarks, type Marks } from "./marks.ts";
 import { createScanner, type Scanner, type ScannerOptions } from "./scanner.ts";
 import { fill, strings } from "./strings.ts";
@@ -7,13 +8,20 @@ import {
   createVerdicts,
   readLink,
   type Analyze,
+  type LinkInput,
   type LinkVerdict,
   type Verdicts,
 } from "./verdicts.ts";
+import {
+  createWarningDialog,
+  type WarningDialog,
+  type WarningDialogOptions,
+} from "./warning-dialog.ts";
 
 /** How long the pointer rests on an unmarked link before its verdict is shown. */
 export const HOVER_DELAY_MS = 350;
 const LINKS = "a[href]";
+const OPEN_FEATURES = "noopener,noreferrer";
 
 export interface Page {
   readonly scanner: Scanner;
@@ -21,11 +29,13 @@ export interface Page {
   readonly tooltip: Tooltip;
   readonly indicator: Indicator;
   readonly verdicts: Verdicts;
+  readonly warning: WarningDialog;
   stop(): void;
 }
 
 export interface PageOptions extends ScannerOptions {
   readonly analyze?: Analyze;
+  readonly warning?: WarningDialogOptions;
 }
 
 function linkOf(target: EventTarget | null): HTMLAnchorElement | null {
@@ -33,7 +43,10 @@ function linkOf(target: EventTarget | null): HTMLAnchorElement | null {
   return typeof element?.closest === "function" ? element.closest<HTMLAnchorElement>(LINKS) : null;
 }
 
-/** Checks every link of a page, marks the suspicious ones, and says what it found. */
+/**
+ * Checks every link of a page, marks the suspicious ones, says what it found, and stops the
+ * click on a dangerous one. Clicks are watched at once; the scan waits for the document.
+ */
 export function startPage(doc: Document, options: PageOptions = {}): Page {
   const tooltip = createTooltip(doc);
   const marks = createMarks(doc, tooltip);
@@ -41,6 +54,30 @@ export function startPage(doc: Document, options: PageOptions = {}): Page {
   const verdicts = createVerdicts(options.analyze);
   const seen = new WeakMap<HTMLAnchorElement, string>();
   const checked = new Map<HTMLAnchorElement, LinkVerdict>();
+  const warning = createWarningDialog(doc, options.warning);
+  const view = doc.defaultView;
+
+  const interceptor = view
+    ? createInterceptor<LinkInput>(
+        view,
+        (anchor) => {
+          const link = anchor.isConnected ? readLink(anchor) : null;
+          return link && verdicts.of(link)?.level === "danger" ? link : null;
+        },
+        (anchor, link) => {
+          const content = verdicts.describe(link);
+          if (!content) return;
+          tooltip.hide();
+          warning.open(
+            content,
+            (choice) => {
+              if (choice === "open") view.open(link.address, "_blank", OPEN_FEATURES);
+            },
+            anchor,
+          );
+        },
+      )
+    : null;
 
   const scanner = createScanner(
     doc,
@@ -114,7 +151,10 @@ export function startPage(doc: Document, options: PageOptions = {}): Page {
   doc.addEventListener("pointerout", onOut, true);
   doc.addEventListener("focusin", onFocus, true);
   doc.addEventListener("focusout", onBlur, true);
-  scanner.start();
+
+  const begin = (): void => scanner.start();
+  if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", begin, { once: true });
+  else begin();
 
   return {
     scanner,
@@ -122,8 +162,13 @@ export function startPage(doc: Document, options: PageOptions = {}): Page {
     tooltip,
     indicator,
     verdicts,
+    warning,
     stop() {
+      doc.removeEventListener("DOMContentLoaded", begin);
+      interceptor?.stop();
+      warning.remove();
       scanner.stop();
+      marks.clear();
       clearTimeout(resting);
       doc.removeEventListener("pointerover", onOver, true);
       doc.removeEventListener("pointerout", onOut, true);

@@ -51,3 +51,11 @@ export const BENCHMARK_LINKS: readonly string[] = [
   "https://netflix-pago-seguro.com/cuenta",
   "https://paypalseguridad.com/",
 ];
+
+/** Links analyzed with the text a message shows for them. */
+export const BENCHMARK_TEXT_LINKS: readonly (readonly [link: string, visibleText: string])[] = [
+  ["https://proteccion-de-usuario.jimdosite.com/", "https://Outlook.com/verificar-identidad"],
+  ["https://cuenta-segura.net/bcp", "Ingresa a www.bcp.com.bo para continuar"],
+  ["https://www.lostiempos.com/actualidad", "www.lostiempos.com"],
+  ["https://www.viabcp.com/", "Ver mi estado de cuenta en línea"],
+];

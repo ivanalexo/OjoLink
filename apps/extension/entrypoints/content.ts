@@ -4,8 +4,9 @@ import { DEFAULT_PATTERNS } from "../src/sites.ts";
 
 export default defineContentScript({
   matches: [...DEFAULT_PATTERNS],
-  runAt: "document_idle",
-  main() {
-    startPage(document);
+  runAt: "document_start",
+  main(ctx) {
+    const page = startPage(document);
+    ctx.onInvalidated(() => page.stop());
   },
 });

@@ -138,5 +138,13 @@
     "source": "constructed",
     "collected": "2026-11-20",
     "note": "Forma real del acortador; el c\u00f3digo es inventado."
+  },
+  {
+    "id": "text-shortener-shown-on-full-address",
+    "input": "https://www.lostiempos.com/actualidad",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Forma habitual en correos leg\u00edtimos; construido a mano.",
+    "visibleText": "bit.ly/nota-de-hoy"
   }
 ]

@@ -93,7 +93,7 @@ describe("page scripts follow the granted sites", () => {
         id: id("mail.proton.me"),
         matches: ["https://mail.proton.me/*"],
         js: [PAGE_SCRIPT],
-        runAt: "document_idle",
+        runAt: "document_start",
         persistAcrossSessions: true,
       },
     ]);

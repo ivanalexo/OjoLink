@@ -220,9 +220,24 @@ Para que se note que revisó la página aunque no haya nada sospechoso, da dos s
 
 La extensión nunca dice que un enlace es seguro: dice que no le encontró señales de alerta.
 
+También compara lo que el enlace dice con a dónde lleva. Si el texto muestra una dirección, por ejemplo `https://Outlook.com/verificar-identidad`, y el enlace lleva a otro sitio, lo marca con el motivo «Dice outlook.com, pero lleva a jimdosite.com.». Es «Peligro» cuando el texto muestra un dominio protegido y «Precaución» cuando muestra cualquier otro. No avisa por esto cuando:
+
+- el texto no es una dirección: un botón, el nombre de una marca sin dominio, un correo electrónico o un nombre de archivo;
+- el destino está oculto tras un acortador o un enlace de seguimiento, como en casi todos los boletines: ahí la marca sigue siendo «Destino oculto»;
+- los dos dominios son de la misma organización, como `outlook.com` y `login.live.com`.
+
+La app web no tiene texto de enlace que comparar, así que esta señal solo actúa en la extensión.
+
+Al hacer clic en un enlace marcado «Peligro», la extensión detiene el clic antes de que el correo web o el navegador lo abran, y muestra un aviso: «OjoLink detuvo este enlace», el motivo con las mismas palabras de la app web, el sitio al que lleva de verdad y dos opciones.
+
+- «Volver» cierra el aviso sin abrir nada. Es la opción que tiene el foco: Enter, Escape o un clic fuera del aviso hacen lo mismo.
+- «Abrir de todos modos» abre el enlace en una pestaña nueva, aislada de la página del correo. Vale solo para ese clic: la próxima vez vuelve a avisar.
+
+Detiene el clic normal, el botón del medio, el clic con Ctrl, Cmd o Shift, y Enter con el teclado. Los enlaces en «Precaución» y «Destino oculto» se abren como siempre. El aviso se dibuja por encima de toda la página, donde el correo web no puede leerlo ni taparlo, y mientras está abierto las teclas no llegan a los atajos del correo.
+
 Límites de hoy:
 
-- No bloquea el clic ni muestra el aviso completo. Un enlace marcado se abre como siempre.
+- No detiene lo que la página no puede ver: «Abrir enlace en una pestaña nueva» del menú del clic derecho, arrastrar el enlace a la barra de pestañas, o copiar su dirección y pegarla. Ahí solo protege la marca.
 - No revela a dónde lleva un enlace corto.
 - No revisa enlaces dentro de marcos. Gmail y Outlook muestran el mensaje en la página principal, pero un correo web que use marcos no mostrará marcas.
 - No conoce todavía los dominios propios de quien la usa.

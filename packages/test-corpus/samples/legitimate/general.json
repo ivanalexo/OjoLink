@@ -1156,5 +1156,53 @@
     "input": "https://www.samsung.com/latin/",
     "source": "observed",
     "collected": "2026-11-20"
+  },
+  {
+    "id": "text-same-domain-news",
+    "input": "https://www.lostiempos.com/actualidad/pais",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Forma habitual en correos leg\u00edtimos; construido a mano.",
+    "visibleText": "www.lostiempos.com"
+  },
+  {
+    "id": "text-same-domain-full-address",
+    "input": "https://www.eldeber.com.bo/economia",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Forma habitual en correos leg\u00edtimos; construido a mano.",
+    "visibleText": "https://www.eldeber.com.bo/economia"
+  },
+  {
+    "id": "text-button-label",
+    "input": "https://www.lostiempos.com/suscripciones",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Forma habitual en correos leg\u00edtimos; construido a mano.",
+    "visibleText": "Ver mi suscripci\u00f3n"
+  },
+  {
+    "id": "text-file-name",
+    "input": "https://www.wikipedia.org/",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Forma habitual en correos leg\u00edtimos; construido a mano.",
+    "visibleText": "informe.pdf"
+  },
+  {
+    "id": "text-file-name-zip",
+    "input": "https://www.wikipedia.org/",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Forma habitual en correos leg\u00edtimos; construido a mano.",
+    "visibleText": "respaldo.zip"
+  },
+  {
+    "id": "text-sentence-no-space",
+    "input": "https://www.wikipedia.org/",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Forma habitual en correos leg\u00edtimos; construido a mano.",
+    "visibleText": "Gracias.Saludos"
   }
 ]

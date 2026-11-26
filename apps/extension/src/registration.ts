@@ -8,7 +8,7 @@ export interface PageScript {
   readonly id: string;
   readonly matches: readonly string[];
   readonly js: readonly string[];
-  readonly runAt: "document_idle";
+  readonly runAt: "document_start";
   readonly persistAcrossSessions: true;
 }
 
@@ -30,7 +30,7 @@ function scriptFor(host: string): PageScript {
     id: `${SCRIPT_PREFIX}${host}`,
     matches: [toPattern(host)],
     js: [PAGE_SCRIPT],
-    runAt: "document_idle",
+    runAt: "document_start",
     persistAcrossSessions: true,
   };
 }

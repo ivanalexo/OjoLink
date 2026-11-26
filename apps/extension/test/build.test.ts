@@ -99,6 +99,11 @@ describe("built manifest", () => {
     expect(existsSync(join(output, PAGE_SCRIPT))).toBe(true);
   });
 
+  it("starts the page script before any script of the page, to see clicks first", () => {
+    expect(manifest.content_scripts?.[0]?.run_at).toBe("document_start");
+    expect(readFileSync(join(output, PAGE_SCRIPT), "utf8")).toContain("ojolink-warning");
+  });
+
   it("declares only capabilities that have a recorded reason", () => {
     expect(permissionProblems(manifest)).toEqual([]);
     expect([...(manifest.permissions ?? [])].sort()).toEqual(["scripting", "storage"]);

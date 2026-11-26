@@ -1,4 +1,10 @@
-import { analyze, describeLevel, type AnalysisResult, type Level } from "@ojolink/core";
+import {
+  analyze,
+  describeLevel,
+  describeResult,
+  type AnalysisResult,
+  type Level,
+} from "@ojolink/core";
 
 export interface LinkVerdict {
   readonly level: Level;
@@ -7,6 +13,15 @@ export interface LinkVerdict {
   /** One sentence with the main reason. */
   readonly reason: string;
   /** The host the link really leads to, after any wrapper is opened. */
+  readonly host: string;
+}
+
+/** The parts of a warning for a link, in the engine's own words. */
+export interface LinkWarning {
+  readonly title: string;
+  readonly explanation: string;
+  readonly advice: string;
+  /** The host the link really leads to, in ASCII form. */
   readonly host: string;
 }
 
@@ -51,6 +66,8 @@ export function readLink(anchor: HTMLAnchorElement): LinkInput | null {
 export interface Verdicts {
   /** The verdict of a link, or null when the engine does not analyze it. */
   of(link: LinkInput): LinkVerdict | null;
+  /** What to tell the person about a link, or null when the engine does not analyze it. */
+  describe(link: LinkInput): LinkWarning | null;
   readonly size: number;
 }
 
@@ -73,6 +90,18 @@ export function createVerdicts(engine: Analyze = analyze, limit: number = CACHE_
   return {
     get size() {
       return cache.size;
+    },
+    describe({ address, text }) {
+      const result = engine(address, { context: { visibleText: text } });
+      const description = describeResult(result);
+      if (!result.analyzed || !description.analyzed) return null;
+      const { warning } = description;
+      return {
+        title: warning?.title ?? description.levelLabel,
+        explanation: warning?.explanation ?? description.levelDescription,
+        advice: warning?.advice ?? "",
+        host: result.url.asciiHost,
+      };
     },
     of(link) {
       const key = `${link.address}\n${link.text}`;

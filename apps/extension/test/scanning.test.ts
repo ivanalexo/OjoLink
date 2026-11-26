@@ -219,8 +219,8 @@ describe("the page script", () => {
     expect(range.cloneContents().textContent).toBe("Hola, entra aquí: mi banco y avisa.");
   });
 
-  it("does not change what a click on a marked link does", () => {
-    const anchor = link(DANGER);
+  it("does not change what a click on a link marked with caution does", () => {
+    const anchor = link(CAUTION);
     message(anchor);
     const { control } = start();
     control.drain();

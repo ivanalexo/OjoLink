@@ -93,6 +93,11 @@ const HOSTING_FACT =
   "Esta página está alojada en {service}, un servicio donde cualquier persona puede publicar. No es el sitio oficial de ninguna empresa.";
 const HOSTING_ADVICE =
   "Las empresas no piden verificar una cuenta desde una página así. Si el mensaje dice venir de una empresa, entra a su sitio escribiendo la dirección tú mismo.";
+const LINK_MISMATCH_TITLE = "Este enlace no va a donde dice";
+const LINK_MISMATCH_ADVICE =
+  "Si querías ir a {shown}, escribe esa dirección tú mismo en el navegador.";
+const LINK_MISMATCH_TECHNICAL =
+  "Dominio que muestra el texto: {shown}. Dominio de destino: {real}.";
 const HOSTING_TECHNICAL =
   "Servicio: {service} ({host}). Nombre elegido por quien publica: {publisherName}. Palabras encontradas: {count}.";
 
@@ -314,6 +319,22 @@ export const es: Messages = {
       advice: SUBDOMAIN_SUFFIX_ADVICE,
       technical:
         "Dirección completa: {asciiHost}. Terminación escrita: {written}. Terminación protegida: {shown}.",
+    },
+    "link-text-mismatch/brand": {
+      tooltip: "Dice {shown}, pero lleva a {real}.",
+      title: LINK_MISMATCH_TITLE,
+      explanation:
+        "El texto del enlace muestra {shown}, pero al abrirlo lleva a {real}, que no es de {entity}.",
+      advice: LINK_MISMATCH_ADVICE,
+      technical: LINK_MISMATCH_TECHNICAL,
+    },
+    "link-text-mismatch/other": {
+      tooltip: "Dice {shown}, pero lleva a {real}.",
+      title: LINK_MISMATCH_TITLE,
+      explanation:
+        "El texto del enlace muestra {shown}, pero al abrirlo lleva a {real}. Son sitios distintos.",
+      advice: LINK_MISMATCH_ADVICE,
+      technical: LINK_MISMATCH_TECHNICAL,
     },
     "invisible-characters/host-one": {
       tooltip: "Tiene 1 carácter invisible en el nombre del sitio; en realidad abre {openedHost}.",

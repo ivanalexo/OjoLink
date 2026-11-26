@@ -38,11 +38,7 @@
     "visibleText": "bcp.com.bo",
     "expectedLevel": "danger",
     "expectedSignal": "link-text-mismatch",
-    "expectedTitle": "Este enlace no va a donde dice",
-    "pending": {
-      "change": "signal-link-text-mismatch",
-      "reason": "the engine has no signal yet for link text that differs from its destination"
-    }
+    "expectedTitle": "Este enlace no va a donde dice"
   },
   {
     "id": "destino-oculto",

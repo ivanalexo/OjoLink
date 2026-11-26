@@ -3,6 +3,7 @@ import { createCombosquatSignal } from "./combosquat.js";
 import { createHomographSignal } from "./homograph.js";
 import { createHostingSignal } from "./hosting.js";
 import { invisibleCharacters } from "./invisible.js";
+import { createLinkMismatchSignal } from "./link-mismatch.js";
 import { mixedScript } from "./mixed-script.js";
 import { credentials, encodedHost, ipHost } from "./obfuscation.js";
 import { createHiddenDestinationSignal } from "./shortener.js";
@@ -17,6 +18,7 @@ export function createDefaultSignals(userDomains?: readonly string[]): readonly 
   const subdomain = createSubdomainSignal(PROTECTED_PACKS, extra);
   const typosquat = createTyposquatSignal(PROTECTED_PACKS, extra);
   const hosting = createHostingSignal(HOSTING_SERVICES, LURE_WORDS);
+  const hidden = createHiddenDestinationSignal(SHORTENERS);
   return [
     homograph,
     subdomain,
@@ -28,10 +30,13 @@ export function createDefaultSignals(userDomains?: readonly string[]): readonly 
     hosting,
     mixedScript,
     invisibleCharacters,
+    createLinkMismatchSignal(PROTECTED_PACKS, SHORTENERS, extra, {
+      isHidden: (url) => hidden.evaluate(url, {}) !== null,
+    }),
     credentials,
     ipHost,
     encodedHost,
-    createHiddenDestinationSignal(SHORTENERS),
+    hidden,
   ];
 }
 

@@ -2525,5 +2525,29 @@
     "source": "observed",
     "collected": "2026-11-23",
     "note": "Direcci\u00f3n oficial de YouTube, del paquete global."
+  },
+  {
+    "id": "text-same-entity-microsoft",
+    "input": "https://login.live.com/",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Forma habitual en correos leg\u00edtimos; construido a mano.",
+    "visibleText": "outlook.com"
+  },
+  {
+    "id": "text-same-entity-youtube",
+    "input": "https://www.youtube.com/watch?v=abc",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Forma habitual en correos leg\u00edtimos; construido a mano.",
+    "visibleText": "youtu.be/abc"
+  },
+  {
+    "id": "text-subdomain-of-shown",
+    "input": "https://banca.bcp.com.bo/login",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Forma habitual en correos leg\u00edtimos; construido a mano.",
+    "visibleText": "bcp.com.bo"
   }
 ]

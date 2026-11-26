@@ -59,6 +59,8 @@ export { createDefaultSignals, DEFAULT_SIGNALS } from "./signals/index.js";
 export { createCombosquatSignal } from "./signals/combosquat.js";
 export type { CombosquatDetails } from "./signals/combosquat.js";
 export { createHomographSignal } from "./signals/homograph.js";
+export { createLinkMismatchSignal } from "./signals/link-mismatch.js";
+export type { LinkMismatchDetails } from "./signals/link-mismatch.js";
 export { createHostingSignal, findLureWords } from "./signals/hosting.js";
 export type { HostedPage, HostingDetails } from "./signals/hosting.js";
 export type { HomographCharacter, HomographDetails } from "./signals/homograph.js";

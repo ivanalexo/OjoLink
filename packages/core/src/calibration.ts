@@ -43,6 +43,8 @@ export const DEFAULT_CALIBRATION: Calibration = {
     "invisible-characters/text-many": 80,
     "invisible-characters/link-one": 40,
     "invisible-characters/link-many": 40,
+    "link-text-mismatch/brand": 70,
+    "link-text-mismatch/other": 40,
     "credentials/decoy": 70,
     "credentials/plain": 40,
     "ip-host/encoded": 60,

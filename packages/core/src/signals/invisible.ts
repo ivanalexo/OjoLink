@@ -47,11 +47,16 @@ function find(
   return found;
 }
 
-function looksLikeDomain(text: string): boolean {
-  const visible = Array.from(text)
+/** The text without the characters this signal reports. */
+export function stripInvisible(text: string): string {
+  if (!hasAny(text, ALL)) return text;
+  return Array.from(text)
     .filter((char) => !ALL.has(char.codePointAt(0) ?? 0))
-    .join("")
-    .trim();
+    .join("");
+}
+
+function looksLikeDomain(text: string): boolean {
+  const visible = stripInvisible(text).trim();
   return visible.includes(".") && !/\s/.test(visible);
 }
 

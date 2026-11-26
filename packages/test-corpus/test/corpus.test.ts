@@ -50,7 +50,9 @@ describe("the corpus", () => {
   });
 
   it("holds the two links of the phishing email of 19 November 2026, with no recipient data", () => {
-    const real = of("phishing").filter((item) => item.sample.source === "real");
+    const real = of("phishing").filter(
+      (item) => item.sample.source === "real" && item.sample.kind === "hosting",
+    );
     expect(real.map((item) => item.sample.id)).toEqual([
       "hosting-real-2026-11-19-google-sites",
       "hosting-real-2026-11-19-zya-redirect",
@@ -63,6 +65,20 @@ describe("the corpus", () => {
     }
     expect(real[0]?.sample.input).toContain("sites.google.com/view/");
     expect(real[1]?.sample.input).toContain("zya.me");
+  });
+
+  it("holds the link of the phishing email of 25 November 2026, with its visible text", () => {
+    const [real, ...others] = of("phishing").filter(
+      (item) => item.sample.source === "real" && item.sample.kind === "link-text-mismatch",
+    );
+    expect(others).toEqual([]);
+    expect(real?.sample).toMatchObject({
+      id: "link-text-mismatch-real-2026-11-25-outlook-jimdo",
+      collected: "2026-11-25",
+      visibleText: "https://Outlook.com/verificar-identidad",
+    });
+    expect(real?.level).toBe("danger");
+    expect(findEmailAddress(real?.sample.note ?? "")).toBeNull();
   });
 
   it("holds real pages of every protected domain, all safe", () => {
@@ -211,7 +227,7 @@ describe("the report", () => {
   });
 
   it("shows detected samples apart for real messages and for samples built by hand", () => {
-    expect(report).toMatch(/\| real \| 2 \| 2 \| 0 \|/);
+    expect(report).toMatch(/\| real \| 3 \| 3 \| 0 \|/);
     expect(report).toMatch(/\| constructed \| \d+ \| \d+ \| 0 \|/);
   });
 
@@ -226,7 +242,8 @@ describe("the report", () => {
     expect(report).not.toContain("pending on protected-domains-global");
     expect(report).toMatch(/\| Todo cirílico \| .+ \| passes \|/);
     expect(report).toMatch(/\| Typosquatting \| .+ \| passes \|/);
-    expect(report).toMatch(/pending on signal-link-text-mismatch/);
+    expect(report).not.toContain("pending on signal-link-text-mismatch");
+    expect(report).toMatch(/\| Texto distinto del destino \| .+ \| passes \|/);
     expect(report).toMatch(/\| out-of-reach-ordinary-domain-login \| out-of-reach \|/);
   });
 

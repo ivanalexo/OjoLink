@@ -1,0 +1,66 @@
+[
+  {
+    "id": "link-text-mismatch-real-2026-11-25-outlook-jimdo",
+    "input": "https://proteccion-de-usuario.jimdosite.com/",
+    "source": "real",
+    "collected": "2026-11-25",
+    "note": "Correo \u00abESTA SUSPENDIDA\u00bb que dice venir de Hotmail. El texto del enlace muestra Outlook.com; se conserva solo el sitio de destino, sin la ruta.",
+    "visibleText": "https://Outlook.com/verificar-identidad"
+  },
+  {
+    "id": "link-text-mismatch-brand-bank-bare",
+    "input": "https://cuenta-segura.net/bcp",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado.",
+    "visibleText": "www.bcp.com.bo"
+  },
+  {
+    "id": "link-text-mismatch-brand-sentence",
+    "input": "https://validacion-clientes.net/",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado.",
+    "visibleText": "Ingresa a bcp.com.bo para continuar"
+  },
+  {
+    "id": "link-text-mismatch-brand-safelink",
+    "input": "https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Facceso-clientes.net%2Flogin&data=05%7C02%7C%7C0123456789abcdef&reserved=0",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado.",
+    "visibleText": "https://www.paypal.com/signin"
+  },
+  {
+    "id": "link-text-mismatch-brand-with-path",
+    "input": "https://centro-de-ayuda.org/cuenta",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado.",
+    "visibleText": "netflix.com/actualizar-pago"
+  },
+  {
+    "id": "link-text-mismatch-other-shop",
+    "input": "https://otra-tienda.net/",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado.",
+    "visibleText": "www.mi-tienda-local.com"
+  },
+  {
+    "id": "link-text-mismatch-other-school",
+    "input": "https://formulario-datos.net/",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado.",
+    "visibleText": "portal.colegio-ejemplo.edu.bo/notas"
+  },
+  {
+    "id": "link-text-mismatch-other-full-address",
+    "input": "https://descargas-rapidas.org/factura",
+    "source": "constructed",
+    "collected": "2026-11-25",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado.",
+    "visibleText": "https://www.proveedor-ejemplo.com/factura/2026"
+  }
+]

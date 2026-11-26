@@ -150,7 +150,8 @@ describe("page script", () => {
     const debug = vi.spyOn(console, "debug").mockImplementation(() => undefined);
 
     const { default: script } = await import("../entrypoints/content.ts");
-    await script.main({} as never);
+    const invalidated: (() => void)[] = [];
+    await script.main({ onInvalidated: (stop: () => void) => invalidated.push(stop) } as never);
     await new Promise((resolve) => setTimeout(resolve, 80));
 
     const marks = document.querySelectorAll("ojolink-mark");
@@ -158,5 +159,11 @@ describe("page script", () => {
     expect(marks[0]?.previousElementSibling?.textContent).toBe("Entrar");
     expect(Object.keys(window).filter((key) => !globals.has(key))).toEqual([]);
     expect(debug).not.toHaveBeenCalled();
+
+    expect(invalidated).toHaveLength(1);
+    invalidated[0]?.();
+    expect(document.querySelectorAll("ojolink-mark, ojolink-status, ojolink-warning")).toHaveLength(
+      0,
+    );
   });
 });
