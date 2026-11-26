@@ -176,7 +176,7 @@ export function createIndicator(doc: Document): Indicator {
         return;
       }
       const next = describe(counts);
-      if (view && view.text === next.text && host?.isConnected) return;
+      if (view && view.text === next.text && view.tone === next.tone && host?.isConnected) return;
       if (!host) build();
       if (!host || !chip || !full || !short) return;
 

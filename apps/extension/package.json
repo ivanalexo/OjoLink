@@ -7,7 +7,7 @@
     "dev": "wxt",
     "build": "wxt build",
     "zip": "wxt zip",
-    "test": "tsc -p tsconfig.json && vitest run --no-file-parallelism",
+    "test": "tsc -p tsconfig.json && vitest run",
     "lint": "eslint ."
   },
   "dependencies": {

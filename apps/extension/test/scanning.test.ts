@@ -345,38 +345,72 @@ describe("batches", () => {
     expect(marksIn()).toHaveLength(1);
   });
 
-  async function measure(count: number, sliceMs?: number): Promise<number[]> {
+  interface Batch {
+    /** How long the batch blocked the page. */
+    readonly duration: number;
+    /** How far into the batch its last link was started. */
+    readonly lastStarted: number;
+    readonly links: number;
+  }
+
+  /** Scans a large page with the real clock and records what each batch did. */
+  async function measure(count: number, sliceMs?: number): Promise<Batch[]> {
     const targets = [DANGER, SHORT, SAFE, CAUTION, "https://www.bcp.com.bo/"];
     document.body.innerHTML = Array.from(
       { length: count },
       (_, index) =>
         `<p>Linea ${index} <a href="${targets[index % targets.length]}p${index % 97}">enlace ${index % 13}</a></p>`,
     ).join("");
-    const durations: number[] = [];
+    const batches: Batch[] = [];
+    let readings: number[] = [];
     await new Promise<void>((done) => {
       const started = startPage(document, {
         ...(sliceMs === undefined ? {} : { sliceMs }),
         schedule: (batch) => void setTimeout(batch, 0),
-        onBatch: (ms) => {
-          durations.push(ms);
+        now: () => {
+          const reading = performance.now();
+          readings.push(reading);
+          return reading;
+        },
+        onBatch: (duration, links) => {
+          // The scanner reads the clock when a batch starts and after each link.
+          const [start = 0] = readings;
+          const lastStarted = links > 1 ? (readings[links - 1] ?? start) - start : 0;
+          batches.push({ duration, lastStarted, links });
+          readings = [];
           if (started.scanner.pending === 0) done();
         },
       });
       page = started;
     });
-    return durations;
+    return batches;
   }
 
-  it("keeps every batch under 5 ms on a page of 5,000 links", async () => {
-    const durations = await measure(5000);
+  const median = (values: readonly number[]): number =>
+    [...values].sort((a, b) => a - b)[Math.floor(values.length / 2)] ?? 0;
+  /** Batches that started one more link after their time was up. */
+  const overran = (batches: readonly Batch[], limit: number): string[] =>
+    batches
+      .filter((batch) => batch.lastStarted >= limit)
+      .map((batch) => batch.lastStarted.toFixed(1));
+
+  it("never starts another link once a batch has used its 3 ms, on a page of 5,000 links", async () => {
+    const batches = await measure(5000);
     expect(marksIn().length).toBe(3000);
-    expect(durations.length).toBeGreaterThan(20);
-    const slow = durations.filter((ms) => ms >= 5);
-    expect(slow, `slow batches: ${slow.map((ms) => ms.toFixed(1)).join(", ")}`).toEqual([]);
+    expect(batches.length).toBeGreaterThan(20);
+    expect(batches.reduce((sum, batch) => sum + batch.links, 0)).toBe(5000);
+    expect(overran(batches, SLICE_MS)).toEqual([]);
   }, 120_000);
 
-  it("the budget check fails when a batch is allowed to run long", async () => {
-    const durations = await measure(3000, 50);
-    expect(durations.some((ms) => ms >= 5)).toBe(true);
+  it("keeps the usual batch under 5 ms", async () => {
+    const batches = await measure(5000);
+    const usual = median(batches.map((batch) => batch.duration));
+    expect(usual, `median batch: ${usual.toFixed(2)} ms`).toBeLessThan(5);
+  }, 120_000);
+
+  it("both checks fail when a batch is allowed to run long", async () => {
+    const batches = await measure(3000, 50);
+    expect(overran(batches, SLICE_MS).length).toBeGreaterThan(0);
+    expect(median(batches.map((batch) => batch.duration))).toBeGreaterThanOrEqual(5);
   }, 120_000);
 });

@@ -29,4 +29,29 @@ export const EXCLUDED_PERMISSIONS: readonly string[] = [
   "<all_urls>",
 ];
 
-export const EXTENSION_PAGES_POLICY = "script-src 'self'; object-src 'none'";
+const SCRIPT_POLICY = "script-src 'self'; object-src 'none'";
+
+/** What the extension's own pages and background may load and contact. */
+export function extensionPagesPolicy(resolver: string | null): string {
+  return `${SCRIPT_POLICY}; connect-src ${resolver === null ? "'none'" : `'self' ${resolver}`}`;
+}
+
+export interface ManifestAccess {
+  readonly permissions: string[];
+  readonly host_permissions: string[];
+  readonly optional_host_permissions: string[];
+  readonly content_security_policy: { extension_pages: string };
+}
+
+/**
+ * Everything the manifest declares about access. The resolver is the one outside address
+ * the extension may contact; a package built without one declares none.
+ */
+export function buildManifest(resolver: string | null): ManifestAccess {
+  return {
+    permissions: Object.keys(PERMISSION_REASONS),
+    host_permissions: [...REQUIRED_HOSTS, ...(resolver === null ? [] : [`${resolver}/*`])],
+    optional_host_permissions: [...OPTIONAL_HOSTS],
+    content_security_policy: { extension_pages: extensionPagesPolicy(resolver) },
+  };
+}

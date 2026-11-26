@@ -5,7 +5,7 @@ import { DEFAULT_PATTERNS, DEFAULT_SITES, toPattern } from "../src/sites.ts";
 import { strings } from "../src/strings.ts";
 
 function fakeApi(answer: "grant" | "dismiss" | "fail" = "grant") {
-  const state = { granted: [...DEFAULT_PATTERNS] as string[] };
+  const state = { granted: [...DEFAULT_PATTERNS] as string[], hover: false };
   const requests: string[] = [];
   const api: OptionsApi = {
     grantedOrigins: async () => state.granted,
@@ -18,6 +18,11 @@ function fakeApi(answer: "grant" | "dismiss" | "fail" = "grant") {
     remove: async (pattern) => {
       state.granted = state.granted.filter((item) => item !== pattern);
       return true;
+    },
+    revealOnHover: async () => state.hover,
+    setRevealOnHover: async (on) => {
+      if (answer === "fail") throw new Error("no storage");
+      state.hover = on;
     },
   };
   return { state, requests, api };

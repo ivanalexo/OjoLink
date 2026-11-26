@@ -3,8 +3,9 @@ import { join } from "node:path";
 import { analyze } from "@ojolink/core";
 import { describe, expect, it } from "vitest";
 import {
+  buildManifest,
   EXCLUDED_PERMISSIONS,
-  EXTENSION_PAGES_POLICY,
+  extensionPagesPolicy,
   OPTIONAL_HOSTS,
   PERMISSION_REASONS,
   REQUIRED_HOSTS,
@@ -34,6 +35,12 @@ interface Manifest {
 
 const manifest = JSON.parse(readFileSync(join(output, "manifest.json"), "utf8")) as Manifest;
 
+/** The resolver this package was built with, read back from what it declares. */
+const builtResolver =
+  (manifest.host_permissions ?? [])
+    .filter((host) => !DEFAULT_PATTERNS.includes(host as (typeof DEFAULT_PATTERNS)[number]))
+    .map((host) => host.replace(/\/\*$/, ""))[0] ?? null;
+
 function files(directory: string, extensions: readonly string[]): string[] {
   if (!existsSync(directory)) return [];
   return readdirSync(directory, { withFileTypes: true, recursive: true })
@@ -42,7 +49,7 @@ function files(directory: string, extensions: readonly string[]): string[] {
 }
 
 /** What the permission check finds wrong in a manifest. */
-function permissionProblems(candidate: Manifest): string[] {
+function permissionProblems(candidate: Manifest, resolver = builtResolver): string[] {
   const problems: string[] = [];
   const declared = [...(candidate.permissions ?? []), ...(candidate.optional_permissions ?? [])];
   const hosts = [
@@ -62,11 +69,12 @@ function permissionProblems(candidate: Manifest): string[] {
     if (EXCLUDED_PERMISSIONS.includes(permission)) problems.push(`"${permission}" is excluded`);
   }
   for (const host of candidate.host_permissions ?? []) {
-    if (!REQUIRED_HOSTS.includes(host))
+    if (!REQUIRED_HOSTS.includes(host) && host !== `${resolver}/*`)
       problems.push(`required host "${host}" is not a default site`);
   }
   for (const host of hosts) {
-    if (!host.startsWith("https://")) problems.push(`host "${host}" is not https`);
+    if (!host.startsWith("https://") && host !== `${resolver}/*`)
+      problems.push(`host "${host}" is not https`);
   }
   return problems;
 }
@@ -86,7 +94,12 @@ describe("built manifest", () => {
   });
 
   it("requires the three webmail sites and nothing else", () => {
-    expect([...(manifest.host_permissions ?? [])].sort()).toEqual([...DEFAULT_PATTERNS].sort());
+    expect([...(manifest.host_permissions ?? [])].sort()).toEqual(
+      [...buildManifest(builtResolver).host_permissions].sort(),
+    );
+    expect(manifest.host_permissions?.length).toBe(
+      DEFAULT_PATTERNS.length + (builtResolver ? 1 : 0),
+    );
     expect(manifest.optional_host_permissions).toEqual([...OPTIONAL_HOSTS]);
     expect(manifest.optional_permissions ?? []).toEqual([]);
   });
@@ -140,8 +153,12 @@ describe("built manifest", () => {
   });
 
   it("allows no script from outside the package", () => {
-    expect(manifest.content_security_policy?.extension_pages).toBe(EXTENSION_PAGES_POLICY);
-    expect(EXTENSION_PAGES_POLICY).not.toMatch(/https?:|unsafe|\*/);
+    const policy = extensionPagesPolicy(builtResolver);
+    expect(manifest.content_security_policy?.extension_pages).toBe(policy);
+    expect(policy.split("connect-src")[0]).not.toMatch(/https?:|unsafe|\*/);
+    expect(extensionPagesPolicy(null)).toBe(
+      "script-src 'self'; object-src 'none'; connect-src 'none'",
+    );
     const page = readFileSync(join(output, manifest.options_ui?.page ?? ""), "utf8");
     expect(page).not.toMatch(/(?:src|href)="(?:https?:)?\/\//);
     expect(page).not.toMatch(/<script(?![^>]*\bsrc=)[^>]*>\s*\S/);
@@ -161,44 +178,102 @@ describe("built manifest", () => {
   });
 });
 
-describe("no network", () => {
+describe("what the manifest declares, with and without a resolver", () => {
+  const without = buildManifest(null);
+  const withOne = buildManifest("https://resolver.example");
+
+  it("adds one host and one connection source for a resolver, and nothing else", () => {
+    expect(withOne.host_permissions).toEqual([
+      ...without.host_permissions,
+      "https://resolver.example/*",
+    ]);
+    expect(withOne.content_security_policy.extension_pages).toBe(
+      "script-src 'self'; object-src 'none'; connect-src 'self' https://resolver.example",
+    );
+    expect(without.content_security_policy.extension_pages).toBe(
+      "script-src 'self'; object-src 'none'; connect-src 'none'",
+    );
+    expect({ ...withOne, host_permissions: [], content_security_policy: null }).toEqual({
+      ...without,
+      host_permissions: [],
+      content_security_policy: null,
+    });
+  });
+
+  it("keeps the same two capabilities either way", () => {
+    expect([...without.permissions].sort()).toEqual(["scripting", "storage"]);
+    expect(withOne.permissions).toEqual(without.permissions);
+    expect(without.host_permissions).toEqual([...DEFAULT_PATTERNS]);
+  });
+});
+
+describe("one request, in one place", () => {
+  const request = /\bfetch\s*\(/;
   const forbidden =
-    /\bfetch\s*\(|XMLHttpRequest|WebSocket|EventSource|sendBeacon|importScripts|\bimport\s*\(\s*["'`]https?:|document\.cookie/;
+    /XMLHttpRequest|WebSocket|EventSource|sendBeacon|importScripts|\bimport\s*\(\s*["'`]https?:|document\.cookie/;
+  const ONLY = join(root, "src", "reveal.ts");
   const sources = [
     ...files(join(root, "src"), [".ts"]),
     ...files(join(root, "entrypoints"), [".ts", ".html"]),
   ];
+  const problems = (file: string, text: string): string[] => [
+    ...(request.test(text) && file !== ONLY ? ["makes a request outside reveal.ts"] : []),
+    ...(forbidden.test(text) ? ["uses a request API other than the one allowed"] : []),
+  ];
 
   it("has source files to check", () => {
-    expect(sources.length).toBeGreaterThanOrEqual(14);
+    expect(sources.length).toBeGreaterThanOrEqual(20);
+    expect(sources).toContain(ONLY);
   });
 
-  it.each(sources)("%s makes no request and loads no remote script", (file) => {
-    expect(readFileSync(file, "utf8")).not.toMatch(forbidden);
+  it.each(sources)("%s makes no request of its own and loads no remote script", (file) => {
+    expect(problems(file, readFileSync(file, "utf8"))).toEqual([]);
   });
 
-  it("the check catches a request", () => {
-    expect('const answer = await fetch("https://example.org/");').toMatch(forbidden);
-    expect('import("https://example.org/x.js")').toMatch(forbidden);
+  it("the resolver call is the only request, and it is where it should be", () => {
+    expect(readFileSync(ONLY, "utf8")).toMatch(request);
+    expect(sources.filter((file) => request.test(readFileSync(file, "utf8")))).toEqual([ONLY]);
   });
 
-  it("references no address outside the default sites in the built files", () => {
+  it("the check catches a request anywhere else", () => {
+    const elsewhere = join(root, "src", "page.ts");
+    expect(problems(elsewhere, 'const answer = await fetch("https://example.org/");')).toEqual([
+      "makes a request outside reveal.ts",
+    ]);
+    expect(problems(ONLY, 'navigator.sendBeacon("https://example.org/")')).toHaveLength(1);
+    expect(problems(ONLY, 'import("https://example.org/x.js")')).toHaveLength(1);
+  });
+
+  /** Hosts named in the built files, apart from the allowed ones. */
+  function outsideHosts(texts: readonly string[], resolver: string | null): string[] {
     // Namespaces, and links in console messages of the build tool and the engine's data sources.
     const allowed = new Set([
       "www.w3.org",
       "mail.google.com",
       "outlook.office.com",
       "outlook.live.com",
+      ...(resolver === null ? [] : [new URL(resolver).hostname]),
     ]);
     const hosts = new Set<string>();
-    for (const file of files(output, [".js", ".html", ".css", ".json"])) {
-      for (const match of readFileSync(file, "utf8").matchAll(
-        /https?:\/\/([a-z0-9.-]+\.[a-z]{2,})/gi,
-      )) {
+    for (const text of texts) {
+      for (const match of text.matchAll(/https?:\/\/([a-z0-9.-]+\.[a-z]{2,})/gi)) {
         hosts.add((match[1] ?? "").toLowerCase());
       }
     }
-    expect([...hosts].filter((host) => !allowed.has(host))).toEqual([]);
+    return [...hosts].filter((host) => !allowed.has(host));
+  }
+
+  it("references no address outside the default sites and the resolver in the built files", () => {
+    const built = files(output, [".js", ".html", ".css", ".json"]).map((file) =>
+      readFileSync(file, "utf8"),
+    );
+    expect(outsideHosts(built, builtResolver)).toEqual([]);
+  });
+
+  it("the check catches an extra host", () => {
+    const text = 'x("https://resolver.example/resolve"); y("https://collector.example/");';
+    expect(outsideHosts([text], "https://resolver.example")).toEqual(["collector.example"]);
+    expect(outsideHosts([text], null)).toEqual(["resolver.example", "collector.example"]);
   });
 });
 

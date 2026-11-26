@@ -11,5 +11,5 @@
     "allowImportingTsExtensions": true,
     "types": ["node"]
   },
-  "include": ["entrypoints", "src", "test", "wxt.config.ts"]
+  "include": ["entrypoints", "src", "test", "wxt.config.ts", "vitest.config.ts"]
 }

@@ -1,20 +1,13 @@
 import { defineConfig } from "wxt";
-import {
-  EXTENSION_PAGES_POLICY,
-  OPTIONAL_HOSTS,
-  PERMISSION_REASONS,
-  REQUIRED_HOSTS,
-} from "./src/permissions.ts";
+import { buildManifest } from "./src/permissions.ts";
+import { resolverOrigin } from "./src/resolver-config.ts";
 import { strings } from "./src/strings.ts";
 
 export default defineConfig({
-  manifest: {
+  manifest: () => ({
     name: strings.name,
     description: strings.description,
-    permissions: Object.keys(PERMISSION_REASONS),
-    host_permissions: [...REQUIRED_HOSTS],
-    optional_host_permissions: [...OPTIONAL_HOSTS],
-    content_security_policy: { extension_pages: EXTENSION_PAGES_POLICY },
+    ...buildManifest(resolverOrigin(import.meta.env.WXT_RESOLVER_URL)),
     minimum_chrome_version: "116",
-  },
+  }),
 });

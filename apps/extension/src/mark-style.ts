@@ -73,6 +73,8 @@ export const MARK_CSS = `
   -webkit-user-select: none;
 }
 .pill svg { width: 1.1em; height: 1.1em; flex: none; }
+.pill[data-control="true"] { cursor: pointer; text-decoration: underline dotted; }
+:host(:focus-visible) .pill { outline: 2px solid #1a5fd0; outline-offset: 1px; }
 ${levelRules}
 `;
 

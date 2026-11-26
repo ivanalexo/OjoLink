@@ -1,4 +1,5 @@
 import { HOST_STYLE, ICONS, isMarked, MARK_CSS, type MarkedLevel } from "./mark-style.ts";
+import { strings } from "./strings.ts";
 import type { Tooltip } from "./tooltip.ts";
 import type { LinkVerdict } from "./verdicts.ts";
 
@@ -11,6 +12,8 @@ export interface MarkView {
   readonly level: MarkedLevel;
   readonly label: string;
   readonly reason: string;
+  /** True when activating the mark offers to reveal the destination. */
+  readonly control: boolean;
   /** The content the page cannot reach, for tests. */
   readonly root: ShadowRoot;
 }
@@ -20,6 +23,7 @@ interface Entry {
   root: ShadowRoot;
   pill: HTMLElement;
   word: HTMLElement;
+  control: boolean;
   level: MarkedLevel;
   label: string;
   reason: string;
@@ -63,14 +67,32 @@ function drawIcon(doc: Document, level: MarkedLevel): SVGElement {
   return svg;
 }
 
-/** Creates the marks shown next to suspicious links. Every text is set as text, never as markup. */
-export function createMarks(doc: Document, tooltip: Tooltip): Marks {
+/**
+ * Creates the marks shown next to suspicious links. Every text is set as text, never as markup.
+ * The mark of a hidden destination is a control: activating it calls `onActivate`.
+ */
+export function createMarks(
+  doc: Document,
+  tooltip: Tooltip,
+  onActivate: (anchor: HTMLAnchorElement) => void = () => undefined,
+): Marks {
   const entries = new Map<HTMLAnchorElement, Entry>();
 
   function describe(anchor: HTMLAnchorElement, entry: Entry): void {
     const sentence = `${entry.label}: ${entry.reason}`;
-    entry.host.setAttribute("aria-label", sentence);
+    entry.host.setAttribute(
+      "aria-label",
+      entry.control ? `${sentence} ${strings.markReveals}` : sentence,
+    );
     anchor.setAttribute(DESCRIPTION, sentence);
+  }
+
+  function setControl(entry: Entry, control: boolean): void {
+    entry.control = control;
+    entry.host.setAttribute("role", control ? "button" : "note");
+    if (control) entry.host.setAttribute("tabindex", "0");
+    else entry.host.removeAttribute("tabindex");
+    entry.pill.dataset.control = String(control);
   }
 
   function paint(entry: Entry, level: MarkedLevel, label: string): void {
@@ -104,12 +126,26 @@ export function createMarks(doc: Document, tooltip: Tooltip): Marks {
     }
     anchor.addEventListener("focusin", show);
     anchor.addEventListener("focusout", hide);
+    const activate = (event: Event): void => {
+      if (!entries.get(anchor)?.control) return;
+      const key = (event as KeyboardEvent).key;
+      if (event.type === "keydown" && key !== "Enter" && key !== " ") return;
+      event.preventDefault();
+      event.stopPropagation();
+      tooltip.hide();
+      onActivate(anchor);
+    };
+    host.addEventListener("click", activate);
+    host.addEventListener("keydown", activate);
+    host.addEventListener("focus", show);
+    host.addEventListener("blur", hide);
 
     const entry: Entry = {
       host,
       root,
       pill,
       word,
+      control: false,
       level,
       label: verdict.label,
       reason: verdict.reason,
@@ -121,6 +157,10 @@ export function createMarks(doc: Document, tooltip: Tooltip): Marks {
         }
         anchor.removeEventListener("focusin", show);
         anchor.removeEventListener("focusout", hide);
+        host.removeEventListener("click", activate);
+        host.removeEventListener("keydown", activate);
+        host.removeEventListener("focus", show);
+        host.removeEventListener("blur", hide);
       },
     };
     paint(entry, level, verdict.label);
@@ -170,6 +210,7 @@ export function createMarks(doc: Document, tooltip: Tooltip): Marks {
       entry.level = verdict.level;
       entry.label = verdict.label;
       entry.reason = verdict.reason;
+      setControl(entry, verdict.level === "hidden-destination" && verdict.hidden !== undefined);
       describe(anchor, entry);
       place(anchor, entry);
     },

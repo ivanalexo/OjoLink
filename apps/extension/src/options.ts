@@ -1,4 +1,5 @@
 import { grantedHosts } from "./registration.ts";
+import { settings as builtSettings, type Settings } from "./settings.ts";
 import { checkSite, DEFAULT_SITES, toPattern } from "./sites.ts";
 import { fill, strings } from "./strings.ts";
 
@@ -8,6 +9,9 @@ export interface OptionsApi {
   /** Shows the browser's prompt. Must be called from the person's action. */
   request(pattern: string): Promise<boolean>;
   remove(pattern: string): Promise<boolean>;
+  /** Whether a hidden destination is revealed when the pointer rests on its link. */
+  revealOnHover(): Promise<boolean>;
+  setRevealOnHover(on: boolean): Promise<void>;
 }
 
 function element<K extends keyof HTMLElementTagNameMap>(
@@ -21,8 +25,15 @@ function element<K extends keyof HTMLElementTagNameMap>(
   return node;
 }
 
-/** Builds the page where the person adds and removes the sites OjoLink runs on. */
-export function mountOptions(root: HTMLElement, api: OptionsApi): { refresh(): Promise<void> } {
+/**
+ * Builds the page where the person adds and removes the sites OjoLink runs on, reads what
+ * leaves the device, and turns revealing on hover on or off.
+ */
+export function mountOptions(
+  root: HTMLElement,
+  api: OptionsApi,
+  settings: Settings = builtSettings,
+): { refresh(): Promise<void> } {
   const status = element("p", "", { role: "status", "aria-live": "polite", class: "status" });
   const list = element("ul", undefined, { class: "sites" });
   const empty = element("p", strings.grantedEmpty, { class: "muted" });
@@ -41,7 +52,24 @@ export function mountOptions(root: HTMLElement, api: OptionsApi): { refresh(): P
     status.textContent = text;
   };
 
+  const hover = element("input", undefined, {
+    id: "hover",
+    type: "checkbox",
+    "aria-describedby": "hover-hint",
+  });
+  hover.addEventListener("change", () => {
+    const wanted = hover.checked;
+    void api.setRevealOnHover(wanted).then(
+      () => say(strings.hoverSaved),
+      () => {
+        hover.checked = !wanted;
+        say(strings.failed);
+      },
+    );
+  });
+
   async function refresh(): Promise<void> {
+    hover.checked = await api.revealOnHover().catch(() => false);
     const hosts = grantedHosts(await api.grantedOrigins());
     list.replaceChildren(
       ...hosts.map((host) => {
@@ -92,6 +120,29 @@ export function mountOptions(root: HTMLElement, api: OptionsApi): { refresh(): P
     }),
   );
 
+  function privacy(): HTMLElement[] {
+    const heading = element("h2", strings.privacyHeading);
+    if (settings.resolver === null || settings.privacyPolicy === null) {
+      return [heading, element("p", strings.privacyNoResolver, { class: "privacy" })];
+    }
+    const text = element("p", `${strings.privacyReveal} `, { class: "privacy" });
+    text.append(
+      element("a", strings.privacyPolicy, {
+        href: settings.privacyPolicy,
+        target: "_blank",
+        rel: "noopener noreferrer",
+      }),
+    );
+    const choice = element("p", undefined, { class: "choice" });
+    choice.append(hover, element("label", strings.hoverLabel, { for: "hover" }));
+    return [
+      heading,
+      text,
+      choice,
+      element("p", strings.hoverHint, { id: "hover-hint", class: "muted" }),
+    ];
+  }
+
   form.append(
     element("label", strings.addLabel, { for: "site" }),
     element("p", strings.addHint, { id: "site-hint", class: "muted" }),
@@ -107,6 +158,7 @@ export function mountOptions(root: HTMLElement, api: OptionsApi): { refresh(): P
     empty,
     list,
     form,
+    ...privacy(),
     status,
   );
   return { refresh };

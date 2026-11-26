@@ -3,6 +3,7 @@ import {
   describeLevel,
   describeResult,
   type AnalysisResult,
+  type HiddenDestinationDetails,
   type Level,
 } from "@ojolink/core";
 
@@ -14,6 +15,16 @@ export interface LinkVerdict {
   readonly reason: string;
   /** The host the link really leads to, after any wrapper is opened. */
   readonly host: string;
+  /** Set when a shortener or a tracking redirect hides the destination. */
+  readonly hidden?: HiddenLink;
+}
+
+export interface HiddenLink {
+  readonly kind: HiddenDestinationDetails["kind"];
+  /** The listed service that hides the destination, such as bit.ly. */
+  readonly service: string;
+  /** The link to ask the resolver about, after any wrapper is opened. */
+  readonly link: string;
 }
 
 /** The parts of a warning for a link, in the engine's own words. */
@@ -79,11 +90,16 @@ export function createVerdicts(engine: Analyze = analyze, limit: number = CACHE_
     const result = engine(address, { context: { visibleText: text } });
     if (!result.analyzed) return null;
     const level = describeLevel(result.level);
+    const concealed = result.signals.find((signal) => signal.kind === "hidden-destination");
+    const details = concealed?.details as HiddenDestinationDetails | undefined;
     return {
       level: result.level,
       label: level.label,
       reason: result.signals[0]?.tooltip ?? level.description,
       host: result.url.host,
+      ...(result.level === "hidden-destination" && details
+        ? { hidden: { kind: details.kind, service: details.service, link: details.link } }
+        : {}),
     };
   }
 

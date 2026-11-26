@@ -233,12 +233,13 @@ Al hacer clic en un enlace marcado «Peligro», la extensión detiene el clic an
 - «Volver» cierra el aviso sin abrir nada. Es la opción que tiene el foco: Enter, Escape o un clic fuera del aviso hacen lo mismo.
 - «Abrir de todos modos» abre el enlace en una pestaña nueva, aislada de la página del correo. Vale solo para ese clic: la próxima vez vuelve a avisar.
 
-Detiene el clic normal, el botón del medio, el clic con Ctrl, Cmd o Shift, y Enter con el teclado. Los enlaces en «Precaución» y «Destino oculto» se abren como siempre. El aviso se dibuja por encima de toda la página, donde el correo web no puede leerlo ni taparlo, y mientras está abierto las teclas no llegan a los atajos del correo.
+Detiene el clic normal, el botón del medio, el clic con Ctrl, Cmd o Shift, y Enter con el teclado. Los enlaces en «Precaución» se abren como siempre. El aviso se dibuja por encima de toda la página, donde el correo web no puede leerlo ni taparlo, y mientras está abierto las teclas no llegan a los atajos del correo.
 
 Límites de hoy:
 
 - No detiene lo que la página no puede ver: «Abrir enlace en una pestaña nueva» del menú del clic derecho, arrastrar el enlace a la barra de pestañas, o copiar su dirección y pegarla. Ahí solo protege la marca.
-- No revela a dónde lleva un enlace corto.
+- No usa el análisis profundo del resolutor (el que abre un navegador en el servidor). Un enlace corto que los niveles rápidos no resuelven se muestra como no revelado.
+- Un acortador puede responderle al resolutor algo distinto de lo que te respondería a ti. «Lleva a» describe lo que el resolutor vio en ese momento.
 - No revisa enlaces dentro de marcos. Gmail y Outlook muestran el mensaje en la página principal, pero un correo web que use marcos no mostrará marcas.
 - No conoce todavía los dominios propios de quien la usa.
 
@@ -247,6 +248,33 @@ La marca no cambia el mensaje: no altera la dirección ni el texto del enlace, n
 ### Dónde corre
 
 Desde que se instala, solo en tres sitios: `mail.google.com`, `outlook.office.com` y `outlook.live.com`. Nunca pide acceso a todos los sitios.
+
+### Enlaces con destino oculto
+
+Un enlace que pasa por un acortador (`bit.ly`, `t.co`) o por un enlace de seguimiento de boletín lleva la marca «Destino oculto»: no se puede saber a dónde va sin abrirlo.
+
+- **Acortadores:** al hacer clic, la extensión detiene el clic y pregunta: «Revelar destino», «Abrir de todos modos» o «Cancelar».
+- **Enlaces de seguimiento:** se abren como siempre, para no interrumpir cada clic de un boletín.
+- **La marca es un botón:** al pulsarla, con el mouse o con Tab y Enter, abre el mismo diálogo. Sirve para los dos casos.
+
+«Revelar destino» le pregunta al resolutor de OjoLink a dónde lleva ese enlace y analiza la respuesta en tu equipo:
+
+- Si el destino es peligroso, el diálogo se convierte en el aviso de peligro, la marca pasa a «Peligro» y los clics siguientes se detienen.
+- Si no tiene señales de alerta, lo dice, muestra el sitio y ofrece «Abrir». La extensión sigue sin decir que es seguro.
+- Si no se pudo revelar (sin conexión, demasiadas consultas, el servicio no respondió), lo muestra en precaución y ofrece intentar de nuevo.
+
+«Abrir» abre el enlace tal como venía en el mensaje, no el destino revelado, así llegas a donde habría llevado un clic normal.
+
+Qué se envía y cuándo:
+
+- Solo el enlace corto. No se envía la página, el mensaje, el texto del enlace, cookies ni ningún identificador.
+- Solo cuando pulsas «Revelar destino». Leer correo, pasar el mouse o hacer clic no envía nada.
+- La petición la hace el script de fondo de la extensión, no la página del correo, y solo acepta enlaces de servicios que están en la lista de acortadores.
+- El destino revelado se recuerda 30 minutos en la memoria de sesión del navegador, nunca en disco, y se borra al cerrarlo.
+
+En la página de opciones hay un ajuste, apagado por defecto, para revelar al dejar el mouse 400 ms sobre un enlace. Si lo activas, cada enlace corto sobre el que dejes el mouse se envía al servicio, con un tope de 10 por minuto.
+
+La dirección del resolutor se fija al construir, con `WXT_RESOLVER_URL` en el entorno o en `apps/extension/.env.local` (hay un `.env.example`). Tiene que ser `https`, o `http` en `localhost`. Sin ella el paquete no declara ningún servidor, no hace ninguna petición y el diálogo dice que revelar no está disponible. Con ella, el manifiesto declara ese servidor y ningún otro.
 
 Quien la usa puede agregar otro correo web, uno a la vez, desde la página de opciones de la extensión. Cada sitio necesita su acción y el aviso de permiso del propio navegador, y se puede quitar cuando quiera.
 
@@ -261,7 +289,7 @@ Quien la usa puede agregar otro correo web, uno a la vez, desde la página de op
 
 No usa `tabs`, `history`, `cookies`, `downloads`, `webRequest` ni `<all_urls>`. Los motivos están en `apps/extension/src/permissions.ts`, y `pnpm test` falla si el paquete declara un permiso que no figure ahí.
 
-La extensión no hace ninguna petición de red ni carga código de fuera de su paquete. El motor va dentro.
+La extensión no carga código de fuera de su paquete; el motor va dentro. Revisar, marcar y detener enlaces no envía nada. La única petición de red que hace es la de «Revelar destino», a una sola dirección, y solo cuando la pides. Está explicado en «Enlaces con destino oculto», más abajo. `pnpm test` falla si aparece una petición en cualquier otro archivo que no sea `apps/extension/src/reveal.ts`, o si el paquete nombra otro servidor.
 
 ### Comandos
 
