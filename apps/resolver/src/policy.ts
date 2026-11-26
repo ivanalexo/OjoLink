@@ -46,6 +46,12 @@ h2 { font-size: 1.1rem; margin-top: 1.6rem; }
 <h2>Límite de uso</h2>
 <p>Para evitar abusos se cuentan las peticiones que llegan desde cada dirección IP: hasta ${RATE_LIMIT.limit} cada ${period}. Ese conteo es temporal y no lo guardamos.</p>
 
+<h2>La extensión del navegador</h2>
+<p>La extensión de OjoLink analiza los enlaces de tu correo en tu equipo. Los dominios que decides proteger y tus ajustes se guardan ahí mismo: no se sincronizan con tu cuenta del navegador ni se envían a ningún servidor. La extensión solo se comunica con este servicio cuando pulsas «Revelar destino» en un enlace corto, y entonces envía ese enlace y nada más. Revelar al dejar el mouse sobre un enlace viene apagado; si lo activas en las opciones, puedes apagarlo ahí mismo.</p>
+
+<h2>Lo que no hacemos</h2>
+<p>No vendemos ni compartimos datos, no mostramos publicidad, no creamos perfiles y no pedimos una cuenta. Esto vale para la app web y para la extensión.</p>
+
 <h2>Dónde funciona</h2>
 <p>El servicio corre en Cloudflare Workers. Cloudflare transporta las peticiones como proveedor de infraestructura. No usamos cookies, cuentas, publicidad ni herramientas de medición.</p>
 </body>

@@ -116,8 +116,6 @@ En PowerShell, la variable se define antes: `$env:VITE_RESOLVER_URL = "http://lo
 - **Android:** al instalar la app desde Chrome, OjoLink aparece en el menú de compartir. Lo compartido llega a la ruta `/analizar`, que responde la copia de la app guardada en el dispositivo.
 - **iPhone y iPad:** iOS no deja que una app web reciba lo compartido, así que se usa un Atajo. La app incluye una guía con los pasos, en `#ios`. El Atajo abre la página en Safari.
 
-Los pasos para comprobarlo en teléfonos reales están en [apps/web/COMPATIBILIDAD.md](apps/web/COMPATIBILIDAD.md).
-
 ## Resolutor de enlaces cortos
 
 `apps/resolver` es un Cloudflare Worker que dice a dónde lleva un enlace corto, como los de `bit.ly`, sin abrirlo. Es la única pieza de OjoLink que recibe algo desde el dispositivo, y lo único que recibe es el enlace corto.
@@ -203,9 +201,8 @@ pnpm --filter @ojolink/resolver run deploy
 El segundo comando muestra la dirección pública, que termina en `workers.dev`. Después del primer despliegue conviene comprobar tres cosas:
 
 1. Que `/privacidad` abre en esa dirección.
-2. Que en el panel de Cloudflare los registros del Worker (Workers Logs) aparecen desactivados.
-3. Que una petición de prueba con un enlace corto devuelve su destino.
-4. Que una petición con `"deep": true` para un enlace que redirige con código devuelve `"method": "headless"`, y que en el panel la sesión del navegador aparece cerrada. Las pruebas automáticas usan un navegador simulado, así que esta es la única comprobación con uno real.
+
+La política cubre la app web y la extensión del navegador: qué queda en el equipo y cuál es la única petición que la extensión hace. El texto está en `apps/resolver/src/policy.ts`; cambiarlo exige volver a desplegar el resolutor para que la versión publicada lo refleje. 2. Que en el panel de Cloudflare los registros del Worker (Workers Logs) aparecen desactivados. 3. Que una petición de prueba con un enlace corto devuelve su destino. 4. Que una petición con `"deep": true` para un enlace que redirige con código devuelve `"method": "headless"`, y que en el panel la sesión del navegador aparece cerrada. Las pruebas automáticas usan un navegador simulado, así que esta es la única comprobación con uno real.
 
 Para volver a la versión anterior: `pnpm --filter @ojolink/resolver exec wrangler rollback`.
 
@@ -321,7 +318,19 @@ pnpm --filter @ojolink/extension zip
 2. Abre `chrome://extensions` (o `edge://extensions`, `brave://extensions`) y activa el «Modo de desarrollador».
 3. Pulsa «Cargar descomprimida» y elige `apps/extension/.output/chrome-mv3`.
 
-Los pasos para comprobarla en cada navegador están en [apps/extension/COMPATIBILIDAD.md](apps/extension/COMPATIBILIDAD.md).
+### Publicación
+
+El mismo paquete se publica en Chrome Web Store y en Microsoft Edge Add-ons. Brave, Opera y Vivaldi instalan desde la tienda de Chrome. Firefox y Safari no están cubiertos por este paquete.
+
+```bash
+pnpm --filter @ojolink/extension release
+```
+
+El comando exige la dirección pública del resolutor (`https`, nunca `localhost`) y una versión que no se haya publicado antes, construye, corre las pruebas, arma `apps/extension/.output/ojolink-<versión>-chrome.zip` y revisa su contenido. Si algo falla no deja ningún archivo. No sube nada a las tiendas.
+
+Cada permiso que declara el paquete tiene su motivo, en español, en `apps/extension/src/permissions.ts`; es el mismo texto que se entrega a las tiendas. Las capturas de la ficha están en `apps/extension/store/screenshots/` y se rehacen con `pnpm --filter @ojolink/extension store:screenshots`, sobre mensajes inventados.
+
+Las versiones publicadas se anotan en [apps/extension/CHANGELOG.md](apps/extension/CHANGELOG.md).
 
 ## Datos
 
@@ -488,6 +497,10 @@ pnpm --filter @ojolink/test-corpus check:dns
 `baseline.json` guarda el nivel de cada muestra legítima en la última calibración aceptada. Si una sube de nivel, por ejemplo al agregar marcas, la comprobación falla y la nombra hasta que se resuelva. Cuando el resultado nuevo se acepta, la línea base se reescribe con `pnpm --filter @ojolink/test-corpus run baseline`.
 
 Si una muestra legítima recibe un nivel equivocado y el proyecto lo acepta, se anota en `exceptions.json` con su motivo. Una excepción que ya no hace falta hace fallar la comprobación, y una página real de un dominio protegido no admite excepción.
+
+## Licencia
+
+El código de OjoLink se publica bajo la licencia MIT. El texto está en [LICENSE](LICENSE). Los datos de terceros que el motor incluye conservan sus propias licencias, descritas a continuación.
 
 ## Licencias de terceros
 

@@ -497,9 +497,14 @@ describe("what the sources may not do", () => {
 
   it("mentions donating only in the panel and its settings", () => {
     const allowed = new Set(
-      ["strings.ts", "popup.ts", "settings.ts", "resolver-config.ts", "env.d.ts"].map((name) =>
-        join(root, "src", name),
-      ),
+      [
+        "strings.ts",
+        "popup.ts",
+        "settings.ts",
+        "resolver-config.ts",
+        "env.d.ts",
+        "release-rules.ts",
+      ].map((name) => join(root, "src", name)),
     );
     const mentioning = sources().filter((file) =>
       /donat|donar|donaci/i.test(readFileSync(file, "utf8")),

@@ -21,3 +21,4 @@ packages/test-corpus/baseline.json
 .output
 .wxt
 apps/extension/public
+apps/extension/store/permisos.es.md

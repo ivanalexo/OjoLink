@@ -2,11 +2,15 @@
   "name": "@ojolink/extension",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "wxt",
     "build": "wxt build",
     "zip": "wxt zip",
+    "release": "node scripts/release.ts",
+    "store:permissions": "node scripts/store-permissions.ts",
+    "store:screenshots": "node scripts/screenshots.ts",
     "test": "tsc -p tsconfig.json && vitest run",
     "lint": "eslint ."
   },
@@ -16,6 +20,7 @@
   "devDependencies": {
     "@types/node": "^26.6.6",
     "jsdom": "^31.0.1",
+    "playwright-core": "^1.65.1",
     "vitest": "^5.1.1",
     "wxt": "0.21.5"
   }

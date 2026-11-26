@@ -248,12 +248,24 @@ describe("texts", () => {
 });
 
 describe("hostile text", () => {
-  it("handles a very long text inside the time budget", () => {
-    const text = `${"palabra ".repeat(6000)} bcp.com.bo ${"x.y ".repeat(3000)}`;
-    check(ELSEWHERE, text);
-    const start = performance.now();
-    for (let i = 0; i < 50; i++) check(ELSEWHERE, text);
-    expect((performance.now() - start) / 50).toBeLessThan(1);
+  it("grows no faster than the text on very long texts", () => {
+    // Relative, so the check does not depend on the speed of the machine running it: twice
+    // the text may cost about twice the time, never several times more.
+    const filler = (words: number) =>
+      `bcp.com.bo ${"palabra ".repeat(words)} ${"x.y ".repeat(words / 2)}`;
+    const [long, longer] = [filler(6000), filler(12000)];
+    const best = (text: string) => {
+      let fastest = Infinity;
+      for (let round = 0; round < 7; round++) {
+        const start = performance.now();
+        for (let i = 0; i < 20; i++) check(ELSEWHERE, text);
+        fastest = Math.min(fastest, performance.now() - start);
+      }
+      return fastest;
+    };
+    best(long);
+    best(longer);
+    expect(best(longer)).toBeLessThan(best(long) * 3 + 2);
   });
 
   it("looks only at the start of a very long text", () => {

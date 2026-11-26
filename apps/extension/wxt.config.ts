@@ -8,12 +8,15 @@ import { strings } from "./src/strings.ts";
 export const BUILD_INFO = "build-info.json";
 
 export default defineConfig({
+  // The screenshot script builds its own copy elsewhere, so it never replaces the real package.
+  ...(process.env.OJOLINK_OUT_DIR ? { outDir: process.env.OJOLINK_OUT_DIR } : {}),
   manifest: () => ({
     name: strings.name,
     description: strings.description,
     ...buildManifest(resolverOrigin(import.meta.env.WXT_RESOLVER_URL)),
     minimum_chrome_version: "116",
   }),
+  zip: { artifactTemplate: "ojolink-{{version}}-{{browser}}.zip" },
   hooks: {
     // Beside the package, not inside it: the outside addresses this build was given.
     "build:done": (wxt) => {

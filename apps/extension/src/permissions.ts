@@ -1,10 +1,24 @@
 import { DEFAULT_PATTERNS } from "./sites.ts";
 
-/** Every browser capability the extension declares, with the reason it needs it. */
+/**
+ * Every browser capability the extension declares, with the reason it needs it. These are the
+ * texts published to the stores, written for the person who installs the extension.
+ */
 export const PERMISSION_REASONS: Readonly<Record<string, string>> = {
-  storage: "Remembers the person's settings on the device. Nothing is synced to a server.",
-  scripting: "Runs the link check on a site the person grants, beyond the three default ones.",
+  storage:
+    "Guarda en tu equipo tus ajustes y los dominios que decides proteger, y recuerda por unos minutos, en memoria, los destinos que revelaste. No se sincroniza con tu cuenta ni se envía a ningún servidor.",
+  scripting:
+    "Permite que OjoLink revise los enlaces en un sitio de correo que tú agregas, además de los tres que trae. No se usa para ninguna otra página.",
 };
+
+/** The reason for each kind of site the extension declares. Published like the ones above. */
+export const SITE_REASONS = {
+  mail: "OjoLink lee los enlaces de los mensajes que abres en {host} para avisarte de los sospechosos antes de que hagas clic. Los analiza en tu equipo: no envía el contenido de tus mensajes ni tus enlaces, y no lee nada fuera de esa página.",
+  optional:
+    "No concede acceso a ningún sitio por sí solo. Existe para que quien usa otro correo web pueda agregarlo: cada sitio necesita que lo escribas en las opciones y que aceptes el aviso del propio navegador, y puedes quitarlo cuando quieras.",
+  resolver:
+    "Es el único servidor con el que OjoLink se comunica. Solo se le consulta cuando pides «Revelar destino» de un enlace corto, o si activas esa opción al pasar el mouse, y solo se envía ese enlace corto. No se usa para nada más.",
+} as const;
 
 export const REQUIRED_HOSTS: readonly string[] = DEFAULT_PATTERNS;
 

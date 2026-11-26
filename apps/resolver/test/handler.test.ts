@@ -307,6 +307,25 @@ describe("privacy policy", () => {
     }
   });
 
+  it("covers the browser extension: what stays on the device and the one thing it sends", async () => {
+    const html = await (await handle(request("GET", "/privacidad"), deps(one()))).text();
+    for (const phrase of [
+      "La extensión del navegador",
+      "en tu equipo",
+      "Los dominios que decides proteger",
+      "no se sincronizan",
+      "«Revelar destino»",
+      "ese enlace y nada más",
+      "viene apagado",
+      "No vendemos ni compartimos datos",
+      "no mostramos publicidad",
+      "no pedimos una cuenta",
+      "la app web y para la extensión",
+    ]) {
+      expect(html, phrase).toContain(phrase);
+    }
+  });
+
   it("fits in under a page", async () => {
     const html = await (await handle(request("GET", "/privacidad"), deps(one()))).text();
     const words = html
@@ -314,7 +333,7 @@ describe("privacy policy", () => {
       .replace(/<[^>]+>/g, " ")
       .trim()
       .split(/\s+/);
-    expect(words.length).toBeLessThan(350);
+    expect(words.length).toBeLessThan(480);
   });
 });
 
