@@ -29,11 +29,18 @@ interface Manifest {
   minimum_chrome_version?: string;
   background?: { service_worker?: string };
   options_ui?: { page?: string };
+  action?: { default_popup?: string; default_title?: string };
   icons?: Record<string, string>;
   content_scripts?: { matches: string[]; js: string[]; run_at?: string }[];
 }
 
 const manifest = JSON.parse(readFileSync(join(output, "manifest.json"), "utf8")) as Manifest;
+
+/** The outside addresses the build recorded beside the package. */
+const info = JSON.parse(readFileSync(join(root, ".output", "build-info.json"), "utf8")) as {
+  resolver: string | null;
+  donate: string | null;
+};
 
 /** The resolver this package was built with, read back from what it declares. */
 const builtResolver =
@@ -164,6 +171,14 @@ describe("built manifest", () => {
     expect(page).not.toMatch(/<script(?![^>]*\bsrc=)[^>]*>\s*\S/);
   });
 
+  it("opens its panel from the icon, with no capability added for it", () => {
+    const popup = manifest.action?.default_popup ?? "missing";
+    expect(existsSync(join(output, popup))).toBe(true);
+    expect(readFileSync(join(output, popup), "utf8")).not.toMatch(/(?:src|href)="(?:https?:)?\/\//);
+    expect([...(manifest.permissions ?? [])].sort()).toEqual(["scripting", "storage"]);
+    expect(existsSync(join(output, "build-info.json"))).toBe(false);
+  });
+
   it("ships the service worker, the options page, and icons of the declared sizes", () => {
     expect(existsSync(join(output, manifest.background?.service_worker ?? "missing"))).toBe(true);
     expect(existsSync(join(output, manifest.options_ui?.page ?? "missing"))).toBe(true);
@@ -245,7 +260,11 @@ describe("one request, in one place", () => {
   });
 
   /** Hosts named in the built files, apart from the allowed ones. */
-  function outsideHosts(texts: readonly string[], resolver: string | null): string[] {
+  function outsideHosts(
+    texts: readonly string[],
+    resolver: string | null,
+    donate: string | null = null,
+  ): string[] {
     // Namespaces, and links in console messages of the build tool and the engine's data sources.
     const allowed = new Set([
       "www.w3.org",
@@ -253,6 +272,7 @@ describe("one request, in one place", () => {
       "outlook.office.com",
       "outlook.live.com",
       ...(resolver === null ? [] : [new URL(resolver).hostname]),
+      ...(donate === null ? [] : [new URL(donate).hostname]),
     ]);
     const hosts = new Set<string>();
     for (const text of texts) {
@@ -267,13 +287,17 @@ describe("one request, in one place", () => {
     const built = files(output, [".js", ".html", ".css", ".json"]).map((file) =>
       readFileSync(file, "utf8"),
     );
-    expect(outsideHosts(built, builtResolver)).toEqual([]);
+    expect(info.resolver).toBe(builtResolver);
+    expect(outsideHosts(built, info.resolver, info.donate)).toEqual([]);
   });
 
   it("the check catches an extra host", () => {
     const text = 'x("https://resolver.example/resolve"); y("https://collector.example/");';
     expect(outsideHosts([text], "https://resolver.example")).toEqual(["collector.example"]);
     expect(outsideHosts([text], null)).toEqual(["resolver.example", "collector.example"]);
+    expect(outsideHosts([text], null, "https://collector.example/dona")).toEqual([
+      "resolver.example",
+    ]);
   });
 });
 

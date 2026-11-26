@@ -249,6 +249,19 @@ La marca no cambia el mensaje: no altera la dirección ni el texto del enlace, n
 
 Desde que se instala, solo en tres sitios: `mail.google.com`, `outlook.office.com` y `outlook.live.com`. Nunca pide acceso a todos los sitios.
 
+### El panel del ícono
+
+Al pulsar el ícono de OjoLink se abre un panel con cuatro partes:
+
+- **En esta página:** lo mismo que dice el indicador, por ejemplo «OjoLink · 12 enlaces revisados, 3 con avisos». En un sitio donde no funciona lo dice y lleva a las opciones; en una página de correo abierta antes de instalar o recargar la extensión, pide recargarla.
+- **Tus dominios protegidos:** los sitios que más te importan, como tu banco o tu trabajo. Se aceptan como la gente los escribe (`https://www.MiEmpresa.com.bo/login` queda como `miempresa.com.bo`), hasta 100. OjoLink avisa de enlaces que los imiten y de enlaces cuyo texto los muestra pero llevan a otro sitio. Al agregar o quitar uno, los correos abiertos se vuelven a revisar sin recargar.
+- **Dónde funciona:** los tres correos web de siempre y los que agregaste, con un botón que abre las opciones.
+- **Apoyar el proyecto:** un enlace para donar, solo si el paquete se construyó con `WXT_DONATE_URL` (tiene que ser `https`). La extensión no lo recuerda ni insiste en ningún otro lugar.
+
+Tus dominios se guardan solo en este equipo, en el almacenamiento local de la extensión. No se sincronizan con tu cuenta del navegador, no se envían a ningún servidor y no van en las consultas de «Revelar destino». En otro navegador hay que volver a escribirlos.
+
+El panel no necesita permisos nuevos: le pregunta el estado al script que la propia extensión tiene en esa página. Por eso mismo no puede nombrar el sitio en el que estás ni ofrecer «agregar este sitio»; para eso lleva a las opciones.
+
 ### Enlaces con destino oculto
 
 Un enlace que pasa por un acortador (`bit.ly`, `t.co`) o por un enlace de seguimiento de boletín lleva la marca «Destino oculto»: no se puede saber a dónde va sin abrirlo.

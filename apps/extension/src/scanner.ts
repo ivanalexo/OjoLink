@@ -25,6 +25,8 @@ export interface ScannerOptions {
 
 export interface Scanner {
   start(): void;
+  /** Goes over every link of the page again, in the usual batches. */
+  rescan(): void;
   stop(): void;
   readonly pending: number;
 }
@@ -123,6 +125,11 @@ export function createScanner(
         attributes: true,
         attributeFilter: ["href"],
       });
+      request();
+    },
+    rescan() {
+      if (!running) return;
+      collect(doc);
       request();
     },
     stop() {

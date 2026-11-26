@@ -1,3 +1,4 @@
+import { settings } from "./settings.ts";
 import { DEFAULT_SITES, hostOfPattern, toPattern } from "./sites.ts";
 
 export const SCRIPT_PREFIX = "ojolink-site:";
@@ -35,13 +36,26 @@ function scriptFor(host: string): PageScript {
   };
 }
 
-/** The hosts the person granted, without the default sites, which the manifest covers. */
-export function grantedHosts(origins: readonly string[]): string[] {
+/** The host of the resolver this package may contact. It is a service, not a mail site. */
+export function serviceHosts(resolver: string | null = settings.resolver): readonly string[] {
+  return resolver === null ? [] : [new URL(resolver).hostname];
+}
+
+/**
+ * The hosts the person granted: without the default sites, which the manifest covers, and
+ * without the resolver, which the extension may contact but never runs on.
+ */
+export function grantedHosts(
+  origins: readonly string[],
+  services: readonly string[] = serviceHosts(),
+): string[] {
   const hosts = origins
     .map(hostOfPattern)
     .filter(
       (host): host is string =>
-        host !== null && !(DEFAULT_SITES as readonly string[]).includes(host),
+        host !== null &&
+        !(DEFAULT_SITES as readonly string[]).includes(host) &&
+        !services.includes(host),
     );
   return [...new Set(hosts)].sort();
 }

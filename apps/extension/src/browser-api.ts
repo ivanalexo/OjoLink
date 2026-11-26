@@ -1,8 +1,12 @@
 import { browser } from "wxt/browser";
 import type { OptionsApi } from "./options.ts";
+import type { PopupApi } from "./popup.ts";
 import type { SiteApi } from "./registration.ts";
 import { CACHE_KEY, type RevealRequest, type SessionStore } from "./reveal-service.ts";
 import { HOVER_SETTING } from "./settings.ts";
+import { createPageStatus, createStatusResponder } from "./status.ts";
+import type { PageCounts } from "./indicator.ts";
+import { readUserDomains, USER_DOMAINS_KEY } from "./user-domains.ts";
 
 async function grantedOrigins(): Promise<readonly string[]> {
   return (await browser.permissions.getAll()).origins ?? [];
@@ -56,6 +60,47 @@ export function watchHover(): () => boolean {
   });
   return () => on;
 }
+
+async function storedUserDomains(): Promise<unknown> {
+  return (await browser.storage.local.get(USER_DOMAINS_KEY))[USER_DOMAINS_KEY];
+}
+
+/** Gives the person's protected domains now and each time the panel changes them. */
+export function watchUserDomains(onChange: (domains: readonly string[]) => void): void {
+  void storedUserDomains().then(
+    (stored) => onChange(readUserDomains(stored)),
+    () => undefined,
+  );
+  browser.storage.onChanged.addListener((changes, area) => {
+    const change = changes[USER_DOMAINS_KEY];
+    if (area === "local" && change) onChange(readUserDomains(change.newValue));
+  });
+}
+
+/** Lets the panel ask this tab's page script what it found. */
+export function answerStatus(counts: () => PageCounts): void {
+  const respond = createStatusResponder(browser.runtime.id, counts);
+  browser.runtime.onMessage.addListener((message, sender, send) => {
+    const answer = respond(message, sender.id);
+    if (answer === null) return false;
+    send(answer);
+    return false;
+  });
+}
+
+export const popupApi: PopupApi = {
+  pageStatus: createPageStatus({
+    async active() {
+      const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
+      return tab;
+    },
+    send: (tabId, message) => browser.tabs.sendMessage(tabId, message),
+  }),
+  userDomains: storedUserDomains,
+  saveUserDomains: (domains) => browser.storage.local.set({ [USER_DOMAINS_KEY]: [...domains] }),
+  grantedOrigins,
+  openOptions: () => browser.runtime.openOptionsPage(),
+};
 
 export const optionsApi: OptionsApi = {
   grantedOrigins,

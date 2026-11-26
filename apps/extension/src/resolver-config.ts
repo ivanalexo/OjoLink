@@ -14,6 +14,26 @@ export function parseResolver(value: unknown): string | null {
   return url.protocol === "https:" || local ? url.origin : null;
 }
 
+/** A donation address, or null when the text is not an https address. */
+export function parseDonate(value: unknown): string | null {
+  if (typeof value !== "string" || value.trim() === "") return null;
+  try {
+    const url = new URL(value.trim());
+    const plain = url.username === "" && url.password === "";
+    return url.protocol === "https:" && plain ? url.href : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Reads the donation address from the build settings and fails the build on a bad one. */
+export function donateAddress(value: string | undefined): string | null {
+  if (value === undefined || value.trim() === "") return null;
+  const address = parseDonate(value);
+  if (address === null) throw new Error("WXT_DONATE_URL must be an https address.");
+  return address;
+}
+
 /** Reads the resolver address from the build settings and fails the build on a bad one. */
 export function resolverOrigin(value: string | undefined): string | null {
   if (value === undefined || value.trim() === "") return null;

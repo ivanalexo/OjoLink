@@ -1,3 +1,4 @@
+import type { UserDomainRejection } from "@ojolink/core";
 import type { FailureReason } from "./reveal.ts";
 import type { SiteRejection } from "./sites.ts";
 
@@ -61,6 +62,37 @@ export const strings = {
   hoverHint:
     "Apagado por defecto. Si lo activas, cada enlace corto sobre el que dejes el mouse se envía al servicio de OjoLink.",
   hoverSaved: "Ajuste guardado.",
+  popupStateHeading: "En esta página",
+  popupLooking: "Consultando esta página…",
+  popupNoLinks: "OjoLink está activo aquí. Esta página no tiene enlaces que revisar.",
+  popupReload: "Recarga esta página para que OjoLink empiece a revisarla.",
+  popupNotHere: "OjoLink no funciona en este sitio.",
+  popupAddSite: "Agregar un sitio de correo",
+  popupSitesHeading: "Dónde funciona",
+  popupManageSites: "Administrar sitios y ajustes",
+  domainsHeading: "Tus dominios protegidos",
+  domainsIntro:
+    "Agrega los sitios que más te importan, como tu banco o tu trabajo. OjoLink avisará de enlaces que los imiten.",
+  domainsEmpty: "Todavía no agregaste ningún dominio.",
+  domainLabel: "Proteger un dominio",
+  domainHint: "Escribe su dirección, por ejemplo miempresa.com.bo. Se guarda solo en este equipo.",
+  domainAdd: "Proteger",
+  domainAdded: "OjoLink ahora protege {domain}.",
+  domainRemoved: "OjoLink dejó de proteger {domain}.",
+  domainRejections: {
+    empty: "Escribe la dirección del sitio.",
+    "not-a-domain": "Eso no parece la dirección de un sitio. Escribe algo como miempresa.com.bo.",
+    "email-address":
+      "Eso es un correo electrónico. Escribe solo el sitio, lo que va después de la arroba.",
+    "ip-address": "Escribe el nombre del sitio, no una dirección IP.",
+    "public-suffix":
+      "Eso es una terminación, no un sitio. Escribe el nombre completo, como miempresa.com.bo.",
+    "already-protected": "OjoLink ya protege ese dominio.",
+    repeated: "Ese dominio ya está en tu lista.",
+    "limit-reached": "Llegaste al máximo de 100 dominios. Quita alguno para agregar otro.",
+  } satisfies Record<UserDomainRejection, string>,
+  donateText: "OjoLink es gratuito y se sostiene con donaciones.",
+  donateLink: "Apoyar el proyecto",
   optionsTitle: "Sitios donde funciona OjoLink",
   defaultHeading: "Siempre activo",
   defaultIntro: "OjoLink revisa los enlaces en estos sitios de correo desde que se instala.",

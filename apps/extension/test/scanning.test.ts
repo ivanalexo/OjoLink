@@ -345,6 +345,42 @@ describe("batches", () => {
     expect(marksIn()).toHaveLength(1);
   });
 
+  it("goes over every link again on rescan, in batches that still stop at the slice", () => {
+    for (let index = 0; index < 6; index++) message(link(`${SAFE}p${index}`));
+    const control = manual();
+    const processed: string[] = [];
+    let clock = 0;
+    const handled: number[] = [];
+    const scanner = createScanner(
+      document,
+      (anchor) => {
+        processed.push(anchor.href);
+        clock += 2;
+      },
+      () => undefined,
+      {
+        now: () => clock,
+        schedule: control.schedule,
+        onBatch: (_ms, count) => handled.push(count),
+      },
+    );
+    scanner.rescan();
+    expect(scanner.pending).toBe(0);
+    scanner.start();
+    control.drain();
+    expect(processed).toHaveLength(6);
+    expect(handled).toEqual([2, 2, 2]);
+
+    scanner.rescan();
+    expect(scanner.pending).toBe(6);
+    control.drain();
+    expect(processed).toHaveLength(12);
+    expect(handled).toEqual([2, 2, 2, 2, 2, 2]);
+    scanner.stop();
+    scanner.rescan();
+    expect(scanner.pending).toBe(0);
+  });
+
   interface Batch {
     /** How long the batch blocked the page. */
     readonly duration: number;

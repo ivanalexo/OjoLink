@@ -85,7 +85,17 @@ ${tones}
 .chip[data-compact="true"]:not(:hover) .short { display: inline; }
 `;
 
-function describe(counts: PageCounts): Omit<IndicatorView, "compact"> {
+/** The paths of the icon for each tone, and for a plain note. */
+export const STATE_ICONS: Readonly<Record<string, readonly string[]>> = {
+  clear: CHECK,
+  danger: ALERT,
+  caution: ALERT,
+  "hidden-destination": ALERT,
+  note: ["M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z", "M12 16v-4m0-4h.01"],
+};
+
+/** The sentence and tone for what was found on a page. The indicator and the panel share it. */
+export function describeCounts(counts: PageCounts): Omit<IndicatorView, "compact"> {
   const { danger, caution } = counts.marked;
   const hidden = counts.marked["hidden-destination"];
   const flagged = danger + caution + hidden;
@@ -175,7 +185,7 @@ export function createIndicator(doc: Document): Indicator {
         remove();
         return;
       }
-      const next = describe(counts);
+      const next = describeCounts(counts);
       if (view && view.text === next.text && view.tone === next.tone && host?.isConnected) return;
       if (!host) build();
       if (!host || !chip || !full || !short) return;

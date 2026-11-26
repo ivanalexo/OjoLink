@@ -929,8 +929,8 @@ describe("options: what leaves the device", () => {
     };
     return { state, fake };
   }
-  const WITH = { resolver: "https://resolver.example", privacyPolicy: POLICY };
-  const WITHOUT = { resolver: null, privacyPolicy: null };
+  const WITH = { resolver: "https://resolver.example", privacyPolicy: POLICY, donate: null };
+  const WITHOUT = { resolver: null, privacyPolicy: null, donate: null };
   const settled = () => new Promise((resolve) => setTimeout(resolve, 0));
   const box = () => document.querySelector<HTMLInputElement>("#hover");
 

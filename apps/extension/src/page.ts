@@ -1,5 +1,6 @@
 import { createDialog, type Dialog, type DialogOptions, type DialogView } from "./dialog.ts";
-import { createIndicator, type Indicator } from "./indicator.ts";
+import { createDefaultEngine } from "@ojolink/core";
+import { createIndicator, type Indicator, type PageCounts } from "./indicator.ts";
 import { createInterceptor } from "./interceptor.ts";
 import { createMarks, type Marks } from "./marks.ts";
 import { failed, type FailureReason, type RevealLink } from "./reveal.ts";
@@ -41,6 +42,8 @@ export interface Page {
   readonly indicator: Indicator;
   readonly verdicts: Verdicts;
   readonly dialog: Dialog;
+  /** What the indicator shows, as numbers, for the panel on the extension's icon. */
+  status(): PageCounts;
   stop(): void;
 }
 
@@ -53,6 +56,11 @@ export interface PageOptions extends ScannerOptions {
   readonly privacyPolicy?: string | null;
   /** True while the person has turned on revealing by resting the pointer on a link. */
   readonly revealOnHover?: () => boolean;
+  /**
+   * Gives the person's protected domains, now and each time they change. Until the first
+   * list arrives, links are judged with the embedded lists.
+   */
+  readonly userDomains?: (onChange: (domains: readonly string[]) => void) => void;
 }
 
 type Stop =
@@ -78,9 +86,9 @@ export function startPage(doc: Document, options: PageOptions = {}): Page {
   const view = doc.defaultView;
   const tooltip = createTooltip(doc);
   const indicator = createIndicator(doc);
-  const verdicts = createVerdicts(options.analyze);
+  let verdicts = createVerdicts(options.analyze);
   const dialog = createDialog(doc, options.dialog);
-  const seen = new WeakMap<HTMLAnchorElement, string>();
+  let seen = new WeakMap<HTMLAnchorElement, string>();
   const checked = new Map<HTMLAnchorElement, LinkVerdict>();
   const destinations = new Map<string, string>();
   const canReveal = options.reveal !== undefined;
@@ -116,8 +124,12 @@ export function startPage(doc: Document, options: PageOptions = {}): Page {
     marks.apply(anchor, verdict);
   }
 
+  function status(): PageCounts {
+    return { checked: checked.size, marked: marks.levels };
+  }
+
   function count(): void {
-    indicator.update({ checked: checked.size, marked: marks.levels });
+    indicator.update(status());
   }
 
   /** Stores a revealed destination and repaints every link that leads through the same one. */
@@ -307,6 +319,19 @@ export function startPage(doc: Document, options: PageOptions = {}): Page {
   doc.addEventListener("focusin", onFocus, true);
   doc.addEventListener("focusout", onBlur, true);
 
+  let protectedDomains = "";
+  let stopped = false;
+  options.userDomains?.((domains) => {
+    const key = domains.join("\n");
+    if (stopped || key === protectedDomains) return;
+    protectedDomains = key;
+    verdicts = createVerdicts(
+      options.analyze ?? createDefaultEngine({ userDomains: domains }).analyze,
+    );
+    seen = new WeakMap();
+    scanner.rescan();
+  });
+
   const begin = (): void => scanner.start();
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", begin, { once: true });
   else begin();
@@ -316,9 +341,13 @@ export function startPage(doc: Document, options: PageOptions = {}): Page {
     marks,
     tooltip,
     indicator,
-    verdicts,
+    get verdicts() {
+      return verdicts;
+    },
     dialog,
+    status,
     stop() {
+      stopped = true;
       flow += 1;
       doc.removeEventListener("DOMContentLoaded", begin);
       interceptor?.stop();

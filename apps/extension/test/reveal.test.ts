@@ -66,8 +66,9 @@ describe("resolver address", () => {
     expect(readSettings({ WXT_RESOLVER_URL: `${RESOLVER}/` })).toEqual({
       resolver: RESOLVER,
       privacyPolicy: `${RESOLVER}/privacidad`,
+      donate: null,
     });
-    expect(readSettings({})).toEqual({ resolver: null, privacyPolicy: null });
+    expect(readSettings({})).toEqual({ resolver: null, privacyPolicy: null, donate: null });
     expect(readSettings({ WXT_RESOLVER_URL: "http://resolver.example" }).resolver).toBeNull();
   });
 });

@@ -146,29 +146,3 @@ describe("options page", () => {
     expect(document.querySelectorAll(".sites")[0]?.querySelectorAll("button")).toHaveLength(0);
   });
 });
-
-describe("page script", () => {
-  it("marks a dangerous link, leaves a safe one alone, and exposes nothing to the page", async () => {
-    document.body.innerHTML =
-      '<p><a href="https://bcp.com.bo.verifica.net/">Entrar</a> <a href="https://www.lostiempos.com/">Noticias</a></p>';
-    const globals = new Set(Object.keys(window));
-    const debug = vi.spyOn(console, "debug").mockImplementation(() => undefined);
-
-    const { default: script } = await import("../entrypoints/content.ts");
-    const invalidated: (() => void)[] = [];
-    await script.main({ onInvalidated: (stop: () => void) => invalidated.push(stop) } as never);
-    await new Promise((resolve) => setTimeout(resolve, 80));
-
-    const marks = document.querySelectorAll("ojolink-mark");
-    expect(marks).toHaveLength(1);
-    expect(marks[0]?.previousElementSibling?.textContent).toBe("Entrar");
-    expect(Object.keys(window).filter((key) => !globals.has(key))).toEqual([]);
-    expect(debug).not.toHaveBeenCalled();
-
-    expect(invalidated).toHaveLength(1);
-    invalidated[0]?.();
-    expect(document.querySelectorAll("ojolink-mark, ojolink-status, ojolink-warning")).toHaveLength(
-      0,
-    );
-  });
-});

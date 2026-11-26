@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   createSync,
   grantedHosts,
+  serviceHosts,
   PAGE_SCRIPT,
   reconcile,
   SCRIPT_PREFIX,
@@ -83,6 +84,18 @@ describe("page scripts follow the granted sites", () => {
   it("leaves the default sites to the manifest", () => {
     expect(grantedHosts(DEFAULT_PATTERNS)).toEqual([]);
     expect(reconcile(DEFAULT_PATTERNS, [])).toEqual({ register: [], unregister: [] });
+  });
+
+  it("never takes the resolver for a site the person added", () => {
+    const origins = [
+      ...DEFAULT_PATTERNS,
+      "https://resolver.example/*",
+      toPattern("mail.proton.me"),
+    ];
+    expect(serviceHosts("https://resolver.example")).toEqual(["resolver.example"]);
+    expect(serviceHosts(null)).toEqual([]);
+    expect(grantedHosts(origins, ["resolver.example"])).toEqual(["mail.proton.me"]);
+    expect(grantedHosts(origins, [])).toEqual(["mail.proton.me", "resolver.example"]);
   });
 
   it("registers a newly granted site, for that site alone", () => {
