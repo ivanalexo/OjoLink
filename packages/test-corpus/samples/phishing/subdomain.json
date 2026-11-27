@@ -103,5 +103,19 @@
     "source": "constructed",
     "collected": "2026-11-23",
     "note": "Construido a mano para mostrar la t\u00e9cnica; no observado."
+  },
+  {
+    "id": "subdomain-hyphenated-brand-telecom",
+    "input": "https://t-mobile.com.cuenta-segura.net/pago",
+    "source": "constructed",
+    "collected": "2026-11-27",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado. El dominio protegido lleva guion."
+  },
+  {
+    "id": "subdomain-hyphenated-brand-bank",
+    "input": "https://deutsche-bank.de.verifica.net/login",
+    "source": "constructed",
+    "collected": "2026-11-27",
+    "note": "Construido a mano para mostrar la t\u00e9cnica; no observado. El dominio protegido lleva guion."
   }
 ]

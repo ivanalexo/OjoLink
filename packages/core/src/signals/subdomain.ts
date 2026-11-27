@@ -1,5 +1,5 @@
 import type { ProtectedPack } from "../data/index.js";
-import { buildProtectedIndex } from "./protected-index.js";
+import { buildProtectedIndex, type ProtectedDomain } from "./protected-index.js";
 import { skeleton } from "./skeleton.js";
 import type { Signal, SignalHit } from "./types.js";
 
@@ -26,7 +26,14 @@ export function createSubdomainSignal(
   userDomains?: readonly string[],
 ): Signal {
   const index = buildProtectedIndex(packs, userDomains);
-  const domainSizes = [...new Set(index.entries.map((entry) => entry.domain.split(".").length))];
+  // A host is compared word by word, with hyphens and dots both ending a word, so a protected
+  // domain that has a hyphen of its own, such as t-mobile.com, is cut the same way.
+  const byWords = new Map<string, ProtectedDomain>();
+  for (const entry of index.entries) {
+    const key = skeleton(entry.domain.replaceAll("-", "."));
+    if (!byWords.has(key)) byWords.set(key, entry);
+  }
+  const domainSizes = [...new Set(index.entries.map((entry) => entry.domain.split(/[.-]/).length))];
 
   return {
     id: "subdomain",
@@ -58,7 +65,7 @@ export function createSubdomainSignal(
 
       for (const size of domainSizes) {
         for (const candidate of windows(tokens, size)) {
-          const shown = index.byDomainSkeleton.get(skeleton(candidate));
+          const shown = byWords.get(skeleton(candidate));
           if (shown) return report("domain", shown.domain, shown.entity);
         }
       }

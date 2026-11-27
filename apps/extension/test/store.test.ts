@@ -1,5 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { analyze } from "@ojolink/core";
 import { describe, expect, it } from "vitest";
 import {
   buildManifest,
@@ -17,7 +18,13 @@ import {
   UNRELEASED,
 } from "../src/release-rules.ts";
 import { DEFAULT_SITES } from "../src/sites.ts";
-import { justifications, renderPermissions, RESOLVER_LABEL } from "../src/store.ts";
+import {
+  FIELD_LIMIT,
+  hostJustification,
+  justifications,
+  renderPermissions,
+  RESOLVER_LABEL,
+} from "../src/store.ts";
 import { strings } from "../src/strings.ts";
 
 const root = process.cwd();
@@ -115,6 +122,22 @@ describe("one text per permission", () => {
     expect(renderPermissions(justifications(buildManifest(RESOLVER)))).not.toContain(
       "resolver.example",
     );
+  });
+
+  it("fits each field of the store's form, and joins every site into the one host field", () => {
+    const entries = justifications(buildManifest(RESOLVER));
+    for (const entry of entries.filter((item) => item.kind === "permiso")) {
+      expect(entry.text.length, entry.item).toBeLessThanOrEqual(FIELD_LIMIT);
+    }
+    const hosts = hostJustification(entries);
+    expect(hosts.length).toBeLessThanOrEqual(FIELD_LIMIT);
+    for (const site of DEFAULT_SITES) expect(hosts).toContain(site);
+    expect(hosts).toContain(OPTIONAL_HOSTS[0]);
+    expect(hosts).toContain(RESOLVER_LABEL);
+    expect(hosts).toMatch(/No concede acceso a ningún sitio por sí solo/);
+    expect(hosts).not.toContain("resolver.example");
+    expect(renderPermissions(entries)).toContain(hosts);
+    expect(hostJustification(justifications(buildManifest(null)))).not.toContain(RESOLVER_LABEL);
   });
 
   it("refuses a manifest that declares something with no justification", () => {
@@ -328,6 +351,10 @@ describe.skipIf(!hasStoreMaterial)("store listing", () => {
       "Idioma",
       "Política de privacidad",
       "Frase sobre el código",
+      "Justificación de permisos",
+      "Código remoto",
+      "Uso de datos",
+      "Acceso: instrucciones de prueba",
     ]) {
       expect(section(title).length, title).toBeGreaterThan(5);
     }
@@ -348,11 +375,38 @@ describe.skipIf(!hasStoreMaterial)("store listing", () => {
     }
   });
 
+  it("answers the data-use boxes and gives reviewers a way to test, in two languages", () => {
+    const data = section("Uso de datos");
+    expect(data).toMatch(/Marca solo esta:\s+- \*\*Contenido de sitios web\.\*\*/);
+    for (const box of [
+      "Comunicaciones personales",
+      "Ubicación",
+      "Historial web",
+      "Actividad del usuario",
+    ]) {
+      expect(data, box).toContain(box);
+    }
+    expect(data.match(/^- No (vendo|uso) /gm)).toHaveLength(3);
+
+    const access = section("Acceso: instrucciones de prueba");
+    expect(access).toMatch(/no necesita cuenta/);
+    expect(access).toMatch(/needs no account/);
+    for (const [address, level] of [
+      ["https://paypal.com.verifica-cuenta.net/", "danger"],
+      ["https://bit.ly/3xYz", "hidden-destination"],
+      ["https://netflix-codes.com/", "caution"],
+      ["https://www.wikipedia.org/", "safe"],
+    ] as const) {
+      expect(access.split(address).length, address).toBe(3);
+      const result = analyze(address);
+      expect(result.analyzed && result.level, address).toBe(level);
+    }
+    expect(section("Código remoto")).toMatch(/no usa código remoto/);
+  });
+
   it("names no address of the owner and no real person", () => {
     for (const file of ["listing.es.md", "permisos.es.md", "datos.es.md"]) {
-      expect(store(file), file).not.toMatch(
-        /https?:\/\/[a-z0-9.-]+\.[a-z]{2,}|workers\.dev|@[a-z0-9-]+\.[a-z]{2,}/i,
-      );
+      expect(store(file), file).not.toMatch(/workers\.dev|@[a-z0-9-]+\.[a-z]{2,}/i);
     }
   });
 });

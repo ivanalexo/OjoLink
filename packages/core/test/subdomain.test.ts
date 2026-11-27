@@ -236,3 +236,46 @@ describe("user domains", () => {
     expect(hit("portal.miempresa.com.bo", own)).toBeNull();
   });
 });
+
+describe("protected domains that have a hyphen of their own", () => {
+  it.each([
+    ["t-mobile.com.cuenta-segura.net", "t-mobile.com"],
+    ["deutsche-bank.de.verifica.net", "deutsche-bank.de"],
+    ["acceso.deutsche-bank.de.verifica.net", "deutsche-bank.de"],
+    ["seguro-t-mobile.com.verifica.net", "t-mobile.com"],
+    ["t-mobile-com.verifica.net", "t-mobile.com"],
+    ["deutsche.bank.de.verifica.net", "deutsche-bank.de"],
+  ])("finds the protected domain inside %s", (host, shown) => {
+    expect(details(host)).toMatchObject({ case: "domain", shown });
+    expect(verdict(host).level).toBe("danger");
+  });
+
+  it("does the same for a domain the person protects", () => {
+    const own = createSubdomainSignal(PROTECTED_PACKS, ["mibanco-ejemplo.com.bo"]);
+    const found = hit("mibanco-ejemplo.com.bo.verifica-cuenta.net", own);
+    expect(found?.details).toMatchObject({ case: "domain", shown: "mibanco-ejemplo.com.bo" });
+    expect(hit("mibanco-ejemplo.com.bo.verifica-cuenta.net")).toBeNull();
+  });
+
+  it.each([
+    "t-mobile.com",
+    "www.t-mobile.com",
+    "deutsche-bank.de",
+    "mobile.com.verifica.net",
+    "bank.de.verifica.net",
+    "t-shirt.com.verifica.net",
+  ])("stays silent for %s", (host) => {
+    expect(hit(host)).toBeNull();
+  });
+
+  it("still finds the domains that have no hyphen, as before", () => {
+    expect(details("bcp.com.bo.verifica.net")).toMatchObject({
+      case: "domain",
+      shown: "bcp.com.bo",
+    });
+    expect(details("bcp-com-bo.verifica.net")).toMatchObject({
+      case: "domain",
+      shown: "bcp.com.bo",
+    });
+  });
+});

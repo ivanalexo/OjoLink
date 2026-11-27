@@ -2,6 +2,10 @@
 
 Historial de versiones. La que está en preparación dice «sin publicar»; las demás llevan la fecha en que se publicaron.
 
+## 0.1.1 — sin publicar
+
+- Detecta la imitación de un sitio cuyo nombre lleva guion, como `mibanco-ejemplo.com.bo.otro-sitio.net`. Antes pasaba sin aviso, tanto para los sitios que agregas tú como para los que OjoLink ya conoce.
+
 ## 0.1.0 — sin publicar
 
 Primera versión pública.

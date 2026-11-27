@@ -52,6 +52,28 @@ export function justifications(manifest: ManifestAccess): Justification[] {
   return all;
 }
 
+/** The longest text a store's justification field takes. Chrome Web Store, November 2026. */
+export const FIELD_LIMIT = 1000;
+
+/**
+ * One text for every site at once. Chrome Web Store has a single field for all host
+ * permissions, so the reasons of each kind are joined, each with the sites it covers.
+ */
+export function hostJustification(entries: readonly Justification[]): string {
+  const of = (kind: JustifiedKind) => entries.filter((entry) => entry.kind === kind);
+  const mail = of("sitio");
+  const parts: string[] = [];
+  if (mail.length > 0) {
+    const names = mail.map((entry) => entry.label).join(", ");
+    parts.push(`Correo web (${names}): ${SITE_REASONS.mail.replace("{host}", "esos sitios")}`);
+  }
+  for (const entry of of("sitio opcional")) {
+    parts.push(`Patrón opcional ${entry.item}: ${entry.text}`);
+  }
+  for (const entry of of("servicio")) parts.push(`${entry.label}: ${entry.text}`);
+  return parts.join("\n\n");
+}
+
 /** The file the owner pastes from when a store asks why each permission is needed. */
 export function renderPermissions(entries: readonly Justification[]): string {
   const lines = [
@@ -64,5 +86,13 @@ export function renderPermissions(entries: readonly Justification[]): string {
   for (const entry of entries) {
     lines.push("", `## ${entry.label}`, "", `Tipo: ${entry.kind}.`, "", entry.text);
   }
+  lines.push(
+    "",
+    "## Permiso de host, en un solo campo",
+    "",
+    "Chrome Web Store tiene un único campo para todos los sitios. Pega este texto ahí:",
+    "",
+    hostJustification(entries),
+  );
   return `${lines.join("\n")}\n`;
 }

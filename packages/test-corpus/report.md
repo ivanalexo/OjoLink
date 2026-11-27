@@ -11,7 +11,7 @@ Most phishing samples in this corpus were built by hand to show one technique ea
 | Legitimate samples at danger | 2 of 771 (2 accepted as exceptions) | 0 outside exceptions | met |
 | Legitimate samples at caution, not counting hosting pages and near-neighbour names | 0.0% (0 of 638) | at most 5.0% | met |
 | Real pages of protected domains at safe | 373 of 373 | all | met |
-| Covered phishing samples with a level other than safe | 100.0% (129 of 129) | at least 90.0% | met |
+| Covered phishing samples with a level other than safe | 100.0% (131 of 131) | at least 90.0% | met |
 
 Every check passes.
 
@@ -28,7 +28,7 @@ Every check passes.
 | legitimate | near-neighbour | 58 | 25 | 0 | 33 | 0 |
 | legitimate | brand-word | 40 | 37 | 0 | 3 | 0 |
 | phishing | homograph | 22 | 0 | 0 | 0 | 22 |
-| phishing | subdomain | 15 | 0 | 0 | 4 | 11 |
+| phishing | subdomain | 17 | 0 | 0 | 4 | 13 |
 | phishing | typosquat | 24 | 2 | 0 | 22 | 0 |
 | phishing | combosquat | 15 | 0 | 0 | 4 | 11 |
 | phishing | hosting | 13 | 0 | 0 | 7 | 6 |
@@ -41,14 +41,14 @@ Every check passes.
 | phishing | hidden-destination | 3 | 0 | 3 | 0 | 0 |
 | phishing | out-of-reach | 4 | 4 | 0 | 0 | 0 |
 
-Legitimate: 771 (minimum 200). Phishing the engine covers: 129 (minimum 50). Out of reach: 6.
+Legitimate: 771 (minimum 200). Phishing the engine covers: 131 (minimum 50). Out of reach: 6.
 
 ## Real and constructed samples
 
 | Source | Covered phishing samples | Detected | Missed |
 | --- | --- | --- | --- |
 | real | 3 | 3 | 0 |
-| constructed | 126 | 126 | 0 |
+| constructed | 128 | 128 | 0 |
 
 ## Signals
 
@@ -57,7 +57,7 @@ Legitimate samples marked: legitimate samples where the signal triggered. Missed
 | Signal | Legitimate samples marked | Of them, wrong results | Phishing samples of its technique | Missed |
 | --- | --- | --- | --- | --- |
 | homograph | 0 | 0 | 22 | 0 |
-| subdomain | 0 | 0 | 15 | 0 |
+| subdomain | 0 | 0 | 17 | 0 |
 | typosquat | 34 | 0 | 22 | 0 |
 | combosquat | 2 | 0 | 15 | 0 |
 | hosting | 32 | 2 | 13 | 0 |
@@ -91,7 +91,7 @@ Legitimate samples marked: legitimate samples where the signal triggered. Missed
 | hosting/one-word | 50 | 3 | 7 | One lure word in the publisher's name is common in honest pages. Measured: 7 legitimate samples and 2 phishing samples, all at caution. |
 | hosting/two-words | 50 | 2 | 2 | Two lure words without a brand name appear in honest pages too, so it stays at caution. Measured: 2 legitimate samples and 2 phishing samples. |
 | hosting/words | 70 | 6 | 2 | Three lure words, or a brand name beside a lure word, is the shape of the real phishing email of 19 November 2026, so it reaches danger alone. Measured: 6 phishing samples, 2 of them real, and 2 constructed legitimate samples that are accepted exceptions. |
-| subdomain/domain | 80 | 11 | 0 | A whole protected domain at the start of another site's name has no innocent use. Measured: 11 phishing samples, 0 of 760 legitimate ones. |
+| subdomain/domain | 80 | 13 | 0 | A whole protected domain at the start of another site's name has no innocent use. Measured: 11 phishing samples, 0 of 760 legitimate ones. |
 | subdomain/suffix | 50 | 2 | 0 | The state's ending inside another site's name, with no protected domain named: suspicious, not proof. Measured: 2 phishing samples, 0 legitimate ones. |
 | subdomain/suffix-lookalike | 50 | 2 | 0 | An ending that looks like the state's. A registry could hand it out honestly, so it gives caution. Measured: 2 phishing samples, 0 legitimate ones. |
 | mixed-script/one | 80 | 7 | 0 | A name that mixes alphabets has no innocent use in the corpus, so it reaches danger alone. Measured: 7 phishing samples, 0 of 760 legitimate ones. |
